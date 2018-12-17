@@ -1,2 +1,12 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>All the Products</h1>
+
+<% @products.each do |product| %>
+  <%= link_to product_path(product) do %>
+    <div style="background-image: url('<%= product.photo %>');">
+      <h5 class="text-name"><%= product.name %></h5>
+      <p class="text-breed"><%= product.description %></p>
+      <p class="text-age">Age : <%= product.price %> yrs</p>
+      <p class="text-gender">Gender : <%= product.quantity %></p>
+    </div>
+  <% end %>
+<% end %>
