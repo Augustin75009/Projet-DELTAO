@@ -5,8 +5,10 @@
       <%= f.input :category, label: 'Catégorie' %>
       <%= f.input :description, label: 'Description du produit' %>
       <%= f.input :price, label: 'Prix en euros' %>
-      <%= f.file_field :photo, label: 'Ajouter une photo' %> <br>
-      <%= f.submit "+ ajouter ce produit", class: "btn btn-primary" %>
+      <%= f.file_field :photo, label: 'Ajouter une photo' %>
+      <div class="button-container">
+      <%= f.submit "+ ajouter ce produit", class: "btn btn-size" %>
+      </div>
     <% end %>
   </div>
 </div>

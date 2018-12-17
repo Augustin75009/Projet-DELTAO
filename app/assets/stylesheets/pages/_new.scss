@@ -1,9 +1,10 @@
 .form-container{
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .product-form {
   width: 50%;
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
