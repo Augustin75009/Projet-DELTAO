@@ -1,7 +1,8 @@
 .show-container {
   display: flex;
   justify-content: center;
-  height: calc(100vh-62);
+  height: 90vh;
+  margin-top: 62px
 }
 
 .product-container {
@@ -12,9 +13,10 @@
 }
 
 .product-image {
-  flex: 1;
-  border: solid 1px;
+  flex: 1;;
   margin: 10px;
+  background-position: center;
+  background-image: url('https://images.unsplash.com/photo-1530006498959-b7884e829a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80')
 }
 
 .product-description {
@@ -22,10 +24,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: solid 1px;
   margin: 10px;
   position: relative;
   padding-left: 8px;
+  background-color: #eaeaea;
 }
 
 .description-title {
@@ -38,16 +40,37 @@
 }
 
 .description-content {
+
+}
+
+.price {
+  flex: none;
+  align-self: flex-end;
 }
 
 .call-to-action {
   position: absolute;
   bottom: 4px;
   display: flex;
+  flex-direction: column;
+
+
+}
+
+.cart {
+  display: flex;
+  flex-direction: inline;
+}
+
+.button {
+  display: flex;
+}
 
   button {
-  height: 40px;
-  text-align: bottom;
+
+  height: 32px;
+  width: 100%;
+  align-self: flex-end;
+  padding: 1px;
 
   }
-}

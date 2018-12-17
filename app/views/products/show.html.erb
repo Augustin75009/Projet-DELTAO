@@ -5,22 +5,27 @@
     </div>
     <div class="product-description">
       <div class="description-title">
-        <h2><%= @product.category %></h2>
-        <h1><%= @product.name %></h1>
+        <h4><%= @product.category %></h2>
+        <h3><%= @product.name %></h1>
       </div>
       <div class="description-content">
         <p><%= @product.description %></p>
-        <span><%= @product.price %></span>
       </div>
       <div class="call-to-action">
-        <div class="quantity">
-        <%= simple_form_for @product do |f|%>
-        </div>
-        <div class="cart">
-        <%= f.input :quantity, label: 'Quantité' %>
-        </div>
-        <% end %>
-        <button class="btn btn-primary">Ajouter au panier</button>
+          <div class="price">
+            <span><%= @product.price %> euros</span>
+          </div>
+          <div class="cart">
+              <%= simple_form_for @product do |f|%>
+              <%= f.label :quantity %>
+            <div class="quantity">
+              <%= f.input_field :quantity %>
+            </div>
+              <% end %>
+            <div class="button">
+              <button class="btn btn-primary">Ajouter au panier</button>
+            </div>
+          </div>
       </div>
     </div>
   </div>
