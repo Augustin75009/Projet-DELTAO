@@ -1,12 +1,32 @@
-<h1>All the Products</h1>
-
-<% @products.each do |product| %>
-  <%= link_to product_path(product) do %>
-    <div style="background-image: url('<%= product.photo %>');">
-      <h5 class="text-name"><%= product.name %></h5>
-      <p class="text-breed"><%= product.description %></p>
-      <p class="text-age">Age : <%= product.price %> yrs</p>
-      <p class="text-gender">Gender : <%= product.quantity %></p>
-    </div>
-  <% end %>
-<% end %>
+<%= render 'shared/banner2' %>
+<div class="main-container" id="cards">
+  <div class="card-container">
+    <% @products.each do |product| %>
+      <div class ="row row-condensend">
+        <div class="col-sm-4">
+          <%= link_to product_path(product) do %>
+            <div class="card">
+              <div class ="card-image"
+                   style="background-image: url(
+                    '<%= product.photo %>'
+                   );">
+                  <div class="card-deploy">
+                    <div class="card-infos">
+                      <h5 class="text-name"><%= product.name %></h5>
+                      <p class="card-description"><%= product.description %></p>
+                      <p class="text-age"><%= product.price %> € </p>
+                      <p class="text-gender"><%= product.quantity %></p>
+                    </div>
+                  </div>
+              </div>
+              <div class="card-content">
+                <h5><%= product.name %></h5>
+                <p class="text-right"><%= product.price %> € </p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

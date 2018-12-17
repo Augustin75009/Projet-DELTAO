@@ -1,0 +1,18 @@
+.introduction {
+  margin: 10vh 20vh 10vh 20vh;
+  display: flex;
+  justify-content: space-around;
+  height: 50vh;
+}
+
+
+.introduction-img {
+  flex: 0 0 30%;
+  background-image: url('introduction.png');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.introduction-content {
+  flex: 0 0 65%;
+}
