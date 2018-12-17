@@ -1,2 +1,12 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<div class="form-container">
+  <div class="product-form">
+    <%= simple_form_for(@product) do |f| %>
+      <%= f.input :name, label: 'Intitulé' %>
+      <%= f.input :category, label: 'Catégorie' %>
+      <%= f.input :description, label: 'Description du produit' %>
+      <%= f.input :price, label: 'Prix en euros' %>
+      <%= f.file_field :photo, label: 'Ajouter une photo' %> <br>
+      <%= f.submit "+ Modifer ce produit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
