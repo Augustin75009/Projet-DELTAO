@@ -1,12 +1,63 @@
-<div class="form-container">
-  <div class="product-form">
-    <%= simple_form_for(@product) do |f| %>
-      <%= f.input :name, label: 'Intitulé' %>
-      <%= f.input :category, label: 'Catégorie' %>
-      <%= f.input :description, label: 'Description du produit' %>
-      <%= f.input :price, label: 'Prix en euros' %>
-      <%= f.file_field :photo, label: 'Ajouter une photo' %> <br>
-      <%= f.submit "+ Modifer ce produit", class: "btn btn-primary" %>
-    <% end %>
+<div class="main-container">
+  <div class="form-container">
+    <div class="product-form">
+  <h1>Modifier les informations de <%= @product.name %></h1>
+      <%= form_for(@product) do |f| %>
+      <div class="row new-row-form">
+        <div class="col-lg-6">
+          <div class="text-right col-sm-3">
+           <%= f.label :name %>
+          </div>
+          <div class="text-left col-sm-9">
+            <%= f.text_field :name, class: 'no-border' %>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="text-right col-sm-3">
+           <%= f.label :photo %>
+          </div>
+          <div class="text-left col-sm-9">
+            <%= f.file_field :photo, class: 'no-border' %>
+          </div>
+        </div>
+      </div>
+      <div class="row new-row-form">
+        <div class="col-lg-6">
+          <div class="text-right col-sm-3">
+           <%= f.label :category %>
+          </div>
+          <div class="text-left col-sm-9">
+            <%= f.select :category, options_for_select(%w[category]), class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="text-right col-sm-3">
+           <%= f.label :price %>
+          </div>
+          <div class="text-left col-sm-9">
+            <%= f.text_field :price, class: 'no-border' %>
+          </div>
+        </div>
+      </div>
+      <div class="row new-row-form">
+        <div class="col-lg-12">
+          <div class="text-right col-sm-3">
+            <%= f.label :description %>
+          </div>
+          <div class="text-left col-sm-9">
+            <%= f.text_field :description, class: 'no-border' %>
+          </div>
+        </div>
+      </div>
+      <div class="third-container spaced-btn">
+        <div class="btn btn--search">
+          <%= f.submit "Modifier ce produit", class:"input-submit" %>
+        </div>
+        <div class="btn btn--search">
+          <%= link_to "Delete your product", product_path(@product), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit?" }, class:"input-submit" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

@@ -17,6 +17,7 @@
   background-size: cover;
   position: relative;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .19);
+  background-image: url('bolathe.png');
 }
 
 .card-dash {
@@ -37,7 +38,7 @@ a {
 
 .card:hover {
   .card-infos {
-    opacity: 0.9;
+    opacity: 1;
   }
 }
 

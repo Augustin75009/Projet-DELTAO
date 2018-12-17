@@ -7,7 +7,7 @@
           <%= link_to product_path(product) do %>
             <div class="card">
               <div class ="card-image"
-                   style="background-image: url(
+                   style="background-image: asset_url(
                     '<%= product.photo %>'
                    );">
                   <div class="card-deploy">
@@ -15,7 +15,7 @@
                       <h5 class="text-name"><%= product.name %></h5>
                       <p class="card-description"><%= product.description %></p>
                       <p class="text-age"><%= product.price %> € </p>
-                      <p class="text-gender"><%= product.quantity %></p>
+                      <p class="text-gender"><%= product.quantity %> unités </p>
                     </div>
                   </div>
               </div>
