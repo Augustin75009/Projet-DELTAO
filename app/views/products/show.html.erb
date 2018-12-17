@@ -1,2 +1,20 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="show-container">
+  <div class="product-container">
+    <div class="product-image">
+      <%= @product.category %>
+      <%= @product.photo %>
+    </div>
+    <div class="product-description">
+      <div class="description-title">
+        <h1><%= @product.name %></h1>
+      </div>
+      <div class="description-content">
+        <p><%= @product.description %></p>
+        <span><%= @product.price %></span>
+      </div>
+      <div class="call-to-action">
+        <button>Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+</div>
