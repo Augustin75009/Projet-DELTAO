@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, :skip => :registration
   root to: 'pages#home'
   resources :products do
     resources :purchases
