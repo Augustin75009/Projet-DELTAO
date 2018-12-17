@@ -2,6 +2,7 @@
   <div class="product-form">
     <%= simple_form_for(@product) do |f| %>
       <%= f.input :name, label: 'Intitulé' %>
+      <%= f.input :category, label: 'Catégorie' %>
       <%= f.input :description, label: 'Description du produit' %>
       <%= f.input :price, label: 'Prix en euros' %>
       <%= f.file_field :photo, label: 'Ajouter une photo' %> <br>

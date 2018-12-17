@@ -22,19 +22,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  position: relative;
-
   border: solid 1px;
   margin: 10px;
+  position: relative;
+  padding-left: 8px;
 }
 
 .description-title {
   position: absolute;
-  top: 10px;
-  left : 2px;
-  right : 2px;
+  top: 0px;
 
-  h1 {
-    text-align: center;
+  h1, h2{
+    margin-left: 4px;
+  }
+}
+
+.description-content {
+}
+
+.call-to-action {
+  position: absolute;
+  bottom: 4px;
+  display: flex;
+
+  button {
+  height: 40px;
+  text-align: bottom;
+
   }
 }
