@@ -1,0 +1,177 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  z-index: 10;
+  padding: 0px 80px 20px 80px;
+  background-color: transparent;
+  width: 100%;
+  }
+
+ .card-container-new {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  .card-image {
+    position: relative !important;
+    .card-infos-status {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+  }
+
+ }
+
+.card-container-width {
+  width: 800px;
+  padding: 0px !important;
+}
+.card {
+  height: 400px;
+  border-radius: 1%;
+  width: 300px;
+  margin: 3px;
+  opacity: 1;
+  background-size: cover;
+  position: relative;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
+.card-dash {
+  height: 400px;
+  border-radius: 1%;
+  flex: 0 0 32%;
+  margin: 3px;
+  opacity: 1;
+  background-size: cover;
+  position: relative;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
+a {
+  color: black !important;
+  font-size: bold;
+}
+
+.card:hover {
+  .card-infos {
+    opacity: 0.9;
+  }
+}
+
+.card-content {
+  text-align :center;
+  border-radius:1%;
+  background-color:rgba(238, 220, 201, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  z-index: 20;
+}
+
+.card-image {
+  height: 360px;
+  width: 100%;
+  border-top-left-radius: 1%;
+  border-top-right-radius: 1%;
+  background-size: cover;
+  display: block;
+  position: absolute;
+  background-position: bottom;
+}
+
+.card-content h5 {
+  font-size: 16px bold !important;
+  position: absolute;
+  bottom: 0px;
+  color: black !important;
+  margin: 0px !important;
+  padding: 10px 20px 10px 10px;
+  color: rgb(253, 251, 249);
+}
+
+p.text-left {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  font-size : 14px;
+  color: black;
+}
+
+p.text-right {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  font-size : 12px;
+  color: #D7B836;
+}
+
+.card-deploy {
+  position: relative;
+}
+
+.card-infos {
+  position: absolute;
+  background-color: white;
+  margin: 25px;
+  height: 120px;
+  width: 250px;
+  top: 190px;
+  display: block;
+  opacity: 0;
+  border-radius: 1%;
+
+}
+
+p.text-age {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  font-size : 14px;
+  color: gray;
+
+}
+
+p.text-gender {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  font-size : 14px;
+  color: gray;
+
+}
+
+p.text-height {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  font-size : 14px;
+  color: gray;
+
+}
+
+p.card-description {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  font-size : 14px;
+  color: black;
+
+}
+
+h5.text-name {
+ padding-left: 10px;
+}
+
+.card-infos-status {
+  background-color: white;
+  height: auto;
+  opacity: 0.8;
+  border-radius: 1%;
+  padding: 15px;
+}
