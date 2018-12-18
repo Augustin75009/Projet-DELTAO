@@ -64,8 +64,8 @@ header.is-absolute {
   display: inline-block;
 }
 
-a {
-  color: inherit;
+header a {
+  color: white !important;
 }
 
 a:-webkit-any-link {
