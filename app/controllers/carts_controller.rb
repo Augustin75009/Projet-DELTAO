@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
 def index
-    @product = Cart.where(user_id:current_user.id)
+    @carts = Cart.where(user_id:current_user.id)
     # authorize @product
 end
 
@@ -18,17 +18,15 @@ def create
       format.html { redirect_to products_path }
       format.js
     end
-    raise
   end
 
   def destroy
-    @product = Product.find(params[:id])
-    @cart = Cart.find_by(product_id: params[:id])
-    authorize @cart
+    @cart = Cart.find(params[:id])
+    # authorize @cart
     @cart.destroy
-    @counter = current_user.carts.count
+    # @counter = current_user.carts.count
     respond_to do |format|
-      format.html { redirect_to products_path }
+      format.html { redirect_to carts_path }
       format.js
     end
   end
