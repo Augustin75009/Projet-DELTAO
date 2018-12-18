@@ -8,3 +8,20 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.button {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 160px;
+  font-family: "Brown", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  font-size: 10px;
+  line-height: 0.83333;
+  font-weight: bold;
+  letter-spacing: .267em;
+  text-indent: .267em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.8em 1.6em 1.5em;
+  border-radius: 2px;
+  transition: color .25s ease, border-color .25s ease, background-color .25s ease;
+}
