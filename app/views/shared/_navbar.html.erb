@@ -6,35 +6,14 @@
     <ul class="menu__product__list">
     <% if user_signed_in? %>
     <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/pets">Tous les produits</a></li>
+      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/products">Tous les produits</a></li>
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/favpets">Panier <span id="wishlist-number">
-        <% if current_user %>
-        <%= current_user.wishpets.count %>
-        <% end %>
-        </span></a></li>
-        <% if current_user.adoptions.count > 0 %>
-      <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/status">Achats</a></li>
-      <% end %>
+      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/products/new">Ajouter un produit</a></li>
     </ul>
   </nav>
   <div class="shopping-nav">
       <div class="header-item">
         <div class="dropdown">
-          <%= image_tag "#{current_user.photo}", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
-            <li>
-              <%= link_to dashboard_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
         </div>
       </div>
     <% else %>

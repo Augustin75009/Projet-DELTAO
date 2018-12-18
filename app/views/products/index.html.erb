@@ -7,8 +7,8 @@
           <%= link_to product_path(product) do %>
             <div class="card">
               <div class ="card-image"
-                   style="background-image: asset_url(
-                    '<%= product.photo %>'
+                   style="background-image: url(
+                    '<%= cl_image_path product.photo.blank? ? 'https://picsum.photos/300/300/?random' : product.photo %>'
                    );">
                   <div class="card-deploy">
                     <div class="card-infos">
