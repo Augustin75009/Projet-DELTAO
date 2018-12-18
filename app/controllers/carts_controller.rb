@@ -1,17 +1,24 @@
 class CartsController < ApplicationController
 
+def index
+    @product = Cart.where(user_id:current_user.id)
+    # authorize @product
+end
+
+
 def create
     @product = Product.find(params[:product])
     @cart = Cart.new
     @cart.user = current_user
     @cart.product = @product
-    authorize @cart
+    # authorize @cart
     @cart.save
-    @counter = current_user.carts.count
+    # @counter = current_user.carts.count
     respond_to do |format|
       format.html { redirect_to products_path }
       format.js
     end
+    raise
   end
 
   def destroy
