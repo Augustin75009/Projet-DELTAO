@@ -32,13 +32,12 @@ ActiveRecord::Schema.define(version: 2018_12_18_152115) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
-    t.integer "amount_cents_cents", default: 0, null: false
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "purchases", force: :cascade do |t|
     t.string "state"
     t.string "teddy_sku"
-    t.integer "amount_cents", default: 0, null: false
     t.jsonb "payment"
     t.bigint "user_id"
     t.datetime "created_at", null: false

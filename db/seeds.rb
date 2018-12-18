@@ -9,7 +9,7 @@ augustin = User.create!(first_name: "Augustin", email: 'augustin@gmail.com', pas
 product1 = Product.create!(
   name: 'Bol à Thé',
   description: "Faïence pincée, jetés et superpositions d'émail",
-  amount_cents: 2000,
+  price_cents: 20000,
   quantity: 10
 )
 
@@ -19,7 +19,7 @@ product1.save!
 product2 = Product.create!(
   name: 'Bol',
   description: "Faïence pincée, jetés et superpositions d'émail",
-  amount_cents: 2000,
+  price_cents: 20000,
   quantity: 10
 )
 
@@ -29,7 +29,7 @@ product2.save!
 product3 = Product.create!(
   name: 'Vase',
   description: "Faïence pincée, jetés et superpositions d'émail",
-  amount_cents: 2000,
+  price_cents: 20000,
   quantity: 10
 )
 
@@ -39,7 +39,7 @@ product3.save!
 product4 = Product.create!(
   name: 'Table',
   description: "Faïence pincée, jetés et superpositions d'émail",
-  amount_cents: 2000,
+  price_cents: 20000,
   quantity: 10
 )
 

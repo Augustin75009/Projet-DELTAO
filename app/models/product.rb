@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-    mount_uploader :photo, PhotoUploader
-    monetize :amount_cents
+  mount_uploader :photo, PhotoUploader
+  monetize :price_cents
 end

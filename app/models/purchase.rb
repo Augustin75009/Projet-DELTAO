@@ -1,4 +1,4 @@
 class Purchase < ApplicationRecord
   belongs_to :user
-  monetize :amount_cents
+  belongs_to :product
 end
