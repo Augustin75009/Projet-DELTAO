@@ -4,6 +4,10 @@ class PurchasesController < ApplicationController
     # authorize @purchase
   end
 
+  def index
+    @purchase = Purchase.all
+  end
+
   def create
     @purchase = Purchase.new
     @cart = Cart.find(params[:id])

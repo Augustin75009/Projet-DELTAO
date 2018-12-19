@@ -2,14 +2,11 @@
   <p>Nombre d'articles : <%= @carts.count %></p>
   <% @carts.each do |cart| %>
     <li><%= cart.product.name %>
-    <%= link_to "supprimer", cart_path(cart), method: :delete %>
+    <%= link_to "supprimer", cart_path(:cart, cart), method: :delete %>
     </li>
+    <%= link_to "payer", cart_purchases_path(cart) %>
   <% end %>
 </div>
 
-<%= form_tag cart_purchases_path(@carts) do %>
-  <%= hidden_field_tag 'cart_id', @carts.id %>
-  <%= submit_tag 'Payer', class: 'btn btn-primary' %>
-  <%= raise %>
-<% end %>
+
 

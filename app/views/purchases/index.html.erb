@@ -1,0 +1,4 @@
+<%= form_tag cart_purchases_path(cart) do %>
+  <%= hidden_field_tag 'cart_id', cart.id %>
+  <%= submit_tag 'Payer', class: 'btn btn-primary' %>
+<% end %>

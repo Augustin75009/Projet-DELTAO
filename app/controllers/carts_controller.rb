@@ -1,12 +1,12 @@
 class CartsController < ApplicationController
 
-def index
+  def index
     @carts = Cart.where(user_id:current_user.id)
     # authorize @product
-end
+  end
 
 
-def create
+  def create
     @product = Product.find(params[:product])
     @cart = Cart.new
     @cart.user = current_user
@@ -56,6 +56,17 @@ def create
   #     format.js
   #   end
   # end
+
+  private
+
+  def cart_empty?
+    content = Cart.count
+    if content.nil?
+      false
+    else
+      true
+    end
+  end
 
 
 end
