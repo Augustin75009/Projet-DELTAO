@@ -14,10 +14,18 @@
     </ul>
   </nav>
   <div class="shopping-nav">
-      <div class="header-item">
-        <div class="dropdown">
-        </div>
+    <div class="header-item">
+      <div class="dropdown">
+        <%= image_tag "home.png", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        </ul>
       </div>
+    </div>
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "header-item header-link" %>
     <% end %>
