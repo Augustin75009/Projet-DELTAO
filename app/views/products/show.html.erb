@@ -23,7 +23,7 @@
             </div>
               <% end %>
             <div class="button">
-              <%= link_to carts_path(product: @product.id), method: :post, remote: false do %>
+              <%= link_to cart_items_path(product: @product.id), method: :post, remote: false do %>
                 <button class="btn btn-primary">Ajouter au panier</button>
               <% end %>
             </div>
