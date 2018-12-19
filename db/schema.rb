@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_152115) do
 
   create_table "purchases", force: :cascade do |t|
     t.string "state"
-    t.string "teddy_sku"
+    t.string "product_sku"
     t.jsonb "payment"
     t.bigint "user_id"
     t.datetime "created_at", null: false
