@@ -1,3 +1,41 @@
 .main-container {
   margin: 20px 0px 20px 0px;
 }
+
+.list-carrousel {
+  justify-content: center;
+  background-color: black;
+}
+
+.list-carrousel.slick-initialized.slick-slider {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+
+.slick-list.draggable {
+}
+
+
+// .slick-track {
+//   margin-top: 62px;
+//   margin-left: 500px;
+// }
+
+
+
+.slick-prev:before {
+  background: #333;
+}
+
+.slick-next:before {
+  background: #333;
+}
+
+
+.slick-slide.slick-current.slick-active{
+  margin-left: auto;
+  margin-right: auto;
+}

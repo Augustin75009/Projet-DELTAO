@@ -7,8 +7,7 @@ import 'slick-carousel/slick/slick-theme.css'
 
 const initSlick = () => {
  $(document).ready(function(){
-      $('.your-class').slick(
-        );
+      $('.list-carrousel').slick();
     });
 }
 
