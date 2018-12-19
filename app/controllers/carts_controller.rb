@@ -5,17 +5,20 @@ class CartsController < ApplicationController
     # authorize @product
   end
 
+  def new
+  end
+
 
   def create
-    @product = Product.find(params[:product])
     @cart = Cart.new
     @cart.user = current_user
-    @cart.product = @product
+    # @cart.product = @product
     # authorize @cart
     @cart.save
+    raise
     # @counter = current_user.carts.count
     respond_to do |format|
-      format.html { redirect_to products_path }
+      format.html { redirect_to carts_path }
       format.js
     end
   end

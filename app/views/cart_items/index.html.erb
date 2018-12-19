@@ -4,7 +4,9 @@
     <li><%= cart_item.product.name %>
     <%= link_to "supprimer", cart_item_path(cart_item), method: :delete %>
     </li>
-
+  <% end %>
+  <%= form_tag carts_path do %>
+  <%= submit_tag 'Payer', class: 'btn btn-primary' %>
   <% end %>
 </div>
 
