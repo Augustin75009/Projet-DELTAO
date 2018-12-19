@@ -14,14 +14,14 @@
                     <div class="card-infos">
                       <h5 class="text-name"><%= product.name %></h5>
                       <p class="card-description"><%= product.description %></p>
-                      <p class="text-age"><%= product.price %> € </p>
+                      <p class="text-age"><%= product.price_cents %> € </p>
                       <p class="text-gender"><%= product.quantity %> unités </p>
                     </div>
                   </div>
               </div>
               <div class="card-content">
                 <h5><%= product.name %></h5>
-                <p class="text-right"><%= product.price %> € </p>
+                <p class="text-right"><%= product.price_cents %> € </p>
               </div>
             </div>
           <% end %>

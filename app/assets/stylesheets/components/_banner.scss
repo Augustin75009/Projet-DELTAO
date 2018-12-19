@@ -1,5 +1,5 @@
 .banner {
-  color: white;
+  color: black;
   text-align: center;
   height: 100vh;
   background-size: cover !important;
@@ -9,13 +9,13 @@
 }
 
 .banner a {
-  color: white;
+  color: black;
 }
 
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: black;
   opacity: 0.9;
   margin-bottom: 30px;
 }
@@ -28,8 +28,6 @@
     opacity: 1;
   }
 }
-
-
 
 .banner2 {
   color: black;
@@ -57,23 +55,21 @@
   height: 100vh;
   overflow: hidden;
   text-align: center;
-  color: #ffffff;
-  display: grid;
+  color: black;
+  display: flex;
   -webkit-box-align: center;
   align-items: center;
-  grid-template-columns: repeat(2, 1fr);
 }
 
 .split-item {
-  width: 100%;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  flex-flow: column nowrap;
+  flex: 0 0 48%;
 }
 
 .btn-ghost {
-  border: thin solid #ffffff;
+  justify-content: center;
+  border: thin solid black;
   background-color: transparent;
-  color: #ffffff;
+  color: black;
+  width: 20%;
+  text-align: center;
 }
