@@ -27,10 +27,7 @@
                 <button class="btn btn-primary">Ajouter au panier</button>
               <% end %>
             </div>
-            <%= form_tag product_purchases_path(@product) do %>
-              <%= hidden_field_tag 'product_id', @product.id %>
-              <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-            <% end %>
+
           </div>
       </div>
     </div>
