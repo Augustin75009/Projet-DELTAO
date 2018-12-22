@@ -4,15 +4,24 @@ class PurchasesController < ApplicationController
     # authorize @purchase
   end
 
+  def show
+    @purchase = current_user.purchases.where(state: 'paid').find(params[:id])
+  end
+
+  def index
+    @purchase = Purchase.all
+  end
+
   def create
     @purchase = Purchase.new
-    @product = Product.find(params[:product_id])
-    @purchase.product = @product
+    @cart = Cart.find(params[:cart_id])
+    @purchase.product_sku = @cart.id
     @purchase.user = current_user
-    @purchase.status = 'checking'
+    @purchase.state = 'checking'
+    @purchase.amount_cents = @cart.price_cents
     # authorize @purchase
     if @purchase.save!
-      redirect_to product_path(@product)
+      redirect_to  new_cart_purchase_payment_path(purchase_id: @purchase.id)
     else
       render :new
     end
@@ -24,7 +33,7 @@ class PurchasesController < ApplicationController
   end
 
   def update
-    @purchase= Purchase.find_by(product_id: params[:product_id], user_id: params[:id])
+    @purchase= Purchase.find_by(cart_id: params[:cart_id], user_id: params[:id])
     if params[:status] == 'checking'
       @purchase.status = 'contact'
       @purchase.save

@@ -1,14 +1,33 @@
 class PaymentsController < ApplicationController
-  before_action :set_purchase
+  before_action :set_order
+
   def new
   end
 
   def create
+    customer = Stripe::Customer.create(
+      source: params[:stripeToken],
+      email:  params[:stripeEmail]
+    )
+
+    charge = Stripe::Charge.create(
+      customer:     customer.id,   # You should store this customer id and re-use it.
+      amount:       @purchase.amount_cents,
+      description:  "Payment for teddy #{@purchase.product_sku} for order #{@purchase.id}",
+      currency:     @order.amount.currency
+    )
+
+    @purchase.update(payment: charge.to_json, state: 'paid')
+    redirect_to cart_purchase_path(@purchase)
+
+    rescue Stripe::CardError => e
+      flash[:alert] = e.message
+      redirect_to new_cart_purchase_payment_path(@purchase)
   end
 
-  private
+private
 
-  def set_purchase
-    @purchase = current_user.purchases.where(state: 'pending').find(params[:purchase_id])
+  def set_order
+    @purchase = current_user.purchases.where(state: 'checking').find(params[:purchase_id]) #verifier pourquoi c'est pas pending comme dans le cours
   end
 end

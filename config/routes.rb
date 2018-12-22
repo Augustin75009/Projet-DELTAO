@@ -4,12 +4,18 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :products do
-    resources :purchases, only: [:new, :create, :edit, :update, :destroy]
+    resources :purchases, only: []
   end
-  resources :carts, only: [:create, :destroy, :index]
+  resources :carts, only: [:new, :create, :destroy, :index, :show] do
+    resources :purchases, only: [:new, :create, :edit, :update, :destroy, :index] do
+      resources :payments, only: [:new, :create]
+    end
+  end
 
-  resources :purchases, only: [] do
-    resources :payments, only: [:create]
+  resources :carts, only: [:create] do
+    resources :users
   end
+
+  resources :cart_items, only: [:create, :destroy, :index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

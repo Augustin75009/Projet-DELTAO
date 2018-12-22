@@ -10,17 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_152115) do
+ActiveRecord::Schema.define(version: 2018_12_22_161910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "carts", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "product_id"
+  create_table "cart_items", force: :cascade do |t|
+    t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_carts_on_product_id"
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.integer "quantity", default: 1
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
+    t.index ["user_id"], name: "index_cart_items_on_user_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -42,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_152115) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
@@ -59,7 +71,9 @@ ActiveRecord::Schema.define(version: 2018_12_18_152115) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "carts", "products"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "products"
+  add_foreign_key "cart_items", "users"
   add_foreign_key "carts", "users"
   add_foreign_key "purchases", "users"
 end

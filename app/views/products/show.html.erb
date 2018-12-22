@@ -13,7 +13,7 @@
       </div>
       <div class="call-to-action">
           <div class="price_cents">
-            <span><%= @product.price_cents %> euros</span>
+            <span><%= @product.total %> euros</span>
           </div>
           <div class="cart">
               <%= simple_form_for @product do |f|%>
@@ -23,14 +23,11 @@
             </div>
               <% end %>
             <div class="button">
-              <%= link_to carts_path(product: @product.id), method: :post, remote: false do %>
+              <%= link_to cart_items_path(product: @product.id), method: :post, remote: false do %>
                 <button class="btn btn-primary">Ajouter au panier</button>
               <% end %>
             </div>
-            <%= form_tag product_purchases_path(@product) do %>
-              <%= hidden_field_tag 'product_id', @product.id %>
-              <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-            <% end %>
+
           </div>
       </div>
     </div>

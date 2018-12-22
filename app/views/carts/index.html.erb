@@ -1,8 +1,5 @@
-<div class="cart-container" style="padding-top: 100px">
-  <p>Nombre d'articles : <%= @carts.count %></p>
-  <% @carts.each do |cart| %>
-    <li><%= cart.product.name %>
-    <%= link_to "supprimer", cart_path(cart), method: :delete %>
-    </li>
-  <% end %>
-</div>
+<h1 style="padding-top: 80px">HELLO ready for checkout</h1>
+
+<%= @cart.cart_items.each do |item| %>
+  <%= item.name %>
+<% end %>

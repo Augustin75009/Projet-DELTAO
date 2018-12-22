@@ -1,5 +1,5 @@
 <h1>Purchase of a product <%= @purchase.product_sku %></h1>
-<%= form_tag purchase_payments_path(@purchase) do %>
+<%= form_tag cart_purchase_payments_path(@purchase) do %>
   <article>
     <label class="amount">
       <span>Amount: <%= humanized_money_with_symbol(@purchase.amount) %></span>

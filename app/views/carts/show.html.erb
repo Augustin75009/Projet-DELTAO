@@ -1,0 +1,18 @@
+<h1 style="padding-top: 80px">HELLO ready for checkout</h1>
+
+<h4>Récapitulatif</h4>
+<% @cart.cart_items.each do |item| %>
+  <li><%= item.product.name %>
+  <%= item.product.price_cents %> euros</li>
+<% end %>
+
+<%= current_user.email %>
+
+<h4>Vos coordonées</h4>
+<div class="billing-form">
+  <%= form_tag cart_purchases_path(@cart) do %>
+    <%= hidden_field_tag 'cart_id', @cart.id %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
