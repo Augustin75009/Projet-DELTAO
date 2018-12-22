@@ -4,6 +4,10 @@ class PurchasesController < ApplicationController
     # authorize @purchase
   end
 
+  def show
+    @purchase = current_user.purchases.where(state: 'paid').find(params[:id])
+  end
+
   def index
     @purchase = Purchase.all
   end
@@ -17,7 +21,7 @@ class PurchasesController < ApplicationController
     @purchase.amount_cents = @cart.price_cents
     # authorize @purchase
     if @purchase.save!
-      redirect_to new_purchase_payment_path(@purchase)
+      redirect_to  new_cart_purchase_payment_path(purchase_id: @purchase.id)
     else
       render :new
     end
