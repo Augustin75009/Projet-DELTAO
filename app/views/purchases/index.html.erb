@@ -1,7 +1,6 @@
-<h1> HELLO Purchase</h1>
+<h1 style="padding-top: 80px">HELLO new purchase</h1>
 
-
-<%= form_tag cart_purchases_path(cart) do %>
-  <%= hidden_field_tag 'cart_id', cart.id %>
-  <%= submit_tag 'Payer', class: 'btn btn-primary' %>
+<%= @cart.cart_items.each do |item| %>
+  <%= item.name %>
 <% end %>
+

@@ -5,10 +5,12 @@
     <%= link_to "supprimer", cart_item_path(cart_item), method: :delete %>
     </li>
   <% end %>
-  <%= form_tag carts_path do %>
-  <%= submit_tag 'Payer', class: 'btn btn-primary' %>
+  <% if CartItem.count != 0 %>
+    <% @cart_id = @cart_items.last.cart_id %>
+    <%= link_to cart_path(@cart_id) do %>
+      <%= hidden_field_tag 'cart_id', @cart_id%>
+      <%= submit_tag 'Checkout', class: 'btn btn-primary' %>
+    <% end %>
   <% end %>
 </div>
-
-
 

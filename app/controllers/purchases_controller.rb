@@ -14,8 +14,10 @@ class PurchasesController < ApplicationController
     @purchase.cart = @cart
     @purchase.user = current_user
     @purchase.status = 'checking'
+    raise
     # authorize @purchase
     if @purchase.save!
+      raise
       redirect_to cart_path(@cart)
     else
       render :new

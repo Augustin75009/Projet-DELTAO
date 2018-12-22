@@ -8,6 +8,10 @@ class CartsController < ApplicationController
   def new
   end
 
+  def show
+    # @cart = Cart.find(@cart_id)
+  end
+
 
   def create
     @cart = Cart.new
