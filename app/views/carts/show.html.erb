@@ -10,12 +10,9 @@
 
 <h4>Vos coordonées</h4>
 <div class="billing-form">
-    <%= simple_form_for(current_user) do |f| %>
-      <%= f.input :first_name, label: 'Nom & Prénom' %>
-      <%= f.input :email, label: 'n° & adresse' %>
-      <div class="button-container">
-      <%= f.submit "Valider les coordonées", class: "btn btn-size" %>
-      </div>
+    <%= form_for(@cart) do |f| %>
+      <%= f.text_field :price_cents %>
+      <%= f.submit %>
     <% end %>
   </div>
 

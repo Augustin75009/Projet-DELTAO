@@ -5,7 +5,6 @@ class CartItemsController < ApplicationController
     # authorize @product
   end
 
-
   def create
     @product = Product.find(params[:product])
     if cart_empty?
@@ -17,7 +16,7 @@ class CartItemsController < ApplicationController
       @cart.price_cents += @product.price_cents
     end
     @cart.save
-    @cart_item = CartItem.new
+    @cart_item = @cart.add_product(@product)
     @cart_item.user = current_user
     @cart_item.product = @product
     @cart_item.cart = @cart
