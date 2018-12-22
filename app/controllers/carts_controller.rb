@@ -12,10 +12,10 @@ class CartsController < ApplicationController
   def create
     @cart = Cart.new
     @cart.user = current_user
+    @cart.price_cents = 12
     # @cart.product = @product
     # authorize @cart
     @cart.save
-    raise
     # @counter = current_user.carts.count
     respond_to do |format|
       format.html { redirect_to carts_path }

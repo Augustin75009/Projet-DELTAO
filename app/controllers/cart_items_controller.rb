@@ -8,7 +8,15 @@ class CartItemsController < ApplicationController
 
   def create
     @product = Product.find(params[:product])
-    @cart = Cart.last
+    if cart_empty?
+      @cart = Cart.new
+      @cart.user = current_user
+      @cart.price_cents = @product.price_cents
+    else
+      @cart = Cart.last
+      @cart.price_cents += @product.price_cents
+    end
+    @cart.save
     @cart_item = CartItem.new
     @cart_item.user = current_user
     @cart_item.product = @product
@@ -33,32 +41,15 @@ class CartItemsController < ApplicationController
     end
   end
 
-  # def create_show
-  #   @product = Product.find(params[:product])
-  #   @cart_item = Cart_item.new
-  #   @cart_item.user = current_user
-  #   @cart_item.product = @product
-  #   authorize @cart_item
-  #   @cart_item.save
-  #   @counter = current_user.cart_item_item.count
-  #   respond_to do |format|
-  #     format.html { redirect_to products_path }
-  #     format.js
-  #   end
-  # end
-
-  # def destroy_show
-  #   @product = Product.find(params[:id])
-  #   @cart_item = Cart_item.find_by(product_id: params[:id])
-  #   authorize @cart_item
-  #   @cart_item.destroy
-  #   @counter = current_user.cart_item_item.count
-  #   respond_to do |format|
-  #     format.html { redirect_to products_path }
-  #     format.js
-  #   end
-  # end
-
   private
+
+  def cart_empty?
+    content = CartItem.count
+    if content.nil?
+      true
+    else
+      false
+    end
+  end
 
 end
