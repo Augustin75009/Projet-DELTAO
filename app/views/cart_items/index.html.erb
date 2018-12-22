@@ -2,6 +2,7 @@
   <p>Nombre d'articles : <%= @cart_items.count %></p>
   <% @cart_items.each do |cart_item| %>
     <li><%= cart_item.product.name %>
+    <p class="font-weight-bold">Total : <span class="badge badge-info"><%= number_to_currency(cart_item.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
     <%= link_to "supprimer", cart_item_path(cart_item), method: :delete %>
     </li>
   <% end %>
@@ -13,4 +14,5 @@
     <% end %>
   <% end %>
 </div>
+
 

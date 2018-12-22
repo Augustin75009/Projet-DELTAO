@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :cart_not_found
 
   def index
     @carts = Cart.where(user_id:current_user.id)
@@ -39,6 +40,10 @@ class CartsController < ApplicationController
   end
 
   private
+
+  def cart_not_found
+    redirect_to root_url, alert: t(".cart_not_found")
+  end
 
   def cart_empty?
     content = Cart.count
