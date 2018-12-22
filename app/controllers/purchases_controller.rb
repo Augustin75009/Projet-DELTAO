@@ -10,15 +10,14 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase = Purchase.new
-    @cart = Cart.find(params[:id])
-    @purchase.cart = @cart
+    @cart = Cart.find(params[:cart_id])
+    @purchase.product_sku = @cart.id
     @purchase.user = current_user
-    @purchase.status = 'checking'
-    raise
+    @purchase.state = 'checking'
+    @purchase.amount_cents = @cart.price_cents
     # authorize @purchase
     if @purchase.save!
-      raise
-      redirect_to cart_path(@cart)
+      redirect_to new_purchase_payment_path(@purchase)
     else
       render :new
     end

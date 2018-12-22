@@ -10,9 +10,9 @@
 
 <h4>Vos coordonées</h4>
 <div class="billing-form">
-    <%= form_for(@cart) do |f| %>
-      <%= f.text_field :price_cents %>
-      <%= f.submit %>
-    <% end %>
-  </div>
+  <%= form_tag cart_purchases_path(@cart) do %>
+    <%= hidden_field_tag 'cart_id', @cart.id %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
+</div>
 
