@@ -6,6 +6,9 @@ header {
   border-left: 6.4rem solid transparent;
   border-right: 6.4rem solid transparent;
   z-index: 111;
+  border-bottom: solid 0.25px;
+  border-bottom-color: rgba(0, 0, 0, 0.4);
+  // background: linear-gradient(180deg,rgba(1,1,1,.5),rgba(1,1,1,.2));
 }
 
 header.is-absolute {
@@ -161,4 +164,12 @@ li {
   min-width: 20px;
   letter-spacing: normal;
   text-align: center;
+}
+
+#header-menu {
+  margin-bottom: 8px;
+}
+.header.is-absolute {
+  border-left-width: 20px;
+  border-right-width: 20px;
 }

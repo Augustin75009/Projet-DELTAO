@@ -10,6 +10,7 @@ class CartItemsController < ApplicationController
     if cart_empty?
       @cart = Cart.new
       @cart.user = current_user
+      # ajouter la creation d'un cart associé à la session en cours
       @cart.price_cents = @product.price_cents
     else
       @cart = Cart.last

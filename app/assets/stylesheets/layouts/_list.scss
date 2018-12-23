@@ -1,41 +1,148 @@
+// https://colorhunt.co/palette/134510
+
+.packer {
+  margin-top: 62px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #ebf0f6;
+  // background-color: rgba(240,240,240,1);
+  border-radius: 5px;
+}
+.slide {
+  background-image: url("https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80")
+}
+.search-product {
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+}
+.search-submit {
+  input {
+    border-radius: 0px 5px 5px 0px;
+    text-align: center;
+    padding-top: 7px;
+  }
+}
+.search-input {
+  input {
+    border-radius: 5px 0px 0px 5px;
+  }
+}
+.search-wrapper {
+  margin-top: 24px;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 80px;
+  input {
+    height: 36px;
+    box-shadow: none;
+    z-index: 11;
+    border: none;
+  }
+}
 .main-container {
   margin: 20px 0px 20px 0px;
 }
-
 .list-carrousel {
   justify-content: center;
-  background-color: black;
 }
-
+.slick-track{
+  opacity: 1 !important;
+  margin-top: 8px;
+}
+.slick-track:hover{
+  opacity: 0.9 !important;
+}
 .list-carrousel.slick-initialized.slick-slider {
   width: 500px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 80px;
+  margin-top: 0px;
 }
-
-
-.slick-list.draggable {
-}
-
-
-// .slick-track {
-//   margin-top: 62px;
-//   margin-left: 500px;
-// }
-
-
-
 .slick-prev:before {
-  background: #333;
+  color: #DAD5DA !important;
+  font-size: 30px !important;
 }
-
 .slick-next:before {
-  background: #333;
+  color: #DAD5DA !important;
+  font-size: 30px !important;
 }
-
-
 .slick-slide.slick-current.slick-active{
   margin-left: auto;
   margin-right: auto;
+}
+.slick-slide img {
+  margin-right: auto;
+  margin-left: auto;
+}
+.main-container{
+
+  h3 {
+    text-align: center;
+    span {
+      border-bottom: solid 1px;
+    }
+  }
+}
+.card-container{
+  margin-top: 32px;
+}
+
+@media (max-width: 1100px) {
+  .packer {
+  margin-top: 100px;
+  }
+}
+
+/*-------------------*/
+
+.dropbtn {
+  background-color: rgba(160,160,160,1);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding-top: 7px;
+  border-radius: 5px;
+  height: 36px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 24px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: rgba(160,160,160,0.5);
 }
