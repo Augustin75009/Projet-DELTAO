@@ -7,7 +7,8 @@ header {
   border-right: 6.4rem solid transparent;
   z-index: 111;
   border-bottom: solid 0.25px;
-  border-bottom-color: grey;
+  border-bottom-color: rgba(0, 0, 0, 0.4);
+  // background: linear-gradient(180deg,rgba(1,1,1,.5),rgba(1,1,1,.2));
 }
 
 header.is-absolute {

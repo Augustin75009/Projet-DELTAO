@@ -1,18 +1,56 @@
-<div class="cart_item-container" style="padding-top: 100px">
-  <p>Nombre d'articles : <%= @cart_items.count %></p>
-  <% @cart_items.each do |cart_item| %>
-    <li><%= cart_item.product.name %> ( x <%= cart_item.quantity %> )
-    <p class="font-weight-bold">Total : <span class="badge badge-info"><%= number_to_currency(cart_item.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
-    <%= link_to "supprimer", cart_item_path(cart_item), method: :delete %>
-    </li>
-  <% end %>
-  <% if CartItem.count != 0 %>
-    <% @cart_id = @cart_items.last.cart_id %>
-    <%= link_to cart_path(@cart_id) do %>
-      <%= hidden_field_tag 'cart_id', @cart_id%>
-      <%= submit_tag 'Checkout', class: 'btn btn-primary' %>
-    <% end %>
-  <% end %>
+<div class="cart-wrapper">
+  <div class="cart_item-banner">
+    <div class="delivery-infos">
+      Livraison par Colissimo<br><br>
+      Gratuit pour les commandes de plus de 100,00 €
+    </div>
+    <div class="delivery-infos">
+      Retours sans condition sous 15 jours <br><br>
+      Contacter Tessa Guilbaud
+    </div>
+    <div class="delivery-infos">
+      Paiements sécurisés à 100 % <br><br>
+      et politique de remboursement fiable
+    </div>
+  </div>
+    <span><p>Nombre d'articles : <%= @cart_items.count %></p></span>
+  <div class="cart_item-container">
+    <% @cart_items.each do |cart_item| %>
+    <div class="card-cart_items">
+      <div class="delete-item">
+        <%= link_to cart_item_path(cart_item), method: :delete do %>
+          supprimer
+        <% end %>
+      </div>
+      <div class="quantity-item">
+        <%= simple_form_for cart_item do |f|%>
+        <%= f.number_field :quantity, class: "narrow-input"%>
+        <% end %>
+
+      </div>
+      <div class="infos-item">
+        <%= cart_item.product.name %> ( x <%= cart_item.quantity %> )
+      </div>
+      <div class="amount-item">
+        <p class="font-weight-bold">Total : <span class="badge badge-info"><%= number_to_currency(cart_item.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
+      </div>
+    </div>
+      <% end %>
+      <div class="summary">
+        <div class="summary-empty"></div>
+        <div class="button-checkout">
+          Récapitulatif de la commande <br><br>
+          sous-total
+          <% if CartItem.count != 0 %>
+            <% @cart_id = @cart_items.last.cart_id %>
+            <%= link_to cart_path(@cart_id) do %>
+              <%= hidden_field_tag 'cart_id', @cart_id%>
+              <%= submit_tag 'Checkout', class: 'btn btn-primary' %>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+  </div>
 </div>
 
 
