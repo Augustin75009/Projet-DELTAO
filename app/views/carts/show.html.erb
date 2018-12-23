@@ -5,22 +5,39 @@
     <h4>Vos coordonées</h4>
     <div class="billing-form">
       <%= form_tag cart_purchases_path(@cart.user) do %>
+        <%= label_tag("Email") %>
         <%= text_field_tag(:email, @cart.user.email) %>
+        <%= label_tag("Prénom") %>
         <%= text_field_tag(:first_name, @cart.user.first_name) %>
+        <%= label_tag("Nom") %>
         <%= text_field_tag(:last_name, @cart.user.last_name) %>
+        <%= label_tag("Adresse") %>
+        <%= text_field_tag(:address, @cart.user.address) %>
+        <%= label_tag("Ville") %>
+        <%= text_field_tag(:city, @cart.user.city) %>
+        <%= label_tag("Code postal") %>
+        <%= text_field_tag(:zip, @cart.user.zip) %>
+        <%= label_tag("Téléphone") %>
+        <%= text_field_tag(:phone, @cart.user.phone) %>
         <%= hidden_field_tag 'cart_id', @cart.id %>
-        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+        <%= submit_tag 'Valider ma commande', class: 'btn btn-danger' %>
       <% end %>
     </div>
   </div>
   <div class="cart-summary">
     <h4>Récapitulatif</h4>
     <% @cart.cart_items.each do |item| %>
-      <li><%= item.product.name %>
-      <%= item.product.price_cents %> euros</li>
+    <div class="cart-summary-item">
+      <span>
+        <%= image_tag(item.product.photo.to_s, class: "cart-icon") do %>
+        <% end %>
+      </span>
+      <span><%= item.product.name %> <span class="cartq" style="font-size: 14px;opacity: 0.8;">x <%= item.quantity %></span></span>
+      </div>
     <% end %>
-
-
+    <br><br><br>
+    <p class="font-weight-bold">Total :<span style="font-size:40px">          <%= number_to_currency(@cart.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
   </div>
+
 </div>
 

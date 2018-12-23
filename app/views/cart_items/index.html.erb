@@ -1,16 +1,19 @@
+<% total_cart = 0 %>
+<% reduction = 0 %>
+
 <div class="cart_item-wrapper">
   <div class="cart_item-banner">
     <div class="delivery-infos">
-      Livraison par Colissimo<br><br>
-      Gratuit pour les commandes de plus de 100,00 €
+      Livraison par Colissimo<br>
+      <h6>Gratuit pour les commandes de plus de 100,00 €</h6>
     </div>
     <div class="delivery-infos">
-      Retours sans condition sous 15 jours <br><br>
-      Contacter Tessa Guilbaud
+      Retours sans condition sous 15 jours <br>
+      <h6>Contacter Tessa Guilbaud</h6>
     </div>
     <div class="delivery-infos">
-      Paiements sécurisés à 100 % <br><br>
-      et politique de remboursement fiable
+      Paiements sécurisés à 100 % <br>
+      <h6>et politique de remboursement fiable</h6>
     </div>
   </div>
     <span id="data-cart_items"><p>Nombre d'articles : <%= @cart_items.count %></p></span>
@@ -19,14 +22,13 @@
     <div class="card-cart_items">
       <div class="delete-item">
         <%= link_to cart_item_path(cart_item), method: :delete do %>
-          supprimer
+          <i class="fa fa-times" aria-hidden="true"></i>
         <% end %>
       </div>
       <div class="quantity-item">
         <%= simple_form_for cart_item do |f|%>
-        <%= f.number_field :quantity, class: "narrow-input"%>
+          <%= f.number_field :quantity, class: "narrow-input"%>
         <% end %>
-
       </div>
       <div class="infos-item">
         <span><%= cart_item.product.name %> ( x <%= cart_item.quantity %> )</span>
@@ -35,17 +37,19 @@
         <p class="font-weight-bold">Total : <span class="badge badge-info"><%= number_to_currency(cart_item.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
       </div>
     </div>
-      <% end %>
+      <% total_cart += cart_item.total %>
+    <% end %>
       <div class="summary">
         <div class="summary-empty"></div>
         <div class="summary-checkout">
-          Récapitulatif de la commande <br><br>
-          Sous-total :<br><br>
-          Total :
+          Récapitulatif de la commande<br><br>
+          <div class="summary-subtotal"><p>Sous-total :<span><%= number_to_currency(total_cart, unit: "€", separator: ",", format: "%n %u") %></span></p></div><br>
+          <div class="summary-reduction"><p>Réduction :<span><%= number_to_currency(reduction, unit: "€", separator: ",", format: "%n %u") %></span></p></div><br>
+          <div class="summary-total"><p>Total :<span style="font-size: 30px"><%= number_to_currency((total_cart - reduction), unit: "€", separator: ",", format: "%n %u") %></span></p></div>
           <div class="button-checkout">
             <% if CartItem.count != 0 %>
             <span>
-              <%= link_to carts_path do %>
+              <%= link_to products_path do %>
                 <%= submit_tag 'Continuer mes achats', class: 'btn btn-secondary' %>
               <% end %>
               </span>
@@ -53,7 +57,7 @@
               <% @cart_id = @cart_items.last.cart_id %>
               <%= link_to cart_path(@cart_id) do %>
                 <%= hidden_field_tag 'cart_id', @cart_id%>
-                <%= submit_tag 'Payer', class: 'btn btn-danger' %>
+                <%= submit_tag 'Paiement', class: 'btn btn-danger' %>
               <% end %>
               </span>
             <% end %>
