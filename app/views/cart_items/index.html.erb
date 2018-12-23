@@ -1,4 +1,4 @@
-<div class="cart-wrapper">
+<div class="cart_item-wrapper">
   <div class="cart_item-banner">
     <div class="delivery-infos">
       Livraison par Colissimo<br><br>
@@ -13,7 +13,7 @@
       et politique de remboursement fiable
     </div>
   </div>
-    <span><p>Nombre d'articles : <%= @cart_items.count %></p></span>
+    <span id="data-cart_items"><p>Nombre d'articles : <%= @cart_items.count %></p></span>
   <div class="cart_item-container">
     <% @cart_items.each do |cart_item| %>
     <div class="card-cart_items">
@@ -29,7 +29,7 @@
 
       </div>
       <div class="infos-item">
-        <%= cart_item.product.name %> ( x <%= cart_item.quantity %> )
+        <span><%= cart_item.product.name %> ( x <%= cart_item.quantity %> )</span>
       </div>
       <div class="amount-item">
         <p class="font-weight-bold">Total : <span class="badge badge-info"><%= number_to_currency(cart_item.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
@@ -38,16 +38,26 @@
       <% end %>
       <div class="summary">
         <div class="summary-empty"></div>
-        <div class="button-checkout">
+        <div class="summary-checkout">
           Récapitulatif de la commande <br><br>
-          sous-total
-          <% if CartItem.count != 0 %>
-            <% @cart_id = @cart_items.last.cart_id %>
-            <%= link_to cart_path(@cart_id) do %>
-              <%= hidden_field_tag 'cart_id', @cart_id%>
-              <%= submit_tag 'Checkout', class: 'btn btn-primary' %>
+          Sous-total :<br><br>
+          Total :
+          <div class="button-checkout">
+            <% if CartItem.count != 0 %>
+            <span>
+              <%= link_to carts_path do %>
+                <%= submit_tag 'Continuer mes achats', class: 'btn btn-secondary' %>
+              <% end %>
+              </span>
+              <span>
+              <% @cart_id = @cart_items.last.cart_id %>
+              <%= link_to cart_path(@cart_id) do %>
+                <%= hidden_field_tag 'cart_id', @cart_id%>
+                <%= submit_tag 'Payer', class: 'btn btn-danger' %>
+              <% end %>
+              </span>
             <% end %>
-          <% end %>
+          </div>
         </div>
     </div>
   </div>

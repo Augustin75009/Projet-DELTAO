@@ -1,27 +1,30 @@
-.cart-wrapper {
+.cart_item-wrapper {
   margin-left: 20px;
   margin-right: 20px;
   // height: 85vh;
   background-color: rgba(249,249,249,1);
-  p {
-    margin-top: 20px;
-    margin-left: 40px;
-  }
+   p {
+     margin-left: 40px;
+   }
+
+#data-cart_items {
+  margin-top: 20px;
+}
 
 }
 .cart_item-banner {
-  height: 30vh;
+  height: 25vh;
   background-color: rgba(249,249,249,.7);
   margin-top: 62px;
   display: flex;
 
 }
 .cart_item-container {
-  padding: 40px;
+  padding: 0px 40px 40px 40px ;
 }
 .delivery-infos {
   flex: 1;
-  padding: 40px;
+  padding: 40px 40px 0px 40px;
 }
 .card-cart_items {
   margin-right: 20px;
@@ -29,9 +32,15 @@
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  div {
+    padding: 5px;
+    justify-content: content;
+    vertical-align: middle;
+  }
 }
 .infos-item {
   flex: 2;
+  display: flex;
   margin-left: 10px;
 }
 .quantity-item, .delete-item, .amount-item {
@@ -40,10 +49,31 @@
 .summary {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-top: solid 0.5px;
+  border-color: rgba(0, 0, 0, 0.4);
+  padding-top: 30px;
 }
-.button-checkout {
+.summary-checkout {
   flex: 1;
+
 }
 .summary-empty {
   flex: 1;
+}
+
+.button-checkout {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  margin-right: 30px;
+  span {
+    flex: 1;
+    margin: 30px;
+    border: none !important;
+  }
+  .btn {
+    border: none;
+  }
 }

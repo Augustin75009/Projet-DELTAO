@@ -1,18 +1,26 @@
 <h1 style="padding-top: 80px">HELLO ready for checkout</h1>
 
-<h4>Récapitulatif</h4>
-<% @cart.cart_items.each do |item| %>
-  <li><%= item.product.name %>
-  <%= item.product.price_cents %> euros</li>
-<% end %>
+<div class="cart-wrapper">
+  <div class="cart-form">
+    <h4>Vos coordonées</h4>
+    <div class="billing-form">
+      <%= form_tag cart_purchases_path(@cart.user) do %>
+        <%= text_field_tag(:email, @cart.user.email) %>
+        <%= text_field_tag(:first_name, @cart.user.first_name) %>
+        <%= text_field_tag(:last_name, @cart.user.last_name) %>
+        <%= hidden_field_tag 'cart_id', @cart.id %>
+        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="cart-summary">
+    <h4>Récapitulatif</h4>
+    <% @cart.cart_items.each do |item| %>
+      <li><%= item.product.name %>
+      <%= item.product.price_cents %> euros</li>
+    <% end %>
 
-<%= current_user.email %>
 
-<h4>Vos coordonées</h4>
-<div class="billing-form">
-  <%= form_tag cart_purchases_path(@cart) do %>
-    <%= hidden_field_tag 'cart_id', @cart.id %>
-    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-  <% end %>
+  </div>
 </div>
 
