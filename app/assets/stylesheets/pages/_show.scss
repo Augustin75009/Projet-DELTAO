@@ -1,3 +1,6 @@
+.root-show {
+  margin-top: 24px;
+}
 .show-container {
   display: flex;
   justify-content: center;
@@ -80,17 +83,20 @@
   flex: 1;
   padding-left: 10px;
 }
-.button {
-  flex: 2;
-  padding: 1px;
-  // float: right;
-  margin-right: 10px;
-  .btn {
-  height: 32px;
-  width: 100%;
-  align-self: flex-end;
-  padding: 1px;
-  border: none;
+
+.cart {
+  .button {
+    flex: 2;
+    padding: 1px;
+    // float: right;
+    margin-right: 10px;
+    .btn {
+    height: 32px;
+    width: 100%;
+    align-self: flex-end;
+    padding: 1px;
+    border: none;
+    }
   }
 }
 
