@@ -7,12 +7,15 @@
 
 
 .introduction-img {
-  flex: 0 0 30%;
+  // flex: 0 0 30%;
+  flex: 1;
   background-image: url('introduction.png');
   background-size: cover;
   background-position: bottom;
+  margin-right: 20px;
 }
 
 .introduction-content {
-  flex: 0 0 65%;
+  // flex: 0 0 65%;
+  flex: 2;
 }
