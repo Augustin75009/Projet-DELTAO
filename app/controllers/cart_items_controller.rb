@@ -45,7 +45,7 @@ class CartItemsController < ApplicationController
 
   def cart_empty?
     content = CartItem.count
-    if content.nil?
+    if content == 0
       true
     else
       false
