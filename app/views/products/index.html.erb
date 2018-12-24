@@ -1,9 +1,13 @@
+<% content1 = "https://images.unsplash.com/photo-1487268113661-a75c49688467?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80" %>
+<% content2 = "https://images.unsplash.com/photo-1481401908818-600b7a676c0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=751&q=80" %>
+<% content3 = "https://images.unsplash.com/photo-1462849251721-16fc0fa4609c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" %>
+
 <div class="packer">
   <div class="slide">
     <div class="list-carrousel">
-      <div><img src="https://source.unsplash.com/random" alt="Smiley face" style="height: 300px"></div>
-      <div><img src="https://source.unsplash.com/random" alt="Smiley face" style="height: 300px"></div>
-      <div><img src="https://source.unsplash.com/random" alt="Smiley face" style="height: 300px"></div>
+      <div><img src=<%= content1 %> alt="Smiley face" style="height: 300px"></div>
+      <div><img src=<%= content2 %> alt="Smiley face" style="height: 300px"></div>
+      <div><img src=<%= content3 %> alt="Smiley face" style="height: 300px"></div>
     </div>
   </div>
     <div class="search-product">
@@ -40,15 +44,17 @@
                       <div class="card-infos">
                         <h5 class="text-name"><%= product.name %></h5>
                         <p class="card-description"><%= product.description %></p>
-                        <p class="text-age"><%= number_to_currency(product.total, unit: "€", separator: ",", format: "%n %u") %></p>
+                        <!-- <p class="text-age"><%= number_to_currency(product.total, unit: "€", separator: ",", format: "%n %u") %></p> -->
                         <p class="text-gender"><%= product.quantity %> unités </p>
                       </div>
                     </div>
                 </div>
                 <div class="card-content">
+
                   <h5><%= product.name %></h5>
                   <p class="text-right"><%= number_to_currency(product.total, unit: "€", separator: ",", format: "%n %u") %></p>
                 </div>
+                <p class="text-bottom">Description</p>
               </div>
             <% end %>
           </div>

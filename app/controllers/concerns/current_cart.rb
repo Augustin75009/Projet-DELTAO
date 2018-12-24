@@ -6,5 +6,6 @@ module CurrentCart
     @cart.price_cents = 0
     @cart.user = current_user
     session[:cart_id] ||= @cart.id
+    raise
   end
 end
