@@ -91,7 +91,7 @@ lesson1 = Lesson.create!(
 lesson1.save!
 
 lesson2 = Lesson.create!(
-  title: 'Ateliers vacances toutes générations"',
+  title: 'Ateliers vacances',
   description: "Enfants solo ou en famille, 1h30 d'ateliers pour modeler son imaginaire.",
   price_cents: 20000,
   quantity: 2,

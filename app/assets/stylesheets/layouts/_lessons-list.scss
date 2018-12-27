@@ -1,0 +1,20 @@
+#lesson-cards {
+  display: flex;
+
+  .card-container {
+    flex: 2;
+  }
+
+  .fb-event {
+    flex: 1;
+  }
+  .card-image {
+    height: 200px;
+  }
+
+  .card {
+    height: 260px;
+  }
+}
+
+

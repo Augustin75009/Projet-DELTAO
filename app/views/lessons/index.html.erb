@@ -17,8 +17,8 @@
           </div>
       </div>
     </div>
-  <div class="main-container" id="cards">
     <h3><span>Tous les produits</span></h3>
+  <div class="main-container" id="lesson-cards">
     <div class="card-container">
       <% @lessons.each do |lesson| %>
         <div class ="row row-condensend">
@@ -29,18 +29,10 @@
                      style="background-image: url(
                       '<%= cl_image_path lesson.photo.blank? ? 'https://picsum.photos/300/300/?random' : lesson.photo %>'
                      );">
-                    <div class="card-deploy">
-                      <div class="card-infos">
-                        <h5 class="text-name"><%= lesson.name %></h5>
-                        <p class="card-description"><%= lesson.description %></p>
-                        <!-- <p class="text-age"><%= number_to_currency(lesson.total, unit: "€", separator: ",", format: "%n %u") %></p> -->
-                        <p class="text-gender"><%= lesson.quantity %> unités </p>
-                      </div>
-                    </div>
                 </div>
                 <div class="card-content">
 
-                  <h5><%= lesson.name %></h5>
+                  <h5><%= lesson.title %></h5>
                   <p class="text-right"><%= number_to_currency(lesson.total, unit: "€", separator: ",", format: "%n %u") %></p>
                 </div>
                 <p class="text-bottom">Description</p>
@@ -50,5 +42,6 @@
         </div>
       <% end %>
     </div>
+    <div class="fb-event"></div>
   </div>
 </div>
