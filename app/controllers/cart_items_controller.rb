@@ -8,26 +8,51 @@ class CartItemsController < ApplicationController
   end
 
   def create
-    @product = Product.find(params[:product])
-    # @cart_item = @cart.cart_items.new(product: @product)
-    if cart_empty?
-      @cart = Cart.new
-      @cart.user = current_user
-      @cart.price_cents = @product.price_cents
+    if is_a_product?
+      @product = Product.find(params[:product])
+      # @cart_item = @cart.cart_items.new(product: @product)
+      if cart_empty?
+        @cart = Cart.new
+        @cart.user = current_user
+        @cart.price_cents = @product.price_cents
+      else
+        @cart = Cart.last
+        @cart.price_cents += @product.price_cents
+      end
+      @cart_item = @cart.add_product(@product)
+      @cart_item.user = current_user
+      @cart_item.cart = @cart
+      @cart_item.save
+      @cart.save
+      # @counter = current_user.cart_item_item.count
+      respond_to do |format|
+        format.html { redirect_to products_path }
+        format.js
+      end
     else
-      @cart = Cart.last
-      @cart.price_cents += @product.price_cents
+      @lesson = Lesson.find(params[:lesson])
+      # @cart_item = @cart.cart_items.new(lesson: @lesson)
+      if cart_empty?
+        @cart = Cart.new
+        @cart.user = current_user
+        @cart.price_cents = @lesson.price_cents
+      else
+        @cart = Cart.last
+        @cart.price_cents += @lesson.price_cents
+      end
+      @cart_item = @cart.add_lesson(@lesson)
+      @cart_item.user = current_user
+      @cart_item.cart = @cart
+      @cart_item.save
+      @cart.save
+      # @counter = current_user.cart_item_item.count
+      respond_to do |format|
+        format.html { redirect_to lessons_path }
+        format.js
+      end
     end
-    @cart_item = @cart.add_product(@product)
-    @cart_item.user = current_user
-    @cart_item.cart = @cart
-    @cart_item.save
-    @cart.save
-    # @counter = current_user.cart_item_item.count
-    respond_to do |format|
-      format.html { redirect_to products_path }
-      format.js
-    end
+
+
   end
 
   def destroy
@@ -46,6 +71,14 @@ class CartItemsController < ApplicationController
   def cart_empty?
     content = CartItem.count
     if content == 0
+      true
+    else
+      false
+    end
+  end
+
+  def is_a_product?
+    if params[:product]
       true
     else
       false
