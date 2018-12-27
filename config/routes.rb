@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :products do
     resources :purchases, only: []
   end
+  resources :lessons do
+    resources :purchases, only: []
+  end
   resources :carts, only: [:new, :create, :destroy, :index, :show] do
     resources :purchases, only: [:new, :create, :edit, :update, :destroy, :index] do
       resources :payments, only: [:new, :create]

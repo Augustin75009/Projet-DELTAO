@@ -1,0 +1,54 @@
+<div class="packer">
+    <div class="search-lesson">
+      <div class="search-wrapper">
+        <div class="search-input">
+          <input type="text" placeholder="Rechercher un produit">
+        </div>
+        <div class="search-submit">
+          <input type="submit" class="btn btn-primary">
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Filtrer par catégorie</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  <div class="main-container" id="cards">
+    <h3><span>Tous les produits</span></h3>
+    <div class="card-container">
+      <% @lessons.each do |lesson| %>
+        <div class ="row row-condensend">
+          <div class="col-sm-4">
+            <%= link_to lesson_path(lesson) do %>
+              <div class="card">
+                <div class ="card-image"
+                     style="background-image: url(
+                      '<%= cl_image_path lesson.photo.blank? ? 'https://picsum.photos/300/300/?random' : lesson.photo %>'
+                     );">
+                    <div class="card-deploy">
+                      <div class="card-infos">
+                        <h5 class="text-name"><%= lesson.name %></h5>
+                        <p class="card-description"><%= lesson.description %></p>
+                        <!-- <p class="text-age"><%= number_to_currency(lesson.total, unit: "€", separator: ",", format: "%n %u") %></p> -->
+                        <p class="text-gender"><%= lesson.quantity %> unités </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="card-content">
+
+                  <h5><%= lesson.name %></h5>
+                  <p class="text-right"><%= number_to_currency(lesson.total, unit: "€", separator: ",", format: "%n %u") %></p>
+                </div>
+                <p class="text-bottom">Description</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
