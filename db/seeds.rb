@@ -87,7 +87,7 @@ lesson1 = Lesson.create!(
   category: 'Atelier enfant'
 )
 
-lesson1.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+# lesson1.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
 lesson1.save!
 
 lesson2 = Lesson.create!(
@@ -98,7 +98,7 @@ lesson2 = Lesson.create!(
   category: 'Atelier enfant & adulte'
 )
 
-lesson2.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+# lesson2.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
 lesson2.save!
 
 lesson3 = Lesson.create!(
@@ -110,7 +110,7 @@ lesson3 = Lesson.create!(
   category: 'Atelier enfant'
 )
 
-lesson3.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+# lesson3.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
 lesson3.save!
 
 lesson4 = Lesson.create!(
@@ -122,5 +122,5 @@ lesson4 = Lesson.create!(
   category: 'Atelier enfant'
 )
 
-lesson4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+# lesson4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
 lesson4.save!
