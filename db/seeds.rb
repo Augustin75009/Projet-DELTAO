@@ -50,3 +50,25 @@ product4 = Product.create!(
 product4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
 product4.save!
 
+product5 = Product.create!(
+  name: 'Plateau',
+  description: "Faïence pincée, jetés et superpositions d'émail",
+  price_cents: 20000,
+  quantity: 2,
+  category: 'A table'
+)
+
+product5.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+product5.save!
+
+product6 = Product.create!(
+  name: 'Plateau',
+  description: "Faïence pincée, jetés et superpositions d'émail",
+  price_cents: 20000,
+  quantity: 2,
+  category: 'A table'
+)
+
+product6.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+product6.save!
+
