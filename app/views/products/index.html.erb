@@ -13,23 +13,30 @@
     <div class="search-product">
       <div class="search-wrapper">
         <div class="search-input">
-          <input type="text" placeholder="Rechercher un produit">
+           <%= form_tag products_path, method: :get do %>
+              <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Rechercher un produit...",
+              value: ""
+              %>
         </div>
         <div class="search-submit">
-          <input type="submit" class="btn btn-primary">
+              <%= submit_tag("Valider") %>
+            <% end %>
         </div>
         <div class="dropdown">
           <button class="dropbtn">Filtrer par catégorie</button>
             <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <%= link_to "A table", products_path({query: "A table"}) %>
+              <%= link_to "Maison", products_path({query: "Maison"}) %>
+              <%= link_to "Pièce unique", products_path({query: "unique"}) %>
             </div>
           </div>
       </div>
     </div>
   <div class="main-container" id="cards">
-    <h3><span>Tous les produits</span></h3>
+    <h3><span>Nos produits</span></h3>
     <div class="card-container">
       <% @products.each do |product| %>
         <div class ="row row-condensend">

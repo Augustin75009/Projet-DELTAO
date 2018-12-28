@@ -29,11 +29,19 @@
     <% @cart.cart_items.each do |item| %>
     <div class="cart-summary-item">
       <span>
-        <%= image_tag(item.product.photo.to_s, class: "cart-icon") do %>
+        <% if item.product.present? %>
+          <%= image_tag(item.product.photo.to_s, class: "cart-icon") do %>
+          <% end %>
+          </span>
+          <span><%= item.product.name %> <span class="cartq" style="font-size: 14px;opacity: 0.8;">x <%= item.quantity %></span></span>
+          </div>
+          <% else %>
+           <%= image_tag(item.lesson.photo.to_s, class: "cart-icon") do %>
+          <% end %>
+          </span>
+          <span><%= item.lesson.title %> <span class="cartq" style="font-size: 14px;opacity: 0.8;">x <%= item.quantity %></span></span>
+          </div>
         <% end %>
-      </span>
-      <span><%= item.product.name %> <span class="cartq" style="font-size: 14px;opacity: 0.8;">x <%= item.quantity %></span></span>
-      </div>
     <% end %>
     <br><br><br>
     <p class="font-weight-bold">Total :<span style="font-size:40px">          <%= number_to_currency(@cart.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
