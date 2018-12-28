@@ -2,22 +2,29 @@
     <div class="search-lesson">
       <div class="search-wrapper">
         <div class="search-input">
-          <input type="text" placeholder="Rechercher un produit">
+          <%= form_tag lessons_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Rechercher une leçon...",
+            value: ""
+            %>
         </div>
         <div class="search-submit">
-          <input type="submit" class="btn btn-primary">
+            <%= submit_tag("Valider") %>
+          <% end %>
         </div>
         <div class="dropdown">
           <button class="dropbtn">Filtrer par catégorie</button>
             <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <%= link_to "Atelier adulte", lessons_path({query: "Adulte"}) %>
+              <%= link_to "Atelier enfant", lessons_path({query: "enfant"}) %>
+              <%= link_to "Atelier découverte", lessons_path({query: "découverte"}) %>
             </div>
           </div>
       </div>
     </div>
-    <h3><span>Tous les produits</span></h3>
+    <h3><span>Nos ateliers</span></h3>
   <div class="main-container" id="lesson-cards">
     <div class="card-container">
       <% @lessons.each do |lesson| %>

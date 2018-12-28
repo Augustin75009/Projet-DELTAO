@@ -88,4 +88,8 @@ class CartItemsController < ApplicationController
     end
   end
 
+  #  def cart_item_filter
+  #   @user_orders = CartItem.where(user_id: current_user.user_id)
+  # end
+
 end
