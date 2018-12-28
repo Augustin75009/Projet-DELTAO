@@ -20,11 +20,12 @@
   input {
     border-radius: 0px 5px 5px 0px;
     text-align: center;
-    padding-top: 7px;
+    padding-top: 4px;
+    background-color: #DAD5DA;
   }
 }
 .search-input {
-  input {
+  .form-control {
     border-radius: 5px 0px 0px 5px;
     padding-left: 10px;
   }
