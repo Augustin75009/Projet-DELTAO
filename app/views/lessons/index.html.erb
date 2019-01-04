@@ -1,4 +1,15 @@
+<% content1 = "https://images.unsplash.com/photo-1487268113661-a75c49688467?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80" %>
+<% content2 = "https://images.unsplash.com/photo-1481401908818-600b7a676c0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=751&q=80" %>
+<% content3 = "https://images.unsplash.com/photo-1462849251721-16fc0fa4609c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" %>
+
 <div class="packer">
+  <div class="slide">
+    <div class="list-carrousel">
+      <div><img src=<%= content1 %> alt="Smiley face" style="height: 300px; border-radius: 10px"></div>
+      <div><img src=<%= content2 %> alt="Smiley face" style="height: 300px; border-radius: 10px"></div>
+      <div><img src=<%= content3 %> alt="Smiley face" style="height: 300px; border-radius: 10px"></div>
+    </div>
+  </div>
     <div class="search-lesson">
       <div class="search-wrapper">
         <div class="search-input">
@@ -24,28 +35,26 @@
           </div>
       </div>
     </div>
+  <div class="main-container" id="cards">
     <h3><span>Nos ateliers</span></h3>
-  <div class="main-container" id="lesson-cards">
     <div class="card-container">
       <% @lessons.each do |lesson| %>
-        <div class ="row row-condensend">
-          <div class="col-sm-4">
-            <%= link_to lesson_path(lesson) do %>
-              <div class="card">
-                <div class ="card-image"
-                     style="background-image: url(
-                      '<%= cl_image_path lesson.photo.blank? ? 'https://picsum.photos/300/300/?random' : lesson.photo %>'
-                     );">
-                </div>
-                <div class="card-content">
-
-                  <h5><%= lesson.title %></h5>
-                  <p class="text-right"><%= number_to_currency(lesson.total, unit: "€", separator: ",", format: "%n %u") %></p>
-                </div>
-                <p class="text-bottom">Description</p>
+        <div class ="card-dispatch">
+          <%= link_to lesson_path(lesson) do %>
+            <div class="card">
+              <div class ="card-image"
+                   style="background-image: url(
+                    '<%= cl_image_path lesson.photo.blank? ? 'https://picsum.photos/300/300/?random' : lesson.photo %>'
+                   );">
               </div>
-            <% end %>
-          </div>
+              <div class="card-content">
+
+                <h5><%= lesson.title %></h5>
+                <p class="text-right"><%= number_to_currency(lesson.total, unit: "€", separator: ",", format: "%n %u") %></p>
+              </div>
+              <p class="text-bottom">Description</p>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
