@@ -1,3 +1,4 @@
+Cart.destroy_all
 User.destroy_all
 Product.destroy_all
 Purchase.destroy_all
@@ -124,3 +125,15 @@ lesson4 = Lesson.create!(
 
 lesson4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
 lesson4.save!
+
+
+
+
+
+
+
+
+
+
+
+

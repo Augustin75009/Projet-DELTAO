@@ -5,13 +5,13 @@
 <div class="packer">
   <div class="slide">
     <div class="list-carrousel">
-      <div><img src=<%= content1 %> alt="Smiley face" style="height: 300px; border-radius: 10px"></div>
-      <div><img src=<%= content2 %> alt="Smiley face" style="height: 300px; border-radius: 10px"></div>
-      <div><img src=<%= content3 %> alt="Smiley face" style="height: 300px; border-radius: 10px"></div>
+      <div><img src=<%= content1 %> alt="Smiley face"></div>
+      <div><img src=<%= content2 %> alt="Smiley face"></div>
+      <div><img src=<%= content3 %> alt="Smiley face"></div>
     </div>
   </div>
     <div class="search-product">
-      <div class="search-wrapper">
+<!--       <div class="search-wrapper"> -->
         <div class="search-input">
            <%= form_tag products_path, method: :get do %>
               <%= text_field_tag :query,
@@ -27,16 +27,16 @@
         </div>
         <div class="dropdown">
           <button class="dropbtn">Filtrer par catégorie</button>
-            <div class="dropdown-content">
-              <%= link_to "A table", products_path({query: "A table"}) %>
-              <%= link_to "Maison", products_path({query: "Maison"}) %>
-              <%= link_to "Pièce unique", products_path({query: "unique"}) %>
-            </div>
+          <div class="dropdown-content">
+            <%= link_to "A table", products_path({query: "A table"}) %>
+            <%= link_to "Maison", products_path({query: "Maison"}) %>
+            <%= link_to "Pièce unique", products_path({query: "unique"}) %>
           </div>
+<!--         </div> -->
       </div>
     </div>
   <div class="main-container" id="cards">
-    <h3><span>Nos produits</span></h3>
+<!--     <h3><span>Nos produits</span></h3> -->
     <div class="card-container">
       <% @products.each do |product| %>
         <div class ="card-dispatch">
