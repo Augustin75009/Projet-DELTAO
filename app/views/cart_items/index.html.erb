@@ -26,7 +26,7 @@
         <% end %>
       </div>
       <div class="quantity-item">
-        <%= simple_form_for cart_item do |f|%>
+        <%= simple_form_for(cart_item, remote: true) do |f|%>
           <%= f.number_field :quantity, class: "narrow-input"%>
           <%= f.submit %>
         <% end %>
