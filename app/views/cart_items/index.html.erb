@@ -28,6 +28,7 @@
       <div class="quantity-item">
         <%= simple_form_for cart_item do |f|%>
           <%= f.number_field :quantity, class: "narrow-input"%>
+          <%= f.submit %>
         <% end %>
       </div>
       <div class="infos-item">

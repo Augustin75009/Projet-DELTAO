@@ -4,7 +4,7 @@
   <div class="cart-form">
     <h4>Vos coordonées</h4>
     <div class="billing-form">
-      <%= form_tag cart_purchases_path(@cart.user) do %>
+      <%= form_tag cart_purchases_path(@cart.id) do %>
         <%= label_tag("Email") %>
         <%= text_field_tag(:email, @cart.user.email) %>
         <%= label_tag("Prénom") %>

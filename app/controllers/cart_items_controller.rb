@@ -54,8 +54,11 @@ class CartItemsController < ApplicationController
         format.js
       end
     end
+  end
 
-
+  def edit
+    @cart_item = CartItem.find(params[:id])
+    raise
   end
 
   def destroy
