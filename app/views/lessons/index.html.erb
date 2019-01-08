@@ -1,31 +1,28 @@
 <div class="packer">
     <div class="search-product">
-<!--       <div class="search-wrapper"> -->
-        <div class="search-input">
-          <%= form_tag lessons_path, method: :get do %>
-            <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Rechercher une leçon...",
-            value: ""
-            %>
+      <div class="search-input">
+        <%= form_tag lessons_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Rechercher une leçon...",
+          value: ""
+          %>
+      </div>
+      <div class="search-submit">
+          <%= submit_tag("Valider") %>
+        <% end %>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Filtrer par catégorie</button>
+        <div class="dropdown-content">
+          <%= link_to "Atelier adulte", lessons_path({query: "Adulte"}) %>
+          <%= link_to "Atelier enfant", lessons_path({query: "enfant"}) %>
+          <%= link_to "Atelier découverte", lessons_path({query: "découverte"}) %>
         </div>
-        <div class="search-submit">
-            <%= submit_tag("Valider") %>
-          <% end %>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Filtrer par catégorie</button>
-            <div class="dropdown-content">
-              <%= link_to "Atelier adulte", lessons_path({query: "Adulte"}) %>
-              <%= link_to "Atelier enfant", lessons_path({query: "enfant"}) %>
-              <%= link_to "Atelier découverte", lessons_path({query: "découverte"}) %>
-            </div>
-          </div>
-<!--       </div> -->
+      </div>
     </div>
   <div class="main-container" id="cards">
-<!--     <h3><span>Nos ateliers</span></h3> -->
     <div class="card-container">
       <% @lessons.each do |lesson| %>
         <div class ="card-dispatch">
