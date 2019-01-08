@@ -12,14 +12,28 @@
 // }
 
 
+const form = document.querySelector('.quantity-item');
 
 
-function updateQuantity(amountHTML) {
-  const amount = document.querySelector('.narrow-input').addEventListener('click', (event) => {;
-  console.log(event.value);
-  // amount.value =
-}}
+// function updateQuantity(data) {
+//   const quantity = document.querySelector('.quantity-item');
+//   const value = quantity.value;
+//   console.log("hello")
+//   const amount = document.querySelector('.infos-item');
+//   const value = data
+//   console.log(value);
+//   newReviewForm.innerHTML = innerHTML;
+// }
 
-updateQuantity("<%= j render 'cart_items/index', cart_items: @cart_items");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  // const data = {author: amount.value};
+  // updateQuantity(data);
+  console.log("hello")
+});
+
+// updateQuantity("<%= j render 'cart_items/variable', cart_item: cart_item %>");
 
 // refresh.addEventListener("click", updateQuantity)
+

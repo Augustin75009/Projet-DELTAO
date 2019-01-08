@@ -32,11 +32,7 @@
         <% end %>
       </div>
       <div class="infos-item">
-        <% if cart_item.product %>
-          <span><%= cart_item.product.name %> ( x <%= cart_item.quantity %> )</span>
-        <% else %>
-          <span><%= cart_item.lesson.title %> ( x <%= cart_item.quantity %> )</span>
-        <% end %>
+        <%= render 'cart_items/variable', cart_item: cart_item %>
       </div>
       <div class="amount-item">
         <p class="font-weight-bold">Total : <span class="badge badge-info"><%= number_to_currency(cart_item.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
