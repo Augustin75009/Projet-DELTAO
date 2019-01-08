@@ -56,9 +56,11 @@ class CartItemsController < ApplicationController
     end
   end
 
-  def edit
+  def update
     @cart_item = CartItem.find(params[:id])
-    raise
+    new_quantity = params[:cart_item]
+    @cart_item.quantity = new_quantity[:quantity]
+    @cart_item.save
   end
 
   def destroy
