@@ -1,83 +1,107 @@
 // https://colorhunt.co/palette/134510
 
 .packer {
-  margin-top: 62px;
+  margin-top: 90px;
   margin-left: 20px;
   margin-right: 20px;
-  // background-color: #ebf0f6;
-  background-color: rgb(249, 249, 249);
-  border-radius: 5px;
+  border-radius: 1%;
 }
+
 .slide {
-  background-image: url("https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80")
+  display: flex;
+  justify-content: center;
+  // background-image: url("https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80")
 }
+
 .search-product {
-  height: 100px;
+  height: 50px;
   display: flex;
-  justify-content: flex-start;
-}
-.search-submit {
-  input {
-    border-radius: 0px 5px 5px 0px;
-    text-align: center;
-    padding-top: 4px;
-    background-color: #DAD5DA;
-  }
-}
-.search-input {
+  justify-content: center;
+  margin-top: 20px;
   .form-control {
-    border-radius: 5px 0px 0px 5px;
-    padding-left: 10px;
+    width: 25rem;
+    border: 1px solid #EBEBEB;
+    border-radius: 1%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: lighter;
   }
-}
-.search-wrapper {
-  margin-top: 48px;
-  width: 80%;
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 100px;
-  input {
-    height: 36px;
-    box-shadow: none;
-    z-index: 11;
+  .search-submit input {
+    text-decoration: none;
     border: none;
+    height: 39px;
+    margin-left: 20px;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.42857;
+    font-weight: lighter;
+    color: white;
+    background-color: rgba(202, 120, 103, 0.8);
+    border-radius: 1%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    text-decoration: none;
+    letter-spacing: .1rem;
+  }
+  .dropbtn {
+    background-color: rgba(202, 120, 103, 0.8);
+    border: none;
+    font-weight: lighter;
+    color: white;
+    height: 39px;
+    padding: 6px 12px;
+    margin-left: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-decoration: none;
+    letter-spacing: .1rem;
+    border-radius: 1%;
+
   }
 }
+
 .main-container {
   margin: 20px 0px 20px 0px;
 }
+
 .list-carrousel {
   justify-content: center;
 }
+
 .slick-track{
   opacity: 1 !important;
   margin-top: 8px;
 }
-.slick-track:hover{
-  opacity: 0.9 !important;
-}
+
+// .slick-track:hover{
+//   opacity: 0.9 !important;
+// }
+
 .list-carrousel.slick-initialized.slick-slider {
   width: 500px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
 }
+
 .slick-prev:before {
   color: #DAD5DA !important;
   font-size: 30px !important;
 }
+
 .slick-next:before {
   color: #DAD5DA !important;
   font-size: 30px !important;
 }
+
 .slick-slide.slick-current.slick-active{
   margin-left: auto;
   margin-right: auto;
 }
+
 .slick-slide img {
   margin-right: auto;
   margin-left: auto;
 }
+
 .main-container{
 
   h3 {
@@ -86,9 +110,6 @@
       border-bottom: solid 1px;
     }
   }
-}
-.card-container{
-  margin-top: 32px;
 }
 
 @media (max-width: 1100px) {
@@ -100,15 +121,8 @@
 /*-------------------*/
 
 .dropbtn {
-  background-color: rgba(160,160,160,1);
-  color: white;
-  padding: 16px;
-  font-size: 16px;
   border: none;
   cursor: pointer;
-  padding-top: 7px;
-  border-radius: 5px;
-  height: 36px;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -123,9 +137,11 @@
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  width: 90%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  margin-left: 20px;
+
 }
 
 /* Links inside the dropdown */
@@ -145,6 +161,11 @@
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: rgba(160,160,160,0.5);
+// .dropdown:hover .dropbtn {
+//   background-color: rgba(160,160,160,0.5);
+// }
+
+.list-carrousel img {
+  height: 300px;
+  border-radius: 1%;
 }
