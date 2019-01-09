@@ -2,8 +2,21 @@ function updateQuantity(data) {
   const quantity = document.querySelector('#infos-item');
   // const value = quantity.value;
   quantity.innerHTML = data
-  console.log("hello");
+}
+
+function updateAmount(amount) {
+  const quantity = document.querySelector('#amount-item');
+  // const value = quantity.value;
+  quantity.innerHTML = amount
+}
+
+function updateTotal(total) {
+  const quantity = document.querySelector('#summary-checkout');
+  // const value = quantity.value;
+  quantity.innerHTML = total;
 }
 
 
-updateQuantity("<%= j render 'cart_items/variable2', cart_item: cart_item %>");
+updateQuantity('<%= j render "cart_items/variable", cart_item: @cart_item %>');
+updateAmount('<%= j render "cart_items/total", cart_item: @cart_item %>');
+// updateTotal('<%= j render "cart_items/recap", cart_item: @cart_items, total_cart: @total_cart, reduction: @reduction %>');

@@ -34,19 +34,16 @@
       <div class="infos-item" id="infos-item">
         <%= render 'cart_items/variable', cart_item: cart_item %>
       </div>
-      <div class="amount-item">
-        <p class="font-weight-bold">Total : <span class="badge badge-info"><%= number_to_currency(cart_item.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
+      <div class="amount-item" id="amount-item">
+        <%= render 'cart_items/total', cart_item: cart_item %>
       </div>
     </div>
       <% total_cart += cart_item.total %>
     <% end %>
       <div class="summary">
         <div class="summary-empty"></div>
-        <div class="summary-checkout">
-          Récapitulatif de la commande<br><br>
-          <div class="summary-subtotal"><p>Sous-total :<span><%= number_to_currency(total_cart, unit: "€", separator: ",", format: "%n %u") %></span></p></div><br>
-          <div class="summary-reduction"><p>Réduction :<span><%= number_to_currency(reduction, unit: "€", separator: ",", format: "%n %u") %></span></p></div><br>
-          <div class="summary-total"><p>Total :<span style="font-size: 30px"><%= number_to_currency((total_cart - reduction), unit: "€", separator: ",", format: "%n %u") %></span></p></div>
+        <div class="summary-checkout" id="summary-checkout">
+          <%= render 'cart_items/recap', cart_item: @cart_items, total_cart: total_cart, reduction: reduction %>
           <div class="button-checkout">
             <% if CartItem.count != 0 %>
             <span>
