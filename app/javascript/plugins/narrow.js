@@ -6,29 +6,35 @@ const updateQuantityUp = () => {
   });
 }
 
-updateQuantityUp();
-// const form = document.querySelector('.quantity-item');
+export {updateQuantityUp}
+
+
+
+
+
+
+
 
 
 // function updateQuantity(data) {
 //   const quantity = document.querySelector('.quantity-item');
 //   // const value = quantity.value;
-//   console.log("hello")
+//   console.log("hello");
 //   // const amount = document.querySelector('.infos-item');
-//   const value = data
-//   console.log(value);
+//   const value = data;
+//   console.log(value)
 //   // newReviewForm.innerHTML = innerHTML;
 // }
 
 
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   // const data = {author: amount.value};
-//   // updateQuantity(data);
-//   console.log("hello")
-// });
+// // form.addEventListener("submit", (event) => {
+// //   event.preventDefault();
+// //   // const data = {author: amount.value};
+// //   // updateQuantity(data);
+// //   console.log("hello")
+// // });
 
 // updateQuantity("<%= j render 'cart_items/variable', cart_item: cart_item %>");
 
-// refresh.addEventListener("click", updateQuantity)
+// // refresh.addEventListener("click", updateQuantity)
 
