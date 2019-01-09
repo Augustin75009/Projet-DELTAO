@@ -1,39 +1,39 @@
-<div class="packer">
-    <div class="search-product">
-      <div class="search-input">
-        <%= form_tag lessons_path, method: :get do %>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Rechercher une leçon...",
-          value: ""
-          %>
-      </div>
-      <div class="search-submit">
-          <%= submit_tag("Valider") %>
-        <% end %>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Filtrer par catégorie</button>
-        <div class="dropdown-content">
-          <%= link_to "Atelier adulte", lessons_path({query: "Adulte"}) %>
-          <%= link_to "Atelier enfant", lessons_path({query: "enfant"}) %>
-          <%= link_to "Atelier découverte", lessons_path({query: "découverte"}) %>
-        </div>
+<div class="packer-lesson">
+  <div class="search-lesson">
+    <div class="search-input-lesson">
+      <%= form_tag lessons_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control lesson",
+        placeholder: "Rechercher une leçon...",
+        value: ""
+        %>
+    </div>
+    <div class="search-submit-lesson">
+        <%= submit_tag("Valider") %>
+      <% end %>
+    </div>
+    <div class="dropdown-lesson">
+      <button class="dropbtn-lesson">Filtrer par catégorie</button>
+      <div class="dropdown-content">
+        <%= link_to "Atelier adulte", lessons_path({query: "Adulte"}) %>
+        <%= link_to "Atelier enfant", lessons_path({query: "enfant"}) %>
+        <%= link_to "Atelier découverte", lessons_path({query: "découverte"}) %>
       </div>
     </div>
-  <div class="main-container" id="cards">
-    <div class="card-container">
+  </div>
+  <div class="main-container" id="cards-lesson">
+    <div class="card-container-lesson">
       <% @lessons.each do |lesson| %>
-        <div class ="card-dispatch">
+        <div class ="card-dispatch-lesson">
           <%= link_to lesson_path(lesson) do %>
-            <div class="card">
-              <div class ="card-image"
+            <div class="card-lesson">
+              <div class ="card-image-lesson"
                    style="background-image: url(
                     '<%= cl_image_path lesson.photo.blank? ? 'https://picsum.photos/300/300/?random' : lesson.photo %>'
                    );">
               </div>
-              <div class="card-content">
+              <div class="card-content-lesson">
 
                 <h5><%= lesson.title %></h5>
                 <p class="text-right"><%= number_to_currency(lesson.total, unit: "€", separator: ",", format: "%n %u") %></p>

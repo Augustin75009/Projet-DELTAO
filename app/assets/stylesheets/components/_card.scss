@@ -42,7 +42,105 @@
   opacity: 1;
   background-size: cover;
   position: relative;
-  // box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
+.card-container-lesson {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+  z-index: 10;
+  padding: 0px 80px 20px 80px;
+  background-color: transparent;
+  width: 100%;
+  }
+
+
+.card-dispatch-lesson {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.card-lesson {
+  margin: 14px;
+  height: 200px;
+  border-radius: 1%;
+  width: 260px;
+  margin: 3px;
+  opacity: 1;
+  background-size: cover;
+  position: relative;
+
+}
+
+.card-dash-lesson {
+  height: 200px;
+  border-radius: 1%;
+  flex: 0 0 32%;
+  margin: 3px;
+  opacity: 1;
+  background-size: cover;
+  position: relative;
+}
+
+.card-lesson:hover {
+  .card-infos-lesson {
+    opacity: 1;
+    transition: 0.4s;
+  }
+}
+
+.card-content-lesson {
+  text-align :center;
+  border-radius:1%;
+  background-color:rgba(238, 220, 201, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  z-index: 20;
+}
+
+.card-image-lesson {
+  height: 120px;
+  width: 100%;
+  border-top-left-radius: 1%;
+  border-top-right-radius: 1%;
+  background-size: cover;
+  display: block;
+  position: absolute;
+  background-position: bottom;
+}
+
+.card-content-lesson h5 {
+  font-size: 16px bold !important;
+  position: absolute;
+  bottom: 24px;
+  color: black !important;
+  margin: 0px !important;
+  padding: 10px 20px 10px 0px;
+  color: rgb(253, 251, 249);
+}
+
+
+.card-deploy-lesson {
+  position: relative;
+}
+
+.card-infos-lesson {
+  position: absolute;
+  background-color: white;
+  margin: 25px;
+  height: 120px;
+  width: 210px !important;
+  top: 190px;
+  display: block;
+  opacity: 0;
+  border-radius: 1%;
+
 }
 
 .card-dash {
@@ -53,7 +151,6 @@
   opacity: 1;
   background-size: cover;
   position: relative;
-  // box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .19);
 }
 
 .card:hover {
@@ -170,7 +267,6 @@ p.text-right {
 p.text-bottom {
   position: absolute;
   bottom: 0px;
-  // padding-left: 10px;
   font-size: 14px;
   opacity: 0.8;
 }

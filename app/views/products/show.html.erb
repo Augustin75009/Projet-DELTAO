@@ -13,7 +13,6 @@
         <div class="description-title">
           <%= @product.name %>
         </div>
-
         <div class="description-category">
           <%= @product.category %>
         </div>
@@ -30,7 +29,7 @@
           <div class="quantity">
             <input type="number" max='<%= @product.quantity %>' min="1" step="1" value="1">
           </div>
-            <% end %>
+          <% end %>
           <div class="button">
             <%= link_to cart_items_path(product: @product.id), method: :post, remote: false do %>
               <button class="button-show">Ajouter au panier</button>
