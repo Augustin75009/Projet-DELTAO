@@ -3,7 +3,7 @@
 <%= form_tag cart_purchase_payments_path(@purchase) do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@purchase.amount) %></span>
+      <span>Amount: <%= humanized_money_with_symbol(@purchase.amount_cents) %></span>
     </label>
   </article>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -11,7 +11,7 @@
     data-name="My Product"
     data-email="<%= current_user.email %>"
     data-description="Product <%= @purchase.product_sku %>"
-    data-amount="<%= @purchase.amount_cents %>"
+    data-amount="<%= @purchase.amount_cents*100 %>"
     data-currency="<%= @purchase.amount.currency %>"></script>
 
 <% end %>
