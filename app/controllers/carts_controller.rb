@@ -11,13 +11,16 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(params[:id])
+    @cart.price_cents = @cart.total
+    @cart.save
   end
 
 
   def create
     @cart = Cart.new
     @cart.user = current_user
-    @cart.price_cents = 12
+    # @cart.price_cents = 12
+    @cart.price_cents = @cart.total
     # @cart.product = @product
     # authorize @cart
     @cart.save

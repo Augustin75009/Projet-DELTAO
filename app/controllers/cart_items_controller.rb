@@ -53,8 +53,18 @@ class CartItemsController < ApplicationController
         format.js
       end
     end
+  end
 
-
+  def update
+    @cart_item = CartItem.find(params[:id])
+    new_quantity = params[:cart_item]
+    @cart_item.quantity = new_quantity[:quantity]
+    @cart_item.save
+    # redirect_to root_path
+    respond_to do |format|
+        format.html { redirect_to cart_items_path }
+        format.js
+      end
   end
 
   def destroy
