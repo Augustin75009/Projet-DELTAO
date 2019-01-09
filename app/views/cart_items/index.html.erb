@@ -1,14 +1,15 @@
 <% total_cart = 0 %>
 <% reduction = 0 %>
 <% if @cart_items.count == 0 %>
-<div class="panier-vide-container">
-  <div class="panier-vide-content">
-    <div>Votre panier est vide</div>
-    <br>
-    <i class="fas fa-cart-plus" style="font-size: 60px;"></i>
+  <div class="panier-vide-container">
+    <div class="panier-vide-content">
+      <div>Votre panier est vide</div>
+      <br>
+      <i class="fas fa-cart-plus" style="font-size: 60px;"></i>
   </div>
-    <span id="data-cart_items"><p>Nombre d'articles : <%= @cart_items.count %></p></span>
-  <div class="cart_item-container">
+<% else %>
+  <div class="cart_item-container" style="margin-top: 100px">
+  <span id="data-cart_items"><p>Nombre d'articles : <%= @cart_items.count %></p></span>
     <% @cart_items.each do |cart_item| %>
     <div class="card-cart_items">
       <div class="delete-item">
@@ -19,7 +20,7 @@
       <div class="quantity-item">
         <%= simple_form_for(cart_item, remote: true) do |f|%>
           <%= f.number_field :quantity, class: "narrow-input"%>
-          <%= f.submit %>
+          <%= f.submit "Top" %>
         <% end %>
       </div>
       <div class="infos-item" id="infos-item">
@@ -41,19 +42,14 @@
               <%= link_to products_path do %>
                 <%= submit_tag 'Continuer mes achats', class: 'btn btn-secondary' %>
               <% end %>
-              </span>
-              <span>
-                <%= link_to products_path do %>
-                  <%= submit_tag 'Continuer mes achats', class: 'btn btn-secondary' %>
-                <% end %>
-                </span>
-                <span>
-                <% @cart_id = @cart_items.last.cart_id %>
-                <%= link_to cart_path(@cart_id) do %>
-                  <%= hidden_field_tag 'cart_id', @cart_id%>
-                  <%= submit_tag 'Paiement', class: 'btn btn-danger' %>
-                <% end %>
-                </span>
+            </span>
+            <span>
+              <% @cart_id = @cart_items.last.cart_id %>
+              <%= link_to cart_path(@cart_id) do %>
+                <%= hidden_field_tag 'cart_id', @cart_id%>
+                <%= submit_tag 'Paiement', class: 'btn btn-danger' %>
+              <% end %>
+            </span>
               <% end %>
             </div>
           </div>
