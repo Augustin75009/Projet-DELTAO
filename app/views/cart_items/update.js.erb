@@ -1,0 +1,9 @@
+function updateQuantity(data) {
+  const quantity = document.querySelector('#infos-item');
+  // const value = quantity.value;
+  quantity.innerHTML = data
+  console.log("hello");
+}
+
+
+updateQuantity("<%= j render 'cart_items/variable2', cart_item: cart_item %>");

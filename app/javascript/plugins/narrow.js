@@ -2,19 +2,11 @@ const updateQuantityUp = () => {
  document.querySelector('.narrow-input').addEventListener('click', (event) => {
   event.preventDefault();
   const value = event.currentTarget.value;
-  console.log("hello")
+  // console.log("hello")
   });
 }
 
 export {updateQuantityUp}
-
-
-
-
-
-
-
-
 
 // function updateQuantity(data) {
 //   const quantity = document.querySelector('.quantity-item');
