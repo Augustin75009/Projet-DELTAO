@@ -1,36 +1,42 @@
 <div class="show-container">
-  <div class="root-show"><span><%= link_to "< Retour à la liste", lessons_path %></span></div>
-  <div class="lesson-container">
-    <div class="lesson-image">
+  <div class="root-show">
+    <%= link_to '<i class="fas fa-chevron-circle-left"></i>   Retour à la liste'.html_safe, lessons_path %>
+  </div>
+  <div class="product-container">
+    <div class="product-image">
       <span><%= image_tag(@lesson.photo.to_s) do %>
       <% end %>
       </span>
     </div>
-    <div class="lesson-description">
-      <div class="description-title">
-        <%= @lesson.category %>
-        <%= @lesson.title %>
-      </div>
-      <div class="description-content">
-        <p><%= @lesson.description %></p>
-      </div>
-      <div class="call-to-action">
-        <div class="price_cents" style="float: right">
-          <p class="font-weight-bold">Prix :<span style="font-size:30px; margin-right: 10px">          <%= number_to_currency(@lesson.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
+    <div class="product-description">
+      <div class="description-top">
+        <div class="description-title">
+          <%= @lesson.title %>
         </div>
+        <div class="description-category">
+          <%= @lesson.category %>
+        </div>
+      </div>
+        <div class="description-content">
+          <%= @lesson.description %>
+        </div>
+      <div class="description-bottom">
+        <div class="price-show">
+          <%= number_to_currency(@lesson.total, unit: "€", separator: ",", format: "%n %u") %>
         </div>
         <div class="cart">
             <%= simple_form_for @lesson do |f|%>
           <div class="quantity">
-            <%= f.input_field :quantity %>
+            <input type="number" max='<%= @lesson.quantity %>' min="1" step="1" value="1">
           </div>
-            <% end %>
+          <% end %>
           <div class="button">
             <%= link_to cart_items_path(lesson: @lesson.id), method: :post, remote: false do %>
-              <button class="btn btn-primary">Ajouter au panier</button>
+              <button class="button-show">Ajouter au panier</button>
             <% end %>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </div>

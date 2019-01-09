@@ -1,0 +1,5 @@
+<% if cart_item.product %>
+  <span><%= cart_item.product.name %> ( x <%= cart_item.quantity %> )</span>
+<% else %>
+  <span><%= cart_item.lesson.title %> ( x <%= cart_item.quantity %> )</span>
+<% end %>

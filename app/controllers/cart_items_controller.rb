@@ -22,7 +22,6 @@ class CartItemsController < ApplicationController
       @cart_item = @cart.add_product(@product)
       @cart_item.user = current_user
       @cart_item.cart = @cart
-      raise
       @cart_item.save
       @cart.save
       # @counter = current_user.cart_item_item.count
