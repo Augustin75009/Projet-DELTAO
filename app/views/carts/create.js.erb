@@ -1,8 +1,8 @@
 function refreshAdd() {
   let addWhishlistNumber = document.getElementById('wishlist-number');
   addWhishlistNumber.innerText = '<%= @counter %>';
-  let wishCard = document.getElementById('wish-card-<%= @pet.id%>')
-  wishCard.innerHTML = "<%= j render 'pets/wishlist', pet: @pet %>";
+  let wishCard = document.getElementById('wish-card-<%= @product.id%>')
+  wishCard.innerHTML = "<%= j render 'products/wishlist', product: @product %>";
 }
 
 refreshAdd();

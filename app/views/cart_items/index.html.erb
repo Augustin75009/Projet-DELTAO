@@ -1,20 +1,11 @@
 <% total_cart = 0 %>
 <% reduction = 0 %>
-
-<div class="cart_item-wrapper">
-  <div class="cart_item-banner">
-    <div class="delivery-infos">
-      Livraison par Colissimo<br>
-      <h6>Gratuit pour les commandes de plus de 100,00 €</h6>
-    </div>
-    <div class="delivery-infos">
-      Retours sans condition sous 15 jours <br>
-      <h6>Contacter Tessa Guilbaud</h6>
-    </div>
-    <div class="delivery-infos">
-      Paiements sécurisés à 100 % <br>
-      <h6>et politique de remboursement fiable</h6>
-    </div>
+<% if @cart_items.count == 0 %>
+<div class="panier-vide-container">
+  <div class="panier-vide-content">
+    <div>Votre panier est vide</div>
+    <br>
+    <i class="fas fa-cart-plus" style="font-size: 60px;"></i>
   </div>
     <span id="data-cart_items"><p>Nombre d'articles : <%= @cart_items.count %></p></span>
   <div class="cart_item-container">
@@ -52,17 +43,23 @@
               <% end %>
               </span>
               <span>
-              <% @cart_id = @cart_items.last.cart_id %>
-              <%= link_to cart_path(@cart_id) do %>
-                <%= hidden_field_tag 'cart_id', @cart_id%>
-                <%= submit_tag 'Paiement', class: 'btn btn-danger' %>
+                <%= link_to products_path do %>
+                  <%= submit_tag 'Continuer mes achats', class: 'btn btn-secondary' %>
+                <% end %>
+                </span>
+                <span>
+                <% @cart_id = @cart_items.last.cart_id %>
+                <%= link_to cart_path(@cart_id) do %>
+                  <%= hidden_field_tag 'cart_id', @cart_id%>
+                  <%= submit_tag 'Paiement', class: 'btn btn-danger' %>
+                <% end %>
+                </span>
               <% end %>
-              </span>
-            <% end %>
+            </div>
           </div>
-        </div>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
 
