@@ -61,6 +61,7 @@ class CartItemsController < ApplicationController
     new_quantity = params[:cart_item]
     @cart_item.quantity = new_quantity[:quantity]
     @cart_item.save
+    # redirect_to root_path
     respond_to do |format|
         format.html { redirect_to cart_items_path }
         format.js

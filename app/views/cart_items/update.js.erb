@@ -1,37 +1,32 @@
-// const updateQuantityUp = () => {
-//  document.querySelector('.narrow-input').addEventListener('click', (event) => {
-//   event.preventDefault();
-//   const value = event.currentTarget.value;
-//   console.log(value)
-//   // // fetch('https://api.github.com/orgs/lewagon/repos')
-//   //   .then(response => response.json())
-//   //   .then((data) => {
-//   //     // Do something with the response
-//   //   });
-//   });
-// }
+const updateQuantityUp = () => {
+ document.querySelector('.narrow-input').addEventListener('click', (event) => {
+  event.preventDefault();
+  const value = event.currentTarget.value;
+  console.log("hello")
+  });
+}
 
-
-const form = document.querySelector('.quantity-item');
+updateQuantityUp();
+// const form = document.querySelector('.quantity-item');
 
 
 // function updateQuantity(data) {
 //   const quantity = document.querySelector('.quantity-item');
-//   const value = quantity.value;
+//   // const value = quantity.value;
 //   console.log("hello")
-//   const amount = document.querySelector('.infos-item');
+//   // const amount = document.querySelector('.infos-item');
 //   const value = data
 //   console.log(value);
-//   newReviewForm.innerHTML = innerHTML;
+//   // newReviewForm.innerHTML = innerHTML;
 // }
 
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  // const data = {author: amount.value};
-  // updateQuantity(data);
-  console.log("hello")
-});
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   // const data = {author: amount.value};
+//   // updateQuantity(data);
+//   console.log("hello")
+// });
 
 // updateQuantity("<%= j render 'cart_items/variable', cart_item: cart_item %>");
 
