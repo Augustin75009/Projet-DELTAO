@@ -1,1 +1,157 @@
 // Specific CSS for your home-page
+
+.announcement {
+  position: relative;
+  margin-top: 16px;
+}
+
+.stage-left {
+  margin-left: 10%;
+}
+
+.stage-right {
+  margin-left: 70%;
+}
+
+.lessons-overview {
+  height: 70vh;
+  position: relative;
+  background-size: cover;
+  margin-top: 16px;
+}
+
+.lessons-overview.background1 {
+  animation: addBack1 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack1 {
+  0% {
+  background-image: url("pic1.jpg");
+  }
+  100% {
+  background-image: url("pic1.jpg");
+  }
+}
+
+.lessons-overview.background2 {
+  animation: addBack2 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack2 {
+  0% {
+  background-image: url("pic2.jpg");
+  }
+  100% {
+  background-image: url("pic2.jpg");
+  }
+}
+
+
+.lessons-overview.background3 {
+  animation: addBack3 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack3 {
+  0% {
+  background-image: url("pic3.jpg");
+  }
+  100% {
+  background-image: url("pic3.jpg");
+  }
+}
+
+
+.lessons-overview.background4 {
+  animation: addBack4 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack4 {
+  0% {
+  background-image: url("pic4.jpg");
+  }
+  100% {
+  background-image: url("pic4.jpg");
+  }
+}
+
+
+.lessons-overview.background5 {
+  animation: addBack5 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack5 {
+  0% {
+  background-image: url("pic5.jpg");
+  }
+  100% {
+  background-image: url("pic5.jpg");
+  }
+}
+
+
+
+.overview-content {
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 50%;
+  color: white;
+}
+
+.overview-content>h3 {
+  font-size: 48px;
+}
+
+.overview-content>p {
+  font-size: 20px;
+}
+
+.overview-selectors {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.overview-button {
+  flex: 1;
+  color: white;
+  font-size: 22px;
+  height: 80vh;
+  position: relative;
+  border-right: solid 0.4px rgba(249, 249, 249, 0.5);
+}
+
+.overview-button.upper>p {
+  padding-bottom: 14px;
+}
+
+.empty {
+  flex: 1;
+  color: white;
+  font-size: 22px;
+  height: 80vh;
+  position: relative;
+  border-right: solid 0.4px rgba(249, 249, 249, 0.5);
+}
+
+.overview-button>p {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  margin-bottom: 0;
+  }
+
+  .overview-button:hover {
+  cursor: pointer;
+  }
