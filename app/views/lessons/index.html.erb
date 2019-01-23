@@ -1,7 +1,40 @@
-<div style="height: 40px"></div>
+<div style="height: 50px"></div>
 <%= render 'shared/overview' %>
-<div class="packer-lesson">
-  <div class="search-lesson">
+<!-- <div class="packer-lesson">
+  </div> -->
+  <div class="main-container" id="cards-lesson">
+    <div class="card-container-lesson">
+      <% @lessons.each do |lesson| %>
+        <div class ="card-dispatch-lesson">
+          <%= link_to lesson_path(lesson) do %>
+            <div class="card-lesson">
+              <div class ="card-image-lesson"
+                   style="background-image: url(
+                    '<%= cl_image_path lesson.photo.blank? ? 'https://picsum.photos/300/300/?random' : lesson.photo %>'
+                   );">
+              </div>
+              <div class="card-content-lesson">
+                <h4><%= lesson.title %></h4>
+                <p>L'empreinte des doigts laisse l'émotion de la main sur la surface du bol.</p>
+              </div>
+              <div class="lesson-infos"></div>
+          <% end %>
+            </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="events">
+      <ul>
+        <li><h2>Event #</h2></li>
+        <li><h2>Event #</h2></li>
+        <li><h2>Event #</h2></li>
+        <li><h2>Event #</h2></li>
+      </ul>
+    </div>
+  </div>
+
+
+<!--   <div class="search-lesson">
     <div class="search-input-lesson">
       <%= form_tag lessons_path, method: :get do %>
         <%= text_field_tag :query,
@@ -23,29 +56,4 @@
         <%= link_to "Atelier découverte", lessons_path({query: "découverte"}) %>
       </div>
     </div>
-  </div>
-  <div class="main-container" id="cards-lesson">
-    <div class="card-container-lesson">
-      <% @lessons.each do |lesson| %>
-        <div class ="card-dispatch-lesson">
-          <%= link_to lesson_path(lesson) do %>
-            <div class="card-lesson">
-              <div class ="card-image-lesson"
-                   style="background-image: url(
-                    '<%= cl_image_path lesson.photo.blank? ? 'https://picsum.photos/300/300/?random' : lesson.photo %>'
-                   );">
-              </div>
-              <div class="card-content-lesson">
-
-                <h5><%= lesson.title %></h5>
-                <p class="text-right"><%= number_to_currency(lesson.total, unit: "€", separator: ",", format: "%n %u") %></p>
-              </div>
-              <p class="text-bottom">Description</p>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-    <div class="fb-event"></div>
-  </div>
-</div>
+  </div> -->

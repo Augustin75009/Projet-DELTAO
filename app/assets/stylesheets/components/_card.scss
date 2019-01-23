@@ -15,23 +15,23 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 800px) and (min-width: 0px) {
-  .card-dispatch {
-    width: 100%;
-  }
-}
+// @media only screen and (max-width: 800px) and (min-width: 0px) {
+//   .card-dispatch {
+//     width: 100%;
+//   }
+// }
 
-@media only screen and (max-width: 1100px) and (min-width: 801px) {
-  .card-dispatch {
-    width: 50%;
-  }
-}
+// @media only screen and (max-width: 1100px) and (min-width: 801px) {
+//   .card-dispatch {
+//     width: 50%;
+//   }
+// }
 
-@media only screen and (max-width: 1300px) and (min-width: 1101px) {
-  .card-dispatch {
-    width: 33%;
-  }
-}
+// @media only screen and (max-width: 1300px) and (min-width: 1101px) {
+//   .card-dispatch {
+//     width: 33%;
+//   }
+// }
 
 .card {
   margin: 14px;
@@ -44,45 +44,65 @@
   position: relative;
 }
 
+.main-container {
+  margin: 20px 40px 20px 40px;
+  display: flex;
+}
+
+.events {
+  flex: 1;
+  padding: 20px 16px 0px 16px;
+}
+
 .card-container-lesson {
+  flex: 3;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-between;
+  align-content: space-around;
   justify-content: space-around;
   z-index: 10;
-  padding: 0px 80px 20px 80px;
+  // padding: 0px 80px 20px 80px;
   background-color: transparent;
   width: 100%;
+  padding-top: 20px;
   }
 
 
 .card-dispatch-lesson {
-  width: 50%;
-  display: flex;
+  width: 370px;
+  height: 400px;
+  // display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin: 4px 4px 20px 4px;
+  // border: solid 0.5px grey;
+  background-image: url('ceramic2.jpeg');
+  background-size: cover;
+  border-radius: 4px;
+  padding: 16px;
 }
 
 .card-lesson {
-  margin: 14px;
-  height: 200px;
-  border-radius: 1%;
-  width: 260px;
-  margin: 3px;
-  opacity: 1;
-  background-size: cover;
+  // margin: 14px;
+  // height: 200px;
+  // border-radius: 1%;
+  width: 100%;
+  height: 100%;
+  margin: auto;
   position: relative;
-
+  // margin: 3px;
+  // opacity: 1;
+  // background-size: cover;
+  // position: relative;
 }
 
 .card-dash-lesson {
-  height: 200px;
-  border-radius: 1%;
-  flex: 0 0 32%;
-  margin: 3px;
-  opacity: 1;
-  background-size: cover;
-  position: relative;
+  // height: 200px;
+  // border-radius: 1%;
+  // flex: 0 0 32%;
+  // margin: 3px;
+  // opacity: 1;
+  // background-size: cover;
+  // position: relative;
 }
 
 .card-lesson:hover {
@@ -93,36 +113,77 @@
 }
 
 .card-content-lesson {
-  text-align :center;
-  border-radius:1%;
-  background-color:rgba(238, 220, 201, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 40px;
+  // text-align :center;
+  // border-radius:1%;
+  // background-color:rgba(238, 220, 201, 0.1);
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  height: 40%;
   width: 100%;
   z-index: 20;
 }
 
-.card-image-lesson {
-  height: 120px;
-  width: 100%;
-  border-top-left-radius: 1%;
-  border-top-right-radius: 1%;
-  background-size: cover;
-  display: block;
-  position: absolute;
-  background-position: bottom;
+.card-content-lesson>p {
+  color: grey;
 }
 
-.card-content-lesson h5 {
-  font-size: 16px bold !important;
+.card-image-lesson {
+  height: 60%;
+  width: 100%;
+  // border-top-left-radius: 1%;
+  // border-top-right-radius: 1%;
+  background-size: cover;
+  // display: block;
+  // position: absolute;
+  // background-position: bottom;
+  background-image: url("enfants.jpg") !important;
+}
+
+.lesson-infos {
+  background-image: url("info.svg");
+  background-size: cover;
+  height: 24px;
+  width: 24px;
   position: absolute;
-  bottom: 24px;
-  color: black !important;
-  margin: 0px !important;
-  padding: 10px 20px 10px 0px;
-  color: rgb(253, 251, 249);
+  bottom: 4px;
+  right: 4px;
+  z-index: 30;
+}
+
+// .lesson-infos.info-animation {
+//   animation: info 0.5s;
+//   animation-iteration-count: 1;
+//   animation-fill-mode: forwards;
+// }
+
+@keyframes infoUp {
+  0% {
+  }
+  100% {
+  background-image: url("info2.svg");
+  background-position-y: -24px;
+  }
+}
+
+@keyframes infoDown {
+  0% {
+  }
+  100% {
+  background-image: url("info.svg");
+  background-position-y: 24px;
+  }
+}
+
+
+.card-content-lesson h5 {
+  // font-size: 16px bold !important;
+  // position: absolute;
+  // bottom: 24px;
+  // color: black !important;
+  // margin: 0px !important;
+  // padding: 10px 20px 10px 0px;
+  // color: rgb(253, 251, 249);
 }
 
 
@@ -131,15 +192,15 @@
 }
 
 .card-infos-lesson {
-  position: absolute;
-  background-color: white;
-  margin: 25px;
-  height: 120px;
-  width: 210px !important;
-  top: 190px;
-  display: block;
-  opacity: 0;
-  border-radius: 1%;
+  // // position: absolute;
+  // background-color: white;
+  // margin: 25px;
+  // height: 120px;
+  // width: 210px !important;
+  // top: 190px;
+  // display: block;
+  // opacity: 0;
+  // border-radius: 1%;
 
 }
 
@@ -161,120 +222,120 @@
 }
 
 .card-content {
-  text-align :center;
-  border-radius:1%;
-  background-color:rgba(238, 220, 201, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 40px;
-  width: 100%;
-  z-index: 20;
+  // // text-align :center;
+  // border-radius:1%;
+  // background-color:rgba(238, 220, 201, 0.1);
+  // // display: flex;
+  // // align-items: center;
+  // justify-content: space-between;
+  // height: 40px;
+  // width: 100%;
+  // z-index: 20;
 }
 
 .card-image {
-  height: 340px;
-  width: 100%;
-  border-top-left-radius: 1%;
-  border-top-right-radius: 1%;
-  background-size: cover;
-  display: block;
-  position: absolute;
-  background-position: bottom;
+  // height: 340px;
+  // width: 100%;
+  // border-top-left-radius: 1%;
+  // border-top-right-radius: 1%;
+  // background-size: cover;
+  // display: block;
+  // position: absolute;
+  // background-position: bottom;
 }
 
 .card-content h5 {
-  font-size: 16px bold !important;
-  position: absolute;
-  bottom: 24px;
-  color: black !important;
-  margin: 0px !important;
-  padding: 10px 20px 10px 0px;
-  color: rgb(253, 251, 249);
+  // font-size: 16px bold !important;
+  // position: absolute;
+  // bottom: 24px;
+  // color: black !important;
+  // margin: 0px !important;
+  // padding: 10px 20px 10px 0px;
+  // color: rgb(253, 251, 249);
 }
 
 
 .card-deploy {
-  position: relative;
+  // position: relative;
 }
 
 .card-infos {
-  position: absolute;
-  background-color: white;
-  margin: 25px;
-  height: 120px;
-  width: 210px !important;
-  top: 190px;
-  display: block;
-  opacity: 0;
-  border-radius: 1%;
+  // position: absolute;
+  // background-color: white;
+  // margin: 25px;
+  // height: 120px;
+  // width: 210px !important;
+  // top: 190px;
+  // display: block;
+  // opacity: 0;
+  // border-radius: 1%;
 
 }
 
 p.text-age {
-  position: absolute;
-  bottom: 0px;
-  right: 10px;
-  font-size : 14px;
-  color: gray;
+  // position: absolute;
+  // bottom: 0px;
+  // right: 10px;
+  // font-size : 14px;
+  // color: gray;
 
 }
 
 p.text-gender {
-  position: absolute;
-  bottom: 0px;
-  left: 10px;
-  font-size : 14px;
-  color: gray;
+  // position: absolute;
+  // bottom: 0px;
+  // left: 10px;
+  // font-size : 14px;
+  // color: gray;
 
 }
 
 p.text-height {
-  position: absolute;
-  top: 60px;
-  left: 10px;
-  font-size : 14px;
-  color: gray;
+  // position: absolute;
+  // top: 60px;
+  // left: 10px;
+  // font-size : 14px;
+  // color: gray;
 
 }
 
 p.card-description {
-  position: absolute;
-  top: 40px;
-  left: 10px;
-  font-size : 14px;
-  color: black;
+  // position: absolute;
+  // top: 40px;
+  // left: 10px;
+  // font-size : 14px;
+  // color: black;
 
 }
 
 h5.text-name {
- padding-left: 10px;
+ // padding-left: 10px;
 }
 p.text-left {
-  position: absolute;
-  bottom: 0px;
-  left: 10px;
-  font-size : 14px;
-  color: black;
+  // position: absolute;
+  // bottom: 0px;
+  // left: 10px;
+  // font-size : 14px;
+  // color: black;
 }
 p.text-right {
-  position: absolute;
-  bottom: 0px;
-  right: 10px;
-  font-size : 16px;
-  color: black;
+  // position: absolute;
+  // bottom: 0px;
+  // right: 10px;
+  // font-size : 16px;
+  // color: black;
 }
 p.text-bottom {
-  position: absolute;
-  bottom: 0px;
-  font-size: 14px;
-  opacity: 0.8;
+  // position: absolute;
+  // bottom: 0px;
+  // font-size: 14px;
+  // opacity: 0.8;
 }
 .card-infos-status {
-  background-color: white;
-  height: auto;
-  opacity: 0.8;
-  border-radius: 1%;
-  padding: 15px;
+  // background-color: white;
+  // height: auto;
+  // opacity: 0.8;
+  // border-radius: 1%;
+  // padding: 15px;
 }
 
