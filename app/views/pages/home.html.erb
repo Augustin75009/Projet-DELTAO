@@ -1,13 +1,45 @@
 <%= render 'shared/banner' %>
-<div class="introduction">
-  <div class="introduction-img">
+<h1 class="main-title"><strong>NOS PROCHAINS EVENEMENTS</strong></h1>
+<div class="announcement">
+  <div class="left-side">
+    <% @lessons.each_with_index do |stage, index| %>
+      <% if index.even? %>
+        <% side = "left" %>
+        <div class='<%= "stage-#{side}" %>'>
+          <h3><%= stage.price_cents %></h3>
+          <p><%= stage.title %></p><button class="button-infos">En savoir +</button>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <div class="introduction-content">
-    <div class="intro-top">
-      <h2>L'empreinte et le geste</h2>
+  <div class="right-side">
+    <% @lessons.each_with_index do |stage, index| %>
+      <% if index.odd? %>
+        <% side = "right" %>
+        <div class='<%= "stage-#{side}" %>'>
+          <h3><%= stage.price_cents %></h3>
+          <p><%= stage.title %></p><button class="button-infos">En savoir +</button>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<h1 class="main-title"><strong>NOS COURS</strong></h1>
+<%= render 'shared/overview' %>
+<div class="about">
+  <div class="tessa">
+    <div class="avatar-tessa">
+      <img src="assets/tessa.jpg" alt="Tessa Guilbaub">
     </div>
-    <div class="intro-bottom">
-      <p>L'empreinte des doigts laisse l'émotion de la main sur la surface du bol. La trace du fil, laisse un signe sur la plaque déchirée. Cassure et brisure font jubiler. <br> Il est enfin possible de se laisser surprendre, d'apercevoir, en tâtonnant, un sens à l'inattendu. <br> Lancer, jeter, saupoudrer, imprimer et découvrir la trace et les effets improbables ainsi créés. Tenter de reproduire, tout au moins répéter sans pour autant retrouver, mais qu'importe, le geste est premier.</p>
+    <div class="resume">
+      <p>L'empreinte des doigts laisse l'émotion de la main sur la surface du bol. La trace du fil, laisse un signe sur la plaque déchirée.</p>
+      <hr size="30">
+      <p><strong>Tessa Guilbaud - Créatrice</strong></p>
     </div>
+  </div>
+<h1 class="main-title"><strong>A PROPOS</strong></h1>
+  <div class="pedagogy">
+    <h2>Pédagogie</h2>
+    <p>L'empreinte des doigts laisse l'émotion de la main sur la surface du bol. La trace du fil, laisse un signe sur la plaque déchirée. Cassure et brisure font jubiler. <br> Il est enfin possible de se laisser surprendre, d'apercevoir, en tâtonnant, un sens à l'inattendu.</p><a href="#"><button class="button-infos">En savoir +</button></a>
   </div>
 </div>

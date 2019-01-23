@@ -1,10 +1,11 @@
 .footer {
-  background: #F4F4F4;
+  // background: #F4F4F4;
+  background: #EBEBEB;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 170px;
-  padding: 10px 100px;
+  height: 200px;
+  padding: 10px 60px;
   color: rgba(0,0,0,0.3);
   width: 100%;
   bottom: 0;
@@ -14,7 +15,7 @@
 
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0 !important;
   }
 }

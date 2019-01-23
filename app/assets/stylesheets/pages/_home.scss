@@ -1,1 +1,228 @@
 // Specific CSS for your home-page
+
+.announcement {
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.right-side {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  flex: 1;
+  // border-left: solid 0.4px rgba(0, 0, 0, 0.5);
+}
+
+.left-side {
+  padding-bottom: 60px;
+  flex: 1;
+  // border-right: solid 0.1px black;
+}
+
+.stage-left {
+  text-align: center;
+  border-bottom: solid 0.4px rgba(0, 0, 0, 0.5);
+  border-right: solid 0.4px rgba(0, 0, 0, 0.5);
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.stage-right {
+  text-align: center;
+  border-bottom: solid 0.4px rgba(0, 0, 0, 0.5);
+  border-left: solid 0.4px rgba(0, 0, 0, 0.5);
+  margin-left: 10px;
+  margin-right: 40px;
+}
+
+.lessons-overview {
+  height: 50vh;
+  position: relative;
+  background-size: cover;
+  margin: 16px 40px 0px 40px;
+}
+
+.lessons-overview.background1 {
+  animation: addBack1 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack1 {
+  0% {
+  background-image: url("pic1.jpg");
+  }
+  100% {
+  background-image: url("pic1.jpg");
+  }
+}
+
+.lessons-overview.background2 {
+  animation: addBack2 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack2 {
+  0% {
+  background-image: url("pic2.jpg");
+  }
+  100% {
+  background-image: url("pic2.jpg");
+  }
+}
+
+.lessons-overview.background3 {
+  animation: addBack3 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack3 {
+  0% {
+  background-image: url("pic3.jpg");
+  }
+  100% {
+  background-image: url("pic3.jpg");
+  }
+}
+
+.lessons-overview.background4 {
+  animation: addBack4 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack4 {
+  0% {
+  background-image: url("pic4.jpg");
+  }
+  100% {
+  background-image: url("pic4.jpg");
+  }
+}
+
+.lessons-overview.background5 {
+  animation: addBack5 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes addBack5 {
+  0% {
+  background-image: url("pic5.jpg");
+  }
+  100% {
+  background-image: url("pic5.jpg");
+  }
+}
+
+.overview-content {
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 50%;
+  color: white;
+}
+
+.overview-content>h3 {
+  font-size: 48px;
+}
+
+.overview-content>p {
+  font-size: 20px;
+}
+
+.overview-selectors {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.overview-button {
+  flex: 1;
+  color: white;
+  font-size: 22px;
+  height: 10vh;
+  position: relative;
+  border-right: solid 0.4px rgba(249, 249, 249, 0.5);
+}
+
+.overview-button.upper {
+  border-right: solid 0.4px rgba(249, 249, 249, 1);
+}
+
+.overview-button.upper>p {
+  padding-bottom: 14px;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.empty {
+  flex: 1;
+  color: white;
+  font-size: 22px;
+  height: 10vh;
+  position: relative;
+  border-right: solid 0.4px rgba(249, 249, 249, 0.5);
+}
+
+.overview-button>p {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  margin-bottom: 0;
+  }
+
+  .overview-button:hover {
+  cursor: pointer;
+  }
+
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding: 10px 20px 0px 20px;
+}
+
+.tessa {
+  // margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding: 120px 40px;
+
+}
+
+.avatar-tessa {
+  vertical-align: center;
+  height: 100px;
+}
+
+.avatar-tessa>img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.resume {
+  padding-left: 20px;
+}
+
+.resume>hr {
+  width: 50% ;
+}
+
+.pedagogy {
+  flex: 1;
+  padding: 40px;
+  // margin: auto;
+}
+
+.pedagogy>h2 {
+  text-align: center;
+}

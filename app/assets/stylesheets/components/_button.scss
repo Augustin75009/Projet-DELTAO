@@ -44,3 +44,39 @@
   text-decoration: none;
   letter-spacing: .1rem;
 }
+
+.button-infos {
+  text-decoration: none;
+  border: none;
+  height: 28px;
+  width: 88px;
+  // padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.42857;
+  font-weight: lighter;
+  color: black;
+  background-color: transparent;
+  border-radius: 1%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  text-decoration: none;
+  letter-spacing: .1rem;
+}
+
+.button-infos:hover {
+  text-decoration: none;
+  border: none;
+  height: 28px;
+  width: 88px;
+  // padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.42857;
+  font-weight: lighter;
+  color: white;
+  background-color: rgba(202, 120, 103, 0.8);
+  border-radius: 1%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  text-decoration: none;
+  letter-spacing: .1rem;
+}
