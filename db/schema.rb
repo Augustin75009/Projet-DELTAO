@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_01_24_121345) do
     t.string "photo"
     t.integer "price_cents", default: 0, null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "updated_at", nurailll: false
     t.string "category"
     t.boolean "adult"
     t.boolean "child"

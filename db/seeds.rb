@@ -8,74 +8,14 @@ diane = User.create!(first_name: "Diane", email: 'diane@gmail.com', password: 'd
 augustin = User.create!(first_name: "Augustin", email: 'augustin@gmail.com', password: 'augustin')
 
 # Products ------------------------------------------------------------------------------
-puts 'Creating Products'
-
-product1 = Product.create!(
-  name: 'Bol à Thé',
-  description: "Faïence pincée, jetés et superpositions d'émail",
-  price_cents: 20000,
-  quantity: 10,
-  category: 'A table'
-)
-
-product1.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.11.png"
-product1.save!
-
-product2 = Product.create!(
-  name: 'Bol ',
-  description: "Faïence pincée, jetés et superpositions d'émail",
-  price_cents: 20000,
-  quantity: 5,
-  category: 'A table'
-)
-
-product2.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.36.png"
-product2.save!
-
-product3 = Product.create!(
-  name: 'Vase',
-  description: "Faïence pincée, jetés et superpositions d'émail",
-  price_cents: 20000,
-  quantity: 3,
-  category: 'Maison'
-)
-
-product3.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.58.png"
-product3.save!
-
-product4 = Product.create!(
-  name: 'Plateau',
-  description: "Faïence pincée, jetés et superpositions d'émail",
-  price_cents: 20000,
-  quantity: 2,
-  category: 'A table'
-)
-
-product4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
-product4.save!
-
-product5 = Product.create!(
-  name: 'Plateau',
-  description: "Faïence pincée, jetés et superpositions d'émail",
-  price_cents: 20000,
-  quantity: 2,
-  category: 'A table'
-)
-
-product5.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
-product5.save!
-
-product6 = Product.create!(
-  name: 'Plateau',
-  description: "Faïence pincée, jetés et superpositions d'émail",
-  price_cents: 20000,
-  quantity: 2,
-  category: 'A table'
-)
-
-product6.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
-product6.save!
-
+#
+adult: false
+,
+child: true,
+phone_booking: false,
+payable: false,
+online_booking: false,
+gift_card: false
 # Lessons -------------------------------------------------------------------------------
 puts 'Creating Lessons'
 
@@ -85,7 +25,13 @@ lesson1 = Lesson.create!(
   description: "Par groupe de 5 ou 6, les enfants déploient leur créativité à travers différents thèmes et situations de modelages proposés : l'animal de mes rêves, le bol animé, auto-portrait....",
   price_cents: 20000,
   quantity: 2,
-  category: 'Atelier enfant'
+  category: 'Atelier enfant',
+  adult: false,
+  child: true,
+  phone_booking: true,
+  payable: true,
+  online_booking: true,
+  gift_card: true
 )
 
 lesson1.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -96,7 +42,13 @@ lesson2 = Lesson.create!(
   description: "Enfants solo ou en famille, 1h30 d'ateliers pour modeler son imaginaire.",
   price_cents: 20000,
   quantity: 2,
-  category: 'Atelier enfant & adulte'
+  category: 'Atelier enfant & adulte',
+  adult: true,
+  child: true,
+  phone_booking: false,
+  payable: true,
+  online_booking: false,
+  gift_card: false
 )
 
 lesson2.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -108,7 +60,13 @@ lesson3 = Lesson.create!(
                 Vous choisissez la "situation créative" que vous souhaitez : ',
   price_cents: 20000,
   quantity: 2,
-  category: 'Atelier enfant'
+  category: 'Atelier enfant',
+  adult: false,
+  child: true,
+  phone_booking: false,
+  payable: false,
+  online_booking: false,
+  gift_card: false
 )
 
 lesson3.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -120,7 +78,13 @@ lesson4 = Lesson.create!(
                 Tous les niveaux sont les bienvenus, de l\'expérimenté au débutant. Dans tous les cas vous découvrirez comment reperer le fil rouge de votre style créatif.',
   price_cents: 20000,
   quantity: 2,
-  category: 'Atelier enfant'
+  category: 'Atelier enfant',
+  adult: false,
+  child: true,
+  phone_booking: false,
+  payable: false,
+  online_booking: false,
+  gift_card: false
 )
 
 lesson4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
