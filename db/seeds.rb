@@ -1,7 +1,7 @@
+Purchase.destroy_all
 Cart.destroy_all
 User.destroy_all
 Product.destroy_all
-Purchase.destroy_all
 puts 'Creating Users'
 
 diane = User.create!(first_name: "Diane", email: 'diane@gmail.com', password: 'dianejr')
