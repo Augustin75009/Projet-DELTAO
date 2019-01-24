@@ -9,6 +9,14 @@
 $body-font: 'Playfair Display', serif;
 $headers-font: 'Playfair Display', serif;
 
+pre {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 17px;
+  border: none !important;
+  overflow: visible;
+  white-space: pre-line;
+}
+
 
 // akzidenz-grotesk-pro,Sans-Serif;
 

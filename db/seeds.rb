@@ -26,9 +26,9 @@ lesson1 = Lesson.create!(
   online_booking: false,
   gift_card: false,
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
-  pricing: "60€ par binôme, 20€ par enfant supplémentaire<br>
-95€ les 2 séances dont une séance émaillage.<br><br>
-Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.<br><br>
+  pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
+95€ les 2 séances dont une séance émaillage.\n
+Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.\n
 Terre et cuissons comprises."
 )
 
@@ -48,9 +48,9 @@ lesson2 = Lesson.create!(
   online_booking: false,
   gift_card: false,
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
-  pricing: "60€ par binôme, 20€ par enfant supplémentaire<br>
-95€ les 2 séances dont une séance émaillage.<br><br>
-Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.<br><br>
+  pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
+95€ les 2 séances dont une séance émaillage.\n
+Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.\n
 Terre et cuissons comprises."
 )
 
@@ -71,9 +71,9 @@ lesson3 = Lesson.create!(
   online_booking: false,
   gift_card: false,
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
-  pricing: "60€ par binôme, 20€ par enfant supplémentaire<br>
-95€ les 2 séances dont une séance émaillage.<br><br>
-Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.<br><br>
+  pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
+95€ les 2 séances dont une séance émaillage.\n
+Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.\n
 Terre et cuissons comprises."
 )
 
@@ -94,9 +94,9 @@ lesson4 = Lesson.create!(
   online_booking: true,
   gift_card: true,
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
-  pricing: "60€ par binôme, 20€ par enfant supplémentaire<br>
-95€ les 2 séances dont une séance émaillage.<br><br>
-Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.<br><br>
+  pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
+95€ les 2 séances dont une séance émaillage.\n
+Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.\n
 Terre et cuissons comprises."
 )
 

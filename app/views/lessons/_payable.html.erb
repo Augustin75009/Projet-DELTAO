@@ -1,9 +1,9 @@
 <div class="cart">
-    <%= simple_form_for @lesson do |f|%>
   <div class="quantity">
+    <%= simple_form_for @lesson do |f|%>
     <input type="number" max='<%= @lesson.quantity %>' min="1" step="1" value="1">
-  </div>
   <% end %>
+  </div>
   <div class="button">
     <%= link_to cart_items_path(lesson: @lesson.id), method: :post, remote: false do %>
       <button class="button-show">Ajouter au panier</button>
