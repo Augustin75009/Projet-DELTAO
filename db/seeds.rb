@@ -24,7 +24,8 @@ lesson1 = Lesson.create!(
   phone_booking: true,
   payable: false,
   online_booking: false,
-  gift_card: false
+  gift_card: false,
+  card_description: "Hello, je suis la description qui apparaitra sur la carte"
 )
 
 lesson1.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -41,7 +42,8 @@ lesson2 = Lesson.create!(
   phone_booking: false,
   payable: true,
   online_booking: false,
-  gift_card: false
+  gift_card: false,
+  card_description: "Hello, je suis la description qui apparaitra sur la carte"
 )
 
 lesson2.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -59,7 +61,8 @@ lesson3 = Lesson.create!(
   phone_booking: true,
   payable: false,
   online_booking: false,
-  gift_card: false
+  gift_card: false,
+  card_description: "Hello, je suis la description qui apparaitra sur la carte"
 )
 
 lesson3.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -77,7 +80,8 @@ lesson4 = Lesson.create!(
   phone_booking: false,
   payable: true,
   online_booking: true,
-  gift_card: true
+  gift_card: true,
+  card_description: "Hello, je suis la description qui apparaitra sur la carte"
 )
 
 lesson4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"

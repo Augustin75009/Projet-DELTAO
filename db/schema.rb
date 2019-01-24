@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_24_121345) do
+ActiveRecord::Schema.define(version: 2019_01_24_124843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_01_24_121345) do
     t.string "photo"
     t.integer "price_cents", default: 0, null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", nurailll: false
+    t.datetime "updated_at"
     t.string "category"
     t.boolean "adult"
     t.boolean "child"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_01_24_121345) do
     t.boolean "payable"
     t.boolean "online_booking"
     t.boolean "gift_card"
+    t.text "card_description"
   end
 
   create_table "products", force: :cascade do |t|
