@@ -9,13 +9,6 @@ augustin = User.create!(first_name: "Augustin", email: 'augustin@gmail.com', pas
 
 # Products ------------------------------------------------------------------------------
 #
-adult: false
-,
-child: true,
-phone_booking: false,
-payable: false,
-online_booking: false,
-gift_card: false
 # Lessons -------------------------------------------------------------------------------
 puts 'Creating Lessons'
 
