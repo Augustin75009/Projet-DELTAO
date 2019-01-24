@@ -121,8 +121,8 @@ event1.save!
 event2 = Event.create!(
   title: 'Vente à la Boutique',
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
-  start_date: "Thu, 4 Fev 2019 16:50:20 +0100",
-  end_date: "Thu, 5 Fev 2019 16:50:20 +0100",
+  start_date: "Thu, 4 Feb 2019 16:50:20 +0100",
+  end_date: "Thu, 5 Feb 2019 16:50:20 +0100",
   photo: 'Pas de photo',
   location: 'Paris, France'
 )
@@ -132,8 +132,8 @@ event2.save!
 event3 = Event.create!(
   title: 'Stage de Pâque',
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
-  start_date: "Thu, 8 Fev 2019 16:50:20 +0100",
-  end_date: "Thu, 8 Fev 2019 18:50:20 +0100",
+  start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
+  end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
   photo: 'Pas de photo',
   location: 'Paris, France'
 )
@@ -143,8 +143,8 @@ event3.save!
 event4 = Event.create!(
   title: 'Stage enfants',
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
-  start_date: "Thu, 8 Fev 2019 16:50:20 +0100",
-  end_date: "Thu, 8 Fev 2019 18:50:20 +0100",
+  start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
+  end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
   photo: 'Pas de photo',
   location: 'Paris, France'
 )
