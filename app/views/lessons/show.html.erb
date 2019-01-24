@@ -39,4 +39,24 @@
       </div>
     </div>
   </div>
+  <div class="more-infos">
+     <ul class="infos-list">
+        <li><%= link_to "Description", lesson_path({tab: "description"}), remote: false %></li>
+        <li><%= link_to "Horaires", lesson_path({tab: "horaires"}), remote: false %></li>
+        <li><%= link_to "Réglement", lesson_path({tab: "reglement"}), remote: false %></li>
+        <li><%= link_to "Avis", lesson_path({tab: "avis"}), remote: false %></li>
+      </ul>
+      <% case params[:tab] %>
+      <% when "description" %>
+        <%= render 'lessons/description' %>
+      <% when "horaires" %>
+        <%= render 'lessons/horaires' %>
+      <% when "reglement" %>
+        <%= render 'lessons/reglement' %>
+      <% when "avis" %>
+        <%= render 'lessons/avis' %>
+      <% end %>
+  </div>
 </div>
+
+<!-- link_to "Avis", deliveries_path({period: "recent"}) -->

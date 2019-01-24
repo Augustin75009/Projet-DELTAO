@@ -1,5 +1,4 @@
 const cards = document.querySelectorAll('.card-dispatch-lesson');
-// const info = document.querySelector('.lesson-infos');
 
 const infoAnimation = () => {
  cards.forEach((card) => {
