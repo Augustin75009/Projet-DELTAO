@@ -24,18 +24,13 @@
         <div class="price-show">
           <%= number_to_currency(@lesson.total, unit: "€", separator: ",", format: "%n %u") %>
         </div>
-        <div class="cart">
-            <%= simple_form_for @lesson do |f|%>
-          <div class="quantity">
-            <input type="number" max='<%= @lesson.quantity %>' min="1" step="1" value="1">
-          </div>
-          <% end %>
-          <div class="button">
-            <%= link_to cart_items_path(lesson: @lesson.id), method: :post, remote: false do %>
-              <button class="button-show">Ajouter au panier</button>
-            <% end %>
-          </div>
-        </div>
+      <% if @lesson.payable %>
+        <%= render "lessons/payable" %>
+      <% elsif @lesson.online_booking %>
+        <%= render "lessons/online-booking" %>
+      <% else @lesson.online_booking %>
+        <%= render "lessons/phone-booking" %>
+      <% end %>
       </div>
     </div>
   </div>

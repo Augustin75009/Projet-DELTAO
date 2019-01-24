@@ -25,7 +25,11 @@ lesson1 = Lesson.create!(
   payable: false,
   online_booking: false,
   gift_card: false,
-  card_description: "Hello, je suis la description qui apparaitra sur la carte"
+  card_description: "Hello, je suis la description qui apparaitra sur la carte",
+  pricing: "60€ par binôme, 20€ par enfant supplémentaire<br>
+95€ les 2 séances dont une séance émaillage.<br><br>
+Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.<br><br>
+Terre et cuissons comprises."
 )
 
 lesson1.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -43,7 +47,11 @@ lesson2 = Lesson.create!(
   payable: true,
   online_booking: false,
   gift_card: false,
-  card_description: "Hello, je suis la description qui apparaitra sur la carte"
+  card_description: "Hello, je suis la description qui apparaitra sur la carte",
+  pricing: "60€ par binôme, 20€ par enfant supplémentaire<br>
+95€ les 2 séances dont une séance émaillage.<br><br>
+Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.<br><br>
+Terre et cuissons comprises."
 )
 
 lesson2.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -62,7 +70,11 @@ lesson3 = Lesson.create!(
   payable: false,
   online_booking: false,
   gift_card: false,
-  card_description: "Hello, je suis la description qui apparaitra sur la carte"
+  card_description: "Hello, je suis la description qui apparaitra sur la carte",
+  pricing: "60€ par binôme, 20€ par enfant supplémentaire<br>
+95€ les 2 séances dont une séance émaillage.<br><br>
+Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.<br><br>
+Terre et cuissons comprises."
 )
 
 lesson3.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
@@ -81,7 +93,11 @@ lesson4 = Lesson.create!(
   payable: true,
   online_booking: true,
   gift_card: true,
-  card_description: "Hello, je suis la description qui apparaitra sur la carte"
+  card_description: "Hello, je suis la description qui apparaitra sur la carte",
+  pricing: "60€ par binôme, 20€ par enfant supplémentaire<br>
+95€ les 2 séances dont une séance émaillage.<br><br>
+Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la séance, 140€ les 2 séances. 20€ pour un enfant supplémentaire.<br><br>
+Terre et cuissons comprises."
 )
 
 lesson4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"

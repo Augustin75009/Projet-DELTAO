@@ -1,0 +1,12 @@
+<<div class="cart">
+    <%= simple_form_for @lesson do |f|%>
+  <div class="quantity">
+    <input type="number" max='<%= @lesson.quantity %>' min="1" step="1" value="1">
+  </div>
+  <% end %>
+  <div class="button">
+    <%= link_to cart_items_path(lesson: @lesson.id), method: :post, remote: false do %>
+      <button class="button-show">Reserver en ligne</button>
+    <% end %>
+  </div>
+</div>
