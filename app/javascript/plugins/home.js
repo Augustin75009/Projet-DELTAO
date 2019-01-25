@@ -21,31 +21,31 @@ const selectLesson = () => {
     if (course === "Cours enfants"){
       background.classList.add('background1');
       button.classList.add('upper');
-      content.appendChild(content.childNodes[1])
+      // content.appendChild(content.childNodes[1])
       content.childNodes[1].innerHTML = "<h3>Cours #1</h3><p>Description du cours .... ....... .... ......</p>"
     }
     if (course === "Cours adultes") {
       background.classList.add('background2');
       button.classList.add('upper');
-      content.appendChild(content.childNodes[1])
+      // content.appendChild(content.childNodes[1])
       content.childNodes[1].innerHTML = "<h3>Cours #2</h3><p>Description du cours .... ....... .... ......</p>"
     }
     if (course === "Découverte") {
       background.classList.add('background3');
       button.classList.add('upper');
-      content.appendChild(content.childNodes[1])
+      // content.appendChild(content.childNodes[1])
       content.childNodes[1].innerHTML = "<h3>Cours #3</h3><p>Description du cours .... ....... .... ......</p>"
     }
     if (course === "Atelier libre") {
       background.classList.add('background4');
       button.classList.add('upper');
-      content.appendChild(content.childNodes[1])
+      // content.appendChild(content.childNodes[1])
       content.childNodes[1].innerHTML = "<h3>Cours #4</h3><p>Description du cours .... ....... .... ......</p>"
     }
     if (course === "Spéciaux*") {
       background.classList.add('background5');
       button.classList.add('upper');
-      content.appendChild(content.childNodes[1])
+      // content.appendChild(content.childNodes[1])
       content.childNodes[1].innerHTML = "<h3>Cours #5</h3><p>Description du cours .... ....... .... ......</p>"
     }
     });
