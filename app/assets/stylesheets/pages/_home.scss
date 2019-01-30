@@ -1,39 +1,27 @@
 // Specific CSS for your home-page
 
 .announcement {
-  position: relative;
+  // position: relative;
   margin-top: 16px;
   margin-bottom: 16px;
-  display: flex;
+  justify-content: center;
 }
 
-.right-side {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  flex: 1;
-  // border-left: solid 0.4px rgba(0, 0, 0, 0.5);
-}
-
-.left-side {
-  padding-bottom: 60px;
-  flex: 1;
-  // border-right: solid 0.1px black;
-}
-
-.stage-left {
+.announcement-wrapper {
+  background-color: #cecece;
+  margin: 0px 40px 0px 40px;
   text-align: center;
-  border-bottom: solid 0.4px rgba(0, 0, 0, 0.5);
-  border-right: solid 0.4px rgba(0, 0, 0, 0.5);
-  margin-right: 10px;
-  margin-left: 40px;
 }
 
-.stage-right {
-  text-align: center;
-  border-bottom: solid 0.4px rgba(0, 0, 0, 0.5);
-  border-left: solid 0.4px rgba(0, 0, 0, 0.5);
-  margin-left: 10px;
-  margin-right: 40px;
+.stage {
+  width: 300px;
+  display: inline-block;
+  padding: 10px;
+
+  img{
+    height: 200px;
+    width: 280px;
+  }
 }
 
 .lessons-overview {

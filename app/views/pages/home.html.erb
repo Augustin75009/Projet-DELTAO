@@ -1,27 +1,18 @@
 <%= render 'shared/banner' %>
 <h1 class="main-title"><strong>NOS PROCHAINS EVENEMENTS</strong></h1>
 <div class="announcement">
-  <div class="left-side">
-    <% Event.all.each_with_index do |stage, index| %>
-      <% if index.even? %>
-        <% side = "left" %>
-        <div class='<%= "stage-#{side}" %>'>
-          <h3><%= stage.title %></h3>
-          <p><%= stage.start_date.strftime("%F")%></p><button class="button-infos">En savoir +</button>
-        </div>
+  <div class="announcement-wrapper">
+    <div class="left-side">
+      <% Event.all.take(3).each_with_index do |stage, index| %>
+          <ul class="stage">
+            <li>
+            <img src="assets/enfants.jpg" alt="">
+            <h3><%= stage.title %></h3>
+            <p><%= stage.start_date.strftime("%F")%></p><button class="button-infos">En savoir +</button>
+            </li>
+          </ul>
       <% end %>
-    <% end %>
-  </div>
-  <div class="right-side">
-    <% Event.all.each_with_index do |stage, index| %>
-      <% if index.odd? %>
-        <% side = "right" %>
-        <div class='<%= "stage-#{side}" %>'>
-          <h3><%= stage.title %></h3>
-          <p><%= stage.start_date.strftime("%F") %></p><button class="button-infos">En savoir +</button>
-        </div>
-      <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
 <h1 class="main-title"><strong>NOS COURS</strong></h1>
