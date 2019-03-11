@@ -1,0 +1,2 @@
+class Teaching < ApplicationRecord
+end
