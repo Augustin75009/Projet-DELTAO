@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-    before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query].present?
@@ -44,9 +44,8 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:name, :description, :price_cents, :photo, :quantity)
+    params.require(:lesson).permit(:title, :description, :price_cents, :photo, :quantity, :category, :adult, :child, :phone_booking, :payable, :online_booking, :gift_card, :card_description)
   end
-
 
   def set_lesson
     @lesson = Lesson.find(params[:id])
