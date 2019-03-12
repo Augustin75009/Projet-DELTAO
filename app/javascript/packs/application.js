@@ -4,10 +4,12 @@ import { updateQuantityUp } from '../plugins/narrow';
 // import {} from '../plugins/show';
 import {selectLesson} from '../plugins/home';
 import {infoAnimation} from '../plugins/card';
+import {eventSticked} from '../plugins/eventSticked';
 import {phoneNumber} from '../plugins/phoneNumber';
 
 initSlick();
 // updateQuantityUp();
 selectLesson();
 infoAnimation();
-phoneNumber();
+// eventSticked();
+// phoneNumber();

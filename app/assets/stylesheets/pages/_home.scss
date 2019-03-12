@@ -15,12 +15,17 @@
 
 .stage {
   width: 300px;
-  display: inline-block;
+  display: inline-flex;
   padding: 10px;
+  justify-content: space-around;
 
   img{
     height: 200px;
     width: 280px;
+  }
+  li {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -28,7 +33,7 @@
   height: 50vh;
   position: relative;
   background-size: cover;
-  margin: 16px 40px 0px 40px;
+  margin: 8px 40px 0px 40px;
 }
 
 .lessons-overview.background1 {
@@ -39,10 +44,10 @@
 
 @keyframes addBack1 {
   0% {
-  background-image: url("pic1.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic1.jpg");
   }
   100% {
-  background-image: url("pic1.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic1.jpg");
   }
 }
 
@@ -54,10 +59,10 @@
 
 @keyframes addBack2 {
   0% {
-  background-image: url("pic2.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic2.jpg");
   }
   100% {
-  background-image: url("pic2.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic2.jpg");
   }
 }
 
@@ -69,10 +74,10 @@
 
 @keyframes addBack3 {
   0% {
-  background-image: url("pic3.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic3.jpg");
   }
   100% {
-  background-image: url("pic3.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic3.jpg");
   }
 }
 
@@ -84,10 +89,10 @@
 
 @keyframes addBack4 {
   0% {
-  background-image: url("pic4.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic4.jpg");
   }
   100% {
-  background-image: url("pic4.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic4.jpg");
   }
 }
 
@@ -99,10 +104,10 @@
 
 @keyframes addBack5 {
   0% {
-  background-image: url("pic5.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic5.jpg");
   }
   100% {
-  background-image: url("pic5.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url("pic5.jpg");
   }
 }
 
@@ -145,6 +150,7 @@
   padding-bottom: 14px;
   font-size: 24px;
   text-decoration: underline;
+  font-weight: 600;
 }
 
 .empty {
@@ -183,6 +189,7 @@
   flex-direction: row;
   flex: 1;
   padding: 120px 40px;
+  margin-top: 50px;
 
 }
 
@@ -208,6 +215,7 @@
 .pedagogy {
   flex: 1;
   padding: 40px;
+  margin-top: 50px;
   // margin: auto;
 }
 

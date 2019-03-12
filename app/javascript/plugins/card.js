@@ -12,4 +12,5 @@ const infoAnimation = () => {
   });
 }
 
+
 export {infoAnimation}

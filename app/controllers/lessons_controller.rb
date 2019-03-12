@@ -11,12 +11,6 @@ class LessonsController < ApplicationController
   end
 
   def show
-    # if params[:tab].present?
-    #    respond_to do |format|
-    #     format.html { redirect_to lesson_path }
-    #     format.js
-    #   end
-    # end
   end
 
   def new

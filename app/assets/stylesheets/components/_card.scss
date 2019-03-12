@@ -52,6 +52,18 @@
 .events {
   flex: 1;
   padding: 20px 16px 0px 16px;
+  text-align: -webkit-center;
+  ul {
+    padding: 0;
+  }
+  h3 {
+    margin-top: 2px;
+  }
+  max-height: 80vh;
+}
+
+.events.sticked {
+  position: relative;
 }
 
 .card-container-lesson {

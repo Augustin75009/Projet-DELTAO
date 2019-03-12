@@ -22,31 +22,36 @@ const selectLesson = () => {
       background.classList.add('background1');
       button.classList.add('upper');
       // content.appendChild(content.childNodes[1])
-      content.childNodes[1].innerHTML = "<h3>Cours #1</h3><p>Description du cours .... ....... .... ......</p>"
+      content.childNodes[1].innerHTML =
+      "<h3>Cours enfants</h3><p>Description du cours .... ....... .... ......</p><a href='/lessons'><button class='button-infos overview'>En savoir +</button></a>"
     }
     if (course === "Cours adultes") {
       background.classList.add('background2');
       button.classList.add('upper');
       // content.appendChild(content.childNodes[1])
-      content.childNodes[1].innerHTML = "<h3>Cours #2</h3><p>Description du cours .... ....... .... ......</p>"
+      content.childNodes[1].innerHTML =
+      "<h3>Cours adultes</h3><p>Description du cours .... ....... .... ......</p><a href='/lessons'><button class='button-infos overview'>En savoir +</button></a>"
     }
     if (course === "Découverte") {
       background.classList.add('background3');
       button.classList.add('upper');
       // content.appendChild(content.childNodes[1])
-      content.childNodes[1].innerHTML = "<h3>Cours #3</h3><p>Description du cours .... ....... .... ......</p>"
+      content.childNodes[1].innerHTML =
+      "<h3>Cours découverte</h3><p>Description du cours .... ....... .... ......</p><a href='/lessons'><button class='button-infos overview'>En savoir +</button></a>"
     }
     if (course === "Atelier libre") {
       background.classList.add('background4');
       button.classList.add('upper');
       // content.appendChild(content.childNodes[1])
-      content.childNodes[1].innerHTML = "<h3>Cours #4</h3><p>Description du cours .... ....... .... ......</p>"
+      content.childNodes[1].innerHTML =
+      "<h3>Atleier libre</h3><p>Description du cours .... ....... .... ......</p><a href='/lessons'><button class='button-infos overview'>En savoir +</button></a>"
     }
     if (course === "Spéciaux*") {
       background.classList.add('background5');
       button.classList.add('upper');
       // content.appendChild(content.childNodes[1])
-      content.childNodes[1].innerHTML = "<h3>Cours #5</h3><p>Description du cours .... ....... .... ......</p>"
+      content.childNodes[1].innerHTML =
+      "<h3>Cours sur mesure</h3><p>Description du cours .... ....... .... ......</p><a href='/lessons'><button class='button-infos overview'>En savoir +</button></a>"
     }
     });
   });

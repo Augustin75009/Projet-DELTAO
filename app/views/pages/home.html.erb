@@ -3,15 +3,18 @@
 <div class="announcement">
   <div class="announcement-wrapper">
     <div class="left-side">
-      <% Event.all.take(3).each_with_index do |stage, index| %>
-          <ul class="stage">
-            <li>
+      <ul class="stage">
+        <% Event.all.take(3).each_with_index do |stage, index| %>
+          <li>
             <img src="assets/enfants.jpg" alt="">
             <h3><%= stage.title %></h3>
-            <p><%= stage.start_date.strftime("%F")%></p><button class="button-infos">En savoir +</button>
-            </li>
-          </ul>
-      <% end %>
+            <h4><%= stage.start_date.strftime("%m/%d/%Y")%></h4>
+            <%= link_to teachings_path do %>
+              <button class="button-infos">En savoir +</button>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
@@ -34,7 +37,7 @@
     <p>L'empreinte des doigts laisse l'émotion de la main sur la surface du bol. La trace du fil, laisse un signe sur la plaque déchirée. Cassure et brisure font jubiler. <br> Il est enfin possible de se laisser surprendre, d'apercevoir, en tâtonnant, un sens à l'inattendu.</p>
     <!-- <a href="#"><button class="button-infos">En savoir +</button></a> -->
     <%= link_to teachings_path do %>
-        <button class="button-infos">En savoir +</button>
-      <% end %>
+      <button class="button-infos">En savoir +</button>
+    <% end %>
   </div>
 </div>

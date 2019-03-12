@@ -1,0 +1,15 @@
+<% @teachings.each do |teaching| %>
+  <div class ="card-dispatch-teaching" style="margin-top: 100px;">
+    <%= link_to teaching_path(teaching) do %>
+      <div class="card-teaching">
+        <div class ="card-image-teaching">
+        </div>
+        <div class="card-content-teaching">
+          <h4><%= teaching.title %></h4>
+          <h4><%= teaching.content %></h4>
+        </div>
+        <div class="teaching-infos"></div>
+    <% end %>
+      </div>
+  </div>
+<% end %>

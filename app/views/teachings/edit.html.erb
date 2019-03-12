@@ -1,0 +1,13 @@
+<div class="form-container">
+  <div class="product-form">
+    <%= simple_form_for(@teaching) do |f| %>
+      <%= f.input :title, label: 'Titre' %>
+      <%= f.input :header, label: 'Sous-titre' %>
+      <%= f.input :content, label: 'Contenu' %>
+      <br>
+      <div class="button-container">
+        <%= f.submit "+ Mettre à jour cette pédagogie", class: "btn btn-size" %>
+      </div>
+    <% end %>
+  </div>
+</div>

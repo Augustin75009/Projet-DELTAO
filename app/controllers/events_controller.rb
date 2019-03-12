@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    redirect_to event_path(@event)
+    redirect_to eventS_path
   end
 
   def destroy
@@ -32,6 +32,6 @@ class EventsController < ApplicationController
   end
 
   def set_event
-    @event = Lesson.find(params[:id])
+    @event = Event.find(params[:id])
   end
 end

@@ -24,7 +24,7 @@
       <% end %>
     </div>
     <div class="events">
-      <h2>Evenement à venir</h2>
+      <h3>Evenement à venir</h3>
       <ul>
         <% @events.sort_by {|a| a.start_date}.take(4).each do |event| %>
           <li>
@@ -34,7 +34,7 @@
         <% end %>
       </ul>
       <%= link_to events_path do %>
-        <button>Tout voir</button>
+        <button class="button-infos">Tout voir</button>
       <% end %>
     </div>
   </div>
