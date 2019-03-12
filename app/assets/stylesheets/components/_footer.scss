@@ -4,7 +4,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 200px;
+  min-height: 200px;
   padding: 10px 60px;
   color: rgba(0,0,0,0.3);
   width: 100%;
@@ -34,6 +34,14 @@
   color: rgba(0,0,0,0.3) !important;
 
 }
+
+  .footer-contact {
+    text-align: -webkit-right;
+  }
+
+  .footer-location, .footer-menu {
+    text-align: -webkit-center;
+  }
 
 .footer-location {
   width: 25%;

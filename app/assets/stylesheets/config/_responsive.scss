@@ -1,0 +1,291 @@
+@media (max-width: 1026px) and (min-width: 1023px) and (max-height: 1367px) and (min-height: 1365px) {
+
+  .banner {
+    height: 30vh !important;
+  }
+
+  .lessons-overview {
+    height: 30vh !important;
+  }
+
+  .show-container {
+    min-height: 30vh !important;
+    padding: 0px 20px 20px 20px !important;
+  }
+
+  .product-container {
+    min-height: 10vh !important;
+    height: 30vh !important;
+  }
+
+  .root-show {
+    padding: 20px 0px 0px 20px !important;
+  }
+
+  .more-infos {
+    min-height: 43vh !important;
+  }
+
+  .cart_item-container {
+    min-height: 78vh !important;
+  }
+
+  .card-dispatch-lesson {
+    width: 340px !important;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .logo__link {
+    display: inline-block;
+    font-size: 22px !important;
+  }
+
+  .burger-phone {
+    display: block !important;
+    padding-left: 24px !important;
+    padding-right: 10px !important;
+    margin-top: 0 !important;
+  }
+
+  .open > .dropdown-menu > li > a {
+    background: #cecece63;
+  }
+
+  #header{
+    justify-content: space-between;
+  }
+
+
+  #header-menu{
+    // margin-right: 10px !important;
+  }
+
+
+  .logo__link {
+    display: inline-block;
+    font-size: 17px !important;
+  }
+
+  .logo {
+  }
+
+  .menu {
+    display: none !important;
+  }
+
+  .main-title {
+    font-size: 30px !important;
+  }
+
+  .banner {
+    height: 40vh !important;
+  }
+
+  .announcement {
+  }
+
+  .announcement-wrapper {
+    overflow: scroll;
+    margin: 0px !important;
+    text-align: end !important;
+    background-color: #cecece63 !important;
+  }
+
+  .stage {
+    justify-content: none !important;
+    text-align: center !important;
+  }
+
+  .lessons-overview {
+    margin: 0px !important;
+    height: 50vh !important;
+  }
+
+  .overview-selectors {
+    overflow: scroll;
+  }
+
+  .overview-button > p {
+    font-size: 16px !important;
+  }
+
+  .overview-button {
+    min-width: 120px !important;
+  }
+
+  .overview-content {
+    padding-top: 8px !important;
+    padding-left: 8px !important;
+    padding-right: 0 !important;
+  }
+
+  .content-switch > h3 {
+    margin: 0 !important
+  }
+
+  .empty {
+    flex: 0 !important;
+  }
+
+  .about {
+    flex-direction: column-reverse !important;
+    .main-title {
+      display: none;
+    }
+  }
+
+  .pedagogy {
+    margin-top: 10px !important;
+    padding: 0 !important;
+  }
+
+  .tessa {
+    padding: 0px !important;
+    margin-top: 50px !important;
+    margin-bottom: 20px !important;
+  }
+
+
+  .avatar-tessa > img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .footer {
+    padding: 10px 10px !important;
+
+    div > p, h5 {
+      font-size: 10px !important;
+    }
+    div > a > p {
+      font-size: 10px !important;
+    }
+  }
+
+  .footer-contact {
+    text-align: -webkit-right;
+  }
+
+  .footer-location, .footer-menu {
+    text-align: -webkit-center;
+  }
+
+
+
+  .main-container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  .events {
+    width: 100% !important;
+    padding: 0 !important;
+
+    .slider {
+      width: 100% !important;
+      overflow: scroll !important;
+    }
+
+    ul {
+      display: inline-flex !important;
+      // overflow: scroll !important;
+
+      li {
+        width: 140px !important;
+        margin: 0px 5px !important;
+        border: solid 0.1px #cecece63;
+
+        p {
+          // margin: 0 !important;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1150px) {
+  // .logo__link {
+  // display: inline-block;
+  // font-size: 22px;
+  // }
+}
+
+@media (max-width: 1130px) {
+  .lessons-overview {
+    height: 50vh;
+    position: relative;
+    background-size: cover;
+    margin: 16px 0px 0px 0px;
+  }
+
+  .main-container {
+    margin: 16px 0px 0px 0px;
+  }
+
+  .card-dispatch-lesson {
+  }
+}
+
+@media (max-width: 1100px) {
+  .packer {
+    margin-top: 100px;
+  }
+  .product-container {
+    height: 80vh;
+    padding-top: 30px;
+    width: 90%;
+  }
+  .button-show, .button-show-phone {
+    font-size: 13px;
+  }
+  .show-container {
+    padding: 0px 20px 20px 20px;
+    margin-top: 110px
+  }
+}
+
+@media (max-width: 990px) {
+    .card-dispatch-lesson {
+    transform: scale(0.85)
+  }
+}
+
+
+@media (max-width: 980px) {
+    .card-dispatch-lesson {
+    transform: scale(1)
+  }
+}
+
