@@ -1,0 +1,18 @@
+<% @events.each do |event| %>
+  <div class ="card-dispatch-event" style="margin-top: 100px;">
+    <%= link_to event_path(event) do %>
+      <div class="card-event">
+        <div class ="card-image-event"
+             style="background-image: url(
+              '<%= cl_image_path event.photo.blank? ? 'https://picsum.photos/300/300/?random' : event.photo %>'
+             );">
+        </div>
+        <div class="card-content-event">
+          <h4><%= event.title %></h4>
+          <p><%= event.start_date %></p>
+        </div>
+        <div class="event-infos"></div>
+    <% end %>
+      </div>
+  </div>
+<% end %>

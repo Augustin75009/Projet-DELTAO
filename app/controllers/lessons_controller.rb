@@ -7,6 +7,7 @@ class LessonsController < ApplicationController
     else
       @lessons = Lesson.all
     end
+    @events = Event.all
   end
 
   def show

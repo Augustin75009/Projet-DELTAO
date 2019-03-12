@@ -24,12 +24,18 @@
       <% end %>
     </div>
     <div class="events">
+      <h2>Evenement à venir</h2>
       <ul>
-        <li><h2>Event #</h2></li>
-        <li><h2>Event #</h2></li>
-        <li><h2>Event #</h2></li>
-        <li><h2>Event #</h2></li>
+        <% @events.sort_by {|a| a.start_date}.take(4).each do |event| %>
+          <li>
+            <h4><%= event.title %></h4>
+            <p><%= event.start_date.strftime("%F") %></p>
+          </li>
+        <% end %>
       </ul>
+      <%= link_to events_path do %>
+        <button>Tout voir</button>
+      <% end %>
     </div>
   </div>
 
