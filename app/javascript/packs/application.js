@@ -11,5 +11,12 @@ initSlick();
 // updateQuantityUp();
 selectLesson();
 infoAnimation();
-// eventSticked();
-// phoneNumber();
+
+if(document.location.href.match('lessons/')) {
+  phoneNumber();
+}
+if(document.location.href.match('lessons')) {
+  eventSticked();
+}
+
+

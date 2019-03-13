@@ -35,7 +35,11 @@
       <div class="summary">
         <div class="summary-empty"></div>
         <div class="summary-checkout" id="summary-checkout">
-          <%= render 'cart_items/recap', cart_item: @cart_items, total_cart: total_cart, reduction: reduction %>
+          <% @total_cart = total_cart %>
+          <% @reduction = reduction %>
+          <span id="total-ajax">
+          <%= render 'cart_items/recap', cart_item: @total_cart, total_cart: @total_cart, reduction: @reduction %>
+          </span>
           <div class="button-checkout">
             <% if CartItem.count != 0 %>
             <span>

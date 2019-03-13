@@ -11,7 +11,7 @@ function updateAmount(amount) {
 }
 
 function updateTotal(total) {
-  const quantity = document.querySelector('#summary-checkout');
+  const quantity = document.querySelector('#total-ajax');
   // const value = quantity.value;
   quantity.innerHTML = total;
 }
@@ -19,4 +19,4 @@ function updateTotal(total) {
 
 updateQuantity('<%= j render "cart_items/variable", cart_item: @cart_item %>');
 updateAmount('<%= j render "cart_items/total", cart_item: @cart_item %>');
-// updateTotal('<%= j render "cart_items/recap", cart_item: @cart_items, total_cart: @total_cart, reduction: @reduction %>');
+updateTotal('<%= j render "cart_items/recap", cart_item: @cart_item.total, total_cart: @total_cart, reduction: @reduction %>');
