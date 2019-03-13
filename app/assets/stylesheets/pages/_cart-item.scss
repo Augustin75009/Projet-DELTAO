@@ -52,7 +52,10 @@
 .quantity-item {
   input {
     padding-left: 5px;
-    width: 30%;
+    width: 50%;
+  }
+  .narrow-input {
+    width: 20%
   }
 }
 .infos-item {
@@ -60,9 +63,14 @@
   display: flex;
   margin-left: 10px;
 }
-.quantity-item, .delete-item, .amount-item {
+.delete-item, .amount-item {
   flex: 1;
 }
+
+.quantity-item {
+  flex: 1.5;
+}
+
 .summary {
   display: flex;
   justify-content: space-between;
@@ -156,13 +164,13 @@
   z-index: 1;
   top: -12px;
   right: -17px;
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
   line-height: 20px;
   font-size: 13px;
   font-weight: 600;
   border-radius: 50%;
-  background-color: rgba(202, 120, 103, 0.8);
+  background-color: rgba(202, 120, 103, 0.5);
   color: #fff;
   animation: zoom 1s 3s both 1 forward;
 }

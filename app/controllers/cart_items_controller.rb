@@ -1,6 +1,6 @@
 class CartItemsController < ApplicationController
   # include CurrentCart
-  # before_action :set_cart, only: [:create]
+  # before_action :set_cart
 
   def index
     @cart_items = CartItem.where(user_id:current_user.id)
@@ -49,7 +49,7 @@ class CartItemsController < ApplicationController
       # raise
       # @counter = current_user.cart_item_item.count
       respond_to do |format|
-        format.html { redirect_to lessons_path }
+        format.html { redirect_to lesson_path(@lesson) }
         format.js
       end
     end
@@ -100,5 +100,6 @@ class CartItemsController < ApplicationController
   #  def cart_item_filter
   #   @user_orders = CartItem.where(user_id: current_user.user_id)
   # end
+
 
 end

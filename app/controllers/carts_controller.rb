@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :cart_not_found
+  before_action :set_cart
 
   def index
     @carts = Cart.where(user_id:current_user.id)
@@ -55,6 +56,10 @@ class CartsController < ApplicationController
     else
       true
     end
+  end
+
+  def set_cart
+    @cart_items = CartItem.all
   end
 
 
