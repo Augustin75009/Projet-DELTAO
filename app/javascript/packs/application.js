@@ -6,6 +6,7 @@ import {selectLesson} from '../plugins/home';
 import {infoAnimation} from '../plugins/card';
 import {eventSticked} from '../plugins/eventSticked';
 import {phoneNumber} from '../plugins/phoneNumber';
+import {tabFocus} from '../plugins/tab';
 
 initSlick();
 // updateQuantityUp();
@@ -15,8 +16,12 @@ infoAnimation();
 if(document.location.href.match('lessons/')) {
   phoneNumber();
 }
+
+// tabFocus();
+
 if(document.location.href.match('lessons')) {
   eventSticked();
 }
+
 
 

@@ -11,6 +11,10 @@ class LessonsController < ApplicationController
   end
 
   def show
+    # respond_to do |format|
+    #   format.html { redirect_to lessons_path }
+    #   format.js
+    # end
   end
 
   def new
