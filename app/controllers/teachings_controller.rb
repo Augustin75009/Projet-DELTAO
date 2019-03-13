@@ -33,5 +33,6 @@ class TeachingsController < ApplicationController
 
   def set_teaching
     @teaching = Teaching.find(params[:id])
+    @cart_items = CartItem.all
   end
 end

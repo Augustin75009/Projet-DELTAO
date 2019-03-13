@@ -32,6 +32,7 @@ class EventsController < ApplicationController
   end
 
   def set_event
+    @cart_items = CartItem.all
     @event = Event.find(params[:id])
   end
 end

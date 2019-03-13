@@ -8,6 +8,7 @@ class LessonsController < ApplicationController
       @lessons = Lesson.all
     end
     @events = Event.all
+    @cart_items = CartItem.all
   end
 
   def show
@@ -47,6 +48,7 @@ class LessonsController < ApplicationController
   end
 
   def set_lesson
+    @cart_items = CartItem.all
     @lesson = Lesson.find(params[:id])
   end
 end

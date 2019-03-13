@@ -1,6 +1,7 @@
 .cart-wrapper {
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 80px;
   // background-color: rgba(236,236,236,1);
   background-color: #ebf0f6;
   display: flex;
@@ -43,3 +44,7 @@
   }
 }
 
+#stripe-checkout {
+  text-align: center !important;
+  background: red
+}

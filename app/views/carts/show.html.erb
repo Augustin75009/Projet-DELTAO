@@ -1,4 +1,4 @@
-<h1 style="padding-top: 80px">HELLO ready for checkout</h1>
+<h1 style="padding-top: 80px">Bonjour, vous pouvez renseigner vos cordonées ci-dessous :</h1>
 
 <div class="cart-wrapper">
   <div class="cart-form">
@@ -44,7 +44,7 @@
         <% end %>
     <% end %>
     <br><br><br>
-    <p class="font-weight-bold">Total :<span style="font-size:40px">          <%= number_to_currency(@cart.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
+    <p class="font-weight-bold">Total :<span style="font-size:40px"> <%= number_to_currency(@cart.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
   </div>
 
 </div>

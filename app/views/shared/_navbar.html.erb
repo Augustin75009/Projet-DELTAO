@@ -10,7 +10,16 @@
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
       <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/lessons">Cours</a></li>
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/cart_items">Panier</a></li>
+        <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/cart_items" style="position: relative; text-align: center">
+          <!-- Panier<div id="nb_cart_items"style=""><span>1</span></div> -->
+          Panier
+          <!-- <div class="notification-box"> -->
+            <% if @cart_items.count != 0 %>
+              <span class="notification-count"><%= @cart_items.count %></span>
+            <% end %>
+          <!-- </div> -->
+        </a>
+      </li>
     </ul>
   </nav>
   <div class="shopping-nav">
