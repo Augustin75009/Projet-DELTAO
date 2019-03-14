@@ -143,8 +143,9 @@
   }
 
   .stage {
-    justify-content: none !important;
+    justify-content: start !important;
     text-align: center !important;
+    width: 100% !important;
   }
 
   .lessons-overview {
@@ -154,6 +155,7 @@
 
   .overview-selectors {
     overflow: scroll;
+    height: 30px;
   }
 
   .overview-button > p {
@@ -203,22 +205,27 @@
   }
 
   .footer {
+    flex-direction: column !important;
     padding: 10px 10px !important;
 
     div > p, h5 {
-      font-size: 10px !important;
+      // font-size: 10px !important;
     }
     div > a > p {
-      font-size: 10px !important;
+      // font-size: 10px !important;
     }
   }
 
   .footer-contact {
     text-align: -webkit-right;
+    div {
+    }
   }
 
-  .footer-location, .footer-menu {
-    text-align: -webkit-center;
+  .footer-location, .footer-menu, .footer-contact, .footer-ouverture {
+    margin: 0px 0px 20px 0px !important;
+    width: 100% !important;
+    text-align: center !important;
   }
 
 

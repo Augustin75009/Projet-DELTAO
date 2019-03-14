@@ -20,6 +20,13 @@
     margin: 0 !important;
   }
 }
+
+.footer-location, .footer-menu, .footer-contact, .footer-ouverture {
+  h5 {
+    font-weight: 600;
+  }
+}
+
 .footer-ouverture {
   width: 25%;
 }
@@ -72,6 +79,9 @@
 .localisation {
   color: rgba(0,0,0,0.3) !important;
   display: inline-block;
+  font-weight: 600;
+  i {
+  }
 }
 
 .localisation:hover {
