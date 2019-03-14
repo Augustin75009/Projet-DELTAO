@@ -3,6 +3,7 @@ class TeachingsController < ApplicationController
 
   def index
     @teachings = Teaching.all
+    @cart_items = CartItem.all
   end
 
   def new

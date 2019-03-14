@@ -37,7 +37,54 @@
 }
 
 
-@media (max-width: 430px) {
+@media (max-width: 1150px) {
+  .card-container-lesson {
+  flex: 4;
+  }
+  .event {
+    flex: 1;
+  }
+
+  .card-dispatch-lesson {
+    width: 45% !important;
+  }
+
+  .logo__link {
+    font-size: 20px !important;
+  }
+
+  #sezaneMenu_rptMenu_liMenu_0 {
+    font-size: 1.2rem !important;
+  }
+}
+
+
+@media (max-width: 800px) {
+
+  .card-container-lesson {
+    flex: 1 !important;
+  }
+  .event {
+    flex: 1 !important;
+  }
+  .card-dispatch-lesson {
+    width: 90% !important;
+  }
+
+  .filter-button {
+    font-size: 17px !important;
+  }
+}
+
+// @media (max-width: 600px) {
+
+//   #sezaneMenu_rptMenu_liMenu_0 {
+//     font-size: 1.1rem !important;
+//   }
+// }
+
+
+@media (max-width: 550px) {
 
   .logo__link {
     display: inline-block;
@@ -183,13 +230,26 @@
     margin-top: 20px !important;
   }
 
+  .card-container-lesson {
+    justify-content: center !important;
+  }
+
+  .actived-filter {
+    width: 80% !important;
+  }
+
   .events {
     width: 100% !important;
-    padding: 0 !important;
-
+    padding: 10px !important;
+    margin: 0 !important;
     .slider {
       width: 100% !important;
       overflow: scroll !important;
+      border: none !important;
+    }
+
+    h3 {
+      // font-size: 22px !important;
     }
 
     ul {
@@ -209,26 +269,6 @@
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -276,16 +316,16 @@
   }
 }
 
-@media (max-width: 990px) {
-    .card-dispatch-lesson {
-    transform: scale(0.85)
-  }
-}
+// @media (max-width: 990px) {
+//     .card-dispatch-lesson {
+//     transform: scale(0.85)
+//   }
+// }
 
 
-@media (max-width: 980px) {
-    .card-dispatch-lesson {
-    transform: scale(1)
-  }
-}
+// @media (max-width: 980px) {
+//     .card-dispatch-lesson {
+//     transform: scale(1)
+//   }
+// }
 

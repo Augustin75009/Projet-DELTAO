@@ -2,8 +2,16 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      @lessons = Lesson.search_by_title_and_category(params[:query])
+    if params[:query5].present?
+      @lessons = Lesson.search_by_category(params[:query5])
+    elsif params[:query4].present?
+      @lessons = Lesson.search_by_category(params[:query4])
+    elsif params[:query3].present?
+      @lessons = Lesson.search_by_category(params[:query3])
+    elsif params[:query2].present?
+      @lessons = Lesson.where(child: true)
+    elsif params[:query1].present?
+      @lessons = Lesson.where(adult: true)
     else
       @lessons = Lesson.all
     end
@@ -20,6 +28,7 @@ class LessonsController < ApplicationController
 
   def new
     @lesson = Lesson.new
+    @cart_items = CartItem.all
   end
 
   def create

@@ -46,7 +46,7 @@ const selectLesson = () => {
       content.childNodes[1].innerHTML =
       "<h3>Atleier libre</h3><p>Description du cours .... ....... .... ......</p><a href='/lessons'><button class='button-infos overview'>En savoir +</button></a>"
     }
-    if (course === "Spéciaux*") {
+    if (course === "Sur mesure") {
       background.classList.add('background5');
       button.classList.add('upper');
       // content.appendChild(content.childNodes[1])

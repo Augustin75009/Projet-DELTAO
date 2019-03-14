@@ -1,0 +1,50 @@
+.filter-for-lesson {
+  margin-top: 7px;
+  display: flex;
+  text-align: -webkit-center;
+}
+
+.filter-button{
+  flex: 1;
+  font-size: 22px;
+  position: relative;
+  border-right: solid 0.4px rgba(249, 249, 249, 0.5);
+  padding-top: 20px;
+
+}
+
+.actived-filter {
+  margin: 5px 0px 20px 0px;
+  background: #cecece50;
+  border-radius: 10px;
+  position: relative;
+}
+
+.filter-button.actived {
+  background: white;
+  font-weight: 600;
+  p {
+    a {
+    // color: #cecece !important;
+    }
+  }
+}
+
+.filter-button:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.delete-filter {
+  position: absolute;
+  top: -13px;
+  right: -10px;
+  background-color: rgba(202, 120, 103, 0.8);
+  border-radius: 50%;
+  height: 27px;
+  width: 26px;
+  transform: scale(0.6);
+  color: white;
+  font-weight: 600;
+}
+

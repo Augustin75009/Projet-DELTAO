@@ -7,6 +7,7 @@ import {infoAnimation} from '../plugins/card';
 import {eventSticked} from '../plugins/eventSticked';
 import {phoneNumber} from '../plugins/phoneNumber';
 import {tabFocus} from '../plugins/tab';
+import {activedFilter} from '../plugins/activedFilter';
 
 initSlick();
 // updateQuantityUp();
@@ -22,6 +23,11 @@ if(document.location.href.match('lessons/')) {
 if(document.location.href.match('lessons')) {
   eventSticked();
 }
+
+if(document.location.href.match('query')) {
+  activedFilter();
+}
+
 
 
 

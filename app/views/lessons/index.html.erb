@@ -1,5 +1,5 @@
 <div style="height: 50px"></div>
-<%= render 'shared/overview' %>
+<%= render 'filter' %>
 <!-- <div class="packer-lesson">
   </div> -->
   <div class="main-container" id="cards-lesson">
@@ -24,6 +24,9 @@
       <% end %>
     </div>
     <div class="events">
+      <div class="actived-filter">
+        Aucun filtre activé
+      </div>
       <h3>Evenement à venir</h3>
       <div class="slider">
       <ul>
@@ -40,28 +43,3 @@
       <% end %>
     </div>
   </div>
-
-
-<!--   <div class="search-lesson">
-    <div class="search-input-lesson">
-      <%= form_tag lessons_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control lesson",
-        placeholder: "Rechercher une leçon...",
-        value: ""
-        %>
-    </div>
-    <div class="search-submit-lesson">
-        <%= submit_tag("Valider") %>
-      <% end %>
-    </div>
-    <div class="dropdown-lesson">
-      <button class="dropbtn-lesson">Filtrer par catégorie</button>
-      <div class="dropdown-content">
-        <%= link_to "Atelier adulte", lessons_path({query: "Adulte"}) %>
-        <%= link_to "Atelier enfant", lessons_path({query: "enfant"}) %>
-        <%= link_to "Atelier découverte", lessons_path({query: "découverte"}) %>
-      </div>
-    </div>
-  </div> -->

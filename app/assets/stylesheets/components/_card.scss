@@ -27,21 +27,31 @@
 }
 
 .main-container {
-  margin: 20px 40px 20px 40px;
+  margin: 0px 40px 20px 40px;
   display: flex;
 }
 
+
 .events {
   flex: 1;
-  padding: 20px 16px 0px 16px;
+  padding: 20px 0px 0px 16px;
   text-align: -webkit-center;
+  max-height: 80vh;
+  margin: 0px 0px 10px 20px;
+  .slider {
+    border: solid 0.5px #cecece;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
   ul {
     padding: 0;
   }
   h3 {
     margin-top: 2px;
   }
-  max-height: 80vh;
+  a {
+    margin-top: 10px;
+  }
 }
 
 .events.sticked {
@@ -53,7 +63,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
-  justify-content: space-around;
+  justify-content: space-between;
   z-index: 10;
   // padding: 0px 80px 20px 80px;
   background-color: transparent;
@@ -63,13 +73,15 @@
 
 
 .card-dispatch-lesson {
-  width: 370px;
+  min-width: 250px;
+  width: 30%;
   height: 400px;
   // display: flex;
   justify-content: center;
   margin: 4px 4px 20px 4px;
   // border: solid 0.5px grey;
-  background-image: url('ceramic2.jpeg');
+  // background-image: url('ceramic2.jpeg');
+  background: #cecece50;
   background-size: cover;
   border-radius: 4px;
   padding: 16px;
@@ -120,6 +132,7 @@
 
 .card-content-lesson>p {
   color: grey;
+  font-size: 15px;
 }
 
 .card-image-lesson {
@@ -140,9 +153,10 @@
   height: 24px;
   width: 24px;
   position: absolute;
-  bottom: 4px;
-  right: 4px;
+  bottom: 3px;
+  right: 3px;
   z-index: 30;
+  // transform: scale(0.8);
 }
 
 
@@ -188,23 +202,4 @@
 
 
 
-
-  @media (max-width: 1050px) {
-.card-container-lesson {
-  flex: 4;
-  }
-  .event {
-    flex: 1;
-  }
-}
-
-
-@media (max-width: 980px) {
-.card-container-lesson {
-  flex: 2;
-  }
-  .event {
-    flex: 1;
-  }
-}
 

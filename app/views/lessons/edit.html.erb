@@ -2,7 +2,7 @@
   <div class="product-form">
     <%= simple_form_for(@lesson) do |f| %>
       <%= f.input :title, label: 'Intitulé' %>
-      <%= f.input :category, label: 'Catégorie' %>
+      <%= f.input :category, label: 'Catégorie', default: "#{@lesson.category}", collection: ["Cours enfants", "Cours adultes", "Découverte", "Atelier libre", "Sur mesure" ]  %>
       <%= f.input :description, label: 'Description du cours' %>
       <%= f.input :card_description, label: 'Description apparaissant sur la carte' %>
       <%= f.input :price_cents, label: 'Prix en euros' %>

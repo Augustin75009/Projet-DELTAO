@@ -4,13 +4,13 @@ class Lesson < ApplicationRecord
   has_many :cart_items, dependent: :nullify
 
   include PgSearch
-  pg_search_scope :search_by_title_and_category,
-    against: [ :title, :category ],
+  pg_search_scope :search_by_category,
+    against: [:category],
     using: {
       tsearch: { prefix: true }
     }
 
   def total
-    price_cents/1000.0
+    price_cents / 1000.0
   end
 end
