@@ -27,14 +27,22 @@ class LessonsController < ApplicationController
   end
 
   def new
-    @lesson = Lesson.new
-    @cart_items = CartItem.all
+    if current_user.id == 1
+      @lesson = Lesson.new
+      @cart_items = CartItem.all
+    else
+      redirect_to lessons_path
+    end
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
-    @lesson.save
-    redirect_to lesson_path(@lesson)
+    if current_user.id == 1
+      @lesson = current_user.lessons.build(lesson_params)
+      @lesson.save
+      redirect_to lesson_path(@lesson)
+    else
+      redirect_to lessons_path
+    end
   end
 
   def edit

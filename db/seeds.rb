@@ -4,8 +4,8 @@ User.destroy_all
 Product.destroy_all
 puts 'Creating Users'
 
-diane = User.create!(first_name: "Diane", email: 'diane@gmail.com', password: 'dianejr')
-augustin = User.create!(first_name: "Augustin", email: 'augustin@gmail.com', password: 'augustin')
+diane = User.create!(first_name: "Diane", email: 'diane@gmail.com', password: 'dianejr', adminkey: 'admin')
+augustin = User.create!(first_name: "Augustin", email: 'augustin@gmail.com', password: 'augustin', adminkey: 'admin')
 
 # Products ------------------------------------------------------------------------------
 #
@@ -25,6 +25,7 @@ lesson1 = Lesson.create!(
   payable: false,
   online_booking: false,
   gift_card: false,
+  user_id: 2,
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
   pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
 95€ les 2 séances dont une séance émaillage.\n
@@ -47,6 +48,7 @@ lesson2 = Lesson.create!(
   payable: true,
   online_booking: false,
   gift_card: false,
+  user_id: 2,
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
   pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
 95€ les 2 séances dont une séance émaillage.\n
@@ -70,6 +72,7 @@ lesson3 = Lesson.create!(
   payable: false,
   online_booking: false,
   gift_card: false,
+  user_id: 2,
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
   pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
 95€ les 2 séances dont une séance émaillage.\n
@@ -93,6 +96,7 @@ lesson4 = Lesson.create!(
   payable: true,
   online_booking: true,
   gift_card: true,
+  user_id: 2,
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
   pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
 95€ les 2 séances dont une séance émaillage.\n
@@ -113,6 +117,7 @@ event1 = Event.create!(
   start_date: "Thu, 29 Jan 2019 16:50:20 +0100",
   end_date: "Thu, 30 Jan 2019 16:50:20 +0100",
   photo: 'Pas de photo',
+  user_id: 2,
   location: 'Paris, France'
 )
 
@@ -124,6 +129,7 @@ event2 = Event.create!(
   start_date: "Thu, 4 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 5 Feb 2019 16:50:20 +0100",
   photo: 'Pas de photo',
+  user_id: 2,
   location: 'Paris, France'
 )
 
@@ -135,6 +141,7 @@ event3 = Event.create!(
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
   photo: 'Pas de photo',
+  user_id: 2,
   location: 'Paris, France'
 )
 
@@ -146,6 +153,7 @@ event4 = Event.create!(
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
   photo: 'Pas de photo',
+  user_id: 2,
   location: 'Paris, France'
 )
 
