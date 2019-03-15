@@ -3,7 +3,6 @@ const tabList = document.querySelector('.infos-list');
 
 const tabFocus = () => {
   tabList.addEventListener('click', function(e) {
-    console.log("hello")
     window.scrollTo(0,document.body.scrollHeight);
     // tabList.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
   })

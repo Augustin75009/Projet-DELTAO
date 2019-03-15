@@ -6,14 +6,22 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
-    @cart_items = CartItem.all
+    if is_admin?
+      @event = Event.new
+      @cart_items = CartItem.all
+    else
+      redirect_to :root
+    end
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.save
-    redirect_to events_path
+    if is_admin?
+      @event = Event.new(event_params)
+      @event.save
+      redirect_to events_path
+    else
+      redirect_to :root
+    end
   end
 
   def update
@@ -35,5 +43,9 @@ class EventsController < ApplicationController
   def set_event
     @cart_items = CartItem.all
     @event = Event.find(params[:id])
+  end
+
+  def is_admin?
+    return current_user.adminkey == "admin"
   end
 end

@@ -7,14 +7,22 @@ class TeachingsController < ApplicationController
   end
 
   def new
-    @teaching = Teaching.new
-    @cart_items = CartItem.all
+    if is_admin?
+      @teaching = Teaching.new
+      @cart_items = CartItem.all
+    else
+      redirect_to :root
+    end
   end
 
   def create
-    @teaching = Teaching.new(teaching_params)
-    @teaching.save
-    redirect_to teachings_path
+    if is_admin?
+      @teaching = Teaching.new(teaching_params)
+      @teaching.save
+      redirect_to teachings_path
+    else
+      redirect_to :root
+    end
   end
 
   def update
@@ -36,5 +44,9 @@ class TeachingsController < ApplicationController
   def set_teaching
     @teaching = Teaching.find(params[:id])
     @cart_items = CartItem.all
+  end
+
+  def is_admin?
+    return current_user.adminkey == "admin"
   end
 end

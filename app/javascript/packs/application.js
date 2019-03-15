@@ -15,13 +15,13 @@ selectLesson();
 infoAnimation();
 
 if(document.location.href.match('lessons/')) {
-  phoneNumber();
+  // phoneNumber();
 }
 
 // tabFocus();
 
 if(document.location.href.match('lessons')) {
-  eventSticked();
+  // eventSticked();
 }
 
 if(document.location.href.match('query')) {

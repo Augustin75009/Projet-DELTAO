@@ -27,21 +27,21 @@ class LessonsController < ApplicationController
   end
 
   def new
-    if current_user.id == 1
+    if is_admin?
       @lesson = Lesson.new
       @cart_items = CartItem.all
     else
-      redirect_to lessons_path
+      redirect_to :root
     end
   end
 
   def create
-    if current_user.id == 1
+    if is_admin?
       @lesson = current_user.lessons.build(lesson_params)
       @lesson.save
       redirect_to lesson_path(@lesson)
     else
-      redirect_to lessons_path
+      redirect_to :root
     end
   end
 
@@ -67,5 +67,9 @@ class LessonsController < ApplicationController
   def set_lesson
     @cart_items = CartItem.all
     @lesson = Lesson.find(params[:id])
+  end
+
+  def is_admin?
+    return current_user.adminkey == "admin"
   end
 end

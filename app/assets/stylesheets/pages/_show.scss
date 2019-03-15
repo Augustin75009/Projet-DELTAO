@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 0px 160px 20px 160px;
-  margin-top: 110px;
+  margin-top: 80px;
 }
 .root-show {
   width: 100%;
@@ -169,18 +169,20 @@ input[type=number]
 }
 
 .infos-list {
-  text-align: center;
+  text-align: start;
+  padding: 0 !important;
+  margin-bottom: 40px;
 }
 
 .infos-list>li {
   display: inline;
   a{
-    margin: 0px 5%;
+    margin: 0px 10% 0px 0px;
     font-size: 18px;
     padding-top: 8px;
     padding-bottom: 16px;
-    border-top: solid 3px rgb(210, 139, 128);
-    color: rgba(0,0,0,0.35);
+    border-top: solid 3px #d28b80;
+    color: rgba(0, 0, 0, 0.35);
   }
 }
 
