@@ -23,16 +23,17 @@
 .filter-button.actived {
   background: white;
   font-weight: 600;
-  p {
-    a {
-    // color: #cecece !important;
-    }
+  p > a {
+    opacity: 0.7;
   }
 }
 
 .filter-button:hover {
   background: white;
+  a {
+
   cursor: pointer;
+  }
 }
 
 .delete-filter {
@@ -46,5 +47,8 @@
   transform: scale(0.6);
   color: white;
   font-weight: 600;
+  a {
+    color: white !important;
+    }
 }
 

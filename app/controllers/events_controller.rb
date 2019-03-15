@@ -7,6 +7,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @cart_items = CartItem.all
   end
 
   def create

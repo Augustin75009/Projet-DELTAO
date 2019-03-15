@@ -8,6 +8,7 @@ class TeachingsController < ApplicationController
 
   def new
     @teaching = Teaching.new
+    @cart_items = CartItem.all
   end
 
   def create

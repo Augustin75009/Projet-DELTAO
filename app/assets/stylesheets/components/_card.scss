@@ -41,7 +41,7 @@
   .slider {
     border: solid 0.5px #cecece;
     margin-bottom: 10px;
-    border-radius: 4px;
+    border-radius: 2px;
   }
   ul {
     padding: 0;
@@ -65,7 +65,6 @@
   align-content: space-around;
   justify-content: space-between;
   z-index: 10;
-  // padding: 0px 80px 20px 80px;
   background-color: transparent;
   width: 100%;
   padding-top: 20px;
@@ -74,41 +73,25 @@
 
 .card-dispatch-lesson {
   min-width: 250px;
-  width: 30%;
+  width: 32%;
   height: 400px;
-  // display: flex;
   justify-content: center;
-  margin: 4px 4px 20px 4px;
-  // border: solid 0.5px grey;
-  // background-image: url('ceramic2.jpeg');
-  background: #cecece50;
+  margin: 4px 0px 20px 0px;
   background-size: cover;
-  border-radius: 4px;
+  border-radius: 2px;
   padding: 16px;
+  background-color: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card-lesson {
-  // margin: 14px;
-  // height: 200px;
-  // border-radius: 1%;
   width: 100%;
   height: 100%;
   margin: auto;
   position: relative;
-  // margin: 3px;
-  // opacity: 1;
-  // background-size: cover;
-  // position: relative;
 }
 
 .card-dash-lesson {
-  // height: 200px;
-  // border-radius: 1%;
-  // flex: 0 0 32%;
-  // margin: 3px;
-  // opacity: 1;
-  // background-size: cover;
-  // position: relative;
 }
 
 .card-lesson:hover {
@@ -119,12 +102,6 @@
 }
 
 .card-content-lesson {
-  // text-align :center;
-  // border-radius:1%;
-  // background-color:rgba(238, 220, 201, 0.1);
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
   height: 40%;
   width: 100%;
   z-index: 20;
@@ -138,12 +115,7 @@
 .card-image-lesson {
   height: 60%;
   width: 100%;
-  // border-top-left-radius: 1%;
-  // border-top-right-radius: 1%;
   background-size: cover;
-  // display: block;
-  // position: absolute;
-  // background-position: bottom;
   background-image: url("enfants.jpg") !important;
 }
 
@@ -156,7 +128,6 @@
   bottom: 3px;
   right: 3px;
   z-index: 30;
-  // transform: scale(0.8);
 }
 
 
@@ -200,6 +171,22 @@
 }
 
 
+.card-wrapper-teaching {
+  overflow: hidden;
+  width: 100%;
+  ul {
+    // display: -webkit-inline-box;
+    width: 100%;
+    // transform: translate(-100vw, 0px);
+  }
+}
 
+.card-dispatch-teaching {
+  min-height: 60vh;
+  width: 100% !important;
+  text-align: center;
+}
 
-
+.sliding-teachings {
+  transform: translate(-100vw, 0px);
+}

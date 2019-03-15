@@ -6,7 +6,7 @@
   align-items: flex-start;
   justify-content: space-between;
   min-height: 200px;
-  padding: 20px 60px;
+  padding: 30px 60px;
   color: rgba(0,0,0,0.3);
   width: 100%;
   bottom: 0;
@@ -24,6 +24,8 @@
 .footer-location, .footer-menu, .footer-contact, .footer-ouverture {
   h5 {
     font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 10px !important;
   }
 }
 
