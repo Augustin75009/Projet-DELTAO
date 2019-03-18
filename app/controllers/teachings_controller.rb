@@ -32,7 +32,7 @@ class TeachingsController < ApplicationController
 
   def destroy
     @teaching.destroy
-    redirect_to :root
+    redirect_to teachings_path
   end
 
   private

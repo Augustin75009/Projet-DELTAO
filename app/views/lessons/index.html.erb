@@ -18,6 +18,16 @@
                 <p><%= lesson.card_description %></p>
               </div>
               <div class="lesson-infos"></div>
+              <% if user_signed_in? %>
+          <% if current_user.adminkey == "admin" %>
+            <%= link_to edit_lesson_path(lesson) do %>
+              <button id="modify" class="button-infos">modifier</button>
+            <% end %>
+            <%= link_to lesson_path(lesson), method: :delete, data: { confirm: 'Confirmer' }  do %>
+              <button id="modify" class="button-infos">Supprimer</button>
+            <% end %>
+          <% end %>
+        <% end %>
           <% end %>
             </div>
         </div>

@@ -11,6 +11,16 @@
             <h4><%= teaching.content %></h4>
           </div>
           <div class="teaching-infos"></div>
+          <% if user_signed_in? %>
+          <% if current_user.adminkey == "admin" %>
+            <%= link_to teaching_path(teaching) do %>
+              <button id="modify" class="button-infos">modifier</button>
+            <% end %>
+            <%= link_to teaching_path(teaching), method: :delete, data: { confirm: 'Confirmer' }  do %>
+              <button id="modify" class="button-infos">Supprimer</button>
+            <% end %>
+          <% end %>
+        <% end %>
       <% end %>
         </div>
     </li>

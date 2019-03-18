@@ -8,6 +8,7 @@ import {eventSticked} from '../plugins/eventSticked';
 import {phoneNumber} from '../plugins/phoneNumber';
 import {tabFocus} from '../plugins/tab';
 import {activedFilter} from '../plugins/activedFilter';
+import {modifyWebsite} from '../plugins/open-widget';
 
 initSlick();
 // updateQuantityUp();
@@ -28,6 +29,7 @@ if(document.location.href.match('query')) {
   activedFilter();
 }
 
+modifyWebsite();
 
 
 

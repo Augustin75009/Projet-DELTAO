@@ -40,7 +40,26 @@
       <button class="button-infos">En savoir +</button>
     <% end %>
   </div>
-  <% if current_user.adminkey == "admin1" %>
-    <button class="btn btn-danger modify-website">MODIFY</button>
+  <% if user_signed_in? %>
+    <% if current_user.adminkey == "admin" %>
+      <button id="modify-website" class="btn btn-danger modify-website">MODIFY</button>
+      <ul id="modifyA" style="display: none;">
+        <li>
+          <%= link_to new_teaching_path do %>
+            <button id="modify" class="button-infos">Pédagogie</button>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_event_path do %>
+            <button id="modify" class="button-infos">Evenement</button>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_lesson_path do %>
+            <button id="modify" class="button-infos">Cours</button>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
   <% end %>
 </div>

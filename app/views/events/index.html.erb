@@ -12,6 +12,16 @@
           <p><%= event.start_date %></p>
         </div>
         <div class="event-infos"></div>
+        <% if user_signed_in? %>
+          <% if current_user.adminkey == "admin" %>
+            <%= link_to edit_event_path(event) do %>
+              <button id="modify" class="button-infos">modifier</button>
+            <% end %>
+            <%= link_to event_path(event), method: :delete, data: { confirm: 'Confirmer' }  do %>
+              <button id="modify" class="button-infos">Supprimer</button>
+            <% end %>
+          <% end %>
+        <% end %>
     <% end %>
       </div>
   </div>

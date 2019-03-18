@@ -95,5 +95,12 @@
 .modify-website {
   position: fixed;
   bottom: 0;
-  right: 50%;
+  right: 0;
+}
+
+.show-widget {
+  display: block !important;
+  position: fixed;
+  bottom: 60px;
+  right: 0;
 }

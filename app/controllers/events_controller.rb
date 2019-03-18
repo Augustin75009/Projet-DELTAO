@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @cart_items = CartItem.all
   end
 
   def new
@@ -31,7 +32,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to :root
+    redirect_to events_path
   end
 
   private
