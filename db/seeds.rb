@@ -116,7 +116,7 @@ event1 = Event.create!(
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 29 Jan 2019 16:50:20 +0100",
   end_date: "Thu, 30 Jan 2019 16:50:20 +0100",
-  photo: 'Pas de photo',
+  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
   user_id: 2,
   location: 'Paris, France'
 )
@@ -128,7 +128,7 @@ event2 = Event.create!(
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 4 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 5 Feb 2019 16:50:20 +0100",
-  photo: 'Pas de photo',
+  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
   user_id: 2,
   location: 'Paris, France'
 )
@@ -140,7 +140,7 @@ event3 = Event.create!(
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
-  photo: 'Pas de photo',
+  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
   user_id: 2,
   location: 'Paris, France'
 )
@@ -152,7 +152,7 @@ event4 = Event.create!(
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
-  photo: 'Pas de photo',
+  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
   user_id: 2,
   location: 'Paris, France'
 )

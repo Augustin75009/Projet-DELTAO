@@ -6,7 +6,7 @@
       <ul class="stage">
         <% Event.all.take(3).each_with_index do |stage, index| %>
           <li>
-            <img src="assets/enfants.jpg" alt="">
+            <%= image_tag "https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg", alt: "Tessa Guilbaud" %>
             <h3><%= stage.title %></h3>
             <h4><%= stage.start_date.strftime("%m/%d/%Y")%></h4>
             <%= link_to teachings_path do %>
@@ -23,7 +23,7 @@
 <div class="about">
   <div class="tessa">
     <div class="avatar-tessa">
-      <img src="assets/tessa.jpg" alt="Tessa Guilbaub">
+      <%= image_tag "https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919502/tessa.jpg", alt: "Tessa Guilbaud" %>
     </div>
     <div class="resume">
       <p>L'empreinte des doigts laisse l'émotion de la main sur la surface du bol. La trace du fil, laisse un signe sur la plaque déchirée.</p>
