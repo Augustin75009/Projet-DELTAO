@@ -42,7 +42,7 @@
   </div>
   <% if user_signed_in? %>
     <% if current_user.adminkey == "admin" %>
-      <button id="modify-website" class="btn btn-danger modify-website">MODIFY</button>
+      <button id="modify-website" class="btn btn-danger modify-website">Modifier</button>
       <ul id="modifyA" style="display: none;">
         <li>
           <%= link_to new_teaching_path do %>
