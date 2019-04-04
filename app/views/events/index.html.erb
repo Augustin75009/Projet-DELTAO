@@ -9,7 +9,7 @@
         </div>
         <div class="card-content-event">
           <h4><%= event.title %></h4>
-          <p><%= event.start_date %></p>
+          <p><%= l(event.start_date, :format => "%b %e, %Y", :locale => 'fr') %></p>
         </div>
         <div class="event-infos"></div>
         <% if user_signed_in? %>

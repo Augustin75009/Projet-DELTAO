@@ -86,6 +86,16 @@
 
 @media (max-width: 550px) {
 
+  .selector-arrow {
+  visibility: visible !important;
+  display: flex;
+
+  span {
+    margin: auto
+  }
+}
+
+
   .logo__link {
     display: inline-block;
     font-size: 22px !important;
@@ -324,7 +334,7 @@
 
   .footer {
     flex-direction: column !important;
-    padding: 10px 10px !important;
+    padding: 60px 10px !important;
 
     div > p, h5 {
       // font-size: 10px !important;

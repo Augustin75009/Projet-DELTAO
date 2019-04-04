@@ -124,11 +124,11 @@ event1 = Event.create!(
 event1.save!
 
 event2 = Event.create!(
-  title: 'Vente à la Boutique',
+  title: 'Modelage en famille',
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 4 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 5 Feb 2019 16:50:20 +0100",
-  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
+  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391528/modelage_en_famille.jpg',
   user_id: 2,
   location: 'Paris, France'
 )
@@ -136,11 +136,11 @@ event2 = Event.create!(
 event2.save!
 
 event3 = Event.create!(
-  title: 'Stage de Pâque',
+  title: 'Modelage enfant',
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
-  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
+  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391521/enfant_modelage.jpg',
   user_id: 2,
   location: 'Paris, France'
 )
@@ -148,11 +148,11 @@ event3 = Event.create!(
 event3.save!
 
 event4 = Event.create!(
-  title: 'Stage enfants',
+  title: 'Stage adulte',
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
-  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
+  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391512/delaterrealobjet_tessa_guilbaud.jpg',
   user_id: 2,
   location: 'Paris, France'
 )
