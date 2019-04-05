@@ -1,28 +1,34 @@
-<% @events.each do |event| %>
-  <div class ="card-dispatch-event" style="margin-top: 100px;">
-    <%= link_to event_path(event) do %>
-      <div class="card-event">
-        <div class ="card-image-event"
-             style="background-image: url(
-              '<%= cl_image_path event.photo.blank? ? 'https://picsum.photos/300/300/?random' : event.photo %>'
-             );">
-        </div>
-        <div class="card-content-event">
-          <h4><%= event.title %></h4>
-          <p><%= l(event.start_date, :format => "%b %e, %Y", :locale => 'fr') %></p>
-        </div>
-        <div class="event-infos"></div>
-        <% if user_signed_in? %>
-          <% if current_user.adminkey == "admin" %>
-            <%= link_to edit_event_path(event) do %>
-              <button id="modify" class="button-infos">modifier</button>
+<div class="card-wrapper-event">
+  <% @events.each do |event| %>
+    <div class ="card-dispatch-event" style="margin-top: 100px;">
+      <%= link_to event_path(event) do %>
+        <div class="card-event">
+          <div class ="card-image-event"
+               style="background-image: url(
+                '<%= cl_image_path event.photo.blank? ? 'https://picsum.photos/300/300/?random' : event.photo %>'
+               );">
+          </div>
+          <div class="card-content-event">
+            <% if event.photo != nil %>
+              <span style="height: 100px"><%= image_tag event.photo, alt: "Tessa Guilbaud" %></span>
             <% end %>
-            <%= link_to event_path(event), method: :delete, data: { confirm: 'Confirmer' }  do %>
-              <button id="modify" class="button-infos">Supprimer</button>
+            <h4><%= event.title %></h4>
+            <p><%= l(event.start_date, :format => "%b %e, %Y", :locale => 'fr') %></p>
+            <p><%= event.description %></p>
+          </div>
+          <div class="event-infos"></div>
+          <% if user_signed_in? %>
+            <% if current_user.adminkey == "admin" %>
+              <%= link_to edit_event_path(event) do %>
+                <button id="modify" class="button-infos">modifier</button>
+              <% end %>
+              <%= link_to event_path(event), method: :delete, data: { confirm: 'Confirmer' }  do %>
+                <button id="modify" class="button-infos">Supprimer</button>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-    <% end %>
-      </div>
-  </div>
-<% end %>
+      <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>
