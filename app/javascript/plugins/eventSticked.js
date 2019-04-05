@@ -15,7 +15,7 @@ const eventSticked = () => {
     // console.log(body.clientHeight)
     // console.log(window.scrollY)
     if ( window.innerWidth > 550 ) {
-      if ((window.scrollY > (bodyHeight - eventHeight)) && ( window.innerHeight < (700) )) {
+      if ((window.scrollY > (bodyHeight - eventHeight)) && ( window.innerHeight < (608.1) )) {
         // events.classList.add("sticked")
         events.setAttribute("style", `position: relative; bottom: ${-(bodyHeight - eventHeight - 340)}px`);
       } else if (window.scrollY > navbarHeight) {

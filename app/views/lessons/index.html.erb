@@ -37,16 +37,16 @@
       <div class="actived-filter">
         Aucun filtre activé
       </div>
-      <h3>Evenement à venir</h3>
+      <!-- <h3>à venir :</h3> -->
       <div class="slider">
-      <ul>
-        <% @events.sort_by {|a| a.start_date}.take(4).each do |event| %>
-          <li>
-            <h4><%= event.title %></h4>
-            <p><%= event.start_date.strftime("%F") %></p>
-          </li>
-        <% end %>
-      </ul>
+        <ul>
+          <% @events.sort_by {|a| a.start_date}.take(4).each do |event| %>
+            <li>
+              <h4><%= event.title %></h4>
+              <p><%= l(event.start_date, :format => "%d %B %Y", :locale => 'fr') %></p>
+            </li>
+          <% end %>
+        </ul>
       </div>
       <%= link_to events_path do %>
         <button class="button-infos">Tout voir</button>

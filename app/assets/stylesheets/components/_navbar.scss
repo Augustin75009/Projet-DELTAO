@@ -73,6 +73,10 @@ header.is-absolute {
 
 .logo__link {
   display: inline-block;
+  height: 44px;
+  img {
+    height: 44px;
+  }
 }
 
 header a {
@@ -181,6 +185,7 @@ li {
   border-left-width: 20px;
   border-right-width: 20px;
   background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 

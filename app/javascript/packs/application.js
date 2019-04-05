@@ -19,7 +19,6 @@ if(document.location.href.match('lessons/')) {
   phoneNumber();
 }
 
-tabFocus();
 
 if(document.location.href.match('lessons')) {
   eventSticked();
@@ -30,6 +29,7 @@ if(document.location.href.match('query')) {
 }
 
 modifyWebsite();
+// tabFocus();
 
 
 

@@ -4,7 +4,7 @@ User.destroy_all
 Product.destroy_all
 puts 'Creating Users'
 
-diane = User.create!(first_name: "Diane", email: 'diane@gmail.com', password: 'dianejr', adminkey: 'admin')
+diane = User.create!(first_name: "Diane", email: 'diane@gmail.com', password: 'dianejr', adminkey: 'admin1')
 augustin = User.create!(first_name: "Augustin", email: 'augustin@gmail.com', password: 'augustin', adminkey: 'admin')
 
 # Products ------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la
 Terre et cuissons comprises."
 )
 
-lesson1.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+lesson1.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg"
 lesson1.save!
 
 lesson2 = Lesson.create!(
@@ -56,7 +56,7 @@ Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la
 Terre et cuissons comprises."
 )
 
-lesson2.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+lesson2.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg"
 lesson2.save!
 
 lesson3 = Lesson.create!(
@@ -80,7 +80,7 @@ Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la
 Terre et cuissons comprises."
 )
 
-lesson3.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+lesson3.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg"
 lesson3.save!
 
 lesson4 = Lesson.create!(
@@ -104,7 +104,7 @@ Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la
 Terre et cuissons comprises."
 )
 
-lesson4.remote_photo_url = "https://res.cloudinary.com/desykbhe3/image/upload/v1545125666/Capture_d_e%CC%81cran_2018-12-18_a%CC%80_10.31.31.png"
+lesson4.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg"
 lesson4.save!
 
 
