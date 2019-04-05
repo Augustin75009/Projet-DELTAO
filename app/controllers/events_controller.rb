@@ -19,7 +19,6 @@ class EventsController < ApplicationController
     if is_admin?
       @event = Event.new(event_params)
       @event.save
-      raise
       redirect_to events_path
     else
       redirect_to :root
