@@ -2,6 +2,7 @@
   <div class="quantity">
     <%= simple_form_for @lesson do |f|%>
     <input type="number" max='<%= @lesson.quantity %>' min="1" step="1" value="1">
+    <!-- <input class="flatpickr"> -->
   <% end %>
   </div>
   <div class="button">

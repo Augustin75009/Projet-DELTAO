@@ -1,13 +1,20 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+// @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+// $body-font: 'Playfair Display', serif;
+// $headers-font: 'Playfair Display', serif;
 
-// Define fonts for body and headers
-// $body-font: 'Poppins', 'sans-serif';
-// $body-font: "Julius Sans One", Helvetica, Arial,sans-serif;
-// $headers-font: 'Poppins', 'sans-serif';
-// $headers-font: "Julius Sans One", Helvetica, Arial,sans-serif;
-$body-font: 'Playfair Display', serif;
-$headers-font: 'Playfair Display', serif;
+
+
+@font-face {
+  font-family: "Font Name";
+  src: font-url('DK_Lemon_Yellow_Sun.otf') format('truetype');
+}
+// $my-font: "Font Name";
+
+body {
+  font-family: "Font Name" !important;
+}
+
 
 pre {
   font-family: 'Playfair Display', serif !important;
@@ -16,16 +23,3 @@ pre {
   overflow: visible;
   white-space: pre-line;
 }
-
-
-// akzidenz-grotesk-pro,Sans-Serif;
-
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
