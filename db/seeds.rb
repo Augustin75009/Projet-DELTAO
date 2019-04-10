@@ -8,11 +8,9 @@ User.destroy_all
 Product.destroy_all
 puts 'Creating Users'
 
-diane = User.create!(first_name: "Diane", email: 'diane@gmail.com', password: 'dianejr', adminkey: 'admin1')
+tessa = User.create!(first_name: "Tessa", email: 'tessa@gmail.com', password: 'tessa2019', adminkey: 'admin')
 augustin = User.create!(first_name: "Augustin", email: 'augustin@gmail.com', password: 'augustin', adminkey: 'admin')
-
-puts diane.id
-puts augustin.id
+user = User.create!(first_name: "User", email: 'user@gmail.com', password: 'user2019', adminkey: 'user')
 
 # Products ------------------------------------------------------------------------------
 #
