@@ -15,7 +15,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <p id="alert"> <%= alert %></p>
-    <section class="boundary" style="max-width: 1500px; margin: auto; background: #F7F7F7"><%= yield %></section>
+    <section class="boundary" style="min-height: 80vh; max-width: 1500px; margin: auto; background: #F7F7F7"><%= yield %></section>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= render 'shared/footer' %>
