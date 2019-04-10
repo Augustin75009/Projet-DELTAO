@@ -1,11 +1,18 @@
+puts 'Destroying_all'
 Purchase.destroy_all
 Cart.destroy_all
+CartItem.destroy_all
+Lesson.destroy_all
+Event.destroy_all
 User.destroy_all
 Product.destroy_all
 puts 'Creating Users'
 
 diane = User.create!(first_name: "Diane", email: 'diane@gmail.com', password: 'dianejr', adminkey: 'admin1')
 augustin = User.create!(first_name: "Augustin", email: 'augustin@gmail.com', password: 'augustin', adminkey: 'admin')
+
+puts diane.id
+puts augustin.id
 
 # Products ------------------------------------------------------------------------------
 #
@@ -26,7 +33,7 @@ lesson1 = Lesson.create!(
   payable: false,
   online_booking: false,
   gift_card: false,
-  user_id: 2,
+  user_id: "#{augustin.id}",
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
   pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
 95€ les 2 séances dont une séance émaillage.\n
@@ -50,7 +57,7 @@ lesson2 = Lesson.create!(
   payable: true,
   online_booking: false,
   gift_card: false,
-  user_id: 2,
+  user_id: "#{augustin.id}",
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
   pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
 95€ les 2 séances dont une séance émaillage.\n
@@ -75,7 +82,7 @@ lesson3 = Lesson.create!(
   payable: false,
   online_booking: false,
   gift_card: false,
-  user_id: 2,
+  user_id: "#{augustin.id}",
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
   pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
 95€ les 2 séances dont une séance émaillage.\n
@@ -100,7 +107,7 @@ lesson4 = Lesson.create!(
   payable: true,
   online_booking: true,
   gift_card: true,
-  user_id: 2,
+  user_id: "#{augustin.id}",
   card_description: "Hello, je suis la description qui apparaitra sur la carte",
   pricing: "60€ par binôme, 20€ par enfant supplémentaire\n
 95€ les 2 séances dont une séance émaillage.\n
@@ -121,7 +128,7 @@ event1 = Event.create!(
   start_date: "Thu, 29 Jan 2019 16:50:20 +0100",
   end_date: "Thu, 30 Jan 2019 16:50:20 +0100",
   photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
-  user_id: 2,
+  user_id: "#{augustin.id}",
   location: 'Paris, France'
 )
 
@@ -133,7 +140,7 @@ event2 = Event.create!(
   start_date: "Thu, 4 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 5 Feb 2019 16:50:20 +0100",
   photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391528/modelage_en_famille.jpg',
-  user_id: 2,
+  user_id: "#{augustin.id}",
   location: 'Paris, France'
 )
 
@@ -145,7 +152,7 @@ event3 = Event.create!(
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
   photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391521/enfant_modelage.jpg',
-  user_id: 2,
+  user_id: "#{augustin.id}",
   location: 'Paris, France'
 )
 
@@ -157,7 +164,7 @@ event4 = Event.create!(
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
   photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391512/delaterrealobjet_tessa_guilbaud.jpg',
-  user_id: 2,
+  user_id: "#{augustin.id}",
   location: 'Paris, France'
 )
 
