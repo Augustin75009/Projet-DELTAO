@@ -4,9 +4,9 @@
   <div class="announcement-wrapper">
     <div class="left-side">
       <ul class="stage">
-        <% Event.all.take(3).each_with_index do |stage, index| %>
+        <% if Event.count > 3 %>
+        <% Event.all.take(3).each do |stage| %>
           <li style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: white;">
-            <!-- <%= image_tag stage.photo, alt: "Tessa Guilbaud" %> -->
             <img src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1554393031/Tessa_guilbaud2.jpg" alt="">
             <div style="display: flex; display: flex; justify-content: flex-start;">
               <div style="padding: 12.5px">
@@ -23,6 +23,28 @@
               <button class="button-infos" style="margin: 8px 0px;">En savoir +</button>
             <% end %> -->
           </li>
+        <% end %>
+        <% else %>
+          <% Event.all.each do |stage| %>
+          <h1>test</h1>
+          <li style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: white;">
+            <img src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1554393031/Tessa_guilbaud2.jpg" alt="">
+            <div style="display: flex; display: flex; justify-content: flex-start;">
+              <div style="padding: 12.5px">
+                <h4 style="color: rgba(202, 120, 103, 1); margin: 0px"><%= l(stage.start_date, :format => "%b", :locale => 'fr') %></h4>
+                <h4 style="margin-top: 0px; font-weight: 600;"><%= l(stage.start_date, :format => "%e", :locale => 'fr') %></h4>
+              </div>
+              <div>
+                <h4><%= stage.title %></h4>
+                <p style="text-align: -webkit-left;"><%= stage.title %></p>
+              </div>
+            </div>
+            <hr style="width: 90%; margin: auto;">
+<!--             <%= link_to teachings_path do %>
+              <button class="button-infos" style="margin: 8px 0px;">En savoir +</button>
+            <% end %> -->
+          </li>
+        <% end %>
         <% end %>
       </ul>
     </div>
