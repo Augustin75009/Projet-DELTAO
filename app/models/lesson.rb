@@ -2,7 +2,7 @@ class Lesson < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   monetize :price_cents
   has_many :cart_items, dependent: :nullify
-  belongs_to :user
+  belongs_to :user, optional: true
 
   include PgSearch
   pg_search_scope :search_by_category,
