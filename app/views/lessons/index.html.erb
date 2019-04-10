@@ -14,7 +14,7 @@
                    );">
               </div>
               <div class="card-content-lesson">
-                <h4><%= lesson.title %></h4>
+                <h5><%= lesson.title %></h5>
                 <p><%= lesson.card_description %></p>
               </div>
               <div class="lesson-infos"></div>
@@ -37,19 +37,24 @@
       <div class="actived-filter">
         Aucun filtre activé
       </div>
-      <!-- <h3>à venir :</h3> -->
       <div class="slider">
         <ul>
+          <div class="event-nav"><h5>Evenements</h5><a href="https://www.facebook.com/pg/delaterrealobjet/events/?ref=page_internal" target="_blank">Tout voir</a></div>
           <% @events.sort_by {|a| a.start_date}.take(4).each do |event| %>
             <li>
-              <h4><%= event.title %></h4>
-              <p><%= l(event.start_date, :format => "%d %B %Y", :locale => 'fr') %></p>
+              <div class="event-card-content">
+                <h4><%= event.title %></h4>
+                <p><%= l(event.start_date, :format => "%d %B %Y", :locale => 'fr') %></p>
+              </div>
+              <div class="event-card-pic">
+                <%= image_tag(event.photo, class: "event-pic")%>
+              </div>
             </li>
           <% end %>
         </ul>
       </div>
-      <%= link_to events_path do %>
+<!--       <%= link_to events_path do %>
         <button class="button-infos">Tout voir</button>
-      <% end %>
+      <% end %> -->
     </div>
   </div>

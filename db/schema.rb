@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_15_140257) do
+ActiveRecord::Schema.define(version: 2019_04_09_203538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2019_03_15_140257) do
     t.string "title"
     t.text "description"
     t.integer "quantity"
-    t.date "slot"
     t.string "photo"
     t.integer "price_cents", default: 0, null: false
     t.datetime "created_at", null: false
@@ -69,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_03_15_140257) do
     t.text "card_description"
     t.text "pricing"
     t.bigint "user_id"
+    t.date "slot", array: true
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 

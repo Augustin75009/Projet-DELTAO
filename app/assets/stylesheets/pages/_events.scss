@@ -10,3 +10,89 @@
   width: 400px;
   margin: auto;
 }
+
+.events {
+  flex: 1;
+  padding: 20px 0px 0px 16px;
+  text-align: -webkit-center;
+  max-height: 80vh;
+  margin: 0px 0px 10px 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+
+  h3 {
+    // margin-top: 2px;
+  }
+  a {
+    margin-top: 10px;
+  }
+  h4 {
+    // margin-bottom: 3.5px;
+  }
+}
+
+.events.sticked {
+  position: relative;
+}
+
+
+
+.slider {
+  ul {
+    padding: 8px 16px;
+    background: #ebebeb;;
+    border-radius: 8px;
+    div {
+
+      a {
+        margin-top: 0px;
+        font-size: 16px;
+        line-height: 1.1;
+        text-decoration: underline !important;
+        color: #469AE0 !important;
+      }
+    }
+    h5 {
+      margin-top: 0px;
+      text-align: left;
+    }
+    li {
+      display: inline-flex;
+      justify-content: flex-end;
+      width: 100%;
+      padding: 0px 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding-top: 4px;
+      background-color: white;
+      margin-bottom: 4px;
+      div {
+        h4 {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+.event-nav {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.event-card-content {
+  margin: auto;
+}
+
+.event-card-pic {
+  height: 100%;
+  width: 60px;
+}
+
+.event-pic {
+  height: 60px;
+  width: 60px;
+  // text-align: end;
+}

@@ -39,10 +39,10 @@
 
 @media (max-width: 1150px) {
   .card-container-lesson {
-  flex: 4;
+    flex: 2 !important;
   }
   .event {
-    flex: 1;
+    flex: 1 !important;
   }
 
   .card-dispatch-lesson {
@@ -56,11 +56,74 @@
   #sezaneMenu_rptMenu_liMenu_0 {
     font-size: 1.2rem !important;
   }
+
+  .stage {
+    transform: scale(0.9) !important;
+  }
 }
+
+@media (max-width: 1050px) {
+    .stage {
+    transform: scale(0.8) !important;
+  }
+
+  .events {
+    margin: 0px !important;
+  }
+}
+
+@media (max-width: 950px) {
+    .stage {
+    transform: scale(0.7) !important;
+  }
+    .card-dispatch-lesson {
+    width: 90% !important;
+  }
+  .card-container-lesson {
+    flex: 1 !important;
+  }
+  .event {
+    flex: 1 !important;
+  }
+
+
+}
+
+@media (max-width: 850px) {
+    .stage {
+    transform : scale(1) !important;
+    margin: 0px 80px !important;
+  }
+
+  .announcement-wrapper {
+    overflow: scroll;
+    margin: 0px !important;
+    text-align: end !important;
+    background-color: #cecece63 !important;
+  }
+}
+
 
 
 @media (max-width: 800px) {
 
+  .about {
+    flex-direction: column-reverse !important;
+    .main-title {
+      display: none;
+    }
+  }
+
+  .pedagogy {
+    margin-top: 10px !important;
+    padding: 20px !important;
+  }
+
+  .tessa {
+    padding: 20px !important;
+    margin-top: 50px !important;
+    margin-bottom: 20px !important;
+  }
   .card-container-lesson {
     flex: 1 !important;
   }
@@ -114,6 +177,7 @@
 
   #header{
     justify-content: space-between;
+    z-index: 30000000;
   }
 
 
@@ -156,6 +220,7 @@
     justify-content: start !important;
     text-align: center !important;
     width: 100% !important;
+    display: inline-flex !important;
   }
 
   .lessons-overview {
@@ -383,9 +448,13 @@
   }
 
   .events {
+    display: none !important;
     width: 100% !important;
     padding: 10px !important;
     margin: 0 !important;
+    margin-bottom: 10px !important;
+    position: static !important;
+    background-color: #fdfdfdbd !important;
     .slider {
       width: 100% !important;
       overflow: scroll !important;
@@ -401,7 +470,7 @@
       // overflow: scroll !important;
 
       li {
-        width: 140px !important;
+        width: 250px !important;
         margin: 0px 5px !important;
         border: solid 0.1px #cecece63;
 

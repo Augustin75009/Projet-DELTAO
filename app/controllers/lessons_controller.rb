@@ -38,6 +38,7 @@ class LessonsController < ApplicationController
   def create
     if is_admin?
       @lesson = current_user.lessons.build(lesson_params)
+      @lesson.slot << params[:lesson]["slot"]
       @lesson.save
       redirect_to lesson_path(@lesson)
     else
@@ -48,8 +49,15 @@ class LessonsController < ApplicationController
   def edit
   end
 
+  def add_date
+    @lesson.slot << params[:lesson]["slot"]
+    @lesson.save
+    redirect_to lesson_path(@lesson)
+  end
+
   def update
-    @lesson.update(lesson_params)
+    @lesson.slot << params[:lesson]["slot"]
+    @lesson.update(lesson_params_edit)
     redirect_to lesson_path(@lesson)
   end
 
@@ -61,6 +69,10 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
+    params.require(:lesson).permit(:title, :description, :price_cents, :photo, :quantity, :category, :adult, :child, :phone_booking, :payable, :online_booking, :gift_card, :card_description, :slot)
+  end
+
+  def lesson_params_edit
     params.require(:lesson).permit(:title, :description, :price_cents, :photo, :quantity, :category, :adult, :child, :phone_booking, :payable, :online_booking, :gift_card, :card_description)
   end
 

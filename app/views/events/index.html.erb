@@ -9,9 +9,7 @@
                );">
           </div>
           <div class="card-content-event">
-            <% if event.photo != nil %>
-              <span style="height: 100px"><%= image_tag event.photo, alt: "Tessa Guilbaud" %></span>
-            <% end %>
+
             <h4><%= event.title %></h4>
             <p><%= l(event.start_date, :format => "%b %e, %Y", :locale => 'fr') %></p>
             <p><%= event.description %></p>

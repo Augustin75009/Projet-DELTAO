@@ -1,8 +1,9 @@
 <div class="cart">
   <div class="quantity">
     <%= simple_form_for @lesson do |f|%>
-    <input type="number" max='<%= @lesson.quantity %>' min="1" step="1" value="1">
-    <!-- <input class="flatpickr"> -->
+    <!-- <input type="number" max='<%= @lesson.quantity %>' min="1" step="1" value="1"> -->
+      <%= f.input :slot, label: false, collection: @lesson.slot %>
+
   <% end %>
   </div>
   <div class="button">

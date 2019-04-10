@@ -32,47 +32,7 @@
 }
 
 
-.events {
-  flex: 1;
-  padding: 20px 0px 0px 16px;
-  text-align: -webkit-center;
-  max-height: 80vh;
-  margin: 0px 0px 10px 20px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 80px;
-  .slider {
-    padding: 8px 0px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: white;
-    // border: solid 0.5px #cecece75;
-    margin-bottom: 10px;
-    border-radius: 2px;
-  }
-  ul {
-    padding: 0;
-  }
 
-  li {
-    // border: solid 1px grey;
-    // margin: 4px;
-    // border-radius: 8px;
-  }
-
-  h3 {
-    margin-top: 2px;
-  }
-  a {
-    margin-top: 10px;
-  }
-  h4 {
-    margin-bottom: 3.5px;
-  }
-}
-
-.events.sticked {
-  position: relative;
-}
 
 .card-container-lesson {
   flex: 3;
@@ -83,7 +43,7 @@
   z-index: 10;
   background-color: transparent;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 16px;
   }
 
 
@@ -95,7 +55,7 @@
   margin: 4px 0px 20px 0px;
   background-size: cover;
   border-radius: 2px;
-  padding: 10px;
+  padding: 20px;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -121,6 +81,10 @@
   height: 40%;
   width: 100%;
   z-index: 20;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-around;
+
   // padding: 0px 8px;
 }
 
@@ -142,8 +106,8 @@
   height: 24px;
   width: 24px;
   position: absolute;
-  bottom: 3px;
-  right: 3px;
+  bottom: 0px;
+  right: 0px;
   z-index: 30;
 }
 

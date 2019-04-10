@@ -1,20 +1,32 @@
 
 <div id="stripe-checkout" style="margin: 80px 40px 40px 40px; padding-bottom: 40px; background-color: white">
-  <h1 style="padding-top: 20px">Paiement</h1>
-  <h1>Carte bancaire <% @purchase.product_sku %></h1>
+  <h1 style="padding-top: 30px; font-size: 32px">Paiement</h1>
+  <h1>Référence : DELTAO-<%= Date.today %>-<%= current_user.id %>-<%= @purchase.product_sku %></h1>
+  <p>
+    <%@cart_items.each do |item| %>
+      <% Lesson.where(id: item.lesson_id).each do |t| %>
+      - <%= t.title %>
+      <% end %>
+    <% end %>
+  </p>
   <div style="text-align: center; margin-bottom: 0px">
+  <!-- <h1>Carte bancaire</h1> -->
     <p style="margin-bottom: 40px" ><img src="https://images-eu.ssl-images-amazon.com/images/G/08/checkout/payselect/pay-method-logos/credit-cards-beacon._CB369360176_.gif" alt="card"></p>
     <%= form_tag cart_purchase_payments_path(@purchase) do %>
       <article>
         <label class="amount">
-          <span>Amount: <%= humanized_money_with_symbol(@purchase.amount_cents) %></span>
+          <span>A payer : <%= humanized_money_with_symbol(@purchase.amount_cents) %></span>
         </label>
       </article>
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-name="My Product"
+        data-name="DELTAO-<%= Date.today %>-<%= current_user.id %>-<%= @purchase.product_sku %>"
         data-email="<%= current_user.email %>"
-        data-description="Product <%= @purchase.product_sku %>"
+        data-description="<%@cart_items.each do |item| %>
+                            <% Lesson.where(id: item.lesson_id).each do |t| %>
+                              <%= t.title %> /
+                            <% end %>
+                          <% end %>"
         data-amount="<%= @purchase.amount_cents*100 %>"
         data-currency="<%= @purchase.amount.currency %>"></script>
     <% end %>
