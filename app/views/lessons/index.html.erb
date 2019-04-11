@@ -15,7 +15,7 @@
               </div>
               <div class="card-content-lesson">
                 <h5><%= lesson.title.truncate(26) %></h5>
-                <p><%= lesson.card_description.truncate(110) %></p>
+                <p><%= lesson.card_description.truncate(100) %></p>
                 <hr>
                 <span><p><%= lesson.category.truncate(21) %> - <%= (lesson.price./10).to_i %>€</p></span>
               </div>

@@ -10,7 +10,7 @@ pre {
 
 .filter-button{
   flex: 1;
-  font-size: 21px;
+  font-size: 20px;
   position: relative;
   border-right: solid 0.4px rgba(249, 249, 249, 0.5);
   padding-top: 20px;
@@ -22,6 +22,7 @@ pre {
   background: #cecece50;
   border-radius: 10px;
   position: relative;
+  padding: 4px;
 }
 
 .filter-button.actived {

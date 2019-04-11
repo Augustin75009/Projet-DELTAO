@@ -1,18 +1,24 @@
 // Import Google fonts
 // @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-// $body-font: 'Playfair Display', serif;
-// $headers-font: 'Playfair Display', serif;
+$body-font: 'Playfair Display', serif;
+$headers-font: 'Playfair Display', serif;
+// $body-font: 'Rubik', sans-serif;
+// $headers-font: 'Rubik', sans-serif;
 
 
 
-@font-face {
-  font-family: "Font Name";
-  src: font-url('DK_Lemon_Yellow_Sun.otf') format('truetype');
-}
-// $my-font: "Font Name";
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('DK_Lemon_Yellow_Sun.otf') format('truetype');
+// }
 
-body {
-  font-family: "Font Name" !important;
+// body {
+//   font-family: "Font Name" !important;
+// }
+
+
+h4 {
+  font-size: 16px;
 }
 
 
