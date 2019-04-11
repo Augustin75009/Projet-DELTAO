@@ -43,7 +43,7 @@
   z-index: 10;
   background-color: transparent;
   width: 100%;
-  padding-top: 16px;
+  padding-top: 8px;
   }
 
 
@@ -83,14 +83,32 @@
   z-index: 20;
   display: flex;
   flex-direction: column;
-  // justify-content: space-around;
-
-  // padding: 0px 8px;
+  h5 {
+    margin-bottom: 4.5px;
+  }
 }
 
 .card-content-lesson>p {
   color: grey;
-  font-size: 15px;
+  font-size: 14px;
+}
+
+.card-content-lesson>hr {
+  height: 1px;
+  width: 80%;
+  position: absolute;
+  bottom: 1px;
+  left: 7%;
+}
+
+
+.card-content-lesson>span>p {
+  position: absolute;
+  bottom: -19px;
+  left: 2px;
+  color: gray;
+  opacity: 0.8;
+  font-size: 16px;
 }
 
 .card-image-lesson {
@@ -104,10 +122,10 @@
 .lesson-infos {
   background-image: url(info.svg);
   background-size: cover;
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   position: absolute;
-  bottom: 0px;
+  bottom: -3px;
   right: 0px;
   z-index: 30;
 }
@@ -118,7 +136,7 @@
   }
   100% {
   background-image: url("https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919579/info2.svg");
-  background-position-y: -24px;
+  background-position-y: -20px;
   }
 }
 
@@ -127,7 +145,7 @@
   }
   100% {
   background-image: url("https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919586/info.svg");
-  background-position-y: 24px;
+  background-position-y: 20px;
   }
 }
 

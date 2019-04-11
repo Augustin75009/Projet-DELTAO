@@ -17,12 +17,12 @@ class Cart < ApplicationRecord
     item
   end
 
-  def add_lesson(lesson)
-    item = CartItem.find_by(lesson: lesson)
+  def add_lesson(lesson, slot)
+    item = CartItem.find_by(lesson: lesson, slot: slot)
     if item
       item.quantity += 1
     else
-      item = CartItem.new(lesson: lesson)
+      item = CartItem.new(lesson: lesson, slot: slot)
     end
     item
   end

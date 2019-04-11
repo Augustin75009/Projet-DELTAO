@@ -1,14 +1,29 @@
 <div class="cart">
   <div class="quantity">
-    <%= simple_form_for @lesson do |f|%>
-    <!-- <input type="number" max='<%= @lesson.quantity %>' min="1" step="1" value="1"> -->
-      <%= f.input :slot, label: false, collection: @lesson.slot %>
-
-  <% end %>
+      <%= simple_form_for @cart_item do |f|%>
+        <%= f.input :slot, label: false, collection: @lesson.slot, input_html: {data: {"slots" => "#{@lesson.slot}"}} %>
   </div>
   <div class="button">
-    <%= link_to cart_items_path(lesson: @lesson.id), method: :post, remote: false do %>
-      <button class="button-show">Ajouter au panier</button>
-    <% end %>
+        <%= hidden_field_tag :lesson, @lesson.id %>
+        <%= f.button :submit, "Ajouter au panier", class: "btn-danger" %>
+      <% end %>
+  </div>
+  <div>
   </div>
 </div>
+<% if user_signed_in? %>
+          <% if current_user.adminkey == "admin" %>
+  <% array = [] %>
+  <% i = 0 %>
+  <% 100.times do |i|
+    array << (Date.today + i)
+    i += 1
+  end %>
+    <%= simple_form_for @lesson do |f|%>
+      <%= f.input :slot, label: "choisir la nouvelle date", collection: array %>
+      <%= f.button :submit, "Ajouter une date", class: "btn-danger" %>
+    <% end %>
+<% end %>
+<% end %>
+
+<!-- html: { id: :flatpickr }  -->

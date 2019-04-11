@@ -13,7 +13,7 @@
 
 .events {
   flex: 1;
-  padding: 20px 0px 0px 16px;
+  padding: 4px 0px 0px 16px;
   text-align: -webkit-center;
   max-height: 80vh;
   margin: 0px 0px 10px 20px;
@@ -47,10 +47,12 @@
 
       a {
         margin-top: 0px;
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.1;
-        text-decoration: underline !important;
         color: #469AE0 !important;
+      }
+      a:hover {
+        text-decoration: underline !important;
       }
     }
     h5 {

@@ -75,22 +75,27 @@
   text-align: end;
 }
 
+
+.btn {
+      border: none;
+    padding: 7px;
+}
 .cart {
   display: flex;
   width: 100%;
   justify-content: space-between;
   padding-bottom: 10px;
-  .simple-form {
-  // width: 50%;
+  .quantity {
   flex: 1;
   }
   .button {
-  // width: 50%;
   flex: 1;
+  .btn {
+    border: none;
+    padding: 7px;
+  }
   }
 }
-
-
 
 .quantity {
   position: relative;
@@ -163,7 +168,6 @@ input[type=number]
 
 
 .more-infos {
-  // height: 80vh;
   width: 70%;
   padding-top: 40px;
 }

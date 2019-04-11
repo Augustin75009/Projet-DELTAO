@@ -41,12 +41,12 @@ class CartItemsController < ApplicationController
         @cart.price_cents += @lesson.price_cents
       end
       # raise
-      @cart_item = @cart.add_lesson(@lesson)
+      @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot])
+      # @cart_item.slot = params[:slot]
       @cart_item.user = current_user
       @cart_item.cart = @cart
       @cart_item.save
       @cart.save
-      # raise
       # @counter = current_user.cart_item_item.count
       respond_to do |format|
         format.html { redirect_to lesson_path(@lesson) }
