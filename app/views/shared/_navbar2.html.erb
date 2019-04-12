@@ -1,41 +1,43 @@
 <header id="header" class="header is-absolute header--light">
   <div class="logo">
     <a class="logo__link" href="/"><img src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391419/LogoMarron.png" alt="De la terre à l'objet"></a>
-    <!-- <a class="logo__link" href="/"><strong>De la Terre à l'Objet</strong></a> -->
   </div>
   <nav class="menu">
     <ul class="menu__product__list">
-    <% if user_signed_in? %>
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
       <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://tessaguilbaud.jimdo.com/points-de-vente/" target="_blank">Boutique</a></li>
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
       <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/lessons">Cours</a></li>
-      <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-        <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/cart_items" style="position: relative; text-align: center">
-          <!-- Panier<div id="nb_cart_items"style=""><span>1</span></div> -->
-          Panier
-          <!-- <div class="notification-box"> -->
-            <% if @cart_items.count != 0 %>
-              <span class="notification-count"><%= @cart_items.count %></span>
-            <% end %>
-          <!-- </div> -->
-        </a>
-      </li>
+      <% if user_signed_in? %>
+        <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
+          <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/cart_items" style="position: relative; text-align: center">
+            Panier
+              <% if @cart_items.count != 0 %>
+                <span class="notification-count"><%= @cart_items.count %></span>
+              <% end %>
+          </a>
+        </li>
+      <% else %>
+        <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
+          <span style="cursor: not-allowed">Panier</span>
+        </li>
+      <% end %>
     </ul>
   </nav>
   <div class="shopping-nav">
     <div class="header-item">
+    <% if user_signed_in? %>
       <div class="dropdown">
-        <%= image_tag "home.png", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown" %>
+        <%= image_tag "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555074154/home.png", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
-            <ul class="burger-phone">
-              <li id="" class="fa fa-sign-out">
-                <a id="" class=".sign_out" href="https://tessaguilbaud.jimdo.com/points-de-vente/" target="_blank">Boutique</a></li>
-              <li id="" class="fa fa-sign-out">
-                <a id="" class=".sign_out" href="/lessons">Cours</a></li>
-              <li id="" class="fa fa-sign-out">
-                <a id="" class=".sign_out" href="/cart_items">Panier</a></li>
-            </ul>
+          <ul class="burger-phone">
+            <li id="" class="fa fa-sign-out">
+              <a id="" class=".sign_out" href="https://tessaguilbaud.jimdo.com/points-de-vente/" target="_blank">Boutique</a></li>
+            <li id="" class="fa fa-sign-out">
+              <a id="" class=".sign_out" href="/lessons">Cours</a></li>
+            <li id="" class="fa fa-sign-out">
+              <a id="" class=".sign_out" href="/cart_items">Panier</a></li>
+          </ul>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>

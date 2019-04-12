@@ -31,8 +31,13 @@
   display: flex;
 }
 
-
-
+.results-container {
+    padding: 30px 0px;
+    font-size: 24px;
+    text-align: center;
+    color: #d18e81;
+    // font-weight: 500;
+}
 
 .card-container-lesson {
   flex: 3;

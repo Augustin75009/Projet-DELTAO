@@ -6,7 +6,8 @@
   background-size: cover !important;
   // background-position: center;
   display: flex;
-  background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1554395564/boutique2.jpg');
+  // background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1554395564/boutique2.jpg');
+  background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/made-com/image/upload/c_lfill,d_madeplusgrey.svg,f_auto,g_auto,h_600,q_auto:best,w_1440/v1/mws/d66f8d5877f1eb4efecc78dcd44e7549c3657d93_liana_2019_03_15_carousels_desktop_02-1.jpg');
   background-position: top;
   background-repeat: no-repeat;
   top: 0;
@@ -29,10 +30,10 @@
   opacity: 1;
 }
 .split-line {
-  width: 1px;
-  border-right: solid 0.5px;
-  height: 50vh;
-  border-color: rgba(0, 0, 0, 0.5);
+  // width: 1px;
+  // border-right: solid 0.5px;
+  // height: 50vh;
+  // border-color: rgba(0, 0, 0, 0.5);
 }
 
 .banner p {

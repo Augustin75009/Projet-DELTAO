@@ -1,5 +1,6 @@
 <div class="wrapper-registration">
   <h2>Resend unlock instructions</h2>
+  <br>
 
   <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>

@@ -149,14 +149,23 @@
 
 @media (max-width: 550px) {
 
+  .wrapper-registration {
+    margin: 0px !important;
+    padding: 40px 20px !important;
+  }
+
+
   .selector-arrow {
   visibility: visible !important;
   display: flex;
-
-  span {
-    margin: auto
+    span {
+      margin: auto
+    }
   }
-}
+
+  .results-container {
+    display: none;
+  }
 
 
   .logo__link {
@@ -438,10 +447,12 @@
 
   .filter-for-lesson {
     display: block !important;
+    margin-top: 30px !important;
   }
 
   .filter-button {
     padding-top: 10px !important;
+    padding-bottom: 1px !important;
   }
 
   .actived-filter {
