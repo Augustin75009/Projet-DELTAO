@@ -38,6 +38,12 @@
 
 
 @media (max-width: 1150px) {
+
+  .announcement-wrapper {
+  margin: 0px 0px 0px 0px !important;
+  text-align: center;
+  }
+
   .card-container-lesson {
     flex: 2 !important;
   }
@@ -63,9 +69,9 @@
 }
 
 @media (max-width: 1050px) {
-    .stage {
-    transform: scale(0.8) !important;
-  }
+  //   .stage {
+  //   transform: scale(0.8) !important;
+  // }
 
   .events {
     margin: 0px !important;
@@ -73,9 +79,6 @@
 }
 
 @media (max-width: 950px) {
-    .stage {
-    transform: scale(0.7) !important;
-  }
     .card-dispatch-lesson {
     width: 90% !important;
   }
@@ -148,6 +151,27 @@
 
 
 @media (max-width: 550px) {
+
+  .button-infos {
+    margin: 10px 0px 10px 38% !important;
+  }
+
+  .header-item {
+    margin: auto 0px !important;
+  }
+
+  #header {
+    height: 65px !important;
+  }
+
+  .logo__link {
+  display: inline-block;
+  height: 35px !important;
+  img {
+    height: 35px !important;
+    width: 112px !important;
+  }
+  }
 
   .wrapper-registration {
     margin: 0px !important;

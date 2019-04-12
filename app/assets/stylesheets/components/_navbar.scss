@@ -27,8 +27,7 @@ header.is-absolute {
   display: flex;
   width: 40%;
   justify-content: flex-start;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: auto 0px;
   padding-bottom: .2rem;
   font-size: 3rem;
   text-transform: uppercase;
@@ -72,9 +71,10 @@ header.is-absolute {
 
 .logo__link {
   display: inline-block;
-  height: 44px;
+  height: 50px;
   img {
-    height: 44px;
+    height: 50px;
+    width: 169px;
   }
 }
 

@@ -1,11 +1,11 @@
 <div class="cart">
   <div class="quantity">
       <%= simple_form_for @cart_item do |f|%>
-        <%= f.input :slot, label: false, collection: @lesson.slot, input_html: {data: {"slots" => "#{@lesson.slot}"}} %>
+        <%= f.input :slot, label: "Choisir un créneau", collection: @lesson.slot, input_html: {data: {"slots" => "#{@lesson.slot}"}} %>
   </div>
   <div class="button">
         <%= hidden_field_tag :lesson, @lesson.id %>
-        <%= f.button :submit, "Ajouter au panier", class: "btn-danger" %>
+        <%= f.button :submit, "Ajouter au panier", class: "button-show" %>
       <% end %>
   </div>
   <div>
@@ -21,7 +21,7 @@
   end %>
     <%= simple_form_for @lesson do |f|%>
       <%= f.input :slot, label: "choisir la nouvelle date", collection: array %>
-      <%= f.button :submit, "Ajouter une date", class: "btn-danger" %>
+      <%= f.button :submit, "Ajouter une date", class: "button-show" %>
     <% end %>
 <% end %>
 <% end %>
