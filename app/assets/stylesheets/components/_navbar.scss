@@ -53,6 +53,7 @@ header.is-absolute {
   text-transform: uppercase;
   letter-spacing: .1rem;
   transition: color .3s linear;
+  color: white;
 }
 
 .shopping-nav {
@@ -79,7 +80,7 @@ header.is-absolute {
 }
 
 header a {
-  color: black;
+  color: white;
 }
 
 a:-webkit-any-link {
@@ -183,8 +184,8 @@ li {
 .header.is-absolute {
   border-left-width: 20px;
   border-right-width: 20px;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 

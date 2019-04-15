@@ -11,7 +11,7 @@
             <div class="card-lesson">
               <div class ="card-image-lesson"
                    style="background-image: url(
-                    '<%= cl_image_path lesson.photo.blank? ? 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg' : lesson.photo %>'
+                    '<%= lesson.photo %>'
                    );">
               </div>
               <div class="card-content-lesson">
@@ -50,7 +50,7 @@
                 <p><%= l(event.start_date, :format => "%d %B %Y", :locale => 'fr') %></p>
               </div>
               <div class="event-card-pic">
-                <img src="https://res-5.cloudinary.com/made-com/image/upload/a_auto,b_transparent,c_pad,d_made.svg,dpr_1.0,f_auto,h_550,q_auto:best,w_1050/v4/catalog/product/asset/8/e/d/0/8ed069774a4209728d3908f3f20577073584affd_TBLCAT001GRE_UK_Catfield_dining_table_grey_and_green_LB02.jpg" alt="" class="event-pic">
+                <img src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1555313947/anniversaire.jpg" alt="" class="event-pic">
               </div>
             </li>
           <% end %>

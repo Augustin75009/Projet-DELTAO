@@ -2,16 +2,17 @@
   position: relative;
   color: black;
   text-align: center;
-  height: 450px;
+  height: 550px;
   background-size: cover !important;
   // background-position: center;
   display: flex;
-  // background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1554395564/boutique2.jpg');
-  background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/made-com/image/upload/c_lfill,d_madeplusgrey.svg,f_auto,g_auto,h_600,q_auto:best,w_1440/v1/mws/d66f8d5877f1eb4efecc78dcd44e7549c3657d93_liana_2019_03_15_carousels_desktop_02-1.jpg');
-  background-position: top;
+  background: linear-gradient(0deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.2) 100%), url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555321849/atelier_ceramique_nb.jpg');
+  // background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/dw7nokc0j/image/upload/e_grayscale,r_0/v1554394852/atelier_grime2.jpg');
+  // background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/made-com/image/upload/c_lfill,d_madeplusgrey.svg,f_auto,g_auto,h_600,q_auto:best,w_1440/v1/mws/d66f8d5877f1eb4efecc78dcd44e7549c3657d93_liana_2019_03_15_carousels_desktop_02-1.jpg');
+  background-position: bottom 0px right 0px;
   background-repeat: no-repeat;
-  top: 0;
-  margin-top: 65px;
+  top: -15px;
+  // margin-top: 65px;
 }
 
 .banner a {
@@ -79,6 +80,15 @@
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+
+  p{
+    position: absolute;
+    left: 27%;
+    top: 50%;
+
+    color: white;
+    font-size: 70px;
+  }
 }
 
 .split-item {
