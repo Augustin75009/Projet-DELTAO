@@ -1,6 +1,6 @@
-<header id="header" class="header is-absolute header--light">
-  <div class="logo">
-    <a class="logo__link" href="/"><img src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1555323674/LogoBlanc.png" alt="De la terre à l'objet"></a>
+<header id="header" class="header is-absolute header--light transparent">
+  <div class="logo transparent">
+    <a class="logo__link transparent" href="/"></a>
   </div>
   <nav class="menu">
     <ul class="menu__product__list">
@@ -19,7 +19,7 @@
         </li>
       <% else %>
         <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-          <span style="cursor: not-allowed">Panier</span>
+          <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="#" style="cursor: not-allowed">Panier</a>
         </li>
       <% end %>
     </ul>
@@ -39,7 +39,7 @@
               <a id="" class=".sign_out" href="/cart_items">Panier</a></li>
           </ul>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "link_sign_out" do %>
               <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
             <% end %>
           </li>

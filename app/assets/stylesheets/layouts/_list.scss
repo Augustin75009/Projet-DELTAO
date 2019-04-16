@@ -175,7 +175,29 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-left: 24px;
+  margin-left: 16px;
+  background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555404696/settings_2.png');
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  img {
+    opacity: 0;
+    height: 30px;
+  }
+}
+
+.dropdown.transparent {
+  position: relative;
+  display: inline-block;
+  margin-left: 16px;
+  background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555404701/settings_1.png');
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  img {
+    opacity: 0;
+    height: 30px;
+  }
 }
 
 /* Dropdown Content (Hidden by Default) */

@@ -152,6 +152,36 @@
 
 @media (max-width: 550px) {
 
+  .fa.fa-sign-out {
+    padding: 8px 0px !important;
+  }
+
+  .dropdown-menu > li > a {
+    padding: 8px 20px !important;
+}
+
+  .dropdown {
+    background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555403885/menu.png') !important;
+  }
+
+  .dropdown.transparent {
+    background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555403885/menu.png') !important;
+  }
+
+  .split {
+    display: flex !important;
+    flex-direction: column !important;
+    p{
+      margin: 180px auto 0px auto !important;
+      position: initial !important;
+      font-size: 50px !important;
+    }
+    button {
+      position: initial !important;
+      margin: 20px auto !important;
+    }
+  }
+
   .button-infos {
     margin: 10px 0px 10px 38% !important;
   }
@@ -165,12 +195,13 @@
   }
 
   .logo__link {
-  display: inline-block;
-  height: 35px !important;
-  img {
-    height: 35px !important;
-    width: 112px !important;
-  }
+    display: inline-block;
+    height: 45px !important;
+    width: 113px !important;
+    // img {
+    //   height: 35px !important;
+    //   width: 112px !important;
+    // }
   }
 
   .wrapper-registration {
@@ -180,7 +211,7 @@
 
 
   .selector-arrow {
-  visibility: visible !important;
+  // visibility: visible !important;
   display: flex;
     span {
       margin: auto
@@ -235,11 +266,12 @@
     font-size: 30px !important;
   }
 
-  .banner {
-    height: 40vh !important;
-  }
+  // .banner {
+  //   height: 40vh !important;
+  // }
 
   .announcement {
+    width: 100% !important;
   }
 
   .announcement-wrapper {
@@ -264,16 +296,18 @@
 
   .overview-selectors {
     overflow: scroll;
-    height: 30px;
+    height: 70px;
+    bottom: 0px !important;
   }
 
   .overview-button > p {
-    font-size: 16px !important;
-    bottom: 13px !important;
+    font-size: 20px !important;
+    bottom: 0px !important;
   }
 
   .overview-button {
     min-width: 120px !important;
+    height: 64px !important;
   }
 
   .overview-content {

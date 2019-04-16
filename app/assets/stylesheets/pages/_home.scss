@@ -1,7 +1,17 @@
 // Specific CSS for your home-page
 
+
+.boundary {
+  min-height: 80vh;
+  //max-width: 1500px;
+  margin: auto;
+  background: #F7F7F7
+}
+
 .announcement {
   // position: relative;
+  width: 90%;
+  margin: auto;
   margin-top: 16px;
   margin-bottom: 16px;
   justify-content: center;

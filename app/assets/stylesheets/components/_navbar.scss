@@ -23,6 +23,32 @@ header.is-absolute {
   color: black;
 }
 
+.header-item {
+    padding-bottom: 6px;
+}
+
+#header-menu {
+  margin-bottom: 8px;
+}
+.header.is-absolute {
+  border-left-width: 20px;
+  border-right-width: 20px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background .3s linear;
+  span {
+    font-weight: 100 !important;
+    color: black !important;
+    // margin-right: 1.3rem;
+  }
+}
+
+.menu__product__item {
+  a {
+    color: black !important;
+  }
+}
+
 .logo {
   display: flex;
   width: 40%;
@@ -32,7 +58,67 @@ header.is-absolute {
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
+}
+
+.menu__product__link.transparent {
+  color: white;
   transition: color .3s linear;
+}
+
+.logo__link {
+  display: inline-block;
+  height: 50px;
+  background: url("https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391419/LogoMarron.png");
+  background-size: cover;
+  height: 50px;
+  width: 124px;
+  transition: background .3s linear;
+}
+
+
+.header.is-absolute.transparent {
+  border-left-width: 20px;
+  border-right-width: 20px;
+  background: transparent;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  transition: background .3s linear;
+  span {
+    font-weight: 600 !important;
+    color: white !important;
+  }
+}
+
+.menu__product__item.transparent {
+  a {
+    color: white !important;
+    font-weight: 600;
+    transition: color .3s linear;
+  }
+}
+
+.menu__product__item.transparent:before, .menu__product__item.transparent:after {
+  color: white !important;
+  transition: color .3s linear;
+}
+
+.logo.transparent {
+  display: flex;
+  width: 40%;
+  justify-content: flex-start;
+  margin: auto 0px;
+  padding-bottom: .2rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+.logo__link.transparent {
+  display: inline-block;
+  background: url("https://res.cloudinary.com/dw7nokc0j/image/upload/v1555323674/LogoBlanc.png");
+  background-size: cover;
+  height: 50px;
+  width: 124px;
+  transition: background .3s linear;
 }
 
 .burger-phone {
@@ -53,7 +139,6 @@ header.is-absolute {
   text-transform: uppercase;
   letter-spacing: .1rem;
   transition: color .3s linear;
-  color: white;
 }
 
 .shopping-nav {
@@ -63,20 +148,15 @@ header.is-absolute {
   -webkit-box-pack: end;
   justify-content: flex-end;
   width: 5%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
   transition: color .3s linear;
   cursor: pointer;
 }
 
-.logo__link {
-  display: inline-block;
-  height: 50px;
-  img {
-    height: 50px;
-    width: 169px;
-  }
+.link_sign_out {
+  color: black !important;
 }
 
 header a {
@@ -178,14 +258,5 @@ li {
   text-align: center;
 }
 
-#header-menu {
-  margin-bottom: 8px;
-}
-.header.is-absolute {
-  border-left-width: 20px;
-  border-right-width: 20px;
-  background: transparent;
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 

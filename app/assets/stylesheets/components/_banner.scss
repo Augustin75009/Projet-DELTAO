@@ -4,15 +4,13 @@
   text-align: center;
   height: 550px;
   background-size: cover !important;
-  // background-position: center;
   display: flex;
-  background: linear-gradient(0deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.2) 100%), url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555321849/atelier_ceramique_nb.jpg');
-  // background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/dw7nokc0j/image/upload/e_grayscale,r_0/v1554394852/atelier_grime2.jpg');
-  // background: linear-gradient(180deg,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0)),url('https://res.cloudinary.com/made-com/image/upload/c_lfill,d_madeplusgrey.svg,f_auto,g_auto,h_600,q_auto:best,w_1440/v1/mws/d66f8d5877f1eb4efecc78dcd44e7549c3657d93_liana_2019_03_15_carousels_desktop_02-1.jpg');
-  background-position: bottom 0px right 0px;
+  background: linear-gradient(0deg,
+              rgba(10,10,10,0.3) 0%,
+              rgba(10,10,10,0.3) 100%),
+              url('https://res.cloudinary.com/dw7nokc0j/image/upload/c_crop,g_north,h_2000,w_3872,x_0,y_715/v1555321849/atelier_ceramique_nb.jpg');
   background-repeat: no-repeat;
   top: -15px;
-  // margin-top: 65px;
 }
 
 .banner a {
@@ -38,7 +36,7 @@
 }
 
 .banner p {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: lighter;
   color: black;
   opacity: 0.9;
@@ -70,6 +68,8 @@
 
 .split {
   position: relative;
+  display: flex;
+  flex-direction: column;
   top: 0;
   left: 0;
   width: 100%;
@@ -82,12 +82,27 @@
   align-items: center;
 
   p{
-    position: absolute;
-    left: 27%;
-    top: 50%;
-
+    // position: absolute;
+    // left: 27%;
+    // top: calc(450px / 2);
+    position: initial;
+    margin: 200px auto 0px auto;
     color: white;
     font-size: 70px;
+  }
+
+  button {
+    // position: absolute;
+    // left: 44%;
+    // top: calc(450px / 2 + 100px);
+    position: initial;
+    margin: 20px auto;
+    padding: 2px 2%;
+    color: white;
+    background: #e0b7b0;
+    border-radius: 4px;
+    border: none;
+    font-size: 20px;
   }
 }
 
