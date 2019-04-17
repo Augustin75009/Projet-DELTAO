@@ -148,13 +148,13 @@ header.is-absolute {
 }
 
 .shopping-nav {
-  height: 100%;
-  margin: auto 0px;
+  // height: 100%;
+  margin: auto 20px;
   display: flex;
   -webkit-box-pack: end;
-  justify-content: flex-end;
-  width: 5%;
-  font-size: 1rem;
+  // justify-content: flex-end;
+  // width: 5%;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: .2rem;
   transition: color .4s linear;

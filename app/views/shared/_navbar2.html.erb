@@ -24,7 +24,11 @@
       <% end %>
     </ul>
   </nav>
-  <div class="shopping-nav">
+  <% if user_signed_in? %>
+    <div class="shopping-nav">
+  <% else %>
+    <div class="shopping-nav" style="background: none !important">
+  <% end %>
     <div class="header-item">
     <% if user_signed_in? %>
       <div class="dropdown">

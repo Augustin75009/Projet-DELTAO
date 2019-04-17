@@ -19,7 +19,7 @@ initSlick();
 selectLesson();
 infoAnimation();
 navbar();
-parallaxScroll();
+//parallaxScroll();
 
 if(document.location.href.match('query')) {
   activedFilter();

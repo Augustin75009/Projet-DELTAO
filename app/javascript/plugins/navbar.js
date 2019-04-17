@@ -2,14 +2,19 @@ const header = document.querySelector('.header.is-absolute');
 const logoLink = document.querySelector('.logo__link');
 const logo = document.querySelector('.logo');
 const items = document.querySelectorAll('.menu__product__item');
-const dropdown = document.querySelector('.dropdown');
+const dropdown = document.querySelector('.shopping-nav');
+const title = document.querySelector('.split p');
+const button = document.querySelector('.split button');
 
 var height = window.top.innerHeight;
-console.log(dropdown.childNodes[1].attributes.src)
 
 const navbar = () => {
 
-  if(document.location.href.match('lessons') || document.location.href.match('cart') || document.location.href.match('events') || window.innerWidth < 550 ) {
+  if(document.location.href.match('lessons')
+    || document.location.href.match('cart')
+    || document.location.href.match('events')
+    || document.location.href.match('user')
+    || window.innerWidth < 550 ) {
     header.classList.remove('transparent')
     logo.classList.remove('transparent')
     logoLink.classList.remove('transparent')
@@ -28,7 +33,22 @@ const navbar = () => {
   }
 
   document.addEventListener('scroll', (event) => {
-    if(document.location.href.match('lessons') || document.location.href.match('cart') || document.location.href.match('events') || window.innerWidth < 550 || window.pageYOffset > 475) {
+    if (window.pageYOffset > 150) {
+      title.classList.add('opacity')
+      button.classList.add('opacity')
+    } else {
+      title.classList.remove('opacity')
+      button.classList.remove('opacity')
+    }
+  })
+
+  document.addEventListener('scroll', (event) => {
+    if(document.location.href.match('lessons')
+      || document.location.href.match('cart')
+      || document.location.href.match('events')
+      || document.location.href.match('user')
+      || window.innerWidth < 550
+      || window.pageYOffset > 458) {
       header.classList.remove('transparent')
       logo.classList.remove('transparent')
       logoLink.classList.remove('transparent')
