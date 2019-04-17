@@ -9,9 +9,9 @@ class LessonsController < ApplicationController
     elsif params[:query3].present?
       @lessons = Lesson.search_by_category(params[:query3])
     elsif params[:query2].present?
-      @lessons = Lesson.where(child: true)
-    elsif params[:query1].present?
       @lessons = Lesson.where(adult: true)
+    elsif params[:query1].present?
+      @lessons = Lesson.where(child: true)
     else
       @lessons = Lesson.all
     end

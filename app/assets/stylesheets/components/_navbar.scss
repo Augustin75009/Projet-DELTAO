@@ -13,6 +13,7 @@ header {
 
 header.is-absolute {
   // position: absolute;
+  height: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -35,11 +36,10 @@ header.is-absolute {
   border-right-width: 20px;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background .3s linear;
+  transition: height .4s linear, background .4s linear;
   span {
     font-weight: 100 !important;
     color: black !important;
-    // margin-right: 1.3rem;
   }
 }
 
@@ -62,7 +62,7 @@ header.is-absolute {
 
 .menu__product__link.transparent {
   color: white;
-  transition: color .3s linear;
+  transition: color .4s linear;
 }
 
 .logo__link {
@@ -72,16 +72,17 @@ header.is-absolute {
   background-size: cover;
   height: 50px;
   width: 124px;
-  transition: background .3s linear;
+  transition: height .4s linear, width .4s linear, background .4s linear;
 }
 
 
 .header.is-absolute.transparent {
+  height: 100px;
   border-left-width: 20px;
   border-right-width: 20px;
   background: transparent;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
-  transition: background .3s linear;
+  transition: height .4s linear;
   span {
     font-weight: 600 !important;
     color: white !important;
@@ -92,13 +93,13 @@ header.is-absolute {
   a {
     color: white !important;
     font-weight: 600;
-    transition: color .3s linear;
+    transition: color .4s linear;
   }
 }
 
 .menu__product__item.transparent:before, .menu__product__item.transparent:after {
   color: white !important;
-  transition: color .3s linear;
+  transition: color .4s linear;
 }
 
 .logo.transparent {
@@ -116,13 +117,17 @@ header.is-absolute {
   display: inline-block;
   background: url("https://res.cloudinary.com/dw7nokc0j/image/upload/v1555323674/LogoBlanc.png");
   background-size: cover;
-  height: 50px;
-  width: 124px;
-  transition: background .3s linear;
+  height: 80px;
+  width: 200px;
+  transition: height .4s linear, width .4s linear, background .4s linear;
 }
 
 .burger-phone {
   display: none;
+}
+
+.header-item {
+  margin: auto;
 }
 
 .menu {
@@ -132,13 +137,14 @@ header.is-absolute {
   -webkit-box-align: baseline;
   align-items: baseline;
   width: 80%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  // margin-top: 1rem;
+  // margin-bottom: 1rem;
   padding-bottom: .2rem;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
-  transition: color .3s linear;
+  transition: color .4s linear;
+  margin: auto
 }
 
 .shopping-nav {
@@ -151,7 +157,7 @@ header.is-absolute {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
-  transition: color .3s linear;
+  transition: color .4s linear;
   cursor: pointer;
 }
 
