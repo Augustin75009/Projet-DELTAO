@@ -151,6 +151,7 @@ event1 = Event.create!(
   end_date: "Thu, 30 Jan 2019 16:50:20 +0100",
   photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
   user_id: "#{tessa.id}",
+  link: "https://www.facebook.com/pg/delaterrealobjet/events/",
   location: 'Paris, France'
 )
 
@@ -163,6 +164,7 @@ event2 = Event.create!(
   end_date: "Thu, 5 Feb 2019 16:50:20 +0100",
   photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391528/modelage_en_famille.jpg',
   user_id: "#{tessa.id}",
+  link: "https://www.facebook.com/pg/delaterrealobjet/events/",
   location: 'Paris, France'
 )
 
@@ -175,6 +177,7 @@ event3 = Event.create!(
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
   photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391521/enfant_modelage.jpg',
   user_id: "#{tessa.id}",
+  link: "https://www.facebook.com/pg/delaterrealobjet/events/",
   location: 'Paris, France'
 )
 
@@ -187,6 +190,7 @@ event4 = Event.create!(
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
   photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391512/delaterrealobjet_tessa_guilbaud.jpg',
   user_id: "#{tessa.id}",
+  link: "https://www.facebook.com/pg/delaterrealobjet/events/",
   location: 'Paris, France'
 )
 

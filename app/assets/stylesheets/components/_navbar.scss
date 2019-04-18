@@ -32,6 +32,7 @@ header.is-absolute {
   margin-bottom: 8px;
 }
 .header.is-absolute {
+  z-index: 30000;
   border-left-width: 20px;
   border-right-width: 20px;
   background: white;
