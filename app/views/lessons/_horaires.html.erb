@@ -4,11 +4,13 @@
 <br>
 <p>Les prochaines dates : </p>
 <ul style ="padding-left: 0px;">
-  <% if @lesson.slot != [""] || @lesson.slot != nil  || @lesson.slot != []%>
+  <% if @lesson.slot.size > 1 %>
     <% @lesson.slot.each do |slot|%>
       <li>
         <%= l(slot.to_datetime, :format => "%d %B %Y", :locale => 'fr') %>
       </li>
     <% end %>
+  <% else %>
+    <%= @lesson.slot[0] %>
   <% end %>
 </ul>
