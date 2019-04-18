@@ -36,22 +36,16 @@
   </div>
   <div class="more-infos">
      <ul class="infos-list">
-        <li><%= link_to "Description", lesson_path({tab: "description"}), remote: false %></li>
-        <li><%= link_to "Horaires", lesson_path({tab: "horaires"}), remote: false %></li>
-        <li><%= link_to "Tarifs", lesson_path({tab: "reglement"}), remote: false %></li>
-        <li><%= link_to "Avis", lesson_path({tab: "avis"}), remote: false %></li>
+        <li class="tab selected-tab">Description</li>
+        <li class="tab">Horaires</li>
+        <li class="tab">Tarifs</li>
+        <li class="tab">Avis</li>
       </ul>
-      <% case params[:tab] %>
-      <% when "description" %>
-        <%= render 'lessons/description' %>
-      <% when "horaires" %>
-        <%= render 'lessons/horaires' %>
-      <% when "reglement" %>
-        <%= render 'lessons/reglement' %>
-      <% when "avis" %>
-        <%= render 'lessons/avis' %>
-      <% end %>
+      <div class="infos-dispatch-content">
+        <span class="tab0 infos-show"><%= render 'lessons/description' %></span>
+        <span class="tab1"><%= render 'lessons/horaires' %></span>
+        <span class="tab2"><%= render 'lessons/reglement' %></span>
+        <span class="tab3"><%= render 'lessons/avis' %></span>
+      </div>
   </div>
 </div>
-
-<!-- link_to "Avis", deliveries_path({period: "recent"}) -->

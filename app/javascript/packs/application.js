@@ -16,6 +16,7 @@ import {parallaxScroll} from '../plugins/parallaxScroll';
 
 initSlick();
 // updateQuantityUp();
+tabFocus();
 selectLesson();
 infoAnimation();
 navbar();
@@ -32,7 +33,6 @@ if(document.location.href.match('/lessons')) {
 
 scroll();
 modifyWebsite();
-// tabFocus();
 
 
 

@@ -1,11 +1,19 @@
-const tabList = document.querySelector('.infos-list');
-// const footer = document.querySelector('.footer');
+const infos = document.querySelectorAll('.infos-list li');
+const tablist = document.querySelectorAll('.infos-dispatch-content span');
 
 const tabFocus = () => {
-  tabList.addEventListener('click', function(e) {
-    window.scrollTo(0,document.body.scrollHeight);
-    // tabList.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-  })
+    infos.forEach((f, index) => {
+      f.addEventListener('click', function(e) {
+        infos.forEach((ff, index) => {
+          ff.classList.remove('selected-tab')
+        });
+        tablist.forEach((t) => {
+          t.classList.remove("infos-show")
+        });
+        infos[index].classList.add("selected-tab")
+        tablist[index].classList.add("infos-show")
+      });
+    });
 }
 
 
