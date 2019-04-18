@@ -204,12 +204,15 @@ input[type=number]
   height: 50vh;
   span {
     position: absolute;
-    visibility: hidden;
+    // visibility: hidden;
+    opacity: 0;
   }
 }
 
 span.infos-show {
-  visibility: visible !important;
+  // visibility: visible !important;
+  opacity: 1;
+  transition: opacity .3s linear;
 }
 
 

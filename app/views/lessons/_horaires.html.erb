@@ -1,1 +1,12 @@
-<p>Voici les horaires<%= @lesson.slot %></p>
+<p>Horaires : </p>
+<br>
+<p>.......</p>
+<br>
+<p>Les prochaines dates : </p>
+<ul style ="padding-left: 0px;">
+  <% @lesson.slot.each do |slot|%>
+    <li>
+      <%= l(slot, :format => "%d %B %Y", :locale => 'fr') %>
+    </li>
+  <% end %>
+</ul>
