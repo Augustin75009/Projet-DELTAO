@@ -3,13 +3,17 @@ class TeachingsController < ApplicationController
 
   def index
     @teachings = Teaching.all
-    @cart_items = CartItem.all
+    if user_signed_in?
+      @cart_items = CartItem.where(user_id: current_user.id)
+    else
+      @cart_items = []
+    end
   end
 
   def new
     if is_admin?
       @teaching = Teaching.new
-      @cart_items = CartItem.all
+      @cart_items = CartItem.where(user_id: current_user.id)
     else
       redirect_to :root
     end
@@ -43,7 +47,11 @@ class TeachingsController < ApplicationController
 
   def set_teaching
     @teaching = Teaching.find(params[:id])
-    @cart_items = CartItem.all
+    if user_signed_in?
+      @cart_items = CartItem.where(user_id: current_user.id)
+    else
+      @cart_items = []
+    end
   end
 
   def is_admin?

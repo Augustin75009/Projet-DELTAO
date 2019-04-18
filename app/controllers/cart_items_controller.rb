@@ -3,7 +3,11 @@ class CartItemsController < ApplicationController
   # before_action :set_cart
 
   def index
-    @cart_items = CartItem.where(user_id: current_user.id)
+    if user_signed_in?
+      @cart_items = CartItem.where(user_id: current_user.id)
+    else
+      @cart_items = []
+    end
     # authorize @product
   end
 

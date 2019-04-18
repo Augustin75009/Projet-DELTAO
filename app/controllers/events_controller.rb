@@ -3,13 +3,17 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @cart_items = CartItem.all
+    if user_signed_in?
+      @cart_items = CartItem.where(user_id: current_user.id)
+    else
+      @cart_items = []
+    end
   end
 
   def new
     if is_admin?
       @event = Event.new
-      @cart_items = CartItem.all
+      @cart_items = CartItem.where(user_id: current_user.id)
     else
       redirect_to :root
     end
@@ -42,7 +46,11 @@ class EventsController < ApplicationController
   end
 
   def set_event
-    @cart_items = CartItem.all
+    if user_signed_in?
+      @cart_items = CartItem.where(user_id: current_user.id)
+    else
+      @cart_items = []
+    end
     @event = Event.find(params[:id])
   end
 

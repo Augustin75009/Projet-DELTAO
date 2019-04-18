@@ -16,7 +16,11 @@ class LessonsController < ApplicationController
       @lessons = Lesson.all
     end
     @events = Event.all
-    @cart_items = CartItem.all
+    if user_signed_in?
+      @cart_items = CartItem.where(user_id: current_user.id)
+    else
+      @cart_items = []
+    end
   end
 
   def show
@@ -26,7 +30,7 @@ class LessonsController < ApplicationController
   def new
     if is_admin?
       @lesson = Lesson.new
-      @cart_items = CartItem.all
+      @cart_items = CartItem.where(user_id: current_user.id)
     else
       redirect_to :root
     end
@@ -74,7 +78,11 @@ class LessonsController < ApplicationController
   end
 
   def set_lesson
-    @cart_items = CartItem.all
+    if user_signed_in?
+      @cart_items = CartItem.where(user_id: current_user.id)
+    else
+      @cart_items = []
+    end
     @lesson = Lesson.find(params[:id])
   end
 

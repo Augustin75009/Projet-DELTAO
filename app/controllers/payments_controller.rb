@@ -28,7 +28,7 @@ class PaymentsController < ApplicationController
 private
 
   def set_order
-    @cart_items = CartItem.all
+    @cart_items = CartItem.where(user_id: current_user.id)
     @purchase = current_user.purchases.where(state: 'checking').find(params[:purchase_id]) #verifier pourquoi c'est pas pending comme dans le cours
   end
 end
