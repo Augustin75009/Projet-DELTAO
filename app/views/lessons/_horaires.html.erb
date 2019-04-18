@@ -4,9 +4,11 @@
 <br>
 <p>Les prochaines dates : </p>
 <ul style ="padding-left: 0px;">
-  <% @lesson.slot.each do |slot|%>
-    <li>
-      <%= l(slot.to_datetime, :format => "%d %B %Y", :locale => 'fr') %>
-    </li>
+  <% if @lesson.slot != [""] || @lesson.slot != nil  || @lesson.slot != []%>
+    <% @lesson.slot.each do |slot|%>
+      <li>
+        <%= l(slot.to_datetime, :format => "%d %B %Y", :locale => 'fr') %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
