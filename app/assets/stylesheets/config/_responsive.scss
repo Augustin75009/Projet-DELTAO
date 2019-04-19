@@ -164,6 +164,14 @@
 
 @media (max-width: 550px) {
 
+  .news {
+    width: 250px !important;
+  }
+
+  .quote.end {
+    margin-left: 230px !important;
+  }
+
   .fa.fa-sign-out {
     padding: 8px 0px !important;
   }

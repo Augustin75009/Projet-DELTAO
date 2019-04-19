@@ -3,8 +3,9 @@
     <div class="content-switch">
       <h3>Cours enfants</h3>
       <p>Description du cours .... <br>....... <br>.... ......</p>
-      <!-- <%= link_to "En savoir +", lessons_path({query1: true}), :class => "button-infos" %> -->
-      <a href='/lessons'><button class='button-infos overview'>En savoir +</button></a>
+      <%= link_to lessons_path({query1: true}) do %>
+        <button class='button-infos overview'>En savoir +</button>
+      <% end %>
     </div>
   </div>
   <div class="overview-selectors">
