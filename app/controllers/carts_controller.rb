@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   before_action :set_cart
 
   def index
+
     @carts = Cart.where(user_id:current_user.id)
     # authorize @product
   end
@@ -48,6 +49,8 @@ class CartsController < ApplicationController
   def cart_not_found
     redirect_to root_url, alert: t(".cart_not_found")
   end
+
+  private
 
   def cart_empty?
     content = Cart.count

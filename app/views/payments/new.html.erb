@@ -1,18 +1,17 @@
 
 <div id="stripe-checkout" style="margin: 110px 40px 40px 40px; padding-bottom: 40px; background-color: white">
   <h4 style="padding-top: 30px; font-size: 34px">Paiement</h4>
-  <h4>Référence : DELTAO-<%= Date.today %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
+  <h4>Référence : Deltao-<%= Date.today.strftime("%y%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
   <br><br>
   <p>
     <%@cart_items.each do |item| %>
       <% Lesson.where(id: item.lesson_id).each do |t| %>
-      - <%= t.title %>
+      <strong>Cours: </strong> <%= t.title %>
       <% end %>
     <% end %>
   </p>
   <div style="text-align: center; margin-bottom: 0px">
   <!-- <h1>Carte bancaire</h1> -->
-    <p style="margin-bottom: 40px" ><img src="https://images-eu.ssl-images-amazon.com/images/G/08/checkout/payselect/pay-method-logos/credit-cards-beacon._CB369360176_.gif" alt="card"></p>
     <%= form_tag cart_purchase_payments_path(@purchase) do %>
       <article>
         <label class="amount">
@@ -31,5 +30,6 @@
         data-amount="<%= @purchase.amount_cents*100 %>"
         data-currency="<%= @purchase.amount.currency %>"></script>
     <% end %>
+    <p style="margin-top: 40px" ><img src="https://images-eu.ssl-images-amazon.com/images/G/08/checkout/payselect/pay-method-logos/credit-cards-beacon._CB369360176_.gif" alt="card"></p>
   </div>
 </div>

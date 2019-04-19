@@ -55,7 +55,6 @@ class TeachingsController < ApplicationController
   end
 
   def is_admin?
-    # return current_user.adminkey == "admin"
-    true
+    return current_user.adminkey == "admin"
   end
 end

@@ -1,7 +1,30 @@
-<h1 style="padding-top: 80px">HELLO new purchase</h1>
-
-<%= @cart.cart_items.each do |item| %>
-  <%= item.name %>
-<% end %>
-<!-- <%= @cart_items %> -->
-
+<h1 style="padding-top: 80px">Listes des commandes payées</h1>
+<div style="padding: 20px">
+  <ul>
+  <% @purchases.each do |item| %>
+  <li>
+    <strong>Ref: </strong>Deltao-<%= item.created_at.strftime("%y%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
+  </li>
+    <li>
+      <strong>Status: </strong><%= item.state %>
+    </li>
+    <li>
+      <strong>Email: </strong><%= @users.find(item.user_id).email %>
+    </li>
+    <li>
+      <strong>Téléphone: </strong>0<%= @users.find(item.user_id).phone %>
+    </li>
+    <li>
+      <strong>Nom: </strong><%= @users.find(item.user_id).last_name %> <%= @users.find(item.user_id).first_name %>
+    </li>
+    <li>
+      <% if item.slot != nil %>
+        <% item.slot.each do |t| %>
+          <strong>Cours: </strong><%= t %>
+        <% end %>
+      <% end %>
+    </li>
+    <hr>
+  <% end %>
+  </ul>
+</div>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'payments/create'
   devise_for :users
   root to: 'pages#home'
+  get 'purchases/index'
   resources :products do
     resources :purchases, only: []
   end
