@@ -8,7 +8,7 @@
     <% @lesson.slot.each do |slot|%>
       <% if slot.class != NilClass %>
         <li>
-          <%= l(slot, :format => "%e %B %Y", :locale => 'fr') %>
+          <%= l(slot.to_date, :format => "%e %B %Y", :locale => 'fr') %>
         </li>
       <% end %>
     <% end %>
