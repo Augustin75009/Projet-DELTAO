@@ -2,7 +2,7 @@
   box-shadow: inset 0 -4px 4px rgba(0,0,0,0.3);
   position: relative;
   color: black;
-  text-align: center;
+  // text-align: center;
   height: 550px;
   display: flex;
   background-attachment: fixed !important;
@@ -43,13 +43,13 @@ p.opacity, button.opacity {
   // border-color: rgba(0, 0, 0, 0.5);
 }
 
-.banner p {
-  font-size: 24px;
-  font-weight: lighter;
-  color: black;
-  opacity: 0.9;
-  margin-bottom: 30px;
-}
+// .banner p {
+//   font-size: 24px;
+//   font-weight: lighter;
+//   color: black;
+//   opacity: 0.9;
+//   margin-bottom: 30px;
+// }
 
 .banner h1 {
   font-size: 38px;
@@ -58,7 +58,7 @@ p.opacity, button.opacity {
 
 .banner2 {
   color: black;
-  text-align: center;
+  // text-align: center;
   height: 50vh;
   background-size: cover !important;
   display: flex;
@@ -83,26 +83,20 @@ p.opacity, button.opacity {
   width: 100%;
   height: 64vh;
   overflow: hidden;
-  text-align: center;
+  // text-align: center;
   color: black;
   display: flex;
   -webkit-box-align: center;
   align-items: center;
 
-  p{
-    // position: absolute;
-    // left: 27%;
-    // top: calc(450px / 2);
+  h1{
     position: initial;
-    margin: 200px auto 0px auto;
+    margin: 150px auto 0px auto !important;
     color: white;
     font-size: 70px;
   }
 
   button {
-    // position: absolute;
-    // left: 44%;
-    // top: calc(450px / 2 + 100px);
     position: initial;
     margin: 10px auto;
     padding: 2px 2%;
@@ -112,7 +106,10 @@ p.opacity, button.opacity {
     border: none;
     font-size: 20px;
   }
+
 }
+
+
 
 .split-item {
   flex: 0 0 49.5%;
