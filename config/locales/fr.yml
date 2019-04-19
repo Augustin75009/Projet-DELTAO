@@ -32,13 +32,13 @@ fr:
     - NOV
     - DEC
     day_names:
-    - dimanche
-    - lundi
-    - mardi
-    - mercredi
-    - jeudi
-    - vendredi
-    - samedi
+    - Dimanche
+    - Lundi
+    - Mardi
+    - Mercredi
+    - Jeudi
+    - Vendredi
+    - Samedi
     formats:
       default: "%d/%m/%Y"
       long: "%e %B %Y"

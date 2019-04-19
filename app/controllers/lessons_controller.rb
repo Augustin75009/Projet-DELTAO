@@ -110,4 +110,10 @@ class LessonsController < ApplicationController
     # return current_user.adminkey == "admin"
     true
   end
+
+  # def self.to_french_date
+  #   @lesson.slot.map do |l|
+  #     l.strftime("%d-%m-%y")
+  #   end
+  # end
 end

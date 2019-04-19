@@ -1,7 +1,7 @@
 <div class="cart">
   <div class="quantity">
       <%= simple_form_for @cart_item do |f|%>
-        <%= f.input :slot, label: "Choisir un créneau", collection: @lesson.slot, input_html: {data: {"slots" => "#{@lesson.slot}"}} %>
+        <%= f.input :slot, label: "Choisir un créneau", collection: @lesson.slot.map { |slot| l(slot, :format => "%A %e %B %Y", :locale => 'fr')} %>
   </div>
   <div class="button">
         <%= hidden_field_tag :lesson, @lesson.id %>
@@ -15,17 +15,17 @@
           <% if current_user.adminkey == "admin" %>
   <% array = [] %>
   <% i = 0 %>
-  <% 100.times do |i|
+  <% 363.times do |i|
     array << (Date.today + i)
     i += 1
   end %>
     <%= simple_form_for @lesson do |f|%>
-      <%= f.input :slot, label: "choisir la nouvelle date", collection: array %>
+      <%= f.input :slot, label: "Choisir une nouvelle date", collection: array.map { |slot| l(slot, :format => "%A %e %B %Y", :locale => 'fr')} %>
       <%= hidden_field_tag "true", true%>
       <%= f.button :submit, "Ajouter", class: "button-show" %>
     <% end %>
     <%= simple_form_for @lesson do |f|%>
-      <%= f.input :slot, label: "Supprimer une date", collection: @lesson.slot %>
+      <%= f.input :slot, label: "Supprimer une date", collection: @lesson.slot.map { |slot| l(slot, :format => "%A %e %B %Y", :locale => 'fr')} %>
       <%= f.button :submit, "Supprimer", class: "button-show" %>
     <% end %>
 <% end %>
