@@ -22,7 +22,9 @@
         </div>
       <div class="description-bottom">
         <div class="price-show">
-          <%= number_to_currency(@lesson.total, unit: "€", separator: ",", format: "%n %u") %>
+          <% if @lesson.payable == true %>
+            <%= number_to_currency(@lesson.total, unit: "€", separator: ",", format: "%n %u") %>
+          <% end %>
         </div>
       <% if @lesson.payable %>
         <%= render "lessons/payable" %>
