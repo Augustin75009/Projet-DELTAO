@@ -70,11 +70,31 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :price_cents, :photo, :quantity, :category, :adult, :child, :phone_booking, :payable, :online_booking, :gift_card, :card_description, :slot)
+    params.require(:lesson).permit(:title,
+                                    :description,
+                                    :price_cents,
+                                    :photo,
+                                    :quantity,
+                                    :category,
+                                    :adult,
+                                    :child,
+                                    :phone_booking,
+                                    :payable,
+                                    :online_booking, :gift_card, :card_description, :slot, :schedule)
   end
 
   def lesson_params_edit
-    params.require(:lesson).permit(:title, :description, :price_cents, :photo, :quantity, :category, :adult, :child, :phone_booking, :payable, :online_booking, :gift_card, :card_description)
+    params.require(:lesson).permit(:title,
+                                    :description,
+                                    :price_cents,
+                                    :photo,
+                                    :quantity,
+                                    :category,
+                                    :adult,
+                                    :child,
+                                    :phone_booking,
+                                    :payable,
+                                    :online_booking, :gift_card, :card_description, :schedule)
   end
 
   def set_lesson

@@ -4,7 +4,6 @@
       <%= f.input :title, label: 'Intitulé' %>
       <%= f.input :category, label: 'Catégorie', default: "#{@lesson.category}", collection: ["Cours enfants", "Cours adultes", "Découverte", "Atelier libre", "Stage" ]  %>
       <%= f.input :description, label: 'Description du cours' %>
-      <%= f.input :card_description, label: 'Description apparaissant sur la carte' %>
       <%= f.input :price_cents, label: 'Prix en euros' %>
       <%= f.input :slot, label: 'Date', as: :date, html5: true %>
       <%= f.input :quantity, label: 'Quantité'%>
@@ -15,6 +14,10 @@
       <%= f.input :online_booking, label: 'Réservation en ligne', class: "form-control" %>
       <%= f.input :gift_card, label: 'Carte cadeau', class: "form-control" %>
       <%= f.file_field :photo, label: 'Ajouter une photo' %>
+            <h1>Rubriques</h1>
+      <%= f.input :card_description, label: 'Description apparaissant sur la carte/infos complémentaires' %>
+      <%= f.input :pricing, label: 'Tarifs' %>
+      <%= f.input :schedule, label: 'Horaires' %>
       <br>
       <div class="button-container">
         <%= f.submit "+ Mettre à jour cet leçon", class: "btn btn-size" %>
