@@ -1,13 +1,16 @@
-<p>Horaires : </p>
+<p class="tab-title-underlign">Horaires : </p>
 <br>
 <pre><%= @lesson.schedule %></pre>
 <br>
-<p>Les prochaines dates : </p>
+<p class="tab-title-underlign">Les prochaines dates : </p>
 <ul style ="padding-left: 0px;">
   <% if @lesson.slot.size > 1 %>
     <% @lesson.slot.each do |slot|%>
-      <li>
-      </li>
+      <% if slot.class != NilClass %>
+        <li>
+          <%= l(slot, :format => "%e %B %Y", :locale => 'fr') %>
+        </li>
+      <% end %>
     <% end %>
   <% else %>
     <%= @lesson.slot[0] %>
