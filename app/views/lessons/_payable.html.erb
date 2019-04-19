@@ -21,7 +21,12 @@
   end %>
     <%= simple_form_for @lesson do |f|%>
       <%= f.input :slot, label: "choisir la nouvelle date", collection: array %>
-      <%= f.button :submit, "Ajouter une date", class: "button-show" %>
+      <%= hidden_field_tag "true", true%>
+      <%= f.button :submit, "Ajouter", class: "button-show" %>
+    <% end %>
+    <%= simple_form_for @lesson do |f|%>
+      <%= f.input :slot, label: "Supprimer une date", collection: @lesson.slot %>
+      <%= f.button :submit, "Supprimer", class: "button-show" %>
     <% end %>
 <% end %>
 <% end %>

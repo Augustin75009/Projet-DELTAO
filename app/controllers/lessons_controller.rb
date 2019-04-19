@@ -40,6 +40,7 @@ class LessonsController < ApplicationController
     if is_admin?
       @lesson = current_user.lessons.build(lesson_params)
       @lesson.slot << params[:lesson]["slot"]
+      @lesson.slot.reject!(&:blank?)
       @lesson.save
       redirect_to lesson_path(@lesson)
     else
@@ -50,14 +51,13 @@ class LessonsController < ApplicationController
   def edit
   end
 
-  def add_date
-    @lesson.slot << params[:lesson]["slot"]
-    @lesson.save
-    redirect_to lesson_path(@lesson)
-  end
-
   def update
-    @lesson.slot << params[:lesson]["slot"]
+    if params["true"] == "true"
+      @lesson.slot << params[:lesson]["slot"]
+    else
+      @lesson.slot -= [params[:lesson]["slot"].to_date]
+    end
+    @lesson.slot.reject!(&:blank?)
     @lesson.update(lesson_params_edit)
     redirect_to lesson_path(@lesson)
   end
