@@ -1,38 +1,7 @@
 // Specific CSS for your home-page
 
 
-.copied-box {
-  position: fixed;
-  top: -40px;
-  color: white;
-  z-index: 1;
-  margin-left: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 4px 10px;
-  border-radius: 4px;
-  opacity: 0;
-}
 
-.copied-box.showBox {
-  animation: showBoxAnimation 4s;
-}
-
-@keyframes showBoxAnimation {
-  20% {
-    top: 24px;
-    opacity: 1;
-  }
-
-  70% {
-    top: 24px;
-    opacity: 1;
-  }
-
-  100% {
-    top: 24px;
-    opacity: 0;
-  }
-}
 
 .boundary {
   min-height: 80vh;
