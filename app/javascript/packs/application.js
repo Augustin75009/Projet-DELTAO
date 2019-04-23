@@ -10,7 +10,6 @@ import {activedFilter} from '../plugins/activedFilter';
 import {modifyWebsite} from '../plugins/open-widget';
 import {navbar} from '../plugins/navbar';
 import {scroll} from '../plugins/scroll';
-import {parallaxScroll} from '../plugins/parallaxScroll';
 
 
 
