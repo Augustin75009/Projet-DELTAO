@@ -20,9 +20,9 @@
   color: black;
 }
 
-p.opacity, button.opacity {
+p.opacity, button.opacity, .banner-main-title.opacity {
   opacity: 0 !important;
-  transition: opacity .2s linear;
+  transition: opacity .25s linear;
 }
 
 .split-item {

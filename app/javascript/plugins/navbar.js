@@ -3,7 +3,8 @@ const logoLink = document.querySelector('.logo__link');
 const logo = document.querySelector('.logo');
 const items = document.querySelectorAll('.menu__product__item');
 const dropdown = document.querySelector('.shopping-nav');
-const title = document.querySelector('.split p');
+const content = document.querySelector('.split p');
+const title = document.querySelector('.banner-main-title');
 const button = document.querySelector('.split button');
 
 var height = window.top.innerHeight;
@@ -35,12 +36,14 @@ const navbar = () => {
   }
 
   document.addEventListener('scroll', (event) => {
-    if (window.pageYOffset > 150) {
+    if (window.pageYOffset > 95) {
       title.classList.add('opacity')
       button.classList.add('opacity')
+      content.classList.add('opacity')
     } else {
       title.classList.remove('opacity')
       button.classList.remove('opacity')
+      content.classList.remove('opacity')
     }
   })
 
