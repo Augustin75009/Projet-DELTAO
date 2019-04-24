@@ -84,6 +84,7 @@ class LessonsController < ApplicationController
                                     :child,
                                     :phone_booking,
                                     :payable,
+                                    :pricing,
                                     :online_booking, :gift_card, :card_description, :slot, :schedule)
   end
 
@@ -98,6 +99,7 @@ class LessonsController < ApplicationController
                                     :child,
                                     :phone_booking,
                                     :payable,
+                                    :pricing,
                                     :online_booking, :gift_card, :card_description, :schedule)
   end
 

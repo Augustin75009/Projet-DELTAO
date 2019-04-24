@@ -1,16 +1,24 @@
 // Import Google fonts
 // @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-$body-font: 'Playfair Display', serif;
-$headers-font: 'Playfair Display', serif;
-// $body-font: 'Rubik', sans-serif;
-// $headers-font: 'Rubik', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe");
+
+
+@font-face {
+  font-family: "Font Name";
+  src: url('fonts/ZCOOLKuaiLe-Regular.ttf') format('truetype');
+}
 
 
 
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('DK_Lemon_Yellow_Sun.otf') format('truetype');
-// }
+$body-font: 'Playfair Display', serif !important;
+$headers-font: 'Playfair Display', serif !important;
+// $body-font: 'Font Name';
+// $headers-font: 'Font Name';
+// $body-font: 'ZCOOL KuaiLe', cursive;
+// $headers-font: 'ZCOOL KuaiLe', cursive;;
+
+
+
 
 // body {
 //   font-family: "Font Name" !important;
