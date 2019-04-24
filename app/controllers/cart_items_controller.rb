@@ -12,50 +12,54 @@ class CartItemsController < ApplicationController
   end
 
   def create
-    if is_a_product?
-      @product = Product.find(params[:product])
-      # @cart_item = @cart.cart_items.new(product: @product)
-      if cart_empty?
-        @cart = Cart.new
-        @cart.user = current_user
-        @cart.price_cents = @product.price_cents
+    if user_signed_in?
+      if is_a_product?
+        @product = Product.find(params[:product])
+        # @cart_item = @cart.cart_items.new(product: @product)
+        if cart_empty?
+          @cart = Cart.new
+          @cart.user = current_user
+          @cart.price_cents = @product.price_cents
+        else
+          @cart = Cart.last
+          @cart.price_cents += @product.price_cents
+        end
+        @cart_item = @cart.add_product(@product)
+        @cart_item.user = current_user
+        @cart_item.cart = @cart
+        @cart_item.save
+        @cart.save
+        # @counter = current_user.cart_item_item.count
+        respond_to do |format|
+          format.html { redirect_to products_path }
+          format.js
+        end
       else
-        @cart = Cart.last
-        @cart.price_cents += @product.price_cents
-      end
-      @cart_item = @cart.add_product(@product)
-      @cart_item.user = current_user
-      @cart_item.cart = @cart
-      @cart_item.save
-      @cart.save
-      # @counter = current_user.cart_item_item.count
-      respond_to do |format|
-        format.html { redirect_to products_path }
-        format.js
+        @lesson = Lesson.find(params[:lesson])
+        # @cart_item = @cart.cart_items.new(lesson: @lesson)
+        if cart_empty?
+          @cart = Cart.new
+          @cart.user = current_user
+          @cart.price_cents = @lesson.price_cents
+        else
+          @cart = Cart.last
+          @cart.price_cents += @lesson.price_cents
+        end
+        # raise
+        @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot])
+        # @cart_item.slot = params[:slot]
+        @cart_item.user = current_user
+        @cart_item.cart = @cart
+        @cart_item.save
+        @cart.save
+        # @counter = current_user.cart_item_item.count
+        respond_to do |format|
+          format.html { redirect_to lesson_path(@lesson) }
+          format.js
+        end
       end
     else
-      @lesson = Lesson.find(params[:lesson])
-      # @cart_item = @cart.cart_items.new(lesson: @lesson)
-      if cart_empty?
-        @cart = Cart.new
-        @cart.user = current_user
-        @cart.price_cents = @lesson.price_cents
-      else
-        @cart = Cart.last
-        @cart.price_cents += @lesson.price_cents
-      end
-      # raise
-      @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot])
-      # @cart_item.slot = params[:slot]
-      @cart_item.user = current_user
-      @cart_item.cart = @cart
-      @cart_item.save
-      @cart.save
-      # @counter = current_user.cart_item_item.count
-      respond_to do |format|
-        format.html { redirect_to lesson_path(@lesson) }
-        format.js
-      end
+      redirect_to new_user_session_path
     end
   end
 

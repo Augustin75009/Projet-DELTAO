@@ -41,6 +41,8 @@ class LessonsController < ApplicationController
       @lesson = current_user.lessons.build(lesson_params)
       @lesson.slot << params[:lesson]["slot"]
       @lesson.slot.reject!(&:blank?)
+      @lesson.slot.reject! { |y| y.nil? }
+      @lesson.price_cents = @lesson.price_cents * 1000
       @lesson.save
       redirect_to lesson_path(@lesson)
     else
@@ -58,6 +60,7 @@ class LessonsController < ApplicationController
       @lesson.slot -= [params[:lesson]["slot"].to_date]
     end
     @lesson.slot.reject!(&:blank?)
+    @lesson.slot.reject! { |y| y.nil? }
     @lesson.update(lesson_params_edit)
     redirect_to lesson_path(@lesson)
   end

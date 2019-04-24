@@ -20,7 +20,7 @@
       <div class="quantity-item">
         <%= simple_form_for(cart_item, remote: true) do |f|%>
           <%= f.number_field :quantity, :as => "number", class: "narrow-input"%>
-          <%= f.submit "save" %>
+          <%= f.submit "ok" %>
         <% end %>
       </div>
       <div class="infos-item" id="infos-item">

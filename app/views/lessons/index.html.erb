@@ -18,7 +18,7 @@
                 <h5><%= lesson.title.truncate(26) %></h5>
                 <p><%= lesson.card_description.truncate(100) %></p>
                 <hr>
-                <span><p><%= lesson.category.truncate(21) %> - <%= (lesson.price./10).to_i %>€</p></span>
+                <span><p><%= lesson.category.truncate(21) %> - <%= (lesson.total).to_i %>€</p></span>
               </div>
               <div class="lesson-infos"></div>
               <% if user_signed_in? %>
