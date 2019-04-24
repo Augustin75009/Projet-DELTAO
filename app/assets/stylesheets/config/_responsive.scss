@@ -114,7 +114,6 @@
     overflow: scroll;
     margin: 0px !important;
     text-align: end !important;
-    background-color: #cecece63 !important;
   }
 }
 
@@ -193,18 +192,30 @@
     background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555403885/menu.png') !important;
   }
 
+  .quote {
+    font-size: 20px !important;
+  }
   .split {
     display: flex !important;
     flex-direction: column !important;
+
+    h1 {
+      font-size: 40px !important;
+    }
     p{
-      margin: 180px auto 0px auto !important;
+      margin: 0px auto 0px auto !important;
       position: initial !important;
-      font-size: 50px !important;
+      font-size: 14px !important;
     }
     button {
       position: initial !important;
       margin: 20px auto !important;
+      font-size: 16px !important;
     }
+  }
+
+  .news {
+    line-height: 18px !important;
   }
 
   .button-infos {
@@ -303,7 +314,6 @@
     overflow: scroll;
     margin: 0px !important;
     text-align: end !important;
-    background-color: #cecece63 !important;
   }
 
   .stage {
