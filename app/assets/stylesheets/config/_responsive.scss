@@ -336,13 +336,25 @@
   }
 
   .overview-button > p {
-    font-size: 20px !important;
+    font-size: 16px !important;
     bottom: 0px !important;
+    border: solid 0.5px;
+    padding-bottom: 0px !important;
   }
 
   .overview-button {
     min-width: 120px !important;
     height: 64px !important;
+    border-right: none !important;
+    margin: 0px 4px !important;
+  }
+
+  .overview-button.upper {
+    border-right: none !important;
+    p {
+    border-radius: 2px !important;
+    margin-bottom: 10px !important;
+    }
   }
 
   .overview-content {
@@ -457,7 +469,7 @@
       // display: none !important;
     }
     .slider {
-      // display: none !important;
+      display: none !important;
     }
     a {
       // display: none !important;
@@ -530,7 +542,7 @@
     display: flex;
     flex-direction: column-reverse;
     margin: 0 !important;
-    margin-top: 20px !important;
+    // margin-top: 20px !important;
   }
 
   .card-container-lesson {
@@ -550,16 +562,17 @@
 
   .actived-filter {
     width: 80% !important;
+    margin: 0px !important;
   }
 
   .events {
-    display: none !important;
+    // display: none !important;
     width: 100% !important;
     padding: 10px !important;
     margin: 0 !important;
     margin-bottom: 10px !important;
     position: static !important;
-    background-color: #fdfdfdbd !important;
+    // background-color: #fdfdfdbd !important;
     .slider {
       width: 100% !important;
       overflow: scroll !important;
