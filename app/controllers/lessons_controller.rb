@@ -58,6 +58,7 @@ class LessonsController < ApplicationController
       @lesson.slot << params[:lesson]["slot"]
     else
       @lesson.slot -= [params[:lesson]["slot"].to_date]
+      @lesson.slot -= [params[:lesson]["slot"]]
     end
     @lesson.slot.reject!(&:blank?)
     @lesson.slot.reject! { |y| y.nil? }
