@@ -57,8 +57,10 @@ class LessonsController < ApplicationController
     if params["true"] == "true"
       @lesson.slot << params[:lesson]["slot"]
     else
-      @lesson.slot -= [params[:lesson]["slot"].to_date]
-      @lesson.slot -= [params[:lesson]["slot"]]
+      if params[:lesson]["slot"].class != NilClass
+        @lesson.slot -= [params[:lesson]["slot"].to_date]
+        @lesson.slot -= [params[:lesson]["slot"]]
+      end
     end
     @lesson.slot.reject!(&:blank?)
     @lesson.slot.reject! { |y| y.nil? }
