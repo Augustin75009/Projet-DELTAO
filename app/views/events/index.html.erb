@@ -1,4 +1,5 @@
 <div class="card-wrapper-event">
+  <%= render 'shared/dashboard'%>
   <% @events.each do |event| %>
     <div class ="card-dispatch-event" style="margin-top: 100px;">
       <%= link_to event_path(event) do %>
@@ -11,7 +12,7 @@
           <div class="card-content-event">
 
             <h4><%= event.title %></h4>
-            <p><%= l(event.start_date, :format => "%b %e, %Y", :locale => 'fr') %></p>
+            <p><%= l(event.start_date, :format => "%e %B %Y", :locale => 'fr') %></p>
             <p><%= event.description %></p>
           </div>
           <div class="event-infos"></div>

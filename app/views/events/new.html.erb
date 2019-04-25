@@ -1,4 +1,5 @@
 <div class="form-container">
+  <%= render 'shared/dashboard'%>
   <div class="product-form">
     <%= simple_form_for(@event) do |f| %>
       <%= f.input :title, label: 'Intitulé' %>
