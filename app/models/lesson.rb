@@ -4,6 +4,8 @@ class Lesson < ApplicationRecord
   has_many :cart_items, dependent: :nullify
   belongs_to :user, optional: true
 
+  validates :slot, presence: true
+
   include PgSearch
   pg_search_scope :search_by_category,
     against: [:category],

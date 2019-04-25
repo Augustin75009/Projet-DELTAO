@@ -43,8 +43,12 @@ class LessonsController < ApplicationController
       @lesson.slot.reject!(&:blank?)
       @lesson.slot.reject! { |y| y.nil? }
       @lesson.price_cents = @lesson.price_cents * 1000
-      @lesson.save
-      redirect_to lesson_path(@lesson)
+      if @lesson.save
+        redirect_to lesson_path(@lesson)
+      else
+        @cart_items = CartItem.where(user_id: current_user.id)
+        render :new
+      end
     else
       redirect_to :root
     end
