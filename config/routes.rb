@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'purchases/index'
+  get 'pages/tessa'
   resources :products do
     resources :purchases, only: []
   end

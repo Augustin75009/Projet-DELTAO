@@ -1,0 +1,19 @@
+.tessa-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+  .tessa-inner {
+    flex: 1;
+    padding: 0px 40px;
+  }
+}
+
+.gallery-pic-wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.gallery-pic {
+  img{
+    height: 150px;
+  }
+}

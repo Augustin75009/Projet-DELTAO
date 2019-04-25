@@ -17,6 +17,7 @@ const navbar = () => {
     || document.location.href.match('user')
     || document.location.href.match('purchases')
     || document.location.href.match('teachings')
+    || document.location.href.match('pages')
     || window.innerWidth < 550 ) {
     header.classList.remove('transparent')
     logo.classList.remove('transparent')
@@ -54,6 +55,7 @@ const navbar = () => {
       || document.location.href.match('user')
       || document.location.href.match('purchases')
       || document.location.href.match('teachings')
+      || document.location.href.match('pages')
       || window.innerWidth < 550
       || window.pageYOffset > 458) {
       header.classList.remove('transparent')
