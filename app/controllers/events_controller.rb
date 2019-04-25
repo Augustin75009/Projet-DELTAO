@@ -22,6 +22,7 @@ class EventsController < ApplicationController
   def create
     if is_admin?
       @event = Event.new(event_params)
+      @event.user_id = current_user
       @event.save
       redirect_to events_path
     else
@@ -31,7 +32,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    redirect_to eventS_path
+    redirect_to events_path
   end
 
   def destroy
