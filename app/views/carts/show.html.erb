@@ -18,7 +18,7 @@
         <%= label_tag("Code postal") %>
         <%= text_field_tag(:zip, @cart.user.zip) %>
         <%= label_tag("Téléphone") %>
-        <%= text_field_tag(:phone, @cart.user.phone) %>
+        <%= text_field_tag(:phone, @cart.user.phone, placeholder: "06000000") %>
         <%= hidden_field_tag 'cart_id', @cart.id %>
         <%= submit_tag 'Valider ma commande', class: 'btn btn-danger' %>
       <% end %>

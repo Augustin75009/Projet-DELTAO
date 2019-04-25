@@ -27,7 +27,7 @@ class PurchasesController < ApplicationController
     @cart = Cart.find(params[:cart_id])
     set_user_infos
     @purchase.product_sku = @cart.id
-    @purchase.user = current_user
+    @purchase.user = @user
     @purchase.state = 'checking'
     @purchase.amount_cents = @cart.price_cents
     @purchase.slot = []
@@ -37,10 +37,11 @@ class PurchasesController < ApplicationController
     end
     # raise
     # authorize @purchase
-    if @purchase.save!
+    if @purchase.save! && provided_phone
       redirect_to new_cart_purchase_payment_path(purchase_id: @purchase.id)
     else
-      render :new
+      @cart_items = CartItem.where(user: current_user)
+      redirect_to cart_path(params[:cart_id]), alert: "N° de téléphone invalide"
     end
     # authorize @purchase
   end
@@ -92,5 +93,10 @@ class PurchasesController < ApplicationController
 
   def is_admin?
     return current_user.adminkey == "admin"
+  end
+
+  def provided_phone
+    # raise
+    return @purchase.user.phone.class != NilClass && @purchase.user.phone != ""
   end
 end

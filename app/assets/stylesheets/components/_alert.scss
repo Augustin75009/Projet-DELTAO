@@ -13,3 +13,10 @@
 .alert-warning {
   background: $red;
 }
+
+#alert {
+  top: 80px;
+  left: 20px;
+  position: absolute;
+  color: red;
+}
