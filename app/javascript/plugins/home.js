@@ -5,7 +5,7 @@ const content = document.querySelector('.overview-content');
 
 const selectLesson = () => {
  buttons.forEach((button) => {
-    button.addEventListener('click', (event) => {
+    button.addEventListener('mouseover', (event) => {
     let course = button.innerText;
     let lastClass = background.classList[1];
     buttons.forEach((buttonremove) => {
