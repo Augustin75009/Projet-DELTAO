@@ -22,7 +22,7 @@ const selectLesson = () => {
       background.classList.add('background1');
       button.classList.add('upper');
       content.childNodes[1].innerHTML =
-      "<h3>Cours enfants</h3><p>Description du cours .... <br>....... <br>.... ......</p><a href='/lessons?query1=true'><button class='button-infos overview'>En savoir +</button></a>"
+      "<h3>Cours enfants</h3><p>Découvrir le modelage avec d'autres enfants ou en famille<a href='/lessons?query1=true'><button class='button-infos overview'>En savoir +</button></a>"
     }
     if (course === "Cours adultes") {
       background.classList.add('background2');

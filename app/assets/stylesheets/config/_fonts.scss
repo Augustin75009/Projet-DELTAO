@@ -1,12 +1,12 @@
 // Import Google fonts
 // @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-@import url("https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe");
+// @import url("https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe");
 
 
-@font-face {
-  font-family: "Font Name";
-  src: url('fonts/ZCOOLKuaiLe-Regular.ttf') format('truetype');
-}
+// @font-face {
+//   font-family: "Font Name";
+//   src: url(assets/ZCOOLKuaiLe-Regular.ttf) format("truetype");
+// }
 
 
 
@@ -20,9 +20,9 @@ $headers-font: 'Playfair Display', serif !important;
 
 
 
-// body {
-//   font-family: "Font Name" !important;
-// }
+body {
+  font-family: "Font Name" !important;
+}
 
 
 h4 {
