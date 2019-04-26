@@ -44,6 +44,7 @@
         <ul>
           <div class="event-nav"><h5>Evenements</h5><a href="https://www.facebook.com/pg/delaterrealobjet/events/?ref=page_internal" target="_blank">Tout voir</a></div>
           <% @events.sort_by {|a| a.start_date}.take(4).each do |event| %>
+              <a href="<%= event.link %>">
             <li>
               <div class="event-card-content">
                 <h4><%= event.title %></h4>
@@ -55,6 +56,7 @@
                 <% end %>
               </div>
             </li>
+              </a>
           <% end %>
         </ul>
       </div>
