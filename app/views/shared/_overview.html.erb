@@ -3,17 +3,24 @@
     <div class="content-switch">
       <h3>Cours enfants</h3>
       <p>Découvrir le modelage avec d'autres enfants ou en famille</p>
-      <%= link_to lessons_path({query1: true}) do %>
-        <button class='button-infos overview'>En savoir +</button>
-      <% end %>
     </div>
   </div>
   <div class="overview-selectors">
-    <div class="overview-button upper"><p>Cours enfants</p></div>
+    <a href='/lessons?query1=true'>
+      <div class="overview-button upper"><p>Cours enfants</p></div>
+    </a>
+    <a href='/lessons?query2=true'>
     <div class="overview-button"><p>Cours adultes</p></div>
-    <div class="overview-button"><p>Découverte</p></div>
-    <div class="overview-button"><p>Atelier libre</p></div>
-    <div class="overview-button"><p>Stage</p></div>
+      </a>
+    <a href='/lessons?query3=Découverte'>
+      <div class="overview-button"><p>Découverte</p></div>
+    </a>
+    <a href='/lessons?query4=Atelier libre'>
+      <div class="overview-button"><p>Atelier libre</p></div>
+    </a>
+    <a href='/lessons?query5=Stage'>
+      <div class="overview-button"><p>Stage</p></div>
+    </a>
   </div>
     <div class="selector-arrow"><span>></span></div>
 </div>
