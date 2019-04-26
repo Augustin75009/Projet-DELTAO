@@ -1,6 +1,8 @@
 const buttons = document.querySelectorAll('.overview-button');
 const background = document.querySelector('.lessons-overview');
 const content = document.querySelector('.overview-content');
+const selectors = document.querySelector('.overview-selectors');
+var innerwidth = window.innerWidth;
 
 
 const selectLesson = () => {
@@ -49,6 +51,57 @@ const selectLesson = () => {
       "<h3>Stage</h3><p>Description du cours .... <br>....... <br>... ......</p>"
     }
     });
+
+
+    if (innerWidth < 550 ) {
+      const size = buttons[0].clientWidth;
+      const offset = innerwidth / 2;
+      console.log(offset)
+      selectors.addEventListener('scroll', (event) => {
+          // console.log(event.currentTarget.scrollLeft)
+        if (event.currentTarget.scrollLeft < 20) {
+          background.classList.add('background5');
+          buttons[0].classList.add('upper');
+          buttons[1].classList.remove('upper');
+          content.childNodes[1].innerHTML =
+          "<h3>Cours enfants</h3><p>Découvrir le modelage avec d'autres enfants ou en famille"
+        }
+        if (event.currentTarget.scrollLeft > 20) {
+          background.classList.add('background5');
+          buttons[1].classList.add('upper');
+          buttons[0].classList.remove('upper');
+          buttons[2].classList.remove('upper');
+          content.childNodes[1].innerHTML =
+          "<h3>Cours adultes</h3><p>Description du cours .... <br>....... <br>.... ......</p>"
+        }
+        if (event.currentTarget.scrollLeft > size) {
+          background.classList.add('background5');
+          buttons[2].classList.add('upper');
+          buttons[1].classList.remove('upper');
+          buttons[3].classList.remove('upper');
+          content.childNodes[1].innerHTML =
+          "<h3>Cours découverte</h3><p>Description du cours .... <br>....... <br>.... ......</p>"
+        }
+        if (event.currentTarget.scrollLeft > (2 * size)) {
+          background.classList.add('background5');
+          buttons[3].classList.add('upper');
+          buttons[2].classList.remove('upper');
+          buttons[4].classList.remove('upper');
+          content.childNodes[1].innerHTML =
+          "<h3>Atleier libre</h3><p>Description du cours .... <br>....... <br>.... ......</p>"
+        }
+        if (event.currentTarget.scrollLeft > (2.5 * size)) {
+          background.classList.add('background5');
+          buttons[4].classList.add('upper');
+          buttons[3].classList.remove('upper');
+          content.childNodes[1].innerHTML =
+          "<h3>Stage</h3><p>Description du cours .... <br>....... <br>... ......</p>"
+        }
+      })
+    }
+
+
+
   });
 }
 
