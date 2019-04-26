@@ -23,8 +23,12 @@ class EventsController < ApplicationController
     if is_admin?
       @event = Event.new(event_params)
       @event.user_id = current_user
-      @event.save
-      redirect_to events_path
+      if @event.save
+        redirect_to events_path
+      else
+        @cart_items = CartItem.where(user_id: current_user.id)
+        render :new
+      end
     else
       redirect_to :root
     end
