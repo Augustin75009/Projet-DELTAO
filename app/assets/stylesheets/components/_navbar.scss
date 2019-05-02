@@ -274,7 +274,8 @@ a, a:active, a:hover {
 }
 
 .header .is_absolute, .header .menu__product__link {
-    white-space: nowrap;
+  font-family: "Font Name" !important;
+  white-space: nowrap;
 }
 
 .menu__product__link {
