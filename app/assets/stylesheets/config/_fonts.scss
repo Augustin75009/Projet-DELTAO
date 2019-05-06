@@ -3,11 +3,11 @@
 
 @font-face {
   font-family: 'Font Name';
-  src:url('webfonts/3949EE_0_0.eot');
-  src:url('webfonts/3949EE_0_0.eot?#iefix') format('embedded-opentype'),
-    url('webfonts/3949EE_0_0.ttf') format('truetype'),
-    url('webfonts/3949EE_0_0.woff') format('woff'),
-    url('webfonts/3949EE_0_0.svg') format('svg');
+  src:font-url( asset_path('webfonts/3949EE_0_0.eot'));
+  src:font-url( asset_path('webfonts/3949EE_0_0.eot?#iefix')) format('embedded-opentype'),
+    font-url( asset_path('webfonts/3949EE_0_0.ttf')) format('truetype'),
+    font-url( asset_path('webfonts/3949EE_0_0.woff')) format('woff'),
+    font-url( asset_path('webfonts/3949EE_0_0.svg')) format('svg');
   font-weight: normal;
   font-style: normal;
 }
