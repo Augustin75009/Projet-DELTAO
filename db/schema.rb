@@ -59,18 +59,18 @@ ActiveRecord::Schema.define(version: 2019_04_19_111032) do
     t.string "photo"
     t.integer "price_cents", default: 0, null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at"
+    t.datetime "updated_at", null: false
     t.string "category"
-    t.boolean "adult"
-    t.boolean "child"
-    t.boolean "phone_booking"
-    t.boolean "payable"
-    t.boolean "online_booking"
-    t.boolean "gift_card"
+    t.boolean "adult", default: false
+    t.boolean "child", default: false
+    t.boolean "phone_booking", default: false
+    t.boolean "payable", default: false
+    t.boolean "online_booking", default: false
+    t.boolean "gift_card", default: false
     t.text "card_description"
     t.text "pricing"
     t.bigint "user_id"
-    t.date "slot", array: true
+    t.string "slot", array: true
     t.text "schedule"
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
