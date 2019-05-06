@@ -88,6 +88,7 @@
 
 .event-card-content {
   margin: auto;
+  font-family: "Font Name" !important;
 }
 
 .event-card-pic {
@@ -105,4 +106,10 @@
   padding-top: 20px;
   top: 80px;
   left: 0px;
+}
+
+.event-date {
+  h4 {
+    color: $tessa;
+  }
 }
