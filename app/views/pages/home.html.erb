@@ -4,6 +4,7 @@
 <div class="announcement">
   <div class="announcement-wrapper">
     <div class="left-side">
+      <div class="news"><p><span class="quote">"</span><br>Sur le "chemin de la terre à l'objet", je propose des situtations de modelage adaptées à la personne. Car chacun se trouve à une étape du chemin de la création, capable d'évoluer pour en découvrir d'autres. <strong>-Tessa-</strong><br><span class="quote end">"</span></p></div>
       <ul class="stage">
         <% if Event.count > 3 %>
         <% Event.all.take(3).each do |stage| %>
@@ -12,12 +13,12 @@
               <%= image_tag(stage.photo.to_s) do %>
               <% end %>
               <div style="display: flex; display: flex; justify-content: flex-start;">
-                <div style="padding: 11px">
+                <div style="padding: 11px 20px">
                   <h4 style="color: rgba(202, 120, 103, 1); margin: 0px"><%= l(stage.start_date, :format => "%b", :locale => 'fr') %></h4>
                   <h4 style="margin-top: 0px; font-weight: 600;"><%= l(stage.start_date, :format => "%e", :locale => 'fr') %></h4>
                 </div>
                 <div>
-                  <h5><%= stage.title %></h5>
+                  <h5 style="text-align: -webkit-left;"><%= stage.title %></h5>
                   <p style="text-align: -webkit-left;"><%= stage.title %></p>
                 </div>
               </div>
