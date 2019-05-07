@@ -149,12 +149,12 @@ event1 = Event.create!(
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 29 Jan 2019 16:50:20 +0100",
   end_date: "Thu, 30 Jan 2019 16:50:20 +0100",
-  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg',
   user_id: "#{tessa.id}",
   link: "https://www.facebook.com/pg/delaterrealobjet/events/",
   location: 'Paris, France'
 )
 
+event1.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1552919569/pic2.jpg"
 event1.save!
 
 event2 = Event.create!(
@@ -162,12 +162,12 @@ event2 = Event.create!(
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 4 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 5 Feb 2019 16:50:20 +0100",
-  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391528/modelage_en_famille.jpg',
   user_id: "#{tessa.id}",
   link: "https://www.facebook.com/pg/delaterrealobjet/events/",
   location: 'Paris, France'
 )
 
+event2.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391528/modelage_en_famille.jpg"
 event2.save!
 
 event3 = Event.create!(
@@ -175,12 +175,12 @@ event3 = Event.create!(
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
-  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391521/enfant_modelage.jpg',
   user_id: "#{tessa.id}",
   link: "https://www.facebook.com/pg/delaterrealobjet/events/",
   location: 'Paris, France'
 )
 
+event3.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391521/enfant_modelage.jpg"
 event3.save!
 
 event4 = Event.create!(
@@ -188,12 +188,12 @@ event4 = Event.create!(
   description: 'Pour vos petits cadeaux de Nouvelle Année, pensez aux  créations artistiques et artisanales.',
   start_date: "Thu, 8 Feb 2019 16:50:20 +0100",
   end_date: "Thu, 8 Feb 2019 18:50:20 +0100",
-  photo: 'https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391512/delaterrealobjet_tessa_guilbaud.jpg',
   user_id: "#{tessa.id}",
   link: "https://www.facebook.com/pg/delaterrealobjet/events/",
   location: 'Paris, France'
 )
 
+event4.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391512/delaterrealobjet_tessa_guilbaud.jpg"
 event4.save!
 
 
