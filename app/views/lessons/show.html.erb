@@ -29,9 +29,7 @@
         </div>
       <% if @lesson.payable %>
         <%= render "lessons/payable" %>
-      <% elsif @lesson.online_booking %>
-        <%= render "lessons/online-booking" %>
-      <% else @lesson.online_booking %>
+      <% else %>
         <%= render "lessons/phone-booking" %>
       <% end %>
       <% if user_signed_in? %>

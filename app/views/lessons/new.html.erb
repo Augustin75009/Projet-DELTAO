@@ -10,10 +10,11 @@
       <%= f.input :quantity, label: 'Quantité'%>
       <%= f.input :adult, label: 'Cours pour adulte', class: "form-control" %>
       <%= f.input :child, label: 'Cours pour enfant', class: "form-control" %>
+      <%= f.input :gift_card, label: 'Carte cadeau', class: "form-control" %>
       <%= f.input :phone_booking, label: 'Réservation par téléphone', class: "form-control" %>
       <%= f.input :payable, label: 'Payable en ligne', class: "form-control" %>
-      <%= f.input :online_booking, label: 'Réservation en ligne', class: "form-control" %>
-      <%= f.input :gift_card, label: 'Carte cadeau', class: "form-control" %>
+      <%=  f.input :deposit, label: 'Acompte', class: "form-control hidden" %>
+      <br>
       <%= f.file_field :photo, label: 'Ajouter une photo' %>
       <h1>Rubriques</h1>
       <%= f.input :card_description, label: 'infos complémentaires' %>
@@ -21,7 +22,7 @@
       <%= f.input :schedule, label: 'Horaires' %>
       <br>
       <div class="button-container">
-        <%= f.submit "+ ajouter cet leçon", class: "btn btn-size" %>
+        <%= f.submit "+ ajouter une leçon", class: "btn btn-size" %>
       </div>
     <% end %>
   </div>

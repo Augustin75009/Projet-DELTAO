@@ -91,7 +91,7 @@ class LessonsController < ApplicationController
                                     :phone_booking,
                                     :payable,
                                     :pricing,
-                                    :online_booking, :gift_card, :card_description, :slot, :schedule)
+                                    :deposit, :gift_card, :card_description, :slot, :schedule)
   end
 
   def lesson_params_edit
@@ -106,7 +106,7 @@ class LessonsController < ApplicationController
                                     :phone_booking,
                                     :payable,
                                     :pricing,
-                                    :online_booking, :gift_card, :card_description, :schedule)
+                                    :deposit, :gift_card, :card_description, :schedule)
   end
 
   def set_lesson

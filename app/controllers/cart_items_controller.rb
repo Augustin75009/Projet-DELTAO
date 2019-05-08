@@ -40,10 +40,10 @@ class CartItemsController < ApplicationController
         if cart_empty?
           @cart = Cart.new
           @cart.user = current_user
-          @cart.price_cents = @lesson.price_cents
+          @cart.price_cents = @lesson.deposit
         else
           @cart = Cart.last
-          @cart.price_cents += @lesson.price_cents
+          @cart.price_cents += @lesson.deposit
         end
         # raise
         @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot])

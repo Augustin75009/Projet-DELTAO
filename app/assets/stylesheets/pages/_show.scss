@@ -90,7 +90,8 @@
   flex: 1;
   }
   .button {
-  flex: 1;
+    margin-top: 10px;
+    flex: 1;
   .btn {
     border: none;
     padding: 7px;
@@ -100,7 +101,6 @@
 
 .quantity {
   position: relative;
-  width: 50%;
 }
 
 input[type=number]::-webkit-inner-spin-button,
