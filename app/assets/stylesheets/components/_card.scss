@@ -197,3 +197,7 @@
 .sliding-teachings {
   transform: translate(-100vw, 0px);
 }
+
+pre {
+  word-break: initial !important;
+}
