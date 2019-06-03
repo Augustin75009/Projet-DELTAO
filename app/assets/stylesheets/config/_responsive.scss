@@ -181,7 +181,7 @@
 
 
   .news {
-    width: 250px !important;
+    width: 70% !important;
   }
 
   .quote.end {
@@ -232,7 +232,7 @@
   }
 
   .news {
-    line-height: 18px !important;
+    // line-height: 18px !important;
   }
 
   .button-infos {
@@ -282,7 +282,7 @@
   }
 
   .burger-phone {
-    display: block !important;
+    display: inherit !important;
     padding-left: 24px !important;
     padding-right: 10px !important;
     margin-top: 0 !important;
