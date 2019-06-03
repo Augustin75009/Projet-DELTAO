@@ -7,7 +7,7 @@ class Cart < ApplicationRecord
     cart_items.to_a.sum(&:total)
   end
 
-   def add_product(product)
+  def add_product(product)
     item = CartItem.find_by(product: product)
     if item
       item.quantity += 1
@@ -17,8 +17,8 @@ class Cart < ApplicationRecord
     item
   end
 
-  def add_lesson(lesson, slot)
-    item = CartItem.find_by(lesson: lesson, slot: slot)
+  def add_lesson(lesson, slot, user)
+    item = CartItem.where(user_id: user.id).find_by(lesson: lesson, slot: slot)
     if item
       item.quantity += 1
     else

@@ -46,7 +46,7 @@ class CartItemsController < ApplicationController
           @cart.price_cents += @lesson.deposit
         end
         # raise
-        @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot])
+        @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot], current_user)
         # @cart_item.slot = params[:slot]
         @cart_item.user = current_user
         @cart_item.cart = @cart

@@ -3,7 +3,7 @@ class CartsController < ApplicationController
   before_action :set_cart
 
   def index
-    @carts = Cart.where(user_id:current_user.id)
+    @carts = Cart.where(user_id: current_user.id)
     # authorize @product
   end
 
