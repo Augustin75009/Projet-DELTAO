@@ -151,6 +151,10 @@
   .filter-button {
     font-size: 17px !important;
   }
+
+  .email {
+    font-size: 12px !important;
+  }
 }
 
 // @media (max-width: 600px) {
@@ -161,7 +165,7 @@
 // }
 
 
-@media (max-width: 550px) {
+@media (max-width: 640px) {
 
   .news {
     width: 250px !important;

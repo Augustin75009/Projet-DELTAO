@@ -3,17 +3,17 @@ class LessonsController < ApplicationController
 
   def index
     if params[:query5].present?
-      @lessons = Lesson.search_by_category(params[:query5])
+      @lessons = Lesson.search_by_category(params[:query5]).order('created_at')
     elsif params[:query4].present?
-      @lessons = Lesson.search_by_category(params[:query4])
+      @lessons = Lesson.search_by_category(params[:query4]).order('created_at')
     elsif params[:query3].present?
-      @lessons = Lesson.search_by_category(params[:query3])
+      @lessons = Lesson.search_by_category(params[:query3]).order('created_at')
     elsif params[:query2].present?
-      @lessons = Lesson.where(adult: true)
+      @lessons = Lesson.where(adult: true).order('created_at')
     elsif params[:query1].present?
-      @lessons = Lesson.where(child: true)
+      @lessons = Lesson.where(child: true).order('created_at')
     else
-      @lessons = Lesson.all
+      @lessons = Lesson.all.order('created_at')
     end
     @events = Event.all
     if user_signed_in?
