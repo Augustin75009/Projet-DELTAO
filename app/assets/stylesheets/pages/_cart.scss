@@ -46,6 +46,10 @@
 }
 
 #stripe-checkout {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center !important;
   background: red;
   min-height: 70vh;

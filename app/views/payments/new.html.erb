@@ -1,21 +1,14 @@
 
-<div id="stripe-checkout" style="margin: 110px 40px 40px 40px; padding-bottom: 40px; background-color: white">
-  <h4 style="padding-top: 30px; font-size: 34px">Paiement</h4>
-  <h4>Référence : Deltao-<%= Date.today.strftime("%y%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
-  <br><br>
-  <p>
-    <%@cart_items.each do |item| %>
-      <% Lesson.where(id: item.lesson_id).each do |t| %>
-      <strong>Cours: </strong> <%= t.title %>
-      <% end %>
-    <% end %>
-  </p>
+<div id="stripe-checkout" style="margin: 90px auto 20px auto; background-color: white">
+  <h4 style="padding-top: 30px; font-size: 30px">Paiement</h4>
+  <h4>Référence : D-<%= Date.today.strftime("%y%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
+    <img style="width: 100%; opacity: 0.5" src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1554822755/barbotine.jpg" alt="">
   <div style="text-align: center; margin-bottom: 0px">
-  <!-- <h1>Carte bancaire</h1> -->
+  <br>
     <%= form_tag cart_purchase_payments_path(@purchase) do %>
       <article>
         <label class="amount">
-          <span>A payer : <%= humanized_money_with_symbol(@purchase.amount_cents) %></span>
+          <span>A payer : <%= humanized_money(@purchase.amount_cents) %> euros</span>
         </label>
       </article>
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -30,6 +23,6 @@
         data-amount="<%= @purchase.amount_cents*100 %>"
         data-currency="<%= @purchase.amount.currency %>"></script>
     <% end %>
-    <p style="margin-top: 40px" ><img src="https://images-eu.ssl-images-amazon.com/images/G/08/checkout/payselect/pay-method-logos/credit-cards-beacon._CB369360176_.gif" alt="card"></p>
+    <p style="margin: 40px 0px 0px 0px" ><img style="width: 100%" src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1559574636/powered-by-stripe.jpg" alt="card"></p>
   </div>
 </div>
