@@ -42,7 +42,7 @@ class CartItemsController < ApplicationController
           @cart.user = current_user
           @cart.price_cents = @lesson.deposit
         else
-          @cart = Cart.last
+          @cart = Cart.where(user_id: current_user.id).last
           @cart.price_cents += @lesson.deposit
         end
         # raise
