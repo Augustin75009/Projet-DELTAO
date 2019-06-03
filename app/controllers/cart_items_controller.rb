@@ -44,7 +44,6 @@ class CartItemsController < ApplicationController
         else
           @cart = Cart.where(user_id: current_user.id).last
           @cart.price_cents += @lesson.deposit
-          raise
         end
         # raise
         @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot])
