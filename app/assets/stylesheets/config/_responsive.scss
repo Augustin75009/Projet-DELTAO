@@ -87,6 +87,11 @@
 }
 
 @media (max-width: 950px) {
+
+    .tessa-wrapper {
+    flex-direction: column;
+  }
+
     .card-dispatch-lesson {
     width: 90% !important;
   }
@@ -120,6 +125,7 @@
 
 
 @media (max-width: 800px) {
+
 
   .about {
     flex-direction: column-reverse !important;
@@ -166,6 +172,13 @@
 
 
 @media (max-width: 640px) {
+
+  .gallery-pic {
+  img {
+    height: 120px !important;
+    }
+  }
+
 
   .news {
     width: 250px !important;
