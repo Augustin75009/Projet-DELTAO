@@ -27,7 +27,7 @@
   <% if user_signed_in? %>
     <div class="shopping-nav">
   <% else %>
-    <div class="shopping-nav" style="background: none !important">
+    <div class="shopping-nav">
   <% end %>
     <div class="header-item">
     <% if user_signed_in? %>
@@ -36,22 +36,37 @@
         <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
           <ul class="burger-phone">
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out" href="https://tessaguilbaud.jimdo.com/points-de-vente/" target="_blank">Boutique</a></li><br>
+              <a id="" class=".sign_out xl" href="https://tessaguilbaud.jimdo.com/points-de-vente/" target="_blank">Boutique</a></li><br>
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out" href="/lessons">Cours</a></li><br>
+              <a id="" class=".sign_out xl" href="/lessons">Cours</a></li><br>
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out" href="/cart_items">Panier</a></li><br>
+              <a id="" class=".sign_out xl" href="/cart_items">Panier</a></li><br>
           </ul>
           <li>
             <%= link_to destroy_user_session_path, method: :delete, class: "link_sign_out" do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out xl", default: "Log out") %>
             <% end %>
           </li>
         </ul>
       </div>
     </div>
     <% else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "header-item header-link" %>
+      <div class="dropdown">
+        <%= image_tag "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555074154/home.png", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
+          <ul class="burger-phone">
+            <li id="" class="fa fa-sign-out">
+              <a id="" class=".sign_out xl" href="https://tessaguilbaud.jimdo.com/points-de-vente/" target="_blank">Boutique</a></li><br>
+            <li id="" class="fa fa-sign-out">
+              <a id="" class=".sign_out xl" href="/lessons">Cours</a></li><br>
+            <li id="" class="fa fa-sign-out">
+              <a id="" class=".sign_out xl" href="/cart_items">Panier</a></li><br>
+          </ul>
+          <li>
+            <%= link_to t(".sign_in xl", default: "Login"), new_user_session_path, class: "header-item header-link" %>
+          </li>
+        </ul>
+      </div>
     <% end %>
   </div>
 </header>
