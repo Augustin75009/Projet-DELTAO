@@ -3,7 +3,6 @@ class CartsController < ApplicationController
   before_action :set_cart
 
   def index
-
     @carts = Cart.where(user_id:current_user.id)
     # authorize @product
   end
@@ -12,11 +11,10 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = Cart.where(user_id:current_user.id).find(params[:id])
+    @cart = Cart.find(params[:id])
     @cart.price_cents = @cart.total
     @cart.save
   end
-
 
   def create
     @cart = Cart.new
@@ -68,6 +66,4 @@ class CartsController < ApplicationController
       @cart_items = []
     end
   end
-
-
 end

@@ -14,26 +14,26 @@ class CartItemsController < ApplicationController
   def create
     if user_signed_in?
       if is_a_product?
-        @product = Product.find(params[:product])
-        # @cart_item = @cart.cart_items.new(product: @product)
-        if cart_empty?
-          @cart = Cart.new
-          @cart.user = current_user
-          @cart.price_cents = @product.price_cents
-        else
-          @cart = Cart.last
-          @cart.price_cents += @product.price_cents
-        end
-        @cart_item = @cart.add_product(@product)
-        @cart_item.user = current_user
-        @cart_item.cart = @cart
-        @cart_item.save
-        @cart.save
-        # @counter = current_user.cart_item_item.count
-        respond_to do |format|
-          format.html { redirect_to products_path }
-          format.js
-        end
+        # @product = Product.find(params[:product])
+        # # @cart_item = @cart.cart_items.new(product: @product)
+        # if cart_empty?
+        #   @cart = Cart.new
+        #   @cart.user = current_user
+        #   @cart.price_cents = @product.price_cents
+        # else
+        #   @cart = Cart.last
+        #   @cart.price_cents += @product.price_cents
+        # end
+        # @cart_item = @cart.add_product(@product)
+        # @cart_item.user = current_user
+        # @cart_item.cart = @cart
+        # @cart_item.save
+        # @cart.save
+        # # @counter = current_user.cart_item_item.count
+        # respond_to do |format|
+        #   format.html { redirect_to products_path }
+        #   format.js
+        # end
       else
         @lesson = Lesson.find(params[:lesson])
         # @cart_item = @cart.cart_items.new(lesson: @lesson)
@@ -44,6 +44,7 @@ class CartItemsController < ApplicationController
         else
           @cart = Cart.where(user_id: current_user.id).last
           @cart.price_cents += @lesson.deposit
+          raise
         end
         # raise
         @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot])
@@ -89,8 +90,8 @@ class CartItemsController < ApplicationController
   private
 
   def cart_empty?
-    content = CartItem.count
-    if content == 0
+    content = CartItem.where(user_id: current_user.id).count
+    if content.zero?
       true
     else
       false
