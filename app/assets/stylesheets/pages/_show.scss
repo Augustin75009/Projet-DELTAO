@@ -254,3 +254,15 @@ span.infos-show {
     opacity: 0;
   }
 }
+
+.payement-format {
+  display: flex;
+  justify-content: space-between;
+  .deposit {
+    margin-right: 10px;
+  }
+}
+
+.font-weight-bold{
+  margin: 20px 0px 0px 0px;
+}

@@ -8,11 +8,23 @@ class CartsController < ApplicationController
   end
 
   def new
+    @cart = Cart.new
+    @cart.user = current_user
+    # @cart.price_cents = 12
+    @cart.price_cents = params[:price].to_i
+    # @cart.product = @product
+    # authorize @cart
+    @cart.save
+    # @counter = current_user.carts.count
+    respond_to do |format|
+      format.html { redirect_to cart_path(@cart, gift: true) }
+      format.js
+    end
   end
 
   def show
     @cart = Cart.find(params[:id])
-    @cart.price_cents = @cart.total
+    # @cart.price_cents = @cart.total
     @cart.save
   end
 
@@ -60,7 +72,7 @@ class CartsController < ApplicationController
   end
 
   def set_cart
-    if user_signed_in?
+    if user_signed_in? || params[:gift]
       @cart_items = CartItem.where(user_id: current_user.id)
     else
       @cart_items = []

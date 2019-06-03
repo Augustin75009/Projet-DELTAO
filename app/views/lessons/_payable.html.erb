@@ -2,7 +2,10 @@
   <div class="quantity">
       <%= simple_form_for @cart_item do |f|%>
         <%= f.input :slot, label: "Choisir un créneau", collection: @lesson.slot.map { |slot| l(slot.to_date, :format => "%A %e %B %Y", :locale => 'fr')} %>
-        <span>Montant de l'acompte : <%= number_to_currency(@lesson.deposit, unit: "€", separator: ",", format: "%n %u") %></span>
+        <div class="payement-format">
+          <span class="deposit">Montant de l'acompte : <%= number_to_currency(@lesson.deposit, unit: "€", separator: ",", format: "%n %u") %></span>
+
+        </div>
   </div>
   <div class="button">
         <%= hidden_field_tag :lesson, @lesson.id %>

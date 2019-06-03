@@ -32,6 +32,13 @@
       <% else %>
         <%= render "lessons/phone-booking" %>
       <% end %>
+        <% if @lesson.gift_card %>
+            <span class="gift_card">
+              <%= link_to new_cart_path(gift: true, price: @lesson.total) do %>
+                Vous pouvez aussi m'offrir 💝 >
+              <% end %>
+            </span>
+          <% end %>
       <% if user_signed_in? %>
         <% if current_user.adminkey == "admin" %>
           <% array = [] %>
