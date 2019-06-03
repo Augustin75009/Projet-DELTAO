@@ -12,7 +12,7 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = Cart.find(params[:id])
+    @cart = Cart.where(user_id:current_user.id).find(params[:id])
     @cart.price_cents = @cart.total
     @cart.save
   end
