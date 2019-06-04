@@ -16,9 +16,13 @@ class CartsController < ApplicationController
     # authorize @cart
     @cart.save
     # @counter = current_user.carts.count
-    respond_to do |format|
-      format.html { redirect_to cart_path(@cart, gift: true) }
-      format.js
+    if user_signed_in?
+      respond_to do |format|
+        format.html { redirect_to cart_path(@cart, gift: true) }
+        format.js
+      end
+    else
+      redirect_to new_user_session_path
     end
   end
 
@@ -72,8 +76,12 @@ class CartsController < ApplicationController
   end
 
   def set_cart
-    if user_signed_in? || params[:gift]
-      @cart_items = CartItem.where(user_id: current_user.id)
+    if user_signed_in?
+      if params[:gift].present?
+        @cart_items = []
+      else
+        @cart_items = CartItem.where(user_id: current_user.id)
+      end
     else
       @cart_items = []
     end
