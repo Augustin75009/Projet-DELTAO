@@ -517,13 +517,17 @@
   }
 
   .cart-form {
-    padding: 0px 0px 0px 0px !important;
+    padding: 0px 0px 0px 20px !important;
     margin: 0px !important;
   }
 
   .cart-wrapper {
     flex-direction: column !important;
     margin-bottom: 20px !important;
+  }
+
+  .cart-wrapper.reverse {
+    flex-direction: column-reverse !important;
   }
 
   .billing-form .btn {

@@ -1,6 +1,10 @@
 <h1 style="padding: 80px 20px 0px 20px">Bonjour, vous pouvez renseigner vos cordonées ci-dessous :</h1>
 
-<div class="cart-wrapper">
+<%if params[:gift] %>
+  <div class="cart-wrapper reverse">
+<% else %>
+  <div class="cart-wrapper">
+<% end %>
   <div class="cart-form">
     <h4>Vos coordonées</h4>
     <div class="billing-form">
@@ -28,7 +32,7 @@
     <%if params[:gift] %>
     <h4>Carte valable 12 mois - Non nominative</h4>
     <p>Pour utiliser votre carte cadeau, téléphoner à Tessa. <br> Munissez-vous de la <strong><u>référence</u></strong> fourni à l'étape de payement.</p>
-    <img src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1559584468/boncadeau_red.jpg" alt="">
+    <img style="width: 100%"src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1559584468/boncadeau_red.jpg" alt="">
     <p class="font-weight-bold">Total :<span style="font-size:30px"> <%= number_to_currency(@cart.price_cents, unit: "€", separator: ",", format: "%n %u") %></span></p>
     <% else %>
     <h4>Récapitulatif</h4>
