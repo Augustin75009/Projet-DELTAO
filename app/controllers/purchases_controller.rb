@@ -16,7 +16,6 @@ class PurchasesController < ApplicationController
       @cart = Cart.all
       # @purchases = Purchase.where(state: 'paid')
       @purchases = Purchase.all
-      # raise
     else
       redirect_to root_path
     end
@@ -38,11 +37,19 @@ class PurchasesController < ApplicationController
     # raise
     # authorize @purchase
     if @purchase.save! && provided_phone
-      redirect_to new_cart_purchase_payment_path(purchase_id: @purchase.id)
+      if params[:gift]
+        redirect_to new_cart_purchase_payment_path(gift: true, purchase_id: @purchase.id)
+      else
+        redirect_to new_cart_purchase_payment_path(purchase_id: @purchase.id)
+      end
     else
       @cart_items = CartItem.where(user: current_user)
-      @cart = Cart.find(params[:cart_id])
-      redirect_to cart_path(gift: true, id: params[:cart_id]), alert: "N° de téléphone invalide"
+      # @cart = Cart.find(params[:cart_id])
+      if params[:gift]
+        redirect_to cart_path(gift: true, id: params[:cart_id]), alert: "N° de téléphone invalide"
+      else
+        redirect_to cart_path(id: params[:cart_id]), alert: "N° de téléphone invalide"
+      end
     end
     # authorize @purchase
   end
@@ -52,7 +59,7 @@ class PurchasesController < ApplicationController
   end
 
   def update
-    @purchase= Purchase.find_by(cart_id: params[:cart_id], user_id: params[:id])
+    @purchase = Purchase.find_by(cart_id: params[:cart_id], user_id: params[:id])
     if params[:status] == 'checking'
       @purchase.status = 'contact'
       @purchase.save

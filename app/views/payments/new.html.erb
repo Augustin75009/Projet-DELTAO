@@ -1,7 +1,11 @@
 
 <div id="stripe-checkout" style="margin: 90px auto 20px auto; background-color: white">
   <h4 style="padding-top: 30px; font-size: 30px">Paiement</h4>
-  <h4>Référence : D-<%= Date.today.strftime("%y%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
+  <% if params[:gift] %>
+    <h4>Référence : G-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
+  <% else %>
+    <h4>Référence : D-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
+  <% end %>
     <img style="width: 100%; opacity: 0.5" src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1554822755/barbotine.jpg" alt="">
   <div style="text-align: center; margin-bottom: 0px">
   <br>
@@ -13,7 +17,11 @@
       </article>
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-name="DELTAO-<%= Date.today %>-<%= current_user.id %>-<%= @purchase.product_sku %>"
+        data-name="<% if params[:gift] %>
+                  G-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %>
+                  <% else %>
+                  D-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %>
+                  <% end %>"
         data-email="<%= current_user.email %>"
         data-description="<%@cart_items.each do |item| %>
                             <% Lesson.where(id: item.lesson_id).each do |t| %>
