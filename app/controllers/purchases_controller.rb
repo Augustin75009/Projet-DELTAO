@@ -41,7 +41,8 @@ class PurchasesController < ApplicationController
       redirect_to new_cart_purchase_payment_path(purchase_id: @purchase.id)
     else
       @cart_items = CartItem.where(user: current_user)
-      redirect_to cart_path(params[:cart_id]), alert: "N° de téléphone invalide"
+      @cart = Cart.find(params[:cart_id])
+      redirect_to cart_path(gift: true, id: params[:cart_id]), alert: "N° de téléphone invalide"
     end
     # authorize @purchase
   end
