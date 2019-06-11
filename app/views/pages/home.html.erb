@@ -7,7 +7,7 @@
     <div class="left-side">
       <ul class="stage">
         <% if Event.count > 3 %>
-        <% Event.all.take(3).each do |stage| %>
+        <% Event.all.sort {|a, b| b.priority <=> a.priority }.take(3).each do |stage| %>
           <li style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: white;">
             <%= link_to(stage.link) do %>
               <%= image_tag(stage.photo.to_s) do %>
