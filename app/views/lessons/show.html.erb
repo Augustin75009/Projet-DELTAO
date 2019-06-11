@@ -6,7 +6,7 @@
   <div class="product-container">
     <div class="product-image">
       <span>
-        <%= image_tag(@lesson.photo.to_s) do %>
+        <%= image_tag(@lesson.photo.to_s, :alt => @lesson.alt) do %>
         <% end %>
       </span>
     </div>

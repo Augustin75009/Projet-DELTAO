@@ -10,7 +10,7 @@
         <% Event.all.sort {|a, b| b.priority <=> a.priority }.take(3).each do |stage| %>
           <li style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: white;">
             <%= link_to(stage.link) do %>
-              <%= image_tag(stage.photo.to_s) do %>
+              <%= image_tag(stage.photo.to_s, :alt => stage.alt) do %>
               <% end %>
               <div style="display: flex; display: flex; justify-content: flex-start;">
                 <div style="padding: 11px 20px">
@@ -30,7 +30,7 @@
           <% Event.all.each do |stage| %>
           <li style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: white;">
             <%= link_to(stage.link) do %>
-              <%= image_tag(stage.photo.to_s) do %>
+              <%= image_tag(stage.photo.to_s, :alt => stage.alt) do %>
               <% end %>
               <div style="display: flex; display: flex; justify-content: flex-start;">
                 <div class="event-date" style="padding: 12.5px">

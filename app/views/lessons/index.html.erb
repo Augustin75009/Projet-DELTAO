@@ -9,10 +9,7 @@
         <div class ="card-dispatch-lesson">
           <%= link_to lesson_path(lesson) do %>
             <div class="card-lesson">
-              <div class ="card-image-lesson"
-                   style="background-image: url(
-                    '<%= lesson.photo %>'
-                   ); background-position: <%= lesson.pic_position %>;">
+              <div class ="card-image-lesson" style="background-image: url('<%= lesson.photo %>'); background-position: <%= lesson.pic_position %>;">
               </div>
               <div class="card-content-lesson">
                 <h4><%= lesson.title.truncate(26) %></h4>
@@ -55,8 +52,7 @@
                 <p><%= l(event.start_date, :format => "%d %B %Y", :locale => 'fr') %></p>
               </div>
               <div class="event-card-pic">
-                <%= image_tag(event.photo.to_s, :class => "event-pic") do %>
-                <!-- <img src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1555313947/anniversaire.jpg" alt="" class="event-pic"> -->
+                <%= image_tag(event.photo.to_s, :class => "event-pic", :alt => "céramique") do %>
                 <% end %>
               </div>
             </li>
@@ -64,8 +60,5 @@
           <% end %>
         </ul>
       </div>
-<!--       <%= link_to events_path do %>
-        <button class="button-infos">Tout voir</button>
-      <% end %> -->
     </div>
   </div>

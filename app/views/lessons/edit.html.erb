@@ -16,6 +16,7 @@
       <h1>Photo</h1>
       <%= f.file_field :photo, label: 'Ajouter une photo' %>
       <br>
+      <%= f.input :alt, label: 'Tags' %>
       <%= f.input :pic_position, label: 'Centrer la photo', collection: ["top", "center", "bottom"] %>
       <h1>Rubriques</h1>
       <%= f.input :card_description, label: 'infos complémentaires' %>
