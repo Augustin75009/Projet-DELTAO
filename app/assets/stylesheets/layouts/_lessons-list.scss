@@ -32,6 +32,11 @@ pre {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.actived-filter.no-background {
+  background: transparent !important;
+  opacity: 0.5 !important;
+}
+
 .filter-button.actived {
   background: white;
   font-weight: 600;
