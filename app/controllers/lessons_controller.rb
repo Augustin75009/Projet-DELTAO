@@ -6,9 +6,9 @@ class LessonsController < ApplicationController
       @lessons = Lesson.search_by_category(params[:query5]).order('created_at')
     elsif params[:query4].present?
       @lessons = Lesson.search_by_category(params[:query4]).order('created_at')
-    elsif params[:query3].present?
-      @lessons = Lesson.search_by_category(params[:query3]).order('created_at')
     elsif params[:query2].present?
+      @lessons = Lesson.search_by_category(params[:query2]).order('created_at')
+    elsif params[:query3].present?
       @lessons = Lesson.where(adult: true).order('created_at')
     elsif params[:query1].present?
       @lessons = Lesson.where(child: true).order('created_at')
@@ -91,7 +91,7 @@ class LessonsController < ApplicationController
                                     :phone_booking,
                                     :payable,
                                     :pricing,
-                                    :deposit, :gift_card, :card_description, :slot, :schedule)
+                                    :deposit, :gift_card, :card_description, :slot, :schedule, :pic_position)
   end
 
   def lesson_params_edit
@@ -106,7 +106,7 @@ class LessonsController < ApplicationController
                                     :phone_booking,
                                     :payable,
                                     :pricing,
-                                    :deposit, :gift_card, :card_description, :schedule)
+                                    :deposit, :gift_card, :card_description, :schedule, :pic_position)
   end
 
   def set_lesson
