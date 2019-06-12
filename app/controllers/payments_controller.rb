@@ -12,12 +12,10 @@ class PaymentsController < ApplicationController
 
     if @purchase.slot == []
       gift = "Bon cadeau"
-      lesson = Lesson.find(params[:lesson])
-      raise
+      lesson = Lesson.find(@cart.last.gift).title
     else
       gift = "Réservation"
       lesson = @purchase.slot
-      raise
     end
 
     charge = Stripe::Charge.create(

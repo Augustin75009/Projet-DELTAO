@@ -11,6 +11,7 @@ class CartsController < ApplicationController
     @cart = Cart.new
     @cart.user = current_user
     @cart.price_cents = Lesson.find(params[:lesson]).total.to_i
+    @cart.gift = params[:lesson]
     # authorize @cart
     @cart.save
     if user_signed_in?
