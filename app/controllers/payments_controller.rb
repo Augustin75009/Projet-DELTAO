@@ -12,13 +12,13 @@ class PaymentsController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
-      amount:       @purchase.amount_cents,
+      amount:       @purchase.amount_cents*100,
       description:  "Payment for teddy #{@purchase.product_sku} for order #{@purchase.id}",
-      currency:     @order.amount.currency
+      currency:     @purchase.amount.currency
     )
 
     @purchase.update(payment: charge.to_json, state: 'paid')
-    redirect_to cart_purchase_path(@purchase)
+    redirect_to cart_purchases_path(@purchase)
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message
@@ -29,6 +29,7 @@ private
 
   def set_order
     @cart_items = CartItem.where(user_id: current_user.id)
-    @purchase = current_user.purchases.where(state: 'checking').find(params[:purchase_id]) #verifier pourquoi c'est pas pending comme dans le cours
+    @purchase = current_user.purchases.where(state: 'checking').find(params[:purchase_id]) # verifier pourquoi c'est pas pending comme dans le cours
+
   end
 end
