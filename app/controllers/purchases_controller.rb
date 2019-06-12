@@ -14,8 +14,8 @@ class PurchasesController < ApplicationController
       @lessons = Lesson.all
       @users = User.all
       @cart = Cart.all
-      # @purchases = Purchase.where(state: 'paid')
-      @purchases = Purchase.all
+      @purchases = Purchase.where(state: 'paid')
+      # @purchases = Purchase.all
     else
       redirect_to root_path
     end
@@ -28,7 +28,12 @@ class PurchasesController < ApplicationController
     @purchase.product_sku = @cart.id
     @purchase.user = @user
     @purchase.state = 'checking'
-    @purchase.amount_cents = @cart.price_cents
+
+    if params[:gift]
+      @purchase.amount_cents = @cart.price_cents
+    else
+      @purchase.amount_cents = @cart.total
+    end
     @purchase.slot = []
     # @purchase.slot = CartIt.where(cart_id: @purchases.last.product_sku).last.slot
     CartItem.where(cart_id: @cart.id).each do |t|
@@ -38,7 +43,7 @@ class PurchasesController < ApplicationController
     # authorize @purchase
     if @purchase.save! && provided_phone
       if params[:gift]
-        redirect_to new_cart_purchase_payment_path(gift: true, purchase_id: @purchase.id)
+        redirect_to new_cart_purchase_payment_path(gift: true, purchase_id: @purchase.id, lesson: params[:slot])
       else
         redirect_to new_cart_purchase_payment_path(purchase_id: @purchase.id)
       end

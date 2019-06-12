@@ -4,7 +4,7 @@
   <ul>
   <% @purchases.each do |item| %>
   <li>
-    <strong>Ref: </strong>Deltao-<%= item.created_at.strftime("%y%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
+    <strong>Ref: </strong><%= item.created_at.strftime("%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
   </li>
     <li>
       <strong>Status: </strong><%= item.state %>

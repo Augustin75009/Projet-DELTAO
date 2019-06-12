@@ -10,15 +10,12 @@ class CartsController < ApplicationController
   def new
     @cart = Cart.new
     @cart.user = current_user
-    # @cart.price_cents = 12
-    @cart.price_cents = params[:price].to_i
-    # @cart.product = @product
+    @cart.price_cents = Lesson.find(params[:lesson]).total.to_i
     # authorize @cart
     @cart.save
-    # @counter = current_user.carts.count
     if user_signed_in?
       respond_to do |format|
-        format.html { redirect_to cart_path(@cart, gift: true) }
+        format.html { redirect_to cart_path(@cart, gift: true, lesson: params[:lesson]) }
         format.js
       end
     else
@@ -28,19 +25,15 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(params[:id])
-    # @cart.price_cents = @cart.total
     @cart.save
   end
 
   def create
     @cart = Cart.new
     @cart.user = current_user
-    # @cart.price_cents = 12
     @cart.price_cents = @cart.total
-    # @cart.product = @product
     # authorize @cart
     @cart.save
-    # @counter = current_user.carts.count
     respond_to do |format|
       format.html { redirect_to carts_path }
       format.js
@@ -51,7 +44,6 @@ class CartsController < ApplicationController
     @cart = Cart.find(params[:id])
     # authorize @cart
     @cart.destroy
-    # @counter = current_user.carts.count
     respond_to do |format|
       format.html { redirect_to carts_path }
       format.js

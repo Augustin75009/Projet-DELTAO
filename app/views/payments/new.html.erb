@@ -15,7 +15,7 @@
           <span>A payer : <%= humanized_money(@purchase.amount_cents) %> euros</span>
         </label>
       </article>
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      <script src="https://checkout.stripe.com/checkout.js?text=1" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         data-name="<% if params[:gift] %>
                   G-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %>
