@@ -30,19 +30,19 @@ const selectLesson = () => {
       background.classList.add('background5');
       button.classList.add('upper');
       content.childNodes[1].innerHTML =
-      "<h3>Atelier adultes</h3><p>Par groupe de 4-5 personnes , vous découvrez votre créativité en vivant les « situations » de modelage proposées. Vous apprenez les techniques et les gestes pour créer en terre de faïence ou de grès. Vous voyez peu à peu se dessinez votre « fil rouge créatif ».</p>"
+      "<h3>Atelier adultes</h3><p>Par groupe de 4-5 personnes , vous découvrez votre créativité en vivant les « situations » de modelage proposées. Vous apprenez les techniques et les gestes pour créer en terre de faïence ou de grès. Vous voyez peu à peu se dessiner votre « fil rouge créatif ».</p>"
     }
     if (workshop === "Découverte") {
       background.classList.add('background5');
       button.classList.add('upper');
       content.childNodes[1].innerHTML =
-      "<h3>Atelier découverte</h3><p>Au cours d'une séances ou d'un mini-stage, vous tournez ou vous modelez. Vous découvrez la matière et les gestes pour sa mise en forme. Vous réalisez le potentiel de vos mains et de votre créativité."
+      "<h3>Atelier découverte</h3><p>Au cours d'une séance ou d'un mini-stage, vous tournez ou vous modelez. Vous découvrez la matière et les gestes pour sa mise en forme. Vous réalisez le potentiel de vos mains et de votre créativité."
     }
     if (workshop === "Atelier libre") {
       background.classList.add('background5');
       button.classList.add('upper');
       content.childNodes[1].innerHTML =
-      "<h3>Atleier libre</h3><p>Vous savez déjà tourner et vous souhaitez progresser en répétant les gestes de manière autonome. Vous pouvez réserver l'atelier et choisir un forfait d'heures."
+      "<h3>Atelier libre</h3><p>Vous savez déjà tourner et vous souhaitez progresser en répétant les gestes de manière autonome. Vous pouvez réserver l'atelier et choisir un forfait d'heures."
     }
     if (workshop === "Stage") {
       background.classList.add('background5');
@@ -72,7 +72,7 @@ const selectLesson = () => {
           buttons[0].classList.remove('upper');
           buttons[2].classList.remove('upper');
           content.childNodes[1].innerHTML =
-          "<h3>Atelier adultes</h3><p>Par groupe de 4-5 personnes , vous découvrez votre créativité en vivant les « situations » de modelage proposées. Vous apprenez les techniques et les gestes pour créer en terre de faïence ou de grès. Vous voyez peu à peu se dessinez votre « fil rouge créatif ».</p>"
+          "<h3>Atelier adultes</h3><p>Par groupe de 4-5 personnes , vous découvrez votre créativité en vivant les « situations » de modelage proposées. Vous apprenez les techniques et les gestes pour créer en terre de faïence ou de grès. Vous voyez peu à peu se dessiner votre « fil rouge créatif ».</p>"
         }
         if (event.currentTarget.scrollLeft > size) {
           background.classList.add('background5');
@@ -80,7 +80,7 @@ const selectLesson = () => {
           buttons[1].classList.remove('upper');
           buttons[3].classList.remove('upper');
           content.childNodes[1].innerHTML =
-          "<h3>Atelier découverte</h3><p>Au cours d'une séances ou d'un mini-stage, vous tournez ou vous modelez. Vous découvrez la matière et les gestes pour sa mise en forme. Vous réalisez le potentiel de vos mains et de votre créativité."
+          "<h3>Atelier découverte</h3><p>Au cours d'une séance ou d'un mini-stage, vous tournez ou vous modelez. Vous découvrez la matière et les gestes pour sa mise en forme. Vous réalisez le potentiel de vos mains et de votre créativité."
         }
         if (event.currentTarget.scrollLeft > (2 * size)) {
           background.classList.add('background5');

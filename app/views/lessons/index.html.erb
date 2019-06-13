@@ -43,7 +43,7 @@
       </div>
       <div class="slider">
         <ul>
-          <div class="event-nav"><h5>Evenements</h5><a href="https://www.facebook.com/pg/delaterrealobjet/events/?ref=page_internal" target="_blank">Tout voir</a></div>
+          <div class="event-nav"><h5>Actualiés</h5></div>
           <% @events.sort {|a, b| b.priority <=> a.priority }.take(4).each do |event| %>
               <a href="<%= event.link %>">
             <li>
