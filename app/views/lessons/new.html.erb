@@ -3,7 +3,7 @@
   <div class="product-form">
     <%= simple_form_for(@lesson) do |f| %>
       <%= f.input :title, label: 'Intitulé' %>
-      <%= f.input :category, label: 'Catégorie', collection: ["Cours enfants", "Cours adultes", "Découverte", "Atelier libre", "Stage" ] %>
+      <%= f.input :category, label: 'Catégorie', collection: ["Atelier enfants", "Atelier adultes", "Découverte", "Atelier libre", "Stage" ] %>
       <%= f.input :description, label: 'Description du cours' %>
       <%= f.input :price_cents, label: 'Prix en euros' %>
       <%= f.input :slot, label: 'Date', as: :date, html5: true, multiple: true %>

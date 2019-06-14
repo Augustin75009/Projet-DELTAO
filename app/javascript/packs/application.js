@@ -20,7 +20,7 @@ tabFocus();
 selectLesson();
 infoAnimation();
 navbar();
-tweenmax();
+// tweenmax();
 //parallaxScroll();
 
 if(document.location.href.match('query')) {
