@@ -1,18 +1,38 @@
 .footer {
+  background: #EBEBEB;
+  min-height: 200px;
+  padding: 30px 60px;
+  width: 100%;
+  bottom: 0;
+  color: rgba(0,0,0,0.3);
+
+}
+
+.footer-credit {
+  padding: 20px 60px 0px 60px;
+  text-align: center;
+  font-size: 14px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.link.footer-link{
+  color: rgba(0,0,0,0.3) !important;
+}
+
+.link.footer-link:hover{
+  opacity: 0.5,
+}
+
+.footer-wrapper {
   // background: #F4F4F4;
   // position: absolute;
-  background: #EBEBEB;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  min-height: 200px;
-  padding: 30px 60px;
-  color: rgba(0,0,0,0.3);
-  width: 100%;
-  bottom: 0;
   h5 {
     font-size: 20px !important;
-    margin: 5px 0px !important;
+    margin: 10px 0px !important;
 
   }
   p {
@@ -97,10 +117,10 @@
 }
 
 .phone-number {
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.3);
 }
 
 .email {
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.3);
   font-size: 14px;
 }

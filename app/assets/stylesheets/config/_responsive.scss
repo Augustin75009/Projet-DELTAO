@@ -161,7 +161,29 @@
   .email {
     font-size: 12px !important;
   }
+
+    .footer-wrapper {
+    flex-direction: column !important;
+    padding: 60px 10px !important;
+  }
+
+  .footer-contact {
+    text-align: -webkit-right;
+    div {
+    }
+  }
+
+  .footer-location, .footer-menu, .footer-contact, .footer-ouverture {
+    margin: 0px 0px 20px 0px !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .footer-credit {
+    padding: 0px 60px 0px 60px !important;
+  }
 }
+
 
 // @media (max-width: 600px) {
 
@@ -543,29 +565,7 @@
   }
 
 
-  .footer {
-    flex-direction: column !important;
-    padding: 60px 10px !important;
 
-    div > p, h5 {
-      // font-size: 10px !important;
-    }
-    div > a > p {
-      // font-size: 10px !important;
-    }
-  }
-
-  .footer-contact {
-    text-align: -webkit-right;
-    div {
-    }
-  }
-
-  .footer-location, .footer-menu, .footer-contact, .footer-ouverture {
-    margin: 0px 0px 20px 0px !important;
-    width: 100% !important;
-    text-align: center !important;
-  }
 
 
 
