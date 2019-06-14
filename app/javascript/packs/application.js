@@ -10,7 +10,7 @@ import {activedFilter} from '../plugins/activedFilter';
 import {modifyWebsite} from '../plugins/open-widget';
 import {navbar} from '../plugins/navbar';
 import {scroll} from '../plugins/scroll';
-
+import {alert} from '../plugins/alert';
 
 
 initSlick();
@@ -30,6 +30,7 @@ if(document.location.href.match('/lessons')) {
 }
 
 
+alert();
 scroll();
 modifyWebsite();
 

@@ -10,14 +10,16 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+<!--     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css"> -->
     <%= favicon_link_tag 'logo.png' %>
   </head>
   <body>
     <%= render 'shared/navbar2' %>
     <p id="alert"> <%= alert %></p>
     <section class="boundary"><%= yield %></section>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= render 'shared/footer' %>
   </body>
 </html>
