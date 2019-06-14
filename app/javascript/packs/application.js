@@ -18,7 +18,7 @@ initSlick();
 // updateQuantityUp();
 tabFocus();
 selectLesson();
-infoAnimation();
+// infoAnimation();
 navbar();
 // tweenmax();
 //parallaxScroll();

@@ -21,7 +21,7 @@
                 <hr>
                 <span><p><%= lesson.category.truncate(21) %> - <%= (lesson.total).to_i %>€</p></span>
               </div>
-              <div class="lesson-infos"></div>
+              <!-- <div class="lesson-infos"></div> -->
               <% if user_signed_in? %>
           <% if current_user.adminkey == "admin" %>
             <%= link_to edit_lesson_path(lesson) do %>

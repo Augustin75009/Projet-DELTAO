@@ -65,6 +65,11 @@
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  transition: all 1s ease-out;
+}
+
+.card-dispatch-lesson:hover {
+  transform: translateY(-10px);
 }
 
 .card-lesson {
@@ -123,10 +128,12 @@
   width: 100%;
   background-size: cover;
   border-radius: 2px;
+  transition: background 1s;
   // background-position: center;
   // background-image: linear-gradient(0deg, rgba(255,255,255,0.861782212885154) 44%, rgba(255,255,255,0.5788690476190477) 64%), url("https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391512/delaterrealobjet_tessa_guilbaud.jpg") !important;;
   // background-image: url("https://res.cloudinary.com/dw7nokc0j/image/upload/v1554391512/delaterrealobjet_tessa_guilbaud.jpg") !important;
 }
+
 
 .lesson-infos {
   background-image: url(info.svg);
