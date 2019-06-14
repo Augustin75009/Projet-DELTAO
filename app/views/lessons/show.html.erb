@@ -34,11 +34,11 @@
         <%= render "lessons/phone-booking" %>
       <% end %>
         <% if @lesson.gift_card %>
-            <span class="gift_card">
+            <div class="gift_card">
               <%= link_to new_cart_path(gift: true, lesson: @lesson.id) do %>
-                Bon cadeau 💝 >
+                > Bon cadeau <span style="font-size: 14px">&#x1F381</span>
               <% end %>
-            </span>
+            </div>
           <% end %>
       <% if user_signed_in? %>
         <% if current_user.adminkey == "admin" %>

@@ -50,7 +50,8 @@
 
   img{
     height: 200px;
-    width: 256px
+    width: 256px;
+    object-fit: cover;
   }
   li {
     margin-left: 20px;
