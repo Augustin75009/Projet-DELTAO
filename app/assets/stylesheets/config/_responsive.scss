@@ -212,12 +212,16 @@
 
   .fa.fa-sign-out {
     // padding: 8px 40px 8px 0px !important;
-    // margin-right: 10px;
+    margin: 8px 0px;
   }
 
   .dropdown-menu > li > a {
     padding: 8px 20px !important;
-}
+  }
+
+  .dropdown-menu {
+    min-width:  200px !important;
+  }
 
   .shopping-nav {
     margin: auto 0px !important;
