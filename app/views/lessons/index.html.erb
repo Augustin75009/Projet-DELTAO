@@ -1,5 +1,9 @@
 <div style="height: 50px"></div>
-<%= render 'filter' %>
+<% if params[:query6] %>
+  <%= render 'gift-infos' %>
+<% else %>
+  <%= render 'filter' %>
+<% end %>
 <!-- <div class="results-container">
   <%= @lessons.count %> COURS DISPONIBLES
 </div> -->
@@ -34,7 +38,7 @@
       <% end %>
     </div>
     <div class="events">
-      <% if params[:query1].present? || params[:query2].present? || params[:query3].present?|| params[:query4].present?|| params[:query5].present? %>
+      <% if params[:query1].present? || params[:query2].present? || params[:query3].present?|| params[:query4].present?|| params[:query5].present?|| params[:query6].present? %>
         <div class="actived-filter">
       <% else %>
         <div class="actived-filter no-background">
