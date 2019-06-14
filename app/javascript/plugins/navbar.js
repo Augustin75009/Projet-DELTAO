@@ -40,11 +40,11 @@ const navbar = () => {
     if (window.pageYOffset > 95) {
       title.classList.add('opacity')
       button.classList.add('opacity')
-      content.classList.add('opacity')
+      // content.classList.add('opacity')
     } else {
       title.classList.remove('opacity')
       button.classList.remove('opacity')
-      content.classList.remove('opacity')
+      // content.classList.remove('opacity')
     }
   })
 

@@ -10,6 +10,7 @@ import {activedFilter} from '../plugins/activedFilter';
 import {modifyWebsite} from '../plugins/open-widget';
 import {navbar} from '../plugins/navbar';
 import {scroll} from '../plugins/scroll';
+import {tweenmax} from '../plugins/tweenmax';
 
 
 
@@ -19,6 +20,7 @@ tabFocus();
 selectLesson();
 infoAnimation();
 navbar();
+tweenmax();
 //parallaxScroll();
 
 if(document.location.href.match('query')) {
