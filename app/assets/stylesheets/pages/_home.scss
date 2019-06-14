@@ -15,7 +15,7 @@
   width: 80%;
   margin: auto;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 50px;
   justify-content: center;
   // background: #ebebeb;
 }
@@ -25,12 +25,13 @@
 }
 
 .news {
-  // text-align: center;
+  text-align: center;
   color: black;
-  width: 400px;
-  margin: 0px auto 30px auto;
-  line-height: 30px;
+  width: 350px;
+  margin: 0px auto 46px auto;
+  line-height: 34px;
   font-style: italic;
+  opacity: 0.8;
 }
 
 .quote {
