@@ -28,7 +28,8 @@ class PaymentsController < ApplicationController
 
     @purchase.update(payment: charge.to_json, state: 'paid')
     @cart_items.destroy_all
-    redirect_to cart_purchases_path(@purchase)
+    redirect_to lessons_path(@purchase, paid: true)
+
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message

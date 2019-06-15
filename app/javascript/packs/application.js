@@ -11,6 +11,7 @@ import {modifyWebsite} from '../plugins/open-widget';
 import {navbar} from '../plugins/navbar';
 import {scroll} from '../plugins/scroll';
 import {alert} from '../plugins/alert';
+import {validation} from '../plugins/payement-validation';
 
 
 initSlick();
@@ -25,8 +26,12 @@ if(document.location.href.match('query')) {
   activedFilter();
 }
 
-if(document.location.href.match('/lessons')) {
+if(document.location.href.match('/lessons/')) {
   phoneNumber();
+}
+
+if(document.location.href.match('paid=true')) {
+  validation();
 }
 
 
