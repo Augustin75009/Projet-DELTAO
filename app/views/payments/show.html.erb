@@ -1,0 +1,4 @@
+<h1 style="padding-top: 40px">Hello World</h1>
+
+<p><%= Purchase.find(params[:id]).slot%></p>
+<p>G-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= Purchase.find(params[:id]).product_sku %></p>

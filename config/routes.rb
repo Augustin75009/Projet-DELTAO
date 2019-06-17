@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'payments/new'
   get 'payments/create'
+  get 'payments/show'
   devise_for :users
   root to: 'pages#home'
   get 'purchases/index'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :carts, only: [:new, :create, :destroy, :index, :show] do
     resources :purchases, only: [:new, :create, :edit, :update, :destroy, :index] do
-      resources :payments, only: [:new, :create]
+      resources :payments, only: [:new, :create, :show]
     end
   end
 
