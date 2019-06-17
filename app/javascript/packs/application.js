@@ -12,6 +12,7 @@ import {navbar} from '../plugins/navbar';
 import {scroll} from '../plugins/scroll';
 import {alert} from '../plugins/alert';
 import {validation} from '../plugins/payement-validation';
+import {planning} from '../plugins/planning';
 
 
 initSlick();
@@ -36,6 +37,7 @@ if(document.location.href.match('paid=true')) {
 
 
 alert();
+planning();
 scroll();
 modifyWebsite();
 
