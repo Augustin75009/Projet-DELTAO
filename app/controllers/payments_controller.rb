@@ -6,7 +6,6 @@ class PaymentsController < ApplicationController
 
   def show
     @cart_items = CartItem.where(user_id: current_user.id)
-    raise
   end
 
   def create
