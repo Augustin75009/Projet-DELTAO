@@ -91,7 +91,7 @@ header.is-absolute {
 }
 
 .menu__product__item.transparent {
-  a {
+  a, p {
     color: white !important;
     font-weight: 600;
     transition: color .4s linear;
