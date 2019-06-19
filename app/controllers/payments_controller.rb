@@ -32,8 +32,11 @@ class PaymentsController < ApplicationController
 
     @purchase.update(payment: charge.to_json, state: 'paid')
     @cart_items.destroy_all
-    redirect_to cart_purchase_payment_path(id: params[:purchase_id], paid: true)
-
+    if gift == "Bon cadeau"
+      redirect_to cart_purchase_payment_path(id: params[:purchase_id], gift: true, paid: true)
+    else
+      redirect_to cart_purchase_payment_path(id: params[:purchase_id], gift: false, paid: true)
+    end
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message
