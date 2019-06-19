@@ -15,7 +15,9 @@ import {validation} from '../plugins/payement-validation';
 import {planning} from '../plugins/planning';
 
 
-initSlick();
+// initSlick();
+alert();
+planning();
 // updateQuantityUp();
 tabFocus();
 selectLesson();
@@ -27,19 +29,17 @@ if(document.location.href.match('query')) {
   activedFilter();
 }
 
-if(document.location.href.match('/lessons/')) {
-  phoneNumber();
-}
 
 if(document.location.href.match('paid=true')) {
   validation();
 }
 
+if(document.location.href.match('/lessons/')) {
+  phoneNumber();
+}
 
-alert();
-planning();
-scroll();
 modifyWebsite();
+scroll();
 
 
 

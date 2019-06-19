@@ -1,14 +1,21 @@
+<!-- <script type="text/javascript" >
+   function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+</script> -->
+<div class="copied-box" style="margin: auto;">Référence copiée 👍</div>
 <div id="stripe-checkout" style="margin: 100px auto !important; background-color: white; min-height: 10vh !important">
-  <h4 style="padding-top: 30px; font-size: 30px">Reçu</h4>
-  <% if params[:gift] %>
-    <h4>Référence : G-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= Purchase.find(params[:id]).product_sku %></h4>
+  <h1 style="padding-top: 30px; font-size: 30px; margin: 20px">Reçu</h1>
+  <% if params[:gift] == "true" %>
+    <h4>Référence : <strong class="ref-gift" onclick="copy()">G-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= Purchase.find(params[:id]).product_sku %></strong> 👈</h4>
   <% else %>
-    <h4>Référence : D-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= Purchase.find(params[:id]).product_sku %></h4>
+    <h4>Référence : <strong class="ref-gift" onclick="copy()">D-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= Purchase.find(params[:id]).product_sku %></strong> 👈</h4>
   <% end %>
   <% if params[:gift] == "true" %>
-    <img class="download-giftcard" style="width: 100%" src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1560937414/Bon_cadeau.jpg" alt="" onclick="download()">
-    <a href="https://res.cloudinary.com/dw7nokc0j/image/upload/v1560937414/Bon_cadeau.jpg"
+    <img class="download-giftcard" style="width: 100%; box-shadow: 4px 4px 20px rgba(0,0,0,0.1); transform: scale(0.9);" src="https://res.cloudinary.com/dw7nokc0j/image/upload/c_scale,w_600/v1560937414/Bon_cadeau.jpg" alt="" onclick="download()">
+    <a href="https://res.cloudinary.com/dw7nokc0j/image/upload/c_scale,w_600/v1560937414/Bon_cadeau.jpg"
    download="Gift Card" target="_blank">Afficher le bon cadeau</a>
+   <p style="font-size: 12px">Affichez et Enregistrez sous le bon cadeau pour l'offrir</p>
   <% else %>
     <img style="width: 100%; opacity: 0.5" src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1554822755/barbotine.jpg" alt="">
   <% end %>
@@ -30,3 +37,30 @@
       </article>
   </div>
 </div>
+<script>
+  const copy = () => {
+    console.log('hello world')
+    const ref = document.querySelector(".ref-gift")
+    const selection = window.getSelection();
+    console.log(selection)
+    const range = document.createRange();
+    range.selectNodeContents(ref);
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    try {
+        document.execCommand('copy');
+        selection.removeAllRanges();
+        document.querySelector(".copied-box").classList.add("showBox");
+
+        setTimeout(() => {
+        document.querySelector(".copied-box").classList.remove("showBox");
+        }, 4000);
+    } catch (e) {
+        phoneButton.textContent = 'Impossible de copier, Ctrl+C!';
+
+        setTimeout(() => {
+        }, 1200);
+    }
+  }
+</script>

@@ -5,7 +5,7 @@ const alert = () => {
   const CGV = document.querySelector('#select-cgv');
   CGV.addEventListener('click', function() {
     const Toast = Swal.mixin({
-      padding: '20px',
+      padding: '30px',
       confirmButtonColor: '#c28d65',
     });
     Toast.fire({
