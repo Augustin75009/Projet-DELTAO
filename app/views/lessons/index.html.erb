@@ -4,9 +4,6 @@
 <% else %>
   <%= render 'filter' %>
 <% end %>
-<!-- <div class="results-container">
-  <%= @lessons.count %> COURS DISPONIBLES
-</div> -->
   <div class="main-container" id="cards-lesson">
     <% if params[:query6] %>
     <div class="card-container-lesson">
@@ -53,9 +50,12 @@
                 <h4><%= lesson.title.truncate(26) %></h4>
                 <p><%= lesson.description.truncate(80) %></p>
                 <hr>
-                <span><p><%= lesson.category.truncate(21) %> - <%= (lesson.total).to_i %>€</p></span>
+                <% if lesson.payable %>
+                  <span><p><%= lesson.category.truncate(21) %> - <%= (lesson.total).to_i %>€</p></span>
+                <% else %>
+                  <span><p><%= lesson.category.truncate(31) %></p></span>
+                <% end %>
               </div>
-              <!-- <div class="lesson-infos"></div> -->
               <% if user_signed_in? %>
           <% if current_user.adminkey == "admin" %>
             <%= link_to edit_lesson_path(lesson) do %>
