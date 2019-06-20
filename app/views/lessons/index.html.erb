@@ -8,6 +8,36 @@
   <%= @lessons.count %> COURS DISPONIBLES
 </div> -->
   <div class="main-container" id="cards-lesson">
+    <% if params[:query6] %>
+    <div class="card-container-lesson">
+      <% @lessons.each do |lesson| %>
+        <div class ="card-dispatch-lesson">
+          <%= link_to new_cart_path(gift: true, lesson: lesson.id) do %>
+            <div class="card-lesson">
+              <div class ="card-image-lesson" style="background-image: url('<%= lesson.photo %>'); background-position: <%= lesson.pic_position %>;">
+              </div>
+              <div class="card-content-lesson">
+                <h4><%= lesson.title.truncate(26) %></h4>
+                <p><%= lesson.description.truncate(80) %></p>
+                <hr>
+                <span><p><%= lesson.category.truncate(21) %> - <%= (lesson.total).to_i %>€</p></span>
+              </div>
+              <% if user_signed_in? %>
+          <% if current_user.adminkey == "admin" %>
+            <%= link_to edit_lesson_path(lesson) do %>
+              <button id="modify" class="button-infos">modifier</button>
+            <% end %>
+            <%= link_to lesson_path(lesson), method: :delete, data: { confirm: 'Confirmer' }  do %>
+              <button id="modify" class="button-infos">Supprimer</button>
+            <% end %>
+          <% end %>
+        <% end %>
+          <% end %>
+            </div>
+        </div>
+      <% end %>
+    </div>
+    <% else %>
     <div class="card-container-lesson">
       <% @lessons.each do |lesson| %>
         <div class ="card-dispatch-lesson">
@@ -37,6 +67,7 @@
         </div>
       <% end %>
     </div>
+    <% end %>
     <div class="events">
       <% if params[:query1].present? || params[:query2].present? || params[:query3].present?|| params[:query4].present?|| params[:query5].present?|| params[:query6].present? %>
         <div class="actived-filter">

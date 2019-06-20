@@ -52,8 +52,8 @@
   </div>
   <div class="cart-summary">
     <%if params[:gift] %>
-    <h4>Bon valable 12 mois - Non nominative</h4>
-    <p>Pour utiliser votre bon cadeau, téléphonez à Tessa. <br> Munissez-vous de la <strong><u>référence</u></strong> fournie à l'étape de paiement.</p>
+    <h4>Bon cadeau - valable  1 an</h4>
+    <p>vous recevrez le bon cadeau par <u>mail</u> après paiement en ligne</p>
     <img style="width: 100%"src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1560937414/Bon_cadeau.jpg" alt="">
     <p class="font-weight-bold">Total :<span style="font-size:30px"> <%= number_to_currency(@cart.price_cents, unit: "€", separator: ",", format: "%n %u") %></span></p>
     <% else %>
