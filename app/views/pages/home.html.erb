@@ -5,7 +5,7 @@
 <div class="announcement">
   <div class="announcement-wrapper">
     <div class="left-side">
-      <% if Event.count > 3 %>
+      <% if Event.count > 6 %>
         <ul class="stage">
         <% Event.all.sort {|a, b| b.priority <=> a.priority }.take(3).each do |stage| %>
           <li style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: white;">
@@ -28,7 +28,7 @@
         <% end %>
         <% else %>
         <ul class="stage centered">
-          <% Event.all.each do |stage| %>
+          <% Event.take(2).each do |stage| %>
           <li style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: white;">
             <%= link_to(stage.link) do %>
               <%= image_tag(stage.photo.to_s, :alt => stage.alt) do %>

@@ -640,12 +640,19 @@
 
 }
 
+
+@media (max-width: 550px) {
+
+    .stage.centered {
+    justify-content: left !important;
+  }
+}
+
 @media (max-width: 350px) {
 
   .more-infos {
     padding: 40px 10px 0px 10px !important;
   }
-
 
 }
 
