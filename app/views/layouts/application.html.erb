@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Tessa Guilbaud</title>
+    <title>De la Terre à l'Objet</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -13,6 +13,17 @@
 <!--     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css"> -->
     <%= favicon_link_tag 'logo.png' %>
+
+    <meta name="description" content="Atelier céramique Paris 18">
+
+        <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="De la Terre à l'Objet" />
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:url" content="<%= request.original_url %>" /> -->
+    <meta property="og:image" content="https://res.cloudinary.com/dw7nokc0j/image/upload/c_scale,w_600/v1558371917/kb8wvgvfwokgkjfwrppe.jpg" />
+    <meta property="og:description" content="Atelier céramique Paris 18" />
+    <meta property="og:site_name" content="De la Terre à l'Objet" />
+
   </head>
   <body>
     <%= render 'shared/navbar2' %>
