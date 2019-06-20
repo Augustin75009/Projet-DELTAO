@@ -13,6 +13,10 @@
       <% @lessons.each do |lesson| %>
         <div class ="card-dispatch-lesson">
           <%= link_to new_cart_path(gift: true, lesson: lesson.id) do %>
+            <div class="card-gift-info">
+              <h4><%= lesson.title.truncate(26) %></h4>
+              <p><%= lesson.description.truncate(400) %></p>
+            </div>
             <div class="card-lesson">
               <div class ="card-image-lesson" style="background-image: url('<%= lesson.photo %>'); background-position: <%= lesson.pic_position %>;">
               </div>
@@ -78,7 +82,7 @@
       </div>
       <div class="slider">
         <ul>
-          <div class="event-nav"><h5>Actualiés</h5></div>
+          <div class="event-nav"><h5>Actualités</h5></div>
           <% @events.sort {|a, b| b.priority <=> a.priority }.take(4).each do |event| %>
               <a href="<%= event.link %>">
             <li>
