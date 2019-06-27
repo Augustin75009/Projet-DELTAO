@@ -200,7 +200,7 @@ input[type=number]
 
 .infos-dispatch-content {
   position: relative;
-  height: 50vh;
+  min-height: 50vh;
   span {
     position: absolute;
     // visibility: hidden;

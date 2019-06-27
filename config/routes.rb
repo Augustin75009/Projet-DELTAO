@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'payments/new'
   get 'payments/create'
   get 'payments/show'
+  post 'cart_items/top_up', to: 'cart_items#top_up'
+  post 'cart_items/top_down', to: 'cart_items#top_down'
   devise_for :users
   root to: 'pages#home'
   get 'purchases/index'

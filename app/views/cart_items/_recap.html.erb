@@ -1,4 +1,4 @@
 Récapitulatif de la commande<br><br>
 <div class="summary-subtotal"><p>Sous-total :<span><%= number_to_currency(cart_item, unit: "€", separator: ",", format: "%n %u") %></span></p></div><br>
-<div class="summary-reduction"><p>Réduction :<span><%= number_to_currency(0, unit: "€", separator: ",", format: "%n %u") %></span></p></div><br>
+<div class="summary-reduction"><p>TVA :<span><%= number_to_currency(reduction, unit: "€", separator: ",", format: "%n %u") %></span></p></div><br>
 <div class="summary-total"><p>Total :<span style="font-size: 30px"><%= number_to_currency((cart_item), unit: "€", separator: ",", format: "%n %u") %></span></p></div>

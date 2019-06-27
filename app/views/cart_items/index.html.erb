@@ -18,10 +18,19 @@
         <% end %>
       </div>
       <div class="quantity-item">
-        <%= simple_form_for(cart_item, remote: true) do |f|%>
-          <%= f.number_field :quantity, :as => "number", class: "narrow-input"%>
-          <%= f.submit "ajouter", class: "quantity-submit" %>
-        <% end %>
+        <div class="actions">
+          <% if  cart_item.quantity < 2 %>
+              <p href="#" class="btn round-bordered incrementer minus" desable data-offset="-1">-</p>
+          <% else %>
+            <%= link_to cart_items_top_down_path(cart_item: cart_item.id), method: :post do %>
+              <p href="#" class="btn round-bordered incrementer minus" desable data-offset="-1">-</p>
+            <% end %>
+          <% end %>
+          <span id="counter" data-count="1"><%= cart_item.quantity %></span>
+          <%= link_to cart_items_top_up_path(cart_item: cart_item.id), method: :post do %>
+            <p href="#" class="btn round-bordered incrementer" data-offset="1">+</p>
+          <% end %>
+        </div>
       </div>
       <div class="infos-item" id="infos-item">
         <%= render 'cart_items/variable', cart_item: cart_item %>
@@ -36,7 +45,7 @@
         <div class="summary-empty"></div>
         <div class="summary-checkout" id="summary-checkout">
           <% @total_cart = total_cart %>
-          <% @reduction = reduction %>
+          <% @reduction = total_cart - (total_cart / 1.2)  %>
           <span id="total-ajax">
           <%= render 'cart_items/recap', cart_item: @total_cart, total_cart: @total_cart, reduction: @reduction %>
           </span>

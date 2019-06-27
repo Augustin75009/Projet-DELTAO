@@ -40,10 +40,10 @@ class CartItemsController < ApplicationController
         if cart_empty?
           @cart = Cart.new
           @cart.user = current_user
-          @cart.price_cents = @lesson.deposit
+          @cart.price_cents = @lesson.price_cents
         else
           @cart = Cart.where(user_id: current_user.id).last
-          @cart.price_cents += @lesson.deposit
+          @cart.price_cents += @lesson.price_cents
         end
         # raise
         @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot], current_user)
@@ -72,7 +72,29 @@ class CartItemsController < ApplicationController
     respond_to do |format|
         format.html { redirect_to cart_items_path }
         format.js
-      end
+    end
+  end
+
+  def top_up
+    @cart_item = CartItem.find(params[:cart_item])
+    @cart_item.quantity += 1
+    @cart_item.save
+    # redirect_to root_path
+    respond_to do |format|
+        format.html { redirect_to cart_items_path }
+        format.js
+    end
+  end
+
+  def top_down
+    @cart_item = CartItem.find(params[:cart_item])
+    @cart_item.quantity -= 1
+    @cart_item.save
+    # redirect_to root_path
+    respond_to do |format|
+        format.html { redirect_to cart_items_path }
+        format.js
+    end
   end
 
   def destroy

@@ -7,9 +7,9 @@ class CartItem < ApplicationRecord
 
   def total
     if product
-      (product.deposit * quantity)
+      (product.price_cents * quantity) / 1000
     else
-      (lesson.deposit * quantity)
+      (lesson.price_cents * quantity) / 1000
     end
   end
 end
