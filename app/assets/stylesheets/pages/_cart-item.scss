@@ -39,7 +39,7 @@
   margin-right: 20px;
   border-top: solid 8px;
   border-color: #daa094;
-  // border-color: rgba(0, 0, 0, 0.4);
+  flex-wrap: wrap;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -50,6 +50,8 @@
   }
 }
 .quantity-item {
+  min-width: 200px;
+  margin: auto;
   input {
     padding-left: 5px;
     width: 50%;
@@ -70,9 +72,13 @@
   flex: 3;
   display: flex;
   margin-left: 10px;
+  margin: auto;
+  min-width: 200px;
 }
+
 .delete-item, .amount-item {
   flex: 1;
+  margin: auto;
 }
 
 .quantity-item {
