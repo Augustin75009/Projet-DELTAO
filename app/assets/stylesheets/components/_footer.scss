@@ -66,6 +66,10 @@
 }
 
   .footer-contact {
+    text-align: -webkit-left;
+  }
+
+  .footer-ouverture {
     text-align: -webkit-right;
   }
 
@@ -87,7 +91,7 @@
 }
 
 
-.footer-contact a {
+.footer-contact > a {
   color: black;
   opacity: 0.15;
   text-decoration: none;
