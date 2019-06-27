@@ -35,6 +35,9 @@
     <% if user_signed_in? %>
       <div class="dropdown">
         <%= image_tag "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555074154/home.png", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown" %>
+        <% if @cart_items.count != 0 %>
+          <span class="notification-count burger dropdown"><%= @cart_items.count %></span>
+        <% end %>
         <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
           <ul class="burger-phone">
             <li id="" class="fa fa-sign-out">
@@ -57,6 +60,9 @@
     <% else %>
       <div class="dropdown">
         <%= image_tag "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555074154/home.png", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown" %>
+        <% if @cart_items.count != 0 %>
+          <span class="notification-count burger dropdown"><%= @cart_items.count %></span>
+        <% end %>
         <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
           <ul class="burger-phone">
             <li id="" class="fa fa-sign-out">

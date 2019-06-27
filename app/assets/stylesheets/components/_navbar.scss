@@ -186,6 +186,10 @@ header.is-absolute {
   }
 }
 
+  .notification-count.burger.dropdown {
+    visibility: hidden;
+  }
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;

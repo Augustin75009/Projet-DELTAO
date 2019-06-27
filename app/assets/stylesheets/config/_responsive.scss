@@ -127,6 +127,19 @@
 @media (max-width: 800px) {
 
 
+  .notification-count.burger {
+    padding-left: 9px;
+    padding-top: 1px;
+    top: -8px !important;
+    right: -12px !important;
+  }
+
+
+  .notification-count.burger.dropdown {
+    visibility: visible !important;
+  }
+
+
   .about {
     flex-direction: column-reverse !important;
     .main-title {
