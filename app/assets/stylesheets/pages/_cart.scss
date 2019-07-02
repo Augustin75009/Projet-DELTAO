@@ -18,9 +18,7 @@
 }
 
 .cart-summary {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
   margin: 20px 20px 100px 20px ;
   background-color: white;
   flex: 1;
@@ -28,10 +26,15 @@
   .cart-icon {
     border-radius: 8px !important;
     margin: 8px 8px 8px 0px;
-    height: 80px;
-    width: 80px;
-    border-radius: 1%;
+    height: 100px;
+    width: 100px;
+    border-radius: 4px;
   }
+}
+
+.font-weight-bold.bottom {
+  position: absolute;
+  bottom: 10px;
 }
 
 .billing-form {
