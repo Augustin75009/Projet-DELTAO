@@ -25,7 +25,7 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @purchase.amount_cents*100,
-      description:  "#{gift} avec atelier #{lesson}",
+      description:  "#{gift} atelier : #{lesson}",
       currency:     @purchase.amount.currency,
       receipt_email: current_user.email
     )
