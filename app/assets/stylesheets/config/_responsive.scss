@@ -208,19 +208,21 @@
 
 @media (max-width: 800px) {
 
+  .card-dispatch-lesson:hover {
+  transform: translateY(0px) !important;
+  // box-shadow: 2px 8px 4px rgba(0, 0, 0, 0) !important;
+
+  .card-gift-info {
+    visibility: hidden !important;
+  }
+}
+
   .footer {
     margin-top: 40px !important;
   }
 
   .footer-credit {
     padding: 0px 40px 0px 40px !important;
-  }
-
-  .gallery-pic {
-  img {
-    height: 200px !important;
-    margin: 20px 0px !important;
-    }
   }
 
 

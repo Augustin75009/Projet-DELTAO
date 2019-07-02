@@ -10,6 +10,7 @@
 .gallery-pic-wrapper {
   display: inline-flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 #cc-m-imagesubtitle-image-10178090371 {
@@ -22,8 +23,9 @@
 }
 
 .gallery-pic {
+  width: 50%;
   img{
-    height: 300px;
+    width: 100%;
     padding: 2px;
   }
 }
