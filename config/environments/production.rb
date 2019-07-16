@@ -3,7 +3,7 @@ Rails.application.configure do
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.action_mailer.default_url_options = { host: 'https://deltao.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'http://www.test-augustin.xyz/' }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
