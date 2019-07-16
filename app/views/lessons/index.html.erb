@@ -43,7 +43,7 @@
     <div class="card-container-lesson">
       <% @lessons.each do |lesson| %>
         <div class ="card-dispatch-lesson">
-          <%= link_to lesson_path(lesson) do %>
+          <%= link_to lesson_path(id: lesson.id, title: lesson.title) do %>
             <div class="card-lesson">
               <div class ="card-image-lesson" style="background-image: url('<%= lesson.photo %>'); background-position: <%= lesson.pic_position %>;">
               </div>
