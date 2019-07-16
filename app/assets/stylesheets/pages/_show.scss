@@ -29,7 +29,8 @@
   width: 50%;
   margin: 20px;
   img {
-    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
     max-height: 600px;
     height: 100%;
     width: 100%;
