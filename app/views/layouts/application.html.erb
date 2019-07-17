@@ -6,7 +6,7 @@
     <title>De la Terre à l'Objet : <%= if @lesson.present?
                                           "#{@lesson.title}"
                                         else
-                                          "Cours de céramique Paris 18"
+                                          "Atelier céramique Paris 18"
                                         end %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <%= favicon_link_tag 'logo.png' %>
 
-    <meta name="description" content="Atelier céramique Paris 18">
+    <meta name="description" content="Atelier céramique Paris 18 : <%= "#{@lesson.title}" if @lesson.present? %>">
+    <meta name="title" content="Atelier céramique Paris 18 : <%= "#{@lesson.title}" if @lesson.present? %>">
     <META NAME='KEYWORDS' CONTENT="céramique, poterie, modelage, émaillage, atelier de céramique, paris, paris 18, 18ème, creation de book, Plasticien, atelier, modelage, céramique, émaux, engobe, de la terre à l'objet, atelier de céramique, loisirs créatifs, travaux manuels, poterie, créativité, creativite">
 
         <!-- Facebook Open Graph data -->
