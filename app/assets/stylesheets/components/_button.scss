@@ -122,3 +122,8 @@
   bottom: 60px;
   right: 0;
 }
+
+.stripe-button-el, .stripe-button-el>span {
+  background: $tessa !important;
+  border-radius: 16px !important;
+}
