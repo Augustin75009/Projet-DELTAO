@@ -9,6 +9,8 @@ class User < ApplicationRecord
   #   new_record? || password.present?
   # end
 
-  has_many :purchases
-  has_many :lessons
+  has_many :purchases, dependent: :destroy
+  has_many :lessons, dependent: :nullify
+  has_many :carts, dependent: :destroy
+  has_many :cart_items, dependent: :destroy
 end
