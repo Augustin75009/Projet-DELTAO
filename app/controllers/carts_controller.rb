@@ -14,9 +14,10 @@ class CartsController < ApplicationController
     @cart.gift = params[:lesson]
     # authorize @cart
     @cart.save
+    # raise
     if user_signed_in?
       respond_to do |format|
-        format.html { redirect_to cart_path(@cart, gift: true, lesson: params[:lesson]) }
+        format.html { redirect_to cart_path(@cart, gift: true, lesson: params[:lesson])}
         format.js
       end
     else

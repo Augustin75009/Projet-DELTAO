@@ -12,7 +12,7 @@ var height = window.top.innerHeight;
 const navbar = () => {
 
   if(document.location.href.match('lessons')
-    || document.location.href.match('cart')
+    || document.location.href.match('carts')
     || document.location.href.match('events')
     || document.location.href.match('user')
     || document.location.href.match('purchases')
@@ -50,7 +50,7 @@ const navbar = () => {
 
   document.addEventListener('scroll', (event) => {
     if(document.location.href.match('lessons')
-      || document.location.href.match('cart')
+      || document.location.href.match('carts')
       || document.location.href.match('events')
       || document.location.href.match('user')
       || document.location.href.match('purchases')

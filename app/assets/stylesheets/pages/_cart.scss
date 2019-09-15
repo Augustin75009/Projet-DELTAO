@@ -3,13 +3,14 @@
   margin-right: 20px;
   margin-bottom: 80px;
   // background-color: rgba(236,236,236,1);
-  background-color: #ebebeb;
+  background: transparent;
   display: flex;
 }
 
 .cart-form {
+  border-radius: 6px;
   flex: 2;
-  padding: 30px 130px 30px 30px;
+  padding: 30px 30px 30px 30px;
   background-color: white;
   margin: 20px;
   max-height: 600px;
@@ -18,22 +19,28 @@
 }
 
 .cart-summary {
+  border-radius: 6px;
+  height: fit-content;
   position: relative;
-  margin: 20px 20px 100px 20px ;
+  margin: 20px 20px 20px 20px ;
   background-color: white;
   flex: 1;
   padding: 30px ;
   .cart-icon {
     border-radius: 8px !important;
     margin: 8px 8px 8px 0px;
-    height: 100px;
-    width: 100px;
+    // height: auto;
+    height: 200px;
+    width: 50%;
     border-radius: 4px;
+    object-fit: cover;
   }
 }
 
 .font-weight-bold.bottom {
-  position: absolute;
+  // position: absolute;
+  // float: right;
+  font-size: 30px;
   bottom: 10px;
 }
 
@@ -71,4 +78,64 @@
 
 .ref-gift:hover {
   text-decoration: underline;
+}
+
+.btn.cart-button{
+  background: #c28d65;
+  border-radius: 6px;
+  color: white;
+}
+.progress-wrapper {
+    opacity: 0.8;
+    padding: 120px 20px 40px 20px;
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .progress-round {
+    opacity: 0.2;
+    padding: 4px 8px;
+    height: 30px;
+    /*width: 30px;*/
+    border-radius: 8px;
+    background: grey;
+  }
+  .progress-square {
+    opacity: 0.2;
+    margin: auto 0px;
+    height: 2px;
+    width: 100px;
+    background: grey
+  }
+  .active-step {
+    color: white;
+    opacity: 1;
+    background-color: #c28d65;
+  }
+  .confirm-infos {
+    display: flex;
+    flex-direction: row;
+  }
+  .cart-form.confirmation {
+    display: flex;
+    flex-direction: column;
+  }
+  .confirm-infos-section {
+    min-width: 240px;
+  }
+
+
+@media (max-width: 900px) {
+  .confirm-infos {
+    flex-direction: column !important;
+  }
+  .confirm-infos-section {
+    margin-bottom: 8px;
+    min-width: 240px;
+    font-weight: 900;
+    font-size: 18px;
+  }
+  .cart-summary {
+    margin: 20px 0px;
+  }
 }

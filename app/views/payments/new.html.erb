@@ -1,45 +1,132 @@
-<script type="text/javascript" >
-   function preventBack(){window.history.forward();}
-    setTimeout("preventBack()", 0);
-    window.onunload=function(){null};
-</script>
-<div id="stripe-checkout" style="margin: 90px auto 20px auto; background-color: white">
-  <h4 style="padding-top: 30px; font-size: 30px">Paiement</h4>
-  <% if params[:gift] %>
-    <h4>Référence : G-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
-  <% else %>
-    <h4>Référence : D-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %></h4>
-  <% end %>
-    <img style="width: 100%; opacity: 0.5" src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1554822755/barbotine.jpg" alt="">
-  <div style="text-align: center; margin-bottom: 0px">
-  <br>
-    <%= form_tag cart_purchase_payments_path(@purchase) do %>
-      <article>
-        <label class="amount">
-          <% @purchase.slot.each do |s| %>
-            <p><%= s %></p>
-            <% end %>
-            <!-- <br> -->
-          <h4 style="margin: 30px 0px 2px 0px">A payer : <%= humanized_money(@purchase.amount_cents) %> euros</h4>
-        </label>
-      </article>
-      <script src="https://checkout.stripe.com/checkout.js?text=1" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-name="<% if params[:gift] %>
-                  G-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %>
-                  <% else %>
-                  D-<%= Date.today.strftime("%m%d") %>-<%= current_user.id %>-<%= @purchase.product_sku %>
-                  <% end %>"
-        data-email="<%= current_user.email %>"
-        data-description="<%@cart_items.each do |item| %>
-                            <% Lesson.where(id: item.lesson_id).each do |t| %>
-                              <%= t.title %> /
-                            <% end %>
-                          <% end %>"
-        data-amount="<%= @purchase.amount_cents*100 %>"
-        data-label="Valider"
-        data-currency="<%= @purchase.amount.currency %>"></script>
+<div class="progress-wrapper">
+  <div class="progress-round active-step">Coordonées</div>
+  <div class="progress-square active-step"></div>
+  <div class="progress-round active-step">Confirmation</div>
+  <div class="progress-square"></div>
+  <div class="progress-round">Paiment</div>
+</div>
+<style>
+
+</style>
+<div class="cart-wrapper">
+  <div class="cart-form" style="height: fit-content">
+    <div class="confirm-infos">
+      <div class="confirm-infos-section">Informations de facturation : </div>
+      <div>
+        <p><%= @current_user.first_name %> <%= @current_user.last_name %> </p>
+        <p><%= @current_user.address %></p>
+        <p> <%= @current_user.city %> <%= @current_user.zip %></p>
+      </div>
+    </div>
+      <div class="confirm-infos">
+        <div class="confirm-infos-section">Email du compte : </div>
+        <div>
+          <p><%= @current_user.email %></p>
+        </div>
+      </div>
+      <div class="confirm-infos">
+        <div class="confirm-infos-section">Téléphone de contact : </div>
+        <div>
+          <p>+33 <%= @current_user.phone %></p>
+        </div>
+      </div>
+  </div>
+  <div class="cart-summary" style="margin-bottom: 20px">
+    <% if params[:gift] %>
+        <h3 style="margin-top: 0px !important">Bon cadeau - valable  1 an</h3>
+      <p>vous recevrez le bon cadeau par <u>mail</u> après paiement en ligne</p>
+      <p class="font-weight-bold">Total :<span style="font-size:30px"> <%= number_to_currency(@cart.price_cents, unit: "€", separator: ",", format: "%n %u") %></span></p>
+      <hr style="border-top: solid 6px #f7f7f7; width: 100%">
+    <% else %>
+      <h3 style="margin-top: 0px !important">Votre réservation</h3>
+      <p>celle-ci sera prise en compte une fois votre paiment effectué</p>
+      <p class="font-weight-bold">Total :<span style="font-size:30px"> <%= number_to_currency(@cart.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
+      <hr style="border-top: solid 6px #f7f7f7; width: 100%">
     <% end %>
-    <p style="margin: 30px 0px 0px 0px" ><img class="powered-by-stripe" style="width: 100%; background: #c18c6591; padding-bottom: 3px; ;" src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1564732609/powered-by-stripe-with-cards.png" alt="card"></p>
+    <button style="opacity: 0.7; width: 49%; background: #c28d65; border-radius: 6px; color: white" class="btn" id="checkout-button" onclick="goBack()">Modifier</button>
+    <button style="width: 49%; background: #c28d65; border-radius: 6px; color: white" class="btn" id="checkout-button" onclick="stripeFunction()">Payer</button>
   </div>
 </div>
+<style>
+  .lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #c28d65;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+</style>
+<script src="https://js.stripe.com/v3"></script>
+<script>
+</script>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<script>
+  function stripeFunction() {
+    var stripeSessionId = '<%= @stripe_session.id %>';
+    var stripePublishableKey = '<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>';
+    // docume.addEventListener("click", (event) => {
+      const stripe = Stripe(stripePublishableKey);
+      stripe.redirectToCheckout({
+        sessionId: stripeSessionId,
+      }).then((result) => {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+      });
+    // });
+  }
+</script>
+<!-- <script>stripeFunction()</script> -->
+<!--  -->

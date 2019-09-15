@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'charge' => 'payments#charge'
   get 'payments/new'
   get 'payments/create'
   get 'payments/show'

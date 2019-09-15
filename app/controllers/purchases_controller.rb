@@ -22,6 +22,9 @@ class PurchasesController < ApplicationController
   end
 
   def create
+
+    # Stripe.api_key = 'sk_test_99wXsxS5OX3ZNbIn0cXhJYbN'
+
     @purchase = Purchase.new
     @cart = Cart.find(params[:cart_id])
     set_user_infos
@@ -43,6 +46,7 @@ class PurchasesController < ApplicationController
     # authorize @purchase
     if @purchase.save! && provided_phone
       if params[:gift]
+
         redirect_to new_cart_purchase_payment_path(gift: true, purchase_id: @purchase.id, lesson: params[:slot])
       else
         redirect_to new_cart_purchase_payment_path(purchase_id: @purchase.id)
@@ -56,6 +60,9 @@ class PurchasesController < ApplicationController
         redirect_to cart_path(id: params[:cart_id]), alert: "N° de téléphone invalide"
       end
     end
+
+
+    # raise
     # authorize @purchase
   end
 
