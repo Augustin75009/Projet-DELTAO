@@ -3,7 +3,8 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :success_hook
 
   def new
-    success_url = "http://localhost:3000/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    # success_url = "http://localhost:3000/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    success_url = "https://tessa.herokuapp.com/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
     @cart = Cart.find(params[:cart_id])
     @cart_items = CartItem.where(user_id: current_user.id)
     if params[:gift]
