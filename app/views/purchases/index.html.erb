@@ -19,13 +19,19 @@
       <strong>Nom: </strong><%= @users.find(item.user_id).last_name %> <%= @users.find(item.user_id).first_name %>
     </li>
     <li>
-      <% if item.slot != nil %>
+      <% if item.slot != [] %>
         <% item.slot.each do |t| %>
-          <strong>Cours: </strong><%= t %>
+          <strong>Atelier: </strong><%= t %>
         <% end %>
+        <!-- < else %> -->
+          <!-- < if Lesson.find(Cart.find(item.product_sku).gift.to_i).title %> -->
+            <!-- <strong>Atelier : </strong>< Lesson.find(item.product_sku).title %> -->
+          <!-- < end %> -->
       <% end %>
     </li>
     <hr>
   <% end %>
   </ul>
 </div>
+
+
