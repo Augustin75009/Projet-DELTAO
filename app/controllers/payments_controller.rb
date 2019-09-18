@@ -3,8 +3,9 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :success_hook
 
   def new
-    success_url = "http://localhost:3000/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
-    # success_url = "https://tessa.herokuapp.com/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    # success_url = "http://localhost:3000/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    success_url = "https://www.delaterrealobjet.fr/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    cancel_url = "https://www.delaterrealobjet.fr/"
     @cart = Cart.find(params[:cart_id])
     @cart_items = CartItem.where(user_id: current_user.id)
     if params[:gift]
@@ -12,7 +13,7 @@ class PaymentsController < ApplicationController
         customer_email: current_user.email,
         payment_method_types: ['card'],
         line_items: [{
-          images: ['https://res.cloudinary.com/dw7nokc0j/image/upload/v1566935252/b76o4z7jziipudajkxxa.jpg'],
+          images: ['https://res.cloudinary.com/dw7nokc0j/image/upload/v1560937414/Bon_cadeau.jpg'],
           description: "Bon cadeau : #{Lesson.find(params[:lesson]).title}",
           name: "Montant total : ",
           amount: @cart.price_cents * 100,
@@ -35,7 +36,7 @@ class PaymentsController < ApplicationController
           quantity: 1
         }],
         success_url: "#{success_url}",
-        cancel_url: "#{success_url}",
+        cancel_url: "#{cancel_url}",
         client_reference_id: "@delivery.id")
     end
 #     rescue Stripe::CardError => e
