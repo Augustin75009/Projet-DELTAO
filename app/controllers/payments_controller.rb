@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
           quantity: 1
         }],
         success_url: "#{success_url}",
-        cancel_url: "#{success_url}",
+        cancel_url: "#{cancel_url}",
         client_reference_id: "@delivery.id")
     else
       @stripe_session = Stripe::Checkout::Session.create(
