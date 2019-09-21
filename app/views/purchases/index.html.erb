@@ -23,10 +23,12 @@
         <% item.slot.each do |t| %>
           <strong>Atelier: </strong><%= t %>
         <% end %>
-        <!-- < else %> -->
-          <!-- < if Lesson.find(Cart.find(item.product_sku).gift.to_i).title %> -->
-            <!-- <strong>Atelier : </strong>< Lesson.find(item.product_sku).title %> -->
-          <!-- < end %> -->
+      <% else %>
+      <% if Cart.find(item.product_sku).gift != "" %>
+        <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
+          <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
+        <% end %>
+      <% end %>
       <% end %>
     </li>
     <hr>
