@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
 
   def new
     # success_url = "http://localhost:3000/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    begin
     success_url = "https://www.delaterrealobjet.fr/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
     cancel_url = "https://www.delaterrealobjet.fr/"
     @cart = Cart.find(params[:cart_id])
@@ -22,7 +23,11 @@ class PaymentsController < ApplicationController
         }],
         success_url: "#{success_url}",
         cancel_url: "#{cancel_url}",
-        client_reference_id: "@delivery.id")
+        client_reference_id: "@delivery.id",
+        payment_intent_data: {
+          description: "Bon cadeau : #{Lesson.find(@cart.gift).title}"
+        }
+      )
     else
       @stripe_session = Stripe::Checkout::Session.create(
         customer_email: current_user.email,
@@ -37,11 +42,16 @@ class PaymentsController < ApplicationController
         }],
         success_url: "#{success_url}",
         cancel_url: "#{cancel_url}",
-        client_reference_id: "@delivery.id")
+        client_reference_id: "@delivery.id",
+        payment_intent_data: {
+          description: "Réservation atelier : #{Purchase.find(params[:purchase_id]).slot}"
+        }
+      )
     end
-#     rescue Stripe::CardError => e
-#      flash[:alert] = e.message
-#      redirect_to new_cart_purchase_payment_path(@purchase)
+    rescue Stripe::CardError => e
+      flash[:alert] = e.message
+      redirect_to new_cart_purchase_payment_path(@purchase)
+   end
   end
 
   def show
@@ -51,7 +61,6 @@ class PaymentsController < ApplicationController
     @cart_items = CartItem.where(user_id: current_user.id)
     Purchase.find(params[:lkEZDDSWWsfnZLEKN]).update(state: 'paid')
     @cart_items.destroy_all
-    # raise
     redirect_to root_path(paid: true)
   end
 
