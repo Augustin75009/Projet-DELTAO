@@ -25,8 +25,10 @@ class PaymentsController < ApplicationController
         cancel_url: "#{cancel_url}",
         client_reference_id: "@delivery.id",
         payment_intent_data: {
-          description: "Bon cadeau : #{Lesson.find(@cart.gift).title}"
-        }
+          description: "Bon cadeau : #{Lesson.find(@cart.gift).title}",
+          receipt_email: current_user.email
+        },
+        locale: 'fr'
       )
     else
       @stripe_session = Stripe::Checkout::Session.create(
@@ -44,8 +46,10 @@ class PaymentsController < ApplicationController
         cancel_url: "#{cancel_url}",
         client_reference_id: "@delivery.id",
         payment_intent_data: {
-          description: "Réservation atelier : #{Purchase.find(params[:purchase_id]).slot}"
-        }
+          description: "Réservation atelier : #{Purchase.find(params[:purchase_id]).slot}",
+          receipt_email: current_user.email
+        },
+        locale: 'fr'
       )
     end
     rescue Stripe::CardError => e
