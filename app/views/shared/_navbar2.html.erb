@@ -14,7 +14,7 @@
       <p id="select-planning-nav" class="menu__product__link" href="/lessons?query6=true">Planning</p></li>
       <% if user_signed_in? %>
         <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-          <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/cart_items" style="position: relative; text-align: center">
+          <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/cart_items" style="position: relative; text-align: center">
             Panier
               <% if @cart_items.count != 0 %>
                 <span class="notification-count"><%= @cart_items.count %></span>
@@ -43,13 +43,13 @@
         <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
           <ul class="burger-phone">
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out xl" href="/lessons">Ateliers</a></li><br>
+              <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/lessons">Ateliers</a></li><br>
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out xl" href="/lessons?query6=true">Bons cadeaux</a></li><br>
+              <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/lessons?query6=true">Bons cadeaux</a></li><br>
             <li id="" class="fa fa-sign-out">
               <a id="select-planning-nav-burger" class=".sign_out xl">Planning</a></li><br>
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out xl" href="/cart_items">Panier</a></li><br>
+              <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/cart_items">Panier</a></li><br>
           </ul>
           <li>
             <%= link_to destroy_user_session_path, method: :delete, class: "link_sign_out" do %>
@@ -65,13 +65,13 @@
         <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
           <ul class="burger-phone">
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out xl" href="/lessons">Ateliers</a></li><br>
+              <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/lessons">Ateliers</a></li><br>
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out xl" href="/lessons?query6=true">Bons cadeaux</a></li><br>
+              <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/lessons?query6=true">Bons cadeaux</a></li><br>
             <li id="" class="fa fa-sign-out">
               <a id="select-planning-nav-burger" class=".sign_out xl">Planning</a></li><br>
             <li id="" class="fa fa-sign-out">
-              <a id="" class=".sign_out xl" href="/cart_items">Panier</a></li><br>
+              <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/cart_items">Panier</a></li><br>
           </ul>
           <li>
             <%= link_to t(".sign_in xl", default: "Login"), new_user_session_path, class: "header-item header-link" %>
