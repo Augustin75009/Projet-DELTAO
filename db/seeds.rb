@@ -38,7 +38,7 @@ Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la
 Terre et cuissons comprises."
 )
 
-lesson1.remote_photo_url = "http://res.cloudinary.com/dw7nokc0j/image/upload/v1555484431/anpk1xgewzblddekmmg0.jpg"
+lesson1.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555484431/anpk1xgewzblddekmmg0.jpg"
 lesson1.save!
 
 lesson2 = Lesson.create!(
@@ -61,7 +61,7 @@ Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la
 Terre et cuissons comprises."
 )
 
-lesson2.remote_photo_url = "http://res.cloudinary.com/dw7nokc0j/image/upload/v1555486445/bffulk7dmvhn0l1hnss0.jpg"
+lesson2.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555486445/bffulk7dmvhn0l1hnss0.jpg"
 lesson2.save!
 
 lesson3 = Lesson.create!(
@@ -108,7 +108,7 @@ Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la
 Terre et cuissons comprises."
 )
 
-lesson4.remote_photo_url = "http://res.cloudinary.com/dw7nokc0j/image/upload/v1555484892/bzf4sevz0y1isv7eczvi.jpg"
+lesson4.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555484892/bzf4sevz0y1isv7eczvi.jpg"
 lesson4.save!
 
 lesson5 = Lesson.create!(
@@ -132,7 +132,7 @@ Tarif spécial 'famille au complet' papa, maman et le 'petit d'homme' : 95€ la
 Terre et cuissons comprises."
 )
 
-lesson5.remote_photo_url = "http://res.cloudinary.com/dw7nokc0j/image/upload/v1555485540/gle17tocw5gv8umyfcmk.jpg"
+lesson5.remote_photo_url = "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555485540/gle17tocw5gv8umyfcmk.jpg"
 lesson5.save!
 
 
