@@ -14,6 +14,9 @@ gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 # pg_search
 gem 'pg_search'
 
+# mailing
+gem 'sendinblue'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.5.0'
