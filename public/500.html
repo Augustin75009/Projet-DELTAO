@@ -1,66 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
+<style>
+  @font-face {
+    font-family: 'tessa';
+    src: asset-url('../app/assets/fonts/webfonts/3949EE_0_0.ttf') format('truetype');
+    font-style: normal;
+  }
+  html {
+  font-size: 17px;
+  font-weight: 100;
+  font-family: tessa;
+  color: black;
+  }
+  header {
+    height: 80px;
+    background: #FFFFFF;
+    border-bottom: solid 1px rgba(32, 46, 58, 0.15);
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+
+  h1 {
+    font-size: 90px;
+  }
+
+  h3, p {
+    font-weight: 500 !important;
+  }
+
+  header > img {
+    margin: auto;
+    height: 48px;
+  }
+
+  footer {
+    height: 213px;
+    background: rgba(0,0,0,0.1);
+  }
+
+  a {
+    /*text-decoration: none;*/
+    color: initial;
+  }
+
   .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
+    margin: 80px 0px 0px 0px;
+    font-weight: 900;
   }
 
   .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 200px);
+    position: relative;
+  }
+
+  .rails-default-error-page div.dialog > img{
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+  }
+
+  .dialog-img {
+    display: flex;
+  }
+
+  .rails-default-error-page div.dialog > div.dialog-img > img{
+    max-width: 100%;
+    margin: auto;
+    height: 100px;
+    position: absolute;
+    top: 0;
   }
 
   .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    padding: 24px;
+    width: 40%;
+  }
+
+  .rails-default-error-page div.dialog > div.dialog-content {
+    margin: auto;
+    z-index: 1;
+  }
+
+  .not-bold {
+    font-weight: 100 !important;
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+
   }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .rails-default-error-page div.dialog > div > p {
+
   }
-  </style>
+
+  @media (max-width: 1024px) {
+    .dialog-img {
+      display: none;
+    }
+    .dialog-content {
+      width: 75% !important;
+    }
+  }
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 70px;
+    }
+  }
+</style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
+  <header><img src="/logo404.png" alt=""></header>
   <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+
+    <div class="dialog-img">
+
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <div class="dialog-content">
+      <h1>OUPS !</h1>
+      <h3>Erreur 500 : La page que vous recherchez est introuvable ! </h3><br><br>
+      <p><span class="not-bold">Quelques pages qui peuvent vous aider :</span> <br><br><br>
+
+        Faire une recherche sur : <a href="https://www.delaterrealobjet.fr/">De la terre a l'objet</a><br><br><br>
+
+        Me connecter : <a href="https://www.delaterrealobjet.fr/users/sign_in">se connecter</a><br>
+        Je suis nouveau : <a href="https://www.delaterrealobjet.fr/users/sign_up">m'inscrire</a>
+      </p>
+    </div>
   </div>
 </body>
 </html>
