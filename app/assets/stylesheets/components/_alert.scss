@@ -15,8 +15,20 @@
 }
 
 #alert {
-  top: 80px;
-  left: 20px;
-  position: absolute;
-  color: red;
+  z-index: 200;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  padding-left: 16px;
+  width: 100%;
+  background: #c18c658f;
+  margin: 0px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.close {
+  position: initial !important;
+  margin-right: 8px;
 }

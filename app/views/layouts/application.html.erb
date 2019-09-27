@@ -40,7 +40,7 @@
   </head>
   <body>
     <%= render 'shared/navbar2' %>
-    <p id="alert"> <%= alert %></p>
+    <%= render 'shared/flashes' %>
     <section class="boundary"><%= yield %></section>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
