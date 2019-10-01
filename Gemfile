@@ -31,6 +31,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'stripe', '5.1.1'
 gem 'money-rails'
 gem 'pundit'
+gem 'dalli'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
