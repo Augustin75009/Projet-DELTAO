@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^delaterrealobjet\.fr [NC]
+RewriteRule ^(.*)$ https://www.delaterrealobjet.fr/$1 [L,R=301]
