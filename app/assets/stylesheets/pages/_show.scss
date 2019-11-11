@@ -201,7 +201,8 @@ input[type=number]
 
 .infos-dispatch-content {
   position: relative;
-  min-height: 50vh;
+  height: 50vh;
+  overflow: scroll;
   span {
     position: absolute;
     // visibility: hidden;
