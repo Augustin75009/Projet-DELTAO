@@ -5,6 +5,10 @@ h1 {
   text-align: center;
 }
 
+h2{
+  margin-top: 0px;
+}
+
 a {
   text-decoration: none !important;
   color: black !important;
@@ -13,6 +17,10 @@ a {
 body {
   background-color: #F7F7F7;
   // min-height: 101vh
+}
+
+input {
+  border-radius: 8px;
 }
 
 .main-title {

@@ -39,10 +39,16 @@
     </script>
   </head>
   <body>
-    <%= render 'shared/navbar2' %>
-    <%= render 'shared/flashes' %>
-    <section class="boundary"><%= yield %></section>
-    <%= render 'shared/footer' %>
+    <div class="body-container">
+      <%= render 'shared/navbar2' %>
+      <%= render 'shared/flashes' %>
+      <section class="boundary">
+        <div class="section_content">
+          <%= yield %>
+        </div>
+      </section>
+      <%= render 'shared/footer' %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

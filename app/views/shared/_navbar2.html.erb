@@ -3,15 +3,15 @@
     <a class="logo__link transparent" href="/"></a>
   </div>
   <nav class="menu">
-    <ul class="menu__product__list">
+    <ul class="custom_navbar_menu_list">
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-      <!-- <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/lessons">Ateliers</a></li> -->
-      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/lessons">Ateliers</a></li>
+      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/lessons">Ateliers</a></li>
+      <!-- <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/lessons">Ateliers</a></li> -->
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-      <!-- <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/lessons?query6=true">Bons cadeaux</a></li> -->
-      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/lessons?query6=true">Bons cadeaux</a></li>
+      <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/lessons?query6=true">Bons cadeaux</a></li>
+      <!-- <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/lessons?query6=true">Bons cadeaux</a></li> -->
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-      <p id="select-planning-nav" class="menu__product__link" href="/lessons?query6=true">Planning</p></li>
+      <span id="select-planning-nav" class="menu__product__link" href="/lessons?query6=true">Planning</span></li>
       <% if user_signed_in? %>
         <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
           <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/cart_items" style="position: relative; text-align: center">
@@ -74,7 +74,7 @@
               <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/cart_items">Panier</a></li><br>
           </ul>
           <li>
-            <%= link_to t(".sign_in xl", default: "Login"), new_user_session_path, class: "header-item header-link" %>
+            <%= link_to t(".sign_in xl", default: "Connection"), new_user_session_path, class: "header-item header-link" %>
           </li>
         </ul>
       </div>

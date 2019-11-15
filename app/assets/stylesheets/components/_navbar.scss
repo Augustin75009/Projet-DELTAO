@@ -50,6 +50,10 @@ header.is-absolute {
   }
 }
 
+.custom_navbar_menu_list{
+  display: inline-flex;
+}
+
 .logo {
   display: flex;
   width: 40%;
@@ -125,6 +129,7 @@ header.is-absolute {
 
 .burger-phone {
   display: none;
+  width: 260px;
 }
 
 .header-item {
@@ -157,7 +162,6 @@ header.is-absolute {
 .shopping-nav {
   position: relative;
   display: inline-block;
-  margin-left: 20px;
   background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555404696/settings_2.png');
   background-size: cover;
   height: 30px;
@@ -227,7 +231,7 @@ span.xl {
 
 .shopping-nav {
   // height: 100%;
-  margin: auto 20px;
+  margin: auto 0px auto 20px;
   display: flex;
   -webkit-box-pack: end;
   // justify-content: flex-end;

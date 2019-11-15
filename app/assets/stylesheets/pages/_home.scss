@@ -1,11 +1,18 @@
 // Specific CSS for your home-page
 
-
-.boundary {
-  min-height: 50vh;
-  // display: flex;
+.body-container{
   margin: auto;
   background: #F7F7F7;
+}
+
+.boundary {
+  padding: 70px 0px;
+  display: flex;
+}
+
+.section_content{
+  min-height: calc(100vh - 300px);
+  width: 100%;
 }
 
 .announcement {
@@ -28,7 +35,7 @@
   text-align: center;
   color: black;
   width: 350px;
-  margin: 0px auto 46px auto;
+  margin: -40px auto 46px auto;
   line-height: 34px;
   font-style: italic;
   opacity: 0.8;
