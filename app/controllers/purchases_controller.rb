@@ -55,7 +55,7 @@ class PurchasesController < ApplicationController
       @cart_items = CartItem.where(user: current_user)
       # @cart = Cart.find(params[:cart_id])
       if params[:gift]
-        redirect_to cart_path(gift: true, id: params[:cart_id]), alert: "N° de téléphone invalide"
+        redirect_to cart_path(gift: true, id: params[:cart_id], lesson: params[:slot]), alert: "N° de téléphone invalide"
       else
         redirect_to cart_path(id: params[:cart_id]), alert: "N° de téléphone invalide"
       end

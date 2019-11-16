@@ -55,7 +55,7 @@ class CartsController < ApplicationController
   private
 
   def cart_not_found
-    redirect_to root_url, alert: t(".cart_not_found")
+    redirect_to root_url, alert: "Une erreur est survenue"
   end
 
   private

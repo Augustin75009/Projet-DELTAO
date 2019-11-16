@@ -10,3 +10,10 @@
     <p><%= alert %></p>
   </div>
 <% end %>
+<script>
+var element = document.getElementById("alert");
+
+setTimeout(function(){
+  element.parentNode.removeChild(element);
+}, 3000);
+</script>

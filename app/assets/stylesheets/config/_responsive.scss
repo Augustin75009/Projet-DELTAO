@@ -88,7 +88,7 @@
 
 @media (max-width: 950px) {
 
-    .tessa-wrapper {
+  .tessa-wrapper {
     flex-direction: column;
   }
 
@@ -112,8 +112,9 @@
   }
     .stage {
     transform : scale(1) !important;
-    margin: 0px 80px !important;
+    margin: 0px !important;
     padding: 10px;
+    width: auto !important;
   }
 
   .announcement-wrapper {
@@ -219,7 +220,7 @@
 }
 
   .footer {
-    margin-top: 40px !important;
+    // margin-top: 40px !important;
   }
 
   .footer-credit {
@@ -393,7 +394,7 @@
   .stage {
     justify-content: start !important;
     text-align: center !important;
-    width: 100% !important;
+    width: auto !important;
     display: inline-flex !important;
     margin-left: 0px !important;
   }
@@ -561,7 +562,7 @@
   }
 
   .card-container-lesson {
-    padding-top: 10px !important;
+    padding-top: 0px !important;
   }
 
   .panier-vide-container {
@@ -608,6 +609,7 @@
     display: flex;
     flex-direction: column-reverse;
     margin: 0 !important;
+    padding-top: 14px !important;
     // margin-top: 20px !important;
   }
 
@@ -615,23 +617,25 @@
     justify-content: center !important;
   }
 
-
   .filter-for-lesson {
     display: block !important;
     margin-top: 30px !important;
+    padding: 6px;
     .toggle-filters{
       display: block !important;
     }
   }
 
   .filter-button {
+    margin-top: 0px !important;
     padding-top: 4px !important;
     padding-bottom: 4px !important;
     border-radius: 8px !important;
   }
 
   .actived-filter {
-    width: 80% !important;
+    max-width: 340px;
+    // width: 80% !important;
     margin: 0px !important;
   }
 

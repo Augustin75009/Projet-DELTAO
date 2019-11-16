@@ -1,8 +1,24 @@
 <div class="filter-for-lesson">
-  <div class="toggle-filters">Masquer x</div>
-<!--   <div class="filter-button"><h1><%= link_to "Adultes", lessons_path({query1: true}) %></h1></div>
-  <div class="filter-button"><h1><%= link_to "Découverte", lessons_path({query2: "Découverte"}) %></h1></div>
-  <div class="filter-button"><h1><%= link_to "Enfants", lessons_path({query3: true}) %></h1></div>
-  <div class="filter-button"><h1><%= link_to "Atelier libre", lessons_path({query4: "Atelier libre"}) %></h1></div>
-  <div class="filter-button"><h1><%= link_to "Stages", lessons_path({query5: "Stage"}) %></h1></div> -->
+  <div class="toggle-filters">
+    Afficher les filtres <%= image_tag 'show_more.svg' %>
+  </div>
+  <div class="filter-button hidden"><h1><%= link_to "Adultes", lessons_path({query1: true}) %></h1></div>
+  <div class="filter-button hidden"><h1><%= link_to "Découverte", lessons_path({query2: "Découverte"}) %></h1></div>
+  <div class="filter-button hidden"><h1><%= link_to "Enfants", lessons_path({query3: true}) %></h1></div>
+  <div class="filter-button hidden"><h1><%= link_to "Atelier libre", lessons_path({query4: "Atelier libre"}) %></h1></div>
+  <div class="filter-button hidden"><h1><%= link_to "Stages", lessons_path({query5: "Stage"}) %></h1></div>
 </div>
+<script>
+  document.querySelector('.toggle-filters').addEventListener('click', function(){
+    document.querySelectorAll('.filter-button').forEach(function(e){
+      e.classList.toggle('hidden')
+      document.querySelector('.filter-for-lesson').classList.toggle('open')
+      document.querySelector('.toggle-filters').classList.toggle('upper')
+      if (e.classList.contains('hidden')) {
+        document.querySelector('.toggle-filters').innerHTML = 'Afficher les filtres <%= image_tag 'show_more.svg'%>'
+      } else {
+        document.querySelector('.toggle-filters').innerHTML = 'Fermer <%= image_tag 'show_more.svg' , class: 'rotate-45' %>'
+      }
+    })
+  })
+</script>

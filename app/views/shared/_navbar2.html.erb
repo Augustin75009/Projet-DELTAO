@@ -1,6 +1,6 @@
-<header id="header" class="header is-absolute header--light transparent">
-  <div class="logo transparent">
-    <a class="logo__link transparent" href="/"></a>
+<header id="header" class="header is-absolute header--light">
+  <div class="logo">
+    <a class="logo__link" href="/"></a>
   </div>
   <nav class="menu">
     <ul class="custom_navbar_menu_list">
@@ -52,8 +52,8 @@
               <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/cart_items">Panier</a></li><br>
           </ul>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete, class: "link_sign_out" do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out xl", default: "Log out") %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "header-item header-link" do %>
+              <%= t(".sign_out xl", default: "Se déconnecter") %>
             <% end %>
           </li>
         </ul>

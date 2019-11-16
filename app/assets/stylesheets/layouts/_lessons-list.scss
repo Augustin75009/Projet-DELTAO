@@ -3,8 +3,14 @@ pre {
 }
 
 .gift-infos {
-  margin-top: 70px;
+  margin-top: 40px;
   text-align: -webkit-center;
+}
+
+.filter-for-lesson.open{
+  // border-bottom: solid 1px rgba(25,25,25,0.1);
+  // border-top: solid 1px rgba(25,25,25,0.1);
+  background: #ebebeb;
 }
 
 .filter-for-lesson {
@@ -12,11 +18,28 @@ pre {
   text-align: -webkit-center;
   position: relative;
   .toggle-filters{
+    cursor: pointer;
     display: none;
     position: absolute;
-    right: 10px;
-    top: -20px;
+    right: 14px;
+    bottom: 0px;
+    background: #f9f9f9;;
+    border: solid 1px rgba(25,25,25, 0.1);
+    border-radius: 8px;
+    padding: 2px 6px;
+    z-index: 2;
   }
+  .toggle-filters.upper{
+    bottom: 6px;
+  }
+}
+
+img.rotate-45{
+  transform: rotate(45deg);
+}
+
+.filter-button.hidden{
+  display: none;
 }
 
 .filter-button{
