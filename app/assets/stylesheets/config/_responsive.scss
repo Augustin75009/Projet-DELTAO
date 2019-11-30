@@ -128,6 +128,12 @@
 
 @media (max-width: 800px) {
 
+  .progress-wrapper{
+    font-size: 13px !important;
+    .progress-round{
+      padding: 6px 8px !important;
+    }
+  }
 
   .notification-count.burger {
     padding-left: 9px;
