@@ -1,7 +1,7 @@
 .footer {
   background: #EBEBEB;
   min-height: 200px;
-  padding: 30px 30px;
+  padding: 30px 30px 40px 30px;
   width: 100%;
   bottom: 0;
   color: rgba(0,0,0,0.3);
@@ -9,15 +9,18 @@
 }
 
 .footer-credit {
-  padding: 10px 60px 0px 60px;
+  padding: 10px 60px 10px 60px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   max-width: 900px;
   margin: auto;
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 .link.footer-link{
-  color: rgba(0,0,0,0.3) !important;
+  color: rgba(0, 173, 181, 1) !important;
 }
 
 .link.footer-link:hover{

@@ -1,33 +1,5 @@
 <div class ="card-wrapper-teaching">
-<!--   <ul>
-  <% @teachings.each do |teaching| %>
-    <li class ="card-dispatch-teaching" style="margin-top: 100px;">
-      <%= link_to teaching_path(teaching) do %>
-        <div class="card-teaching">
-          <div class ="card-image-teaching">
-          </div>
-          <div class="card-content-teaching">
-            <h4><%= teaching.title %></h4>
-            <h4><%= teaching.content %></h4>
-          </div>
-          <div class="teaching-infos"></div>
-          <% if user_signed_in? %>
-          <% if current_user.adminkey == "admin" %>
-            <%= link_to teaching_path(teaching) do %>
-              <button id="modify" class="button-infos">modifier</button>
-            <% end %>
-            <%= link_to teaching_path(teaching), method: :delete, data: { confirm: 'Confirmer' }  do %>
-              <button id="modify" class="button-infos">Supprimer</button>
-            <% end %>
-          <% end %>
-        <% end %>
-      <% end %>
-        </div>
-    </li>
-  <% end %>
-    </ul> -->
-
-    <div style="margin: auto; width: 80%; padding-top: 60px; max-width: 800px">
+  <div style="margin: auto; width: 80%; padding-top: 0px; max-width: 800px">
   <h1 style="font-size:26px;line-height:31px;">P&eacute;dagogie</h1>
 <!--   <p><br />
   <span style="font-size:14px;"><span style="color: rgb(153, 204, 102);">Sur le &quot;chemin de la terre &agrave; l&#39;objet&quot;, je propose des situtations de modelage adapt&eacute;es &agrave; la personne. Car chacun se trouve &agrave; une &eacute;tape du chemin de la cr&eacute;ation, capable d&#39;&eacute;voluer pour en d&eacute;couvrir d&#39;autres.</span></span><br />

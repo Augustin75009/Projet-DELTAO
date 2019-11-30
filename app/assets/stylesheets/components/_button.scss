@@ -103,6 +103,7 @@
 .hr-title {
   width: 80px;
   border-color: $tessa;
+  // border-color: $tessa-blue;
   border-width: 3px;
   margin-top: 14px;
     margin-bottom: 14px;
@@ -126,4 +127,12 @@
 .stripe-button-el, .stripe-button-el>span {
   background: $tessa !important;
   border-radius: 16px !important;
+}
+
+.form-actions{
+  input {
+    margin-top: 16px;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
 }

@@ -15,7 +15,7 @@ a {
 }
 
 body {
-  background-color: #F7F7F7;
+  background-color: $tessa-white;
   // min-height: 101vh
 }
 
@@ -25,5 +25,7 @@ input {
 
 .main-title {
   font-size: 34px;
+  // color: #cecece;
   color: #cecece;
+  // color: $tessa-light-brown;
 }
