@@ -89,6 +89,11 @@
   p{
     overflow: scroll;
     height: 70%;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  p::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
   }
 }
 
