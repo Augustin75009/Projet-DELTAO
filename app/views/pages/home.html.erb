@@ -166,10 +166,12 @@ document.querySelector('.discover').addEventListener('click', () => {
   document.querySelector('#discover-focus').scrollIntoView({ behavior: "smooth" });
 });
 </script>
-<script>
-const modify = document.querySelector('#modify-website');
-const modifyA = document.querySelector('#modifyA');
-modify.addEventListener('click', function() {
-  modifyA.classList.toggle("show-widget");
-});
-</script>
+<% if user_signed_in? && current_user.adminkey %>
+  <script>
+  const modify = document.querySelector('#modify-website');
+  const modifyA = document.querySelector('#modifyA');
+  modify.addEventListener('click', function() {
+    modifyA.classList.toggle("show-widget");
+  });
+  </script>
+<% end %>

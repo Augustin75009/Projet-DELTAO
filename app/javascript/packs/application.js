@@ -43,7 +43,7 @@ if(document.location.href.match('/lessons/')) {
 }
 
 scroll();
-modifyWebsite();
+// modifyWebsite();
 
 
 
