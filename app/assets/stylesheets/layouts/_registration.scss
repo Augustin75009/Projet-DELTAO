@@ -1,3 +1,13 @@
+section[class^='devise'], section[class*=' devise']{
+  background-color: $tessa;
+  .form-actions{
+    input {
+      background-color: $tessa;
+      color: white;
+    }
+  }
+}
+
 .container-registration{
   height: calc(100% - 80px);
   width: 100%;
