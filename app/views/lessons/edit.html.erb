@@ -11,7 +11,7 @@
       <%= f.input :gift_card, label: 'Carte cadeau', class: "form-control" %>
       <%= f.input :phone_booking, label: 'Réservation par téléphone', class: "form-control" %>
       <%= f.input :payable, label: 'Payable en ligne', class: "form-control" %>
-      <%=  f.input :deposit, label: 'Acompte (si payable en ligne)', class: "form-control hidden" %>
+      <%= f.input :deposit, label: 'Acompte (si payable en ligne)', class: "form-control hidden" %>
       <br>
       <h1>Photo</h1>
       <%= f.file_field :photo, label: 'Ajouter une photo' %>

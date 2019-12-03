@@ -49,12 +49,12 @@
             i += 1
           end %>
             <%= simple_form_for @lesson do |f|%>
-              <%= f.input :slot, label: "Choisir une nouvelle date", collection: array %>
+              <%= f.input :slot, label: "Choisir une nouvelle date", collection: array.map { |a| l(a, :format => "%A %e %B %Y", :locale => 'fr')} %>
               <%= hidden_field_tag "true", true%>
               <%= f.button :submit, "Ajouter", class: "button-show" %>
             <% end %>
             <%= simple_form_for @lesson do |f|%>
-              <%= f.input :slot, label: "Supprimer une date", collection: @lesson.slot %>
+              <%= f.input :slot, label: "Supprimer une date", collection: @lesson.slot.map { |a| l(a.to_date, :format => "%A %e %B %Y", :locale => 'fr')} %>
               <%= f.button :submit, "Supprimer", class: "button-show" %>
             <% end %>
         <% end %>
