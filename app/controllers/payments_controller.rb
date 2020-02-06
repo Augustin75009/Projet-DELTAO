@@ -4,8 +4,8 @@ class PaymentsController < ApplicationController
 
   def new
     begin
-    success_url = "http://localhost:3000/charge?success=#{params[:purchase_id]}"
-    # success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
+    # success_url = "http://localhost:3000/charge?success=#{params[:purchase_id]}"
+    success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
     cancel_url = "https://www.delaterrealobjet.fr/"
     @cart = Cart.find(params[:cart_id])
     @cart_items = CartItem.where(user_id: current_user.id)
