@@ -1,7 +1,6 @@
 class PurchasesController < ApplicationController
   def new
     @purchase = Purchase.new
-    # authorize @purchase
   end
 
   def show
@@ -15,16 +14,12 @@ class PurchasesController < ApplicationController
       @users = User.all
       @cart = Cart.all
       @purchases = Purchase.where(state: 'paid')
-      # @purchases = Purchase.all
     else
       redirect_to root_path
     end
   end
 
   def create
-
-    # Stripe.api_key = 'sk_test_99wXsxS5OX3ZNbIn0cXhJYbN'
-
     @purchase = Purchase.new
     @cart = Cart.find(params[:cart_id])
     set_user_infos
@@ -38,12 +33,9 @@ class PurchasesController < ApplicationController
       @purchase.amount_cents = @cart.total
     end
     @purchase.slot = []
-    # @purchase.slot = CartIt.where(cart_id: @purchases.last.product_sku).last.slot
     CartItem.where(cart_id: @cart.id).each do |t|
       @purchase.slot << "#{t.slot} - #{Lesson.find(t.lesson_id).title} x#{t.quantity}"
     end
-    # raise
-    # authorize @purchase
     if @purchase.save! && provided_phone
       if params[:gift]
 
@@ -53,21 +45,15 @@ class PurchasesController < ApplicationController
       end
     else
       @cart_items = CartItem.where(user: current_user)
-      # @cart = Cart.find(params[:cart_id])
       if params[:gift]
         redirect_to cart_path(gift: true, id: params[:cart_id], lesson: params[:slot]), alert: "N° de téléphone invalide"
       else
         redirect_to cart_path(id: params[:cart_id]), alert: "N° de téléphone invalide"
       end
     end
-
-
-    # raise
-    # authorize @purchase
   end
 
   def edit
-    # authorize @purchase
   end
 
   def update
@@ -75,17 +61,14 @@ class PurchasesController < ApplicationController
     if params[:status] == 'checking'
       @purchase.status = 'contact'
       @purchase.save
-      # authorize @purchase
       redirect_to myproducts_path
     elsif params[:status] == 'contact'
       @purchase.status = 'approved'
       @purchase.save
-      # authorize @purchase
       redirect_to myproducts_path
     elsif params[:status] == 'paid'
       @purchase.status = 'done'
       @purchase.save
-      # authorize @purchase
       redirect_to status_path
     end
   end
@@ -93,7 +76,6 @@ class PurchasesController < ApplicationController
   def destroy
     @purchase = Purchase.find(params[:id])
     @purchase.destroy
-    # authorize @purchase
     redirect_to product_path(@product)
   end
 
@@ -116,7 +98,6 @@ class PurchasesController < ApplicationController
   end
 
   def provided_phone
-    # raise
     return @purchase.user.phone.class != NilClass && @purchase.user.phone != ""
   end
 end
