@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :users
+      resources :carts
+      resources :cart_items
+      resources :events
+      resources :lessons
+      resources :products
+      resources :purchases
+      resources :teachings
+
+      root to: "users#index"
+    end
   get 'charge' => 'payments#charge'
   get 'payments/new'
   get 'payments/create'
