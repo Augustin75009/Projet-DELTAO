@@ -13,15 +13,19 @@
               <% end %>
               <div style="display: flex; display: flex; justify-content: flex-start;">
                 <div style="padding: 11px 20px">
-                  <h4 style="color: rgba(202, 120, 103, 1); margin: 0px"><%= l(stage.start_date, :format => "%b", :locale => 'fr') %></h4>
-                  <h4 style="margin-top: 0px; font-weight: 600;"><%= l(stage.start_date, :format => "%e", :locale => 'fr') %></h4>
+                  <% unless stage.start_date.nil? %>
+                    <h4 style="color: rgba(202, 120, 103, 1); margin: 0px"><%= l(stage.start_date, :format => "%b", :locale => 'fr') %></h4>
+                    <h4 style="margin-top: 0px; font-weight: 600;"><%= l(stage.start_date, :format => "%e", :locale => 'fr') %></h4>
+                  <% else %>
+                    <p style="color: rgba(202, 120, 103, 1)">Nouveau</p>
+                  <% end %>
                 </div>
                 <div>
                   <h5 style="text-align: -webkit-left;"><%= stage.title %></h5>
                   <p style="text-align: -webkit-left;"><%= stage.title %></p>
                 </div>
               </div>
-              <hr style="width: 90%; margin: auto;">
+              <!-- <hr style="width: 90%; margin: auto;"> -->
             <% end %>
           </li>
         <% end %>

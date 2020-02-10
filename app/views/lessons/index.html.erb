@@ -88,7 +88,11 @@
             <li>
               <div class="event-card-content">
                 <h4><%= event.title %></h4>
-                <p><%= l(event.start_date, :format => "%d %B %Y", :locale => 'fr') %></p>
+                <% unless event.start_date.nil? %>
+                  <p><%= l(event.start_date, :format => "%d %B %Y", :locale => 'fr') %></p>
+                <% else %>
+                  <p style="color: rgba(202, 120, 103, 1)">Nouveau</p>
+                <% end %>
               </div>
               <div class="event-card-pic">
                 <%= image_tag(event.photo.to_s, :class => "event-pic", :alt => "céramique") do %>
