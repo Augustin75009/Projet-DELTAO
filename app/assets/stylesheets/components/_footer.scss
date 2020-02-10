@@ -1,11 +1,28 @@
 .footer {
-  background: #EBEBEB;
-  min-height: 200px;
+  background: $tessa;
+  min-height: 300px;
   padding: 30px 30px 40px 30px;
   width: 100%;
   bottom: 0;
-  color: rgba(0,0,0,0.3);
+  color: white;
+  display: flex;
+}
 
+.footer-wrapper {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  h5 {
+    font-size: 20px !important;
+    margin: 10px 0px !important;
+
+  }
+  p {
+    font-size: 16px;
+    margin: 0 !important;
+  }
 }
 
 .footer-credit {
@@ -22,35 +39,30 @@
 }
 
 .link.footer-link{
-  color: rgba(0, 173, 181, 1) !important;
+  color: black !important;
 }
 
 .link.footer-link:hover{
   opacity: 0.5,
 }
 
-.footer-wrapper {
-  // background: #F4F4F4;
-  // position: absolute;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  h5 {
-    font-size: 20px !important;
-    margin: 10px 0px !important;
-
-  }
-  p {
-    font-size: 16px;
-    margin: 0 !important;
-  }
-}
 
 .footer-location, .footer-menu, .footer-contact, .footer-ouverture {
   h5 {
     font-weight: 600;
     font-size: 16px;
     margin-bottom: 10px !important;
+  }
+}
+
+.footer-logo {
+  padding: 12px;
+  width: 25%;
+  img {
+    height: 80px;
+  }
+  @media (max-width: 1024px) {
+    display: none;
   }
 }
 
@@ -66,8 +78,7 @@
 }
 
 .menu-links-footer {
-  color: rgba(0,0,0,0.3) !important;
-
+  color: white !important;
 }
 
   .footer-contact {
@@ -89,30 +100,26 @@
 
 .footer-contact {
   width: 25%;
-
-  // h5 {
-  //   font-size: 20px !important;
-  // }
 }
 
 
 .footer-contact > a {
-  color: black;
-  opacity: 0.15;
+  color: white;
+  opacity: 1;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 5px;
   margin-top: 10px;
 }
 .footer-contact a:hover {
-  opacity: 1;
+  opacity: 0.5;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: white;
 }
 
 .localisation {
-  color: rgba(0,0,0,0.3) !important;
+  color: white !important;
   display: inline-block;
   font-weight: 600;
   i {
@@ -121,19 +128,23 @@
 
 .localisation:hover {
   .fa-map-marker-alt {
-    color: rgb(107, 160, 244);
+    color: white;
   }
 }
 
 .phone-number {
-  color: rgba(0,0,0,0.3);
+  color: white;
 }
 
 p.email {
-  color: rgba(0,0,0,0.3);
+  color: white;
   font-size: 14px;
 }
 
 #select-cgv:hover, #select-planning:hover{
   cursor: pointer;
+}
+
+.fa-instagram, .fa-facebook {
+  color: white;
 }
