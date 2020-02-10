@@ -13,4 +13,8 @@ class User < ApplicationRecord
   has_many :lessons, dependent: :nullify
   has_many :carts, dependent: :destroy
   has_many :cart_items, dependent: :destroy
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

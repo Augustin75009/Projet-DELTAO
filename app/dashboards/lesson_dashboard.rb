@@ -39,36 +39,28 @@ class LessonDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  cart_items
-  user
   id
   title
+  category
+  payable
+  gift_card
+  quantity
+  price_cents
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  cart_items
-  user
   id
   title
-  description
   quantity
-  photo
   price_cents
-  created_at
-  updated_at
   category
   adult
   child
   phone_booking
   payable
   gift_card
-  card_description
-  pricing
-  slot
-  schedule
-  deposit
   pic_position
   alt
   ].freeze
@@ -77,12 +69,8 @@ class LessonDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  cart_items
-  user
   title
-  description
   quantity
-  photo
   price_cents
   category
   adult
@@ -90,11 +78,6 @@ class LessonDashboard < Administrate::BaseDashboard
   phone_booking
   payable
   gift_card
-  card_description
-  pricing
-  slot
-  schedule
-  deposit
   pic_position
   alt
   ].freeze
@@ -114,7 +97,7 @@ class LessonDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how lessons are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(lesson)
-  #   "Lesson ##{lesson.id}"
-  # end
+  def display_resource(lesson)
+    ": #{lesson.title}"
+  end
 end

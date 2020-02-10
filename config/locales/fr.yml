@@ -1,5 +1,45 @@
 fr:
   activerecord:
+    models:
+      user:
+        one: 'Utilisateur'
+        other: 'Utilisateurs'
+      event:
+        one: 'Evènement'
+        other: 'Evènements'
+      lesson:
+        one: 'Atelier'
+        other: 'Ateliers'
+      purchase:
+        one: 'Commande'
+        other: 'Commandes'
+    attributes:
+      user:
+        first_name: 'Prénom'
+        last_name: 'Nom'
+        address: 'Adresse'
+        zip: 'Code postal'
+        phone: 'Téléphone'
+      event:
+        title: 'Titre'
+        start_date: 'Début'
+        end_date: 'Fin'
+        link: 'Lien'
+        priority: 'Priorité'
+      lesson:
+        title: 'Titre'
+        quantity: 'Quantité'
+        price_cents: 'Tarif'
+        category: 'Catégorie'
+        adult: 'Adulte'
+        child: 'Enfant'
+        phone_booking: 'Réservation par téléphone'
+        payable: 'Payable'
+        gift_card: 'Bon cadeau'
+        pic_position: 'Position de la photo'
+      purchase:
+        user: 'Utilisateur'
+        state: 'Statut'
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'
@@ -154,6 +194,36 @@ fr:
       create: Créer un(e) %{model}
       submit: Enregistrer ce(tte) %{model}
       update: Modifier ce(tte) %{model}
+    label:
+      user:
+        first_name: 'Prénom'
+        last_name: 'Nom'
+        address: 'Adresse'
+        zip: 'Code postal'
+        phone: 'Téléphone'
+      event:
+        title: 'Titre'
+        start_date: 'Début'
+        end_date: 'Fin'
+        link: 'Lien'
+        priority: 'Priorité'
+      lesson:
+        title: 'Titre'
+        quantity: 'Quantité'
+        gift_card: 'Bon cadeau'
+        price_cents: 'Tarif'
+        category: 'Catégorie'
+        adult: 'Adulte'
+        child: 'Enfant'
+        phone_booking: 'Réservation par téléphone'
+        pic_position: 'Position de la photo'
+      purchase:
+        state: 'Statut'
+        product_sku: 'Identifiant atelier'
+        amount_cents: 'Montant'
+        slot: 'Date / Atelier'
+        created_at: "Date de Création"
+        updated_at: "Date de modification"
   number:
     currency:
       format:
@@ -212,7 +282,7 @@ fr:
   time:
     am: am
     formats:
-      default: "%d %B %Y %Hh %Mmin %Ss"
-      long: "%A %d %B %Y %Hh%M"
+      default: "%d %B %Y"
+      long: "%A %d %B %Y %Hh %Mmin %Ss"
       short: "%d %b %Hh%M"
     pm: pm

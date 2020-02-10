@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   namespace :admin do
       resources :users
-      resources :carts
-      resources :cart_items
       resources :events
       resources :lessons
-      resources :products
       resources :purchases
-      resources :teachings
+      # resources :carts
+      # resources :cart_items
+      # resources :products
+      # resources :teachings
 
       root to: "users#index"
     end
