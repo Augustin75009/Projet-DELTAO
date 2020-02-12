@@ -14,7 +14,7 @@
       <span id="select-planning-nav" class="menu__product__link" href="/lessons?query6=true">Planning</span></li>
       <% if user_signed_in? %>
         <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
-          <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/cart_items" style="position: relative; text-align: center">
+          <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/cart_items" style="position: relative; text-align: center">
             Panier
               <% if @cart_items.count != 0 %>
                 <span class="notification-count"><%= @cart_items.count %></span>
@@ -49,7 +49,7 @@
             <li id="" class="fa fa-custom">
               <a id="select-planning-nav-burger" class=".sign_out xl">Planning</a></li>
             <li id="" class="fa fa-custom">
-              <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/cart_items">Panier</a></li>
+              <a id="" class=".sign_out xl" href="/cart_items">Panier</a></li>
           </ul>
           <li>
             <%= link_to destroy_user_session_path, method: :delete, class: "header-item header-link" do %>
@@ -71,7 +71,7 @@
             <li id="" class="fa fa-custom">
               <a id="select-planning-nav-burger" class=".sign_out xl">Planning</a></li>
             <li id="" class="fa fa-custom">
-              <a id="" class=".sign_out xl" href="https://www.delaterrealobjet.fr/cart_items">Panier</a></li>
+              <a id="" class=".sign_out xl" href="/cart_items">Panier</a></li>
           </ul>
           <li>
             <%= link_to t(".sign_in xl", default: "Se connecter"), new_user_session_path, class: "header-item header-link" %>
