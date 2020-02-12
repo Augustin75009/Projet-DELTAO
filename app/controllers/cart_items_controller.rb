@@ -43,8 +43,7 @@ class CartItemsController < ApplicationController
           @cart = Cart.where(user_id: current_user.id).last
           @cart.price_cents += @lesson.price_cents
         end
-        # raise
-        @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot], current_user)
+        @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot_id], current_user)
         # @cart_item.slot = params[:slot]
         @cart_item.user = current_user
         @cart_item.cart = @cart
