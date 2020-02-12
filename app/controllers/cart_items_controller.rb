@@ -37,10 +37,8 @@ class CartItemsController < ApplicationController
       else
         @lesson = Lesson.find(params[:lesson])
         # @cart_item = @cart.cart_items.new(lesson: @lesson)
-        if cart_empty?
-          @cart = Cart.new
-          @cart.user = current_user
-          @cart.price_cents = @lesson.price_cents
+        if cart_for_user?
+          @cart = Cart.new(user_id: current_user.id, price_cents: @lesson.price_cents)
         else
           @cart = Cart.where(user_id: current_user.id).last
           @cart.price_cents += @lesson.price_cents
@@ -117,6 +115,10 @@ class CartItemsController < ApplicationController
     else
       false
     end
+  end
+
+  def cart_for_user?
+    Cart.where(user_id: User.first.id).last.nil? ? true : false
   end
 
   def is_a_product?

@@ -3,10 +3,11 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :success_hook
 
   def new
-    # success_url = "http://localhost:3000/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    success_url = "http://localhost:3000/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    # success_url = "https://www.delaterrealobjet.fr/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
+    cancel_url = "http://localhost:3000/"
+    # cancel_url = "https://www.delaterrealobjet.fr/"
     begin
-    success_url = "https://www.delaterrealobjet.fr/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
-    cancel_url = "https://www.delaterrealobjet.fr/"
     @cart = Cart.find(params[:cart_id])
     @cart_items = CartItem.where(user_id: current_user.id)
     if params[:gift]
@@ -64,6 +65,7 @@ class PaymentsController < ApplicationController
   def charge
     @cart_items = CartItem.where(user_id: current_user.id)
     Purchase.find(params[:lkEZDDSWWsfnZLEKN]).update(state: 'paid')
+    raise
     @cart_items.destroy_all
     redirect_to root_path(paid: true)
   end
@@ -71,7 +73,7 @@ class PaymentsController < ApplicationController
   def create
   end
 
-private
+  private
 
   def set_order
     @cart_items = CartItem.where(user_id: current_user.id)
