@@ -40,7 +40,7 @@ class PurchasesController < ApplicationController
     @purchase.slot = []
     # @purchase.slot = CartIt.where(cart_id: @purchases.last.product_sku).last.slot
     CartItem.where(cart_id: @cart.id).each do |t|
-      @purchase.slot << "#{t.slot} - #{Lesson.find(t.lesson_id).title} x#{t.quantity}"
+      @purchase.slot << "#{l(t.slot.date, :format => "%A %e %B %Y", :locale => 'fr')} - #{Lesson.find(t.lesson_id).title} x#{t.quantity}"
     end
     # raise
     # authorize @purchase

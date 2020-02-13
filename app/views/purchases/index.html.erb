@@ -24,7 +24,7 @@
           <strong>Atelier: </strong><%= t %>
         <% end %>
       <% else %>
-      <% if Cart.find(item.product_sku).gift != "" %>
+      <% unless Cart.find_by(id: item.product_sku).nil? || Cart.find_by(id: item.product_sku).gift != "" %>
         <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
           <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
         <% end %>

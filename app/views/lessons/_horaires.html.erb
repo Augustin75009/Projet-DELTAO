@@ -1,20 +1,22 @@
-<p class="tab-title-underlign">Horaires : </p>
-<br>
-<pre><%= @lesson.schedule %></pre>
-<br>
-<% if @lesson.slot.size > 1 %>
+<% unless @lesson.schedule.nil? %>
+  <p class="tab-title-underlign">Horaires : </p>
+  <br>
+  <pre><%= @lesson.schedule %></pre>
+  <br>
+<% end %>
+<% if @lesson.slots.size > 0 %>
   <p class="tab-title-underlign">Les prochaines dates : </p>
   <ul style ="padding-left: 0px;">
-    <% if @lesson.slot.size > 1 %>
-      <% @lesson.slot.each do |slot|%>
+    <% if @lesson.slots.size > 1 %>
+      <% @lesson.slots.each do |slot|%>
         <% if slot.class != NilClass %>
           <li>
-            <%= l(slot.to_date, :format => "%e %B %Y", :locale => 'fr') %>
+            <%= l(slot.date, :format => "%A %e %B %Y", :locale => 'fr') %>
           </li>
         <% end %>
       <% end %>
     <% else %>
-      <%= @lesson.slot[0] %>
+      Pas d'atelier prévu prochainement
     <% end %>
   </ul>
 <% end %>

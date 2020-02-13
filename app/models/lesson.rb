@@ -2,6 +2,7 @@ class Lesson < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   monetize :price_cents
   has_many :cart_items, dependent: :nullify
+  has_many :slots, dependent: :destroy
   belongs_to :user, optional: true
 
   validates :slot, presence: true
