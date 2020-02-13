@@ -1,7 +1,7 @@
 <div class="cart">
   <div class="quantity">
       <%= simple_form_for @cart_item do |f|%>
-        <%= f.input :slot_id, label: "Choisir une date", collection: Slot.where(lesson_id: @lesson.id).sort.map { |slot| [l(slot.date, :format => "%A %e %B %Y", :locale => 'fr'), slot.id]} %>
+        <%= f.input :slot_id, label: "Choisir une date", collection: Slot.where(lesson_id: @lesson.id).where("quantity > ?", 0).sort.map { |slot| [l(slot.date, :format => "%A %e %B %Y", :locale => 'fr'), slot.id]} %>
 <!--         <div class="payement-format">
           <span class="deposit">Montant de l'acompte : <%= number_to_currency(@lesson.deposit, unit: "€", separator: ",", format: "%n %u") %></span>
         </div> -->

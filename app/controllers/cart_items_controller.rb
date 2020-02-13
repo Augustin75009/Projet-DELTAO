@@ -74,8 +74,8 @@ class CartItemsController < ApplicationController
 
   def top_up
     @cart_item = CartItem.find(params[:cart_item])
-    @cart_item.quantity += 1
-    @cart_item.save
+    new_quantity = @cart_item.quantity += 1
+    @cart_item.save if new_quantity <= @cart_item.slot.quantity
     # redirect_to root_path
     respond_to do |format|
         format.html { redirect_to cart_items_path }
@@ -117,7 +117,7 @@ class CartItemsController < ApplicationController
   end
 
   def cart_for_user?
-    Cart.where(user_id: User.first.id).last.nil? ? true : false
+    Cart.where(user_id: current_user.id).last.nil? ? true : false
   end
 
   def is_a_product?

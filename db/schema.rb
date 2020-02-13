@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_112255) do
+ActiveRecord::Schema.define(version: 2020_02_12_105848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_112255) do
     t.text "card_description"
     t.text "pricing"
     t.bigint "user_id"
-    t.string "comment", array: true
+    t.string "slot", array: true
     t.text "schedule"
     t.integer "deposit", default: 0, null: false
     t.string "pic_position", default: "center"
