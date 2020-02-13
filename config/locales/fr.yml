@@ -86,7 +86,7 @@ fr:
     formats:
       default: "%d/%m/%Y"
       long: "%e %B %Y"
-      short: "%%e %b"
+      short: "%e %b"
     month_names:
     -
     - janvier
