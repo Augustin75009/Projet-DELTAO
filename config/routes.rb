@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :events
       resources :lessons
       resources :purchases
+      resources :slots
       # resources :carts
       # resources :cart_items
       # resources :products
