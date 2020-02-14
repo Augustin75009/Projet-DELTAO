@@ -1,6 +1,11 @@
 <h1>Here you can create a signature</h1>
+<%= @signature.student_ids %>
 <% @students.each do |student| %>
-  <%= student.first_name %>
+  <%= Student.find(student).first_name %>
+<% end %>
+<%= form_with(model: @signature, local: true) do |form| %>
+  <%= form.select(:student_ids, Student.all.sort_by { |obj| obj.first_name }.map{ |obj| [obj.first_name, obj.id] }, {}, {class: "select2-multiple", multiple: false}) %>
+  <%= form.submit %>
 <% end %>
 <%= simple_form_for(@student, url: signature_students_path(@signature), html: { method: :post }) do |f| %>
   <%= f.input :first_name, required: true %>

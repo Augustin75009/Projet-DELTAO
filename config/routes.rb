@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   resources :cart_items, only: [:create, :destroy, :index, :update]
   resources :events, only: [:new, :create, :destroy, :index, :show, :update, :edit]
   resources :teachings, only: [:new, :create, :destroy, :index, :show, :update, :edit]
-  resources :signatures, only: [:new, :show] do
+  resources :signatures, only: [:new, :show, :update] do
     resources :students, only: [:new, :create, :show]
   end
 
