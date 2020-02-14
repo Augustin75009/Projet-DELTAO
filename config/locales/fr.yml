@@ -16,6 +16,12 @@ fr:
       slot:
         one: 'Horaire'
         other: 'Horaires'
+      student:
+        one: 'Elève'
+        other: 'Elèves'
+      signature:
+        one: 'Emargement'
+        other: 'Emargements'
     attributes:
       user:
         first_name: 'Prénom'
@@ -44,6 +50,14 @@ fr:
       purchase:
         user: 'Utilisateur'
         state: 'Statut'
+      signature:
+        title: 'Titre'
+        student: 'Elèves'
+      student:
+        first_name: 'Prénom'
+        last_name: 'Nom'
+        address: 'Adresse'
+        phone: 'Téléphone'
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'
@@ -229,6 +243,14 @@ fr:
         slot: 'Date / Atelier'
         created_at: "Date de Création"
         updated_at: "Date de modification"
+      signature:
+        title: 'Titre'
+        students: 'Elèves'
+      student:
+        first_name: 'Prénom'
+        last_name: 'Nom'
+        address: 'Adresse'
+        phone: 'Téléphone'
   number:
     currency:
       format:
