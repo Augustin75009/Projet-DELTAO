@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_105848) do
+ActiveRecord::Schema.define(version: 2020_02_14_111550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,15 @@ ActiveRecord::Schema.define(version: 2020_02_12_105848) do
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
+  create_table "signatures", force: :cascade do |t|
+    t.datetime "date"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "student_id"
+    t.index ["student_id"], name: "index_signatures_on_student_id"
+  end
+
   create_table "slots", force: :cascade do |t|
     t.integer "quantity"
     t.datetime "date"
@@ -112,6 +121,20 @@ ActiveRecord::Schema.define(version: 2020_02_12_105848) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_slots_on_lesson_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.text "address"
+    t.string "city"
+    t.integer "zip"
+    t.integer "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "signature_id"
+    t.string "email"
+    t.index ["signature_id"], name: "index_students_on_signature_id"
   end
 
   create_table "teachings", force: :cascade do |t|
@@ -152,6 +175,8 @@ ActiveRecord::Schema.define(version: 2020_02_12_105848) do
   add_foreign_key "events", "users"
   add_foreign_key "lessons", "users"
   add_foreign_key "purchases", "users"
+  add_foreign_key "signatures", "students"
   add_foreign_key "slots", "lessons"
+  add_foreign_key "students", "signatures"
   add_foreign_key "teachings", "users"
 end

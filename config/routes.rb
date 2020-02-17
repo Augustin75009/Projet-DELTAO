@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :lessons
       resources :purchases
       resources :slots
+      resources :signatures
+      resources :students
       # resources :carts
       # resources :cart_items
       # resources :products
@@ -41,6 +43,9 @@ Rails.application.routes.draw do
   resources :cart_items, only: [:create, :destroy, :index, :update]
   resources :events, only: [:new, :create, :destroy, :index, :show, :update, :edit]
   resources :teachings, only: [:new, :create, :destroy, :index, :show, :update, :edit]
+  resources :signatures, only: [:new, :show, :update] do
+    resources :students, only: [:new, :create, :show]
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
