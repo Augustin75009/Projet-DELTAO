@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
-  default from: "Woonies <hello@woonies.com>"
-  def ceramic_ready(user)
-    mail(to: user.email, subject: "Bienvenue chez Woonies")
+  default from: "De la terre à l'objet <contact@delaterrealobjet.fr>"
+  def ceramic_ready(email)
+    mail(to: email, subject: "Vos créations sont prêtes")
   end
 end

@@ -11,11 +11,6 @@ class SignaturesController < ApplicationController
     redirect_to signature_path(@signature)
   end
 
-  def notification
-    raise
-    UserMailer.ceramic_ready(current_user).deliver_now
-  end
-
   private
 
   def define_signatue
