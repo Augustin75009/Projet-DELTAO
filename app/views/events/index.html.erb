@@ -12,7 +12,9 @@
           <div class="card-content-event">
 
             <h4><%= event.title %></h4>
-            <p><%= l(event.start_date, :format => "%e %B %Y", :locale => 'fr') %></p>
+            <% unless event.start_date.nil? %>
+              <p><%= l(event.start_date, :format => "%e %B %Y", :locale => 'fr') %></p>
+            <% end %>
             <p><%= event.description %></p>
           </div>
           <div class="event-infos"></div>

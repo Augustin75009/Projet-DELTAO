@@ -22,7 +22,7 @@ class Cart < ApplicationRecord
     if item
       item.quantity += 1
     else
-      item = CartItem.new(lesson: lesson, slot: slot)
+      item = CartItem.new(lesson: lesson, slot_id: slot)
     end
     item
   end

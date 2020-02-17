@@ -32,4 +32,9 @@ pre {
   border: none !important;
   overflow: visible;
   white-space: pre-line;
+  background: transparent !important;
+}
+
+.menu-links-footer, #select-planning, #select-cgv {
+  font-family: 'Poppins', sans-serif !important;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_27_212241) do
+ActiveRecord::Schema.define(version: 2020_02_17_091848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +24,11 @@ ActiveRecord::Schema.define(version: 2019_09_27_212241) do
     t.integer "quantity", default: 1
     t.bigint "lesson_id"
     t.string "slot"
+    t.bigint "slot_id"
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
     t.index ["lesson_id"], name: "index_cart_items_on_lesson_id"
     t.index ["product_id"], name: "index_cart_items_on_product_id"
+    t.index ["slot_id"], name: "index_cart_items_on_slot_id"
     t.index ["user_id"], name: "index_cart_items_on_user_id"
   end
 
@@ -103,6 +105,39 @@ ActiveRecord::Schema.define(version: 2019_09_27_212241) do
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
+  create_table "signatures", force: :cascade do |t|
+    t.datetime "date"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "signatures_students", id: false, force: :cascade do |t|
+    t.integer "signature_id"
+    t.integer "student_id"
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.integer "quantity"
+    t.datetime "date"
+    t.bigint "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_slots_on_lesson_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.text "address"
+    t.string "city"
+    t.integer "zip"
+    t.integer "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+  end
+
   create_table "teachings", force: :cascade do |t|
     t.string "title"
     t.string "header"
@@ -135,10 +170,12 @@ ActiveRecord::Schema.define(version: 2019_09_27_212241) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "lessons"
   add_foreign_key "cart_items", "products"
+  add_foreign_key "cart_items", "slots"
   add_foreign_key "cart_items", "users"
   add_foreign_key "carts", "users"
   add_foreign_key "events", "users"
   add_foreign_key "lessons", "users"
   add_foreign_key "purchases", "users"
+  add_foreign_key "slots", "lessons"
   add_foreign_key "teachings", "users"
 end

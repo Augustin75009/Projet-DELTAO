@@ -1,5 +1,4 @@
 class CartItemsController < ApplicationController
-
   def index
     if user_signed_in?
       @cart_items = CartItem.where(user_id: current_user.id)
@@ -33,15 +32,15 @@ class CartItemsController < ApplicationController
         # end
       else
         @lesson = Lesson.find(params[:lesson])
-        if cart_empty?
-          @cart = Cart.new
-          @cart.user = current_user
-          @cart.price_cents = @lesson.price_cents
+        # @cart_item = @cart.cart_items.new(lesson: @lesson)
+        if cart_for_user?
+          @cart = Cart.new(user_id: current_user.id, price_cents: @lesson.price_cents)
         else
           @cart = Cart.where(user_id: current_user.id).last
           @cart.price_cents += @lesson.price_cents
         end
-        @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot], current_user)
+        @cart_item = @cart.add_lesson(@lesson, params[:cart_item][:slot_id], current_user)
+        # @cart_item.slot = params[:slot]
         @cart_item.user = current_user
         @cart_item.cart = @cart
         @cart_item.save
@@ -69,8 +68,8 @@ class CartItemsController < ApplicationController
 
   def top_up
     @cart_item = CartItem.find(params[:cart_item])
-    @cart_item.quantity += 1
-    @cart_item.save
+    new_quantity = @cart_item.quantity += 1
+    @cart_item.save if new_quantity <= @cart_item.slot.quantity
     respond_to do |format|
         format.html { redirect_to cart_items_path }
         format.js
@@ -105,6 +104,10 @@ class CartItemsController < ApplicationController
     else
       false
     end
+  end
+
+  def cart_for_user?
+    Cart.where(user_id: current_user.id).last.nil? ? true : false
   end
 
   def is_a_product?

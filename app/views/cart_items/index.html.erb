@@ -10,7 +10,7 @@
 <% else %>
   <div class="cart_item-container" style="">
   <span id="data-cart_items"><p>Nombre d'articles : <%= @cart_items.count %></p></span>
-    <% @cart_items.each do |cart_item| %>
+    <% @cart_items.order(:created_at).each do |cart_item| %>
     <div class="card-cart_items">
       <div class="delete-item">
         <%= link_to cart_item_path(cart_item), method: :delete do %>
