@@ -3,10 +3,10 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :success_hook
 
   def new
-    # success_url = "http://localhost:3000/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
-    success_url = "https://www.delaterrealobjet.fr/charge?lkEZDDSWWsfnZLEKN=#{params[:purchase_id]}"
-    # cancel_url = "http://localhost:3000/cart_items"
-    cancel_url = "https://www.delaterrealobjet.fr/cart_items"
+    success_url = "http://localhost:3000/charge?success=#{params[:purchase_id]}"
+    # success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
+    cancel_url = "http://localhost:3000/cart_items"
+    # cancel_url = "https://www.delaterrealobjet.fr/cart_items"
     begin
     @cart = Cart.find(params[:cart_id])
     @cart_items = CartItem.where(user_id: current_user.id)
@@ -64,10 +64,10 @@ class PaymentsController < ApplicationController
 
   def charge
     @cart_items = CartItem.where(user_id: current_user.id)
-    Purchase.find(params[:lkEZDDSWWsfnZLEKN]).update(state: 'paid')
+    Purchase.find(params[:success]).update(state: 'paid')
     update_quantity
     @cart_items.destroy_all
-    redirect_to root_path(paid: true)
+    redirect_to root_path(paid: true), flash: { notice: 'Réservation prise en compte' }
   end
 
   def create

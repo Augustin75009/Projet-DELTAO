@@ -1,14 +1,10 @@
 class CartItemsController < ApplicationController
-  # include CurrentCart
-  # before_action :set_cart
-
   def index
     if user_signed_in?
       @cart_items = CartItem.where(user_id: current_user.id)
     else
       @cart_items = []
     end
-    # authorize @product
   end
 
   def create
@@ -49,7 +45,6 @@ class CartItemsController < ApplicationController
         @cart_item.cart = @cart
         @cart_item.save
         @cart.save
-        # @counter = current_user.cart_item_item.count
         respond_to do |format|
           format.html { redirect_to lesson_path(@lesson) }
           format.js
@@ -65,7 +60,6 @@ class CartItemsController < ApplicationController
     new_quantity = params[:cart_item]
     @cart_item.quantity = new_quantity[:quantity]
     @cart_item.save
-    # redirect_to root_path
     respond_to do |format|
         format.html { redirect_to cart_items_path }
         format.js
@@ -76,7 +70,6 @@ class CartItemsController < ApplicationController
     @cart_item = CartItem.find(params[:cart_item])
     new_quantity = @cart_item.quantity += 1
     @cart_item.save if new_quantity <= @cart_item.slot.quantity
-    # redirect_to root_path
     respond_to do |format|
         format.html { redirect_to cart_items_path }
         format.js
@@ -87,7 +80,6 @@ class CartItemsController < ApplicationController
     @cart_item = CartItem.find(params[:cart_item])
     @cart_item.quantity -= 1
     @cart_item.save
-    # redirect_to root_path
     respond_to do |format|
         format.html { redirect_to cart_items_path }
         format.js
@@ -96,9 +88,7 @@ class CartItemsController < ApplicationController
 
   def destroy
     @cart_item = CartItem.find(params[:id])
-    # authorize @cart_item
     @cart_item.destroy
-    # @counter = current_user.cart_item_item.count
     respond_to do |format|
       format.html { redirect_to cart_items_path }
       format.js
@@ -127,10 +117,4 @@ class CartItemsController < ApplicationController
       false
     end
   end
-
-  #  def cart_item_filter
-  #   @user_orders = CartItem.where(user_id: current_user.user_id)
-  # end
-
-
 end
