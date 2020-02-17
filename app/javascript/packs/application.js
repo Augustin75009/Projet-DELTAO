@@ -35,7 +35,7 @@ if(document.location.href.match('query')) {
 }
 
 if(document.location.href.match('paid=true')) {
-  validation();
+  // validation();
 }
 
 if(document.location.href.match('/lessons/')) {

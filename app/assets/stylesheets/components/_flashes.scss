@@ -1,0 +1,35 @@
+.alert-success {
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 500px;
+  height: 60px;
+  opacity: 80%;
+  background-color: #c28d65;
+  -webkit-animation: slide 1s forwards;
+  -webkit-animation-delay: 3s;
+  animation: slide 1s forwards;
+  animation-delay: 3.5s;
+  p {
+    margin: 22px 0px;
+    padding-left: 10px;
+    font-weight: 500;
+    color: white;
+  }
+  button {
+    padding-left: 20px;
+    font-size: xx-large;
+    margin: auto 0px;
+    background: transparent;
+    border: none;
+    color: #18273A;
+  }
+}
+
+@keyframes slide {
+    100% { left: -700px; }
+}
