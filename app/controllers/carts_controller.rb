@@ -24,7 +24,6 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(params[:id])
-    @cart.save
   end
 
   def create

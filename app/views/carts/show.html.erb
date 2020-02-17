@@ -46,19 +46,19 @@
       <% if params[:gift] %>
         <%= form_tag cart_purchases_path(gift: true, cart_id: @cart.id) do %>
           <%= label_tag("Email") %>
-          <%= text_field_tag(:email, @cart.user.email) %>
+          <%= text_field_tag(:email, @cart.user.email, required: true) %>
           <%= label_tag("Prénom") %>
-          <%= text_field_tag(:first_name, @cart.user.first_name) %>
+          <%= text_field_tag(:first_name, @cart.user.first_name, required: true) %>
           <%= label_tag("Nom") %>
-          <%= text_field_tag(:last_name, @cart.user.last_name) %>
+          <%= text_field_tag(:last_name, @cart.user.last_name, required: true) %>
           <%= label_tag("Adresse") %>
-          <%= text_field_tag(:address, @cart.user.address) %>
+          <%= text_field_tag(:address, @cart.user.address, required: true) %>
           <%= label_tag("Ville") %>
-          <%= text_field_tag(:city, @cart.user.city) %>
+          <%= text_field_tag(:city, @cart.user.city, required: true) %>
           <%= label_tag("Code postal") %>
-          <%= text_field_tag(:zip, @cart.user.zip) %>
+          <%= text_field_tag(:zip, @cart.user.zip, required: true) %>
           <%= label_tag("Téléphone") %>
-          <%= text_field_tag(:phone, @cart.user.phone, placeholder: "06000000") %>
+          <%= text_field_tag(:phone, @cart.user.phone, placeholder: "06000000", required: true) %>
           <%= hidden_field_tag 'cart_id', @cart.id %>
           <%= hidden_field_tag 'slot', params[:lesson] %>
           <%= submit_tag 'Valider mes coordonnées', class: 'btn cart-button' %>
@@ -66,19 +66,19 @@
       <% else %>
         <%= form_tag cart_purchases_path(@cart.id) do %>
           <%= label_tag("Email") %>
-          <%= text_field_tag(:email, @cart.user.email) %>
+          <%= text_field_tag(:email, @cart.user.email, required: true) %>
           <%= label_tag("Prénom") %>
-          <%= text_field_tag(:first_name, @cart.user.first_name) %>
+          <%= text_field_tag(:first_name, @cart.user.first_name, required: true) %>
           <%= label_tag("Nom") %>
-          <%= text_field_tag(:last_name, @cart.user.last_name) %>
+          <%= text_field_tag(:last_name, @cart.user.last_name, required: true) %>
           <%= label_tag("Adresse") %>
-          <%= text_field_tag(:address, @cart.user.address) %>
+          <%= text_field_tag(:address, @cart.user.address, required: true) %>
           <%= label_tag("Ville") %>
-          <%= text_field_tag(:city, @cart.user.city) %>
+          <%= text_field_tag(:city, @cart.user.city, required: true) %>
           <%= label_tag("Code postal") %>
-          <%= text_field_tag(:zip, @cart.user.zip) %>
+          <%= text_field_tag(:zip, @cart.user.zip, required: true) %>
           <%= label_tag("Téléphone") %>
-          <%= text_field_tag(:phone, @cart.user.phone, placeholder: "06000000", require: true) %>
+          <%= text_field_tag(:phone, @cart.user.phone, placeholder: "06000000", required: true) %>
           <%= hidden_field_tag 'cart_id', @cart.id %>
           <%= submit_tag 'Valider mes coordonnées', class: 'btn cart-button' %>
         <% end %>

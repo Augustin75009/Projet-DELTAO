@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_091848) do
+ActiveRecord::Schema.define(version: 2020_02_17_132950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,10 +119,10 @@ ActiveRecord::Schema.define(version: 2020_02_17_091848) do
 
   create_table "slots", force: :cascade do |t|
     t.integer "quantity"
-    t.datetime "date"
     t.bigint "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
     t.index ["lesson_id"], name: "index_slots_on_lesson_id"
   end
 
@@ -161,7 +161,7 @@ ActiveRecord::Schema.define(version: 2020_02_17_091848) do
     t.text "address"
     t.string "city"
     t.integer "zip"
-    t.integer "phone"
+    t.string "phone"
     t.string "adminkey"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

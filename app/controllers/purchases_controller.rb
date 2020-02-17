@@ -79,11 +79,10 @@ class PurchasesController < ApplicationController
     redirect_to product_path(@product)
   end
 
-  private
-
   def set_user_infos
     @user = User.find(@cart.user.id)
-    @user.phone = params[:phone]
+    phone = validate_phone_format ? nil : params[:phone]
+    @user.phone = phone
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
     @user.address = params[:address]
@@ -91,6 +90,12 @@ class PurchasesController < ApplicationController
     @user.email = params[:email]
     @user.city = params[:city]
     @user.save
+  end
+
+  def validate_phone_format
+    phone = params[:phone]
+    test_regexp = phone =~ /^0[1-9](?:\d{8})|0[1-9](?: \d\d){4}$/
+    test_regexp.nil?
   end
 
   def is_admin?
