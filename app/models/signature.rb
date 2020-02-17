@@ -1,4 +1,4 @@
 class Signature < ApplicationRecord
-  has_many :students, dependent: :nullify
-  belongs_to :student, optional: :true
+  has_and_belongs_to_many :students
+  # belongs_to :student, optional: :true
 end

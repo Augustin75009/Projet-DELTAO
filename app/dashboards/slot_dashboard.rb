@@ -33,15 +33,17 @@ class SlotDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  quantity
   date
-  lesson_id
+  lesson
+  quantity
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+  date
+  lesson
   quantity
   ].freeze
 
@@ -60,7 +62,7 @@ class SlotDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how slots are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(slot)
-  #   "Slot ##{slot.id}"
-  # end
+  def display_resource(slot)
+    "Horaire ##{slot.id}"
+  end
 end
