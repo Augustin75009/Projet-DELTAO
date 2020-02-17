@@ -251,6 +251,9 @@ fr:
         last_name: 'Nom'
         address: 'Adresse'
         phone: 'Téléphone'
+      slot:
+        lesson: 'Atelier'
+        quantity: 'Quantité'
   number:
     currency:
       format:
@@ -311,5 +314,5 @@ fr:
     formats:
       default: "%A %d %B %Y"
       long: "%A %d %B %Y %Hh %Mmin %Ss"
-      short: "%d %b %Hh%M"
+      short: "%d %b %Hh %M"
     pm: pm

@@ -95,6 +95,6 @@ class LessonDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(lesson)
-    ": #{lesson.title}"
+    "#{lesson.title}"
   end
 end

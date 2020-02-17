@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   namespace :admin do
       resources :users
-      resources :events
       resources :lessons
-      resources :purchases
       resources :slots
-      resources :signatures
       resources :students
+      resources :signatures
+      resources :events
+      resources :purchases
       # resources :carts
       # resources :cart_items
       # resources :products

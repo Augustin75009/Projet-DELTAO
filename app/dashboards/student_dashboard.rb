@@ -40,9 +40,10 @@ class StudentDashboard < Administrate::BaseDashboard
   first_name
   last_name
   address
+  city
   zip
-  phone
   email
+  phone
   signatures
   ].freeze
 
@@ -55,8 +56,9 @@ class StudentDashboard < Administrate::BaseDashboard
   address
   city
   zip
-  phone
   email
+  phone
+  signatures
   ].freeze
 
   # COLLECTION_FILTERS
