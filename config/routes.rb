@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   resources :teachings, only: [:new, :create, :destroy, :index, :show, :update, :edit]
   resources :signatures, only: [:new, :show, :update] do
     resources :students, only: [:new, :create, :show]
+    get 'notification'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
