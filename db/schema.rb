@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_111550) do
+ActiveRecord::Schema.define(version: 2020_02_17_091848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,8 +110,11 @@ ActiveRecord::Schema.define(version: 2020_02_14_111550) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "student_id"
-    t.index ["student_id"], name: "index_signatures_on_student_id"
+  end
+
+  create_table "signatures_students", id: false, force: :cascade do |t|
+    t.integer "signature_id"
+    t.integer "student_id"
   end
 
   create_table "slots", force: :cascade do |t|
@@ -132,9 +135,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_111550) do
     t.integer "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "signature_id"
     t.string "email"
-    t.index ["signature_id"], name: "index_students_on_signature_id"
   end
 
   create_table "teachings", force: :cascade do |t|
@@ -175,8 +176,6 @@ ActiveRecord::Schema.define(version: 2020_02_14_111550) do
   add_foreign_key "events", "users"
   add_foreign_key "lessons", "users"
   add_foreign_key "purchases", "users"
-  add_foreign_key "signatures", "students"
   add_foreign_key "slots", "lessons"
-  add_foreign_key "students", "signatures"
   add_foreign_key "teachings", "users"
 end

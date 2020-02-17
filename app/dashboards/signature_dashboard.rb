@@ -8,7 +8,7 @@ class SignatureDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    students: Field::HasMany,
+    signatures_student: Field::HasMany,
     id: Field::Number,
     date: Field::DateTime,
     title: Field::String,
@@ -32,7 +32,6 @@ class SignatureDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   title
   date
-  students
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -41,7 +40,6 @@ class SignatureDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   date
   title
-  students
   ].freeze
 
   # COLLECTION_FILTERS

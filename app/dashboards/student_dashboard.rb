@@ -8,7 +8,7 @@ class StudentDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    signatures: Field::HasMany,
+    signatures_student: Field::HasMany,
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
@@ -43,7 +43,6 @@ class StudentDashboard < Administrate::BaseDashboard
   zip
   phone
   email
-  signatures
   ].freeze
 
   # FORM_ATTRIBUTES
