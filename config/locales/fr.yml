@@ -120,8 +120,6 @@ fr:
     - :month
     - :year
   datetime:
-    formats:
-      default: "%d/%m/%Y"
     distance_in_words:
       about_x_hours:
         one: environ une heure
@@ -315,6 +313,6 @@ fr:
     am: am
     formats:
       default: "%A %d %B %Y"
-      long: "%A %d %B %Y"
-      short: "%d %b %Hh%M"
+      long: "%A %d %B %Y %Hh %Mmin %Ss"
+      short: "%d %b %Hh %M"
     pm: pm
