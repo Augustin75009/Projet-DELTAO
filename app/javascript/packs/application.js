@@ -20,11 +20,11 @@ import {planningNav} from '../plugins/planning-nav';
 
 // initSlick();
 alert();
-if(window.innerWidth < 800 ) {
-  planningNav();
-} else {
-  planning();
-}
+// if(window.innerWidth < 800 ) {
+//   planningNav();
+// } else {
+//   planning();
+// }
 // updateQuantityUp();
 tabFocus();
 selectLesson();
