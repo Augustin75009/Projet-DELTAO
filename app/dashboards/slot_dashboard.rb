@@ -9,6 +9,7 @@ class SlotDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
+    lesson: Field::BelongsTo,
     cart_items: Field::HasMany,
     id: Field::Number,
     quantity: Field::Number,
@@ -25,6 +26,7 @@ class SlotDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   date
+  lesson
   quantity
   ].freeze
 

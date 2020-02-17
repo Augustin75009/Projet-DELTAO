@@ -251,6 +251,9 @@ fr:
         last_name: 'Nom'
         address: 'Adresse'
         phone: 'Téléphone'
+      slot:
+        lesson: 'Atelier'
+        quantity: 'Quantité'
   number:
     currency:
       format:
