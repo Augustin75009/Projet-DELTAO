@@ -3,7 +3,7 @@ module Admin
     def notification
       signature = Signature.find(params[:id])
       signature.students.each do |student|
-        UserMailer.ceramic_ready(student.email).deliver_now
+        UserMailer.ceramic_ready(student).deliver_now
       end
       redirect_to admin_signatures_path, notice: 'Mails envoyés !'
     end
