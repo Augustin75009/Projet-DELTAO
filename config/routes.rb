@@ -35,6 +35,9 @@ Rails.application.routes.draw do
     resources :purchases, only: [:new, :create, :edit, :update, :destroy, :index] do
       resources :payments, only: [:new, :create, :show]
     end
+    resources :gifts, only: [:new, :create, :edit, :update, :destroy, :index] do
+      resources :payments, only: [:new, :create, :show]
+    end
   end
 
   resources :carts, only: [:create] do
