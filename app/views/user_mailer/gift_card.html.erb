@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>pe
+    <p>Bonjour <%= @gift.user.first_name.capitalize %>,</p>
+    <p>
+      Bon cadeau pour : <%= @gift.gift_to.capitalize %>
+      De la part de : <%= @gift.gift_from.capitalize %>
+    </p>
+    <p>
+      Bien cordialement
+    </p>
+    <p>
+      Tessa
+    </p>
+  </body>
+</html>

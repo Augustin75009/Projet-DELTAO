@@ -73,7 +73,9 @@ class PaymentsController < ApplicationController
       update_quantity
       @cart_items.destroy_all
     else
-      Gift.find(params[:gift]).update(state: 'paid')
+      gift = Gift.find(params[:gift])
+      gift.update(state: 'paid')
+      UserMailer.gift_card(gift).deliver_now
     end
     redirect_to root_path(paid: true), flash: { notice: 'Réservation prise en compte' }
   end
