@@ -7,6 +7,6 @@ class UserMailer < ApplicationMailer
 
   def gift_card(gift)
     @gift = gift
-    mail(to: gift.user.email, subject: "Bon cadeau")
+    mail(to: gift.user.contact_email, subject: "Bon cadeau")
   end
 end

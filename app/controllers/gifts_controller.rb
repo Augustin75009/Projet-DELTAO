@@ -25,7 +25,7 @@ class GiftsController < ApplicationController
     @user.last_name = params[:last_name]
     @user.address = params[:address]
     @user.zip = params[:zip]
-    @user.email = params[:email]
+    @user.contact_email = params[:contact_email]
     @user.city = params[:city]
     @user.save
   end

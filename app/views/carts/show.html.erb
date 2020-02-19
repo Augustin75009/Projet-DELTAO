@@ -12,7 +12,7 @@
       <div class="billing-form">
         <%= form_tag cart_gifts_path(gift: true, cart_id: @cart.id) do %>
           <%= label_tag("Email") %>
-          <%= text_field_tag(:email, @cart.user.email, required: true) %>
+          <%= text_field_tag(:contact_email, @cart.user.email, required: true) %>
           <%= label_tag("Prénom") %>
           <%= text_field_tag(:first_name, @cart.user.first_name, required: true) %>
           <%= label_tag("Nom") %>
