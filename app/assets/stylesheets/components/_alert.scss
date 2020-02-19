@@ -33,3 +33,60 @@
   position: initial !important;
   margin-right: 8px;
 }
+
+.popup-cgv-wrapper{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: rgba(0,0,0,0.2);
+  z-index: 200000;
+  .popup-cgv-container{
+    margin:auto;
+    width: 280px;
+    height: auto;
+    border-radius: 4px;
+    background: white;
+    padding: 30px;
+    text-align: center;
+  }
+  #cgv-dismiss{
+    padding: 4px 8px;
+    margin: auto;
+    width: 48px;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    background: $tessa;
+  }
+  #cgv-dismiss:hover{
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
+.popup-planning-wrapper{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: rgba(0,0,0,0.2);
+  z-index: 200000;
+  .popup-planning-container{
+    margin:auto;
+    border-radius: 4px;
+    background: white;
+    padding: 30px;
+    text-align: center;
+    img{
+      height: auto;
+      width: 90vw;
+      max-height: 90vh;
+      max-width: 800px;
+    }
+  }
+}
+
+
