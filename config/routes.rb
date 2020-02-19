@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
+  patch 'admin/signature/notification/:id', to: 'admin/signatures#notification', as: :notification
   get 'charge' => 'payments#charge'
   get 'payments/new'
   get 'payments/create'
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
   resources :teachings, only: [:new, :create, :destroy, :index, :show, :update, :edit]
   resources :signatures, only: [:new, :show, :update] do
     resources :students, only: [:new, :create, :show]
+    patch 'notification'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
