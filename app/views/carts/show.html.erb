@@ -5,46 +5,12 @@
   <div class="progress-square"></div>
   <div class="progress-round">Paiment</div>
 </div>
-<!-- <style>
-  .progress-wrapper {
-    padding: 40px 20px 20px 20px;
-    display: inline-flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 15px;
-  }
-  .progress-round {
-    opacity: 0.2;
-    padding: 4px;
-    height: 30px;
-    /*width: 30px;*/
-    border-radius: 10px;
-    background: grey;
-  }
-  .progress-square {
-    opacity: 0.2;
-    margin: auto 0px;
-    height: 2px;
-    width: 100px;
-    background: grey
-  }
-  .active-step {
-    color: white;
-    opacity: 1;
-    background-color: #c28d65;
-  }
-</style> -->
-
-<%if params[:gift] %>
-  <div class="cart-wrapper reverse">
-<% else %>
-  <div class="cart-wrapper">
-<% end %>
-  <div class="cart-form">
-    <h4>Vos coordonnées</h4>
-    <div class="billing-form">
-      <% if params[:gift] %>
-        <%= form_tag cart_purchases_path(gift: true, cart_id: @cart.id) do %>
+<% if params[:gift] %>
+  <div class="cart-wrapper <%= params[:gift] ? "" : "" %>">
+    <div class="cart-form">
+      <h4>Vos coordonnées</h4>
+      <div class="billing-form">
+        <%= form_tag cart_gifts_path(gift: true, cart_id: @cart.id) do %>
           <%= label_tag("Email") %>
           <%= text_field_tag(:email, @cart.user.email, required: true) %>
           <%= label_tag("Prénom") %>
@@ -62,8 +28,33 @@
           <%= hidden_field_tag 'cart_id', @cart.id %>
           <%= hidden_field_tag 'slot', params[:lesson] %>
           <%= submit_tag 'Valider mes coordonnées', class: 'btn cart-button' %>
-        <% end %>
-      <% else %>
+      </div>
+    </div>
+    <div class="cart-summary">
+      <h3 style="margin-top: 0px !important">Bon cadeau - valable  1 an</h3>
+        <p>vous recevrez le bon cadeau par <u>mail</u> après paiement en ligne</p>
+        <div class="billing-form">
+            <%= label_tag("Bon cadeau pour") %>
+            <%= text_field_tag(:gift_to, nil, required: true) %>
+            <%= label_tag("De la part") %>
+            <%= text_field_tag(:gift_from, nil,  required: true) %>
+          <% end %>
+        </div>
+        <br>
+        <img style="max-height: 300px; object-fit: cover;"src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1560937414/Bon_cadeau.jpg" alt="">
+        <hr style="border-top: solid 6px #f7f7f7; width: 100%">
+        <h3 style="margin-top: 0px !important">Récapitulatif</h3>
+        <h4><%= Lesson.find(params[:lesson]).title %></h4>
+        <p><%= Lesson.find(params[:lesson]).description %></p>
+        <img style="width: 100%; max-height: 300px; object-fit: cover;"src="<%= Lesson.find(params[:lesson]).photo %>" alt=""><br><br>
+        <p class="font-weight-bold">Total :<span style="font-size:30px"> <%= number_to_currency(@cart.price_cents, unit: "€", separator: ",", format: "%n %u") %></span></p>
+    </div>
+  </div>
+<% else %>
+  <div class="cart-wrapper <%= params[:gift] ? "reverse" : "" %>">
+    <div class="cart-form">
+      <h4>Vos coordonnées</h4>
+      <div class="billing-form">
         <%= form_tag cart_purchases_path(@cart.id) do %>
           <%= label_tag("Email") %>
           <%= text_field_tag(:email, @cart.user.email, required: true) %>
@@ -82,30 +73,17 @@
           <%= hidden_field_tag 'cart_id', @cart.id %>
           <%= submit_tag 'Valider mes coordonnées', class: 'btn cart-button' %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
-  <div class="cart-summary">
-    <%if params[:gift] %>
-    <h3 style="margin-top: 0px !important">Bon cadeau - valable  1 an</h3>
-      <p>vous recevrez le bon cadeau par <u>mail</u> après paiement en ligne</p>
-      <img style="width: 80%; max-height: 300px; object-fit: cover;"src="https://res.cloudinary.com/dw7nokc0j/image/upload/v1560937414/Bon_cadeau.jpg" alt="">
-      <p class="font-weight-bold">Total :<span style="font-size:30px"> <%= number_to_currency(@cart.price_cents, unit: "€", separator: ",", format: "%n %u") %></span></p>
-      <hr style="border-top: solid 6px #f7f7f7; width: 100%">
-      <h3 style="margin-top: 0px !important">Récapitulatif</h3>
-      <h4><%= Lesson.find(params[:lesson]).title %></h4>
-      <p><%= Lesson.find(params[:lesson]).description %></p>
-      <img style="width: 100%; max-height: 300px; object-fit: cover;"src="<%= Lesson.find(params[:lesson]).photo %>" alt="">
-    <% else %>
+    <div class="cart-summary">
       <h4>Récapitulatif</h4>
       <br>
       <% @cart.cart_items.each do |item| %>
-      <div class="cart-summary-item">
-        <p><%= item.lesson.title %><span class="cartq" style="font-size: 14px;opacity: 0.8; float: right;"> EUR <%= item.lesson.total %> x <%= item.quantity %></span></p>
-            </div>
-    <% end %>
-    <p class="font-weight-bold bottom">Total :<span style="font-size:30px; float: right"> <%= number_to_currency(@cart.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
-    <% end %>
+        <div class="cart-summary-item">
+          <p><%= item.lesson.title %><span class="cartq" style="font-size: 14px;opacity: 0.8; float: right;"> EUR <%= item.lesson.total %> x <%= item.quantity %></span></p>
+        </div>
+      <% end %>
+      <p class="font-weight-bold bottom">Total :<span style="font-size:30px; float: right"> <%= number_to_currency(@cart.total, unit: "€", separator: ",", format: "%n %u") %></span></p>
+    </div>
   </div>
-</div>
-
+<% end %>

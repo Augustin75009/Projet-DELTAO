@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :signatures
       resources :events
       resources :purchases
+      resources :gifts
       # resources :carts
       # resources :cart_items
       # resources :products

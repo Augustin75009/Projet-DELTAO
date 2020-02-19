@@ -3,14 +3,14 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :success_hook
 
   def new
-    success_url = "http://localhost:3000/charge?success=#{params[:purchase_id]}"
-    # success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
-    cancel_url = "http://localhost:3000/cart_items"
-    # cancel_url = "https://www.delaterrealobjet.fr/cart_items"
     begin
     @cart = Cart.find(params[:cart_id])
     @cart_items = CartItem.where(user_id: current_user.id)
     if params[:gift]
+      success_url = "http://localhost:3000/charge?gift=#{params[:gift_id]}"
+      # success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:gift_id]}"
+      cancel_url = "http://localhost:3000/cart_items"
+      # cancel_url = "https://www.delaterrealobjet.fr/cart_items"
       @stripe_session = Stripe::Checkout::Session.create(
         customer_email: current_user.email,
         payment_method_types: ['card'],
@@ -32,6 +32,10 @@ class PaymentsController < ApplicationController
         locale: 'fr'
       )
     else
+      success_url = "http://localhost:3000/charge?success=#{params[:purchase_id]}"
+      # success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
+      cancel_url = "http://localhost:3000/cart_items"
+      # cancel_url = "https://www.delaterrealobjet.fr/cart_items"
       @stripe_session = Stripe::Checkout::Session.create(
         customer_email: current_user.email,
         payment_method_types: ['card'],
@@ -64,9 +68,13 @@ class PaymentsController < ApplicationController
 
   def charge
     @cart_items = CartItem.where(user_id: current_user.id)
-    Purchase.find(params[:success]).update(state: 'paid')
-    update_quantity
-    @cart_items.destroy_all
+    if params[:success]
+      Purchase.find(params[:success]).update(state: 'paid')
+      update_quantity
+      @cart_items.destroy_all
+    else
+      Gift.find(params[:gift]).update(state: 'paid')
+    end
     redirect_to root_path(paid: true), flash: { notice: 'Réservation prise en compte' }
   end
 
@@ -86,6 +94,10 @@ class PaymentsController < ApplicationController
   def set_order
     @cart_items = CartItem.where(user_id: current_user.id)
     @cart = Cart.where(user_id: current_user.id)
-    @purchase = current_user.purchases.where(state: 'checking').find(params[:purchase_id]) # verifier pourquoi c'est pas pending comme dans le cours
+    # if params[:gift]
+    #   @gift = current_user.gifts.where(state: 'checking').find(params[:gift_id])
+    # else
+    #   @purchase = current_user.purchases.where(state: 'checking').find(params[:purchase_id])
+    # end
   end
 end
