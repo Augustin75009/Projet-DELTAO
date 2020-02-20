@@ -9,6 +9,7 @@ class GiftDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
+    student: Field::BelongsTo,
     id: Field::Number,
     state: Field::String,
     product_sku: Field::String,
@@ -42,6 +43,7 @@ class GiftDashboard < Administrate::BaseDashboard
   gift_to
   gift_from
   user
+  student
   created_at
   amount_cents
   ].freeze
@@ -50,13 +52,13 @@ class GiftDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  user
+  id
   state
   product_sku
   gift_to
   gift_from
-  payment
-  amount_cents
+  user
+  student
   ].freeze
 
   # COLLECTION_FILTERS
