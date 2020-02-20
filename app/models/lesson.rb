@@ -1,5 +1,7 @@
 class Lesson < ApplicationRecord
   mount_uploader :photo, PhotoUploader
+  mount_uploader :photo_1, PhotoUploader
+  mount_uploader :photo_2, PhotoUploader
   monetize :price_cents
   has_many :cart_items, dependent: :nullify
   has_many :slots, dependent: :destroy

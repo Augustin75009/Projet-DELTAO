@@ -27,3 +27,53 @@ input {
   font-size: 34px;
   color: #cecece;
 }
+
+// SLICK CONFIG
+
+.list-carrousel.slick-initialized.slick-slider{
+  height: 100% !important;
+  width: 100% !important;
+  margin: auto !important;
+  background: white;
+  display: flex;
+}
+
+.slick-list.draggable{
+  margin: auto;
+  background: #f9f9f9;
+  height: 100% !important;
+}
+
+.slick-track{
+  height: 100% !important;
+}
+
+.slick-slide {
+  height: 100%;
+  width: 100%;
+  div{
+    height: 100%;
+  }
+}
+
+.slick-arrow {
+  height: 30px;
+  z-index: 200000;
+  position: absolute;
+  top: 230px;
+  @media (max-width: 800px) {
+    top: calc(35% + 30px);
+  }
+}
+
+.slick-next {
+  right: 0;
+  background: transparent;
+  border: none;
+}
+
+.slick-prev {
+  left: 0;
+  background: transparent;
+  border: none;
+}
