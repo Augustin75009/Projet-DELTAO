@@ -35,7 +35,6 @@ and renders all form fields for a resource's editable attributes.
 
   <% page.attributes.each do |attribute| -%>
     <div class="field-unit field-unit--<%= attribute.html_class %>">
-      <%= attribut %>
       <%= render_field attribute, f: f %>
     </div>
   <% end -%>

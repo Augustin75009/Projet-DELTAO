@@ -18,7 +18,6 @@ import {planning} from '../plugins/planning';
 import {planningNav} from '../plugins/planning-nav';
 
 
-// initSlick();
 alert();
 // if(window.innerWidth < 800 ) {
 //   planningNav();
@@ -38,6 +37,7 @@ if(document.location.href.match('paid=true')) {
   // validation();
 }
 
+initSlick();
 if(document.location.href.match('/lessons/')) {
   phoneNumber();
 }

@@ -1,14 +1,36 @@
 <div class="show-container">
   <div class="copied-box">Numéro copié 📲</div>
   <div class="root-show">
-    <%= link_to '<i class="fas fa-chevron-circle-left"></i>   Retour à la liste'.html_safe, :back %>
+    <%= link_to '<i class="fas fa-chevron-circle-left"></i> Retour à la liste'.html_safe, :back %>
   </div>
   <div class="product-container">
     <div class="product-image">
-      <span>
-        <%= image_tag(@lesson.photo.to_s, :alt => @lesson.alt) do %>
+      <div class="list-carrousel">
+        <% if @lesson.photo? %>
+          <div class="slick-image-container">
+            <!-- <span class="lesson-image"> -->
+              <%= image_tag(@lesson.photo.to_s, :alt => @lesson.alt) do %>
+              <% end %>
+            <!-- </span> -->
+          </div>
         <% end %>
-      </span>
+        <% if @lesson.photo_1? %>
+          <div class="slick-image-container">
+            <!-- <span class="lesson-image"> -->
+              <%= image_tag(@lesson.photo_1.to_s, :alt => @lesson.alt) do %>
+              <% end %>
+            <!-- </span> -->
+          </div>
+        <% end %>
+        <% if @lesson.photo_2? %>
+          <div class="slick-image-container">
+            <!-- <span class="lesson-image"> -->
+              <%= image_tag(@lesson.photo_2.to_s, :alt => @lesson.alt) do %>
+              <% end %>
+            <!-- </span> -->
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="product-description">
       <div class="description-top">
