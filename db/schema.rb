@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_124151) do
+ActiveRecord::Schema.define(version: 2020_02_20_103510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_02_19_124151) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "amount_cents", default: 0, null: false
+    t.bigint "student_id"
+    t.index ["student_id"], name: "index_gifts_on_student_id"
     t.index ["user_id"], name: "index_gifts_on_user_id"
   end
 
@@ -125,6 +127,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_124151) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "mail_sent", default: false
   end
 
   create_table "signatures_students", id: false, force: :cascade do |t|
@@ -190,6 +193,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_124151) do
   add_foreign_key "cart_items", "users"
   add_foreign_key "carts", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "gifts", "students"
   add_foreign_key "gifts", "users"
   add_foreign_key "lessons", "users"
   add_foreign_key "purchases", "users"

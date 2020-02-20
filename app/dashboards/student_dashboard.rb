@@ -30,8 +30,8 @@ class StudentDashboard < Administrate::BaseDashboard
   first_name
   last_name
   email
-  phone
   address
+  phone
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
