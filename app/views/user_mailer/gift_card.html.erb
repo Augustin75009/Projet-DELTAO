@@ -380,9 +380,17 @@
 
                                                                 <tbody><tr>
                                                                     <td class="content-spacing" style="font-size:14px; font-family:Arial,Helvetica,sans-serif, sans-serif; color:#3c4858; line-height: 21px;"><div>
-<div><span style="font-size:20px;">                                                                      <p style="font-size: 16px">Bon cadeau pour : <%= @gift.gift_to.capitalize %> <br>
-        De la part de : <%= @gift.gift_from.capitalize %>
-                                                                      </p></span></div>
+<div>
+  <span style="font-size:18px; line-height: 24px">
+    <p>Bon cadeau pour : <span style="font-weight: 100;"><%= @gift.gift_to.capitalize %></span><br>
+        Valable pour  : <span style="font-weight: 100;"><%= @gift.product_sku %></span><br>
+        De la part de : <span style="font-weight: 100;"><%= @gift.gift_from.capitalize %></span>
+    </p>
+  </span>
+  <span style="font-size:14px;"><p>
+    ref: <%= @gift.created_at.to_date.to_formatted_s(:number) %>-<%= @gift.id %>
+  </p></span>
+</div>
 </div>
 </td>
                                                                 </tr>
