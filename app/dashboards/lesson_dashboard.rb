@@ -58,6 +58,7 @@ class LessonDashboard < Administrate::BaseDashboard
   title
   price_cents
   category
+  description
   phone_booking
   payable
   gift_card
@@ -72,6 +73,7 @@ class LessonDashboard < Administrate::BaseDashboard
   quantity
   price_cents
   category
+  description
   adult
   child
   phone_booking
