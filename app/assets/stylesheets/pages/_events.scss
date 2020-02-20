@@ -98,7 +98,10 @@
 
 .event-card-content {
   margin: auto;
-  font-family: "Font Name" !important;
+  p{
+    font-size: 12px;
+    font-weight: 300;
+  }
 }
 
 .event-card-pic {
