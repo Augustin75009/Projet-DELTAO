@@ -8,7 +8,6 @@
     "eventbrite": "^1.2.1",
     "flatpickr": "^4.5.7",
     "jquery": "^3.4.0",
-    "node": "^10.15.3",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^8.12.1"
   },
