@@ -49,7 +49,12 @@ as well as a link to its edit page.
       Pièces prêtes :
     </dt>
     <dd class="attribute-data">
-      <%= render partial: 'admin/shared/row', locals: {resource_id: params[:id]} %>
+      <% if Signature.find(params[:id]).mail_sent %>
+        Emails envoyés !
+        (<%=link_to "renvoyer", notification_path(params[:id]), data: { confirm: 'Êtes-vous sûr(e) de vouloir envoyer les emails ?' }, method: "patch", remote: false, class: "" %>)
+      <% else %>
+        <%= render partial: 'admin/shared/row', locals: {resource_id: params[:id]} %>
+      <% end %>
     </dd>
   </dl>
 </section>

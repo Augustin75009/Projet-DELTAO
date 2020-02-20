@@ -2,6 +2,7 @@ module Admin
   class SignaturesController < Admin::ApplicationController
     def notification
       signature = Signature.find(params[:id])
+      signature.update(mail_sent: true)
       signature.students.each do |student|
         UserMailer.ceramic_ready(student).deliver_now
       end
