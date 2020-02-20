@@ -1,1 +1,1 @@
-<%=link_to "Envoyer Mail", notification_path(resource.id), data: { confirm: 'Êtes-vous sûr(e) de vouloir accepter ?' }, method: "patch", remote: false %>
+<%=link_to "Envoyer email(s)", notification_path(params[:id]), data: { confirm: 'Êtes-vous sûr(e) de vouloir envoyer les emails ?' }, method: "patch", remote: false, class: "button" %>

@@ -11,8 +11,8 @@ fr:
         one: 'Atelier'
         other: 'Ateliers'
       purchase:
-        one: 'Commande'
-        other: 'Commandes'
+        one: 'Réservation'
+        other: 'Réservations'
       slot:
         one: 'Horaire'
         other: 'Horaires'

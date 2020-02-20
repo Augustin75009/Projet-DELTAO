@@ -76,7 +76,7 @@ class GiftDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how gifts are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(gift)
-  #   "Gift ##{gift.id}"
-  # end
+  def display_resource(gift)
+    "Bon cadeau ##{gift.id}"
+  end
 end
