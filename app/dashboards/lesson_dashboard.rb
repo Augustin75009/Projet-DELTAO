@@ -15,7 +15,9 @@ class LessonDashboard < Administrate::BaseDashboard
     title: Field::String,
     description: Field::Text,
     quantity: Field::Number,
-    photo: Field::String,
+    photo: Field::PaperclipField,
+    photo_1: Field::Paperclip1Field,
+    photo_2: Field::Paperclip2Field,
     price_cents: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -75,6 +77,9 @@ class LessonDashboard < Administrate::BaseDashboard
   phone_booking
   payable
   gift_card
+  photo
+  photo_1
+  photo_2
   pic_position
   alt
   ].freeze
