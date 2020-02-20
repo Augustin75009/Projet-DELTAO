@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_132950) do
+ActiveRecord::Schema.define(version: 2020_02_19_124151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(version: 2020_02_17_132950) do
     t.integer "priority", default: 1
     t.string "alt", default: "Atelier de céramique paris 18"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "gifts", force: :cascade do |t|
+    t.string "state"
+    t.string "product_sku"
+    t.string "gift_to"
+    t.string "gift_from"
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.index ["user_id"], name: "index_gifts_on_user_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -102,6 +115,8 @@ ActiveRecord::Schema.define(version: 2020_02_17_132950) do
     t.datetime "updated_at", null: false
     t.integer "amount_cents", default: 0, null: false
     t.string "slot", array: true
+    t.string "gift_to"
+    t.string "gift_from"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
@@ -163,6 +178,7 @@ ActiveRecord::Schema.define(version: 2020_02_17_132950) do
     t.integer "zip"
     t.string "phone"
     t.string "adminkey"
+    t.string "contact_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -174,6 +190,7 @@ ActiveRecord::Schema.define(version: 2020_02_17_132950) do
   add_foreign_key "cart_items", "users"
   add_foreign_key "carts", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "gifts", "users"
   add_foreign_key "lessons", "users"
   add_foreign_key "purchases", "users"
   add_foreign_key "slots", "lessons"

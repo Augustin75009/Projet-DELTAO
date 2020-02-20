@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :signatures
       resources :events
       resources :purchases
+      resources :gifts
       # resources :carts
       # resources :cart_items
       # resources :products
@@ -33,6 +34,9 @@ Rails.application.routes.draw do
   end
   resources :carts, only: [:new, :create, :destroy, :index, :show] do
     resources :purchases, only: [:new, :create, :edit, :update, :destroy, :index] do
+      resources :payments, only: [:new, :create, :show]
+    end
+    resources :gifts, only: [:new, :create, :edit, :update, :destroy, :index] do
       resources :payments, only: [:new, :create, :show]
     end
   end

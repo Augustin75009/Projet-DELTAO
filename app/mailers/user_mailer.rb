@@ -4,4 +4,9 @@ class UserMailer < ApplicationMailer
     @user = user
     mail(to: user.email, subject: "Vos créations sont prêtes")
   end
+
+  def gift_card(gift)
+    @gift = gift
+    mail(to: gift.user.contact_email, subject: "Bon cadeau")
+  end
 end

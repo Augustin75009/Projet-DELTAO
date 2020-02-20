@@ -22,6 +22,9 @@ fr:
       signature:
         one: 'Emargement'
         other: 'Emargements'
+      gift:
+        one: 'Bon cadeau'
+        other: 'Bon cadeau'
     attributes:
       user:
         first_name: 'Prénom'
@@ -58,6 +61,11 @@ fr:
         last_name: 'Nom'
         address: 'Adresse'
         phone: 'Téléphone'
+      gift:
+        product_sku: 'Atelier'
+        state: 'Pour'
+        gift_from: 'De la part'
+        amount_cents: 'Prix'
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'
@@ -254,6 +262,14 @@ fr:
       slot:
         lesson: 'Atelier'
         quantity: 'Quantité'
+      gift:
+        product_sku: 'Atelier'
+        state: 'Statut'
+        gift_to: 'Pour'
+        gift_from: 'De la part'
+        amount_cents: 'Prix'
+        created_at: "Date de Création"
+        updated_at: "Date de modification"
   number:
     currency:
       format:
