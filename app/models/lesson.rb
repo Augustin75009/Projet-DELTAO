@@ -19,12 +19,4 @@ class Lesson < ApplicationRecord
   def total
     price_cents / 1000.0
   end
-
-  def check_images
-    images = []
-    images << '' if self.photo?
-    images << '1' if self.photo?
-    images << '2' if self.photo?
-    images
-  end
 end
