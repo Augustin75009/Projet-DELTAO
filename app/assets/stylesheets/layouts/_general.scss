@@ -60,7 +60,7 @@ input {
   height: 30px !important;
   z-index: 200000 !important;
   position: absolute !important;
-  top: 230px !important;
+  top: 240px !important;
   @media (max-width: 800px) {
     top: calc(35% + 30px) !important;
   }
@@ -68,12 +68,14 @@ input {
 
 .slick-next {
   right: 0 !important;
+  width: auto !important;
   background: transparent !important;
   border: none !important;
 }
 
 .slick-prev {
   left: 0 !important;
+  width: auto !important;
   background: transparent !important;
   border: none !important;
 }
