@@ -57,23 +57,23 @@ input {
 }
 
 .slick-arrow {
-  height: 30px;
-  z-index: 200000;
-  position: absolute;
-  top: 230px;
+  height: 30px !important;
+  z-index: 200000 !important;
+  position: absolute !important;
+  top: 230px !important;
   @media (max-width: 800px) {
-    top: calc(35% + 30px);
+    top: calc(35% + 30px) !important;
   }
 }
 
 .slick-next {
-  right: 0;
-  background: transparent;
-  border: none;
+  right: 0 !important;
+  background: transparent !important;
+  border: none !important;
 }
 
 .slick-prev {
-  left: 0;
-  background: transparent;
-  border: none;
+  left: 0 !important;
+  background: transparent !important;
+  border: none !important;
 }
