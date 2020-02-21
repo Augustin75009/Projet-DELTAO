@@ -8,7 +8,7 @@
 <% if params[:gift] %>
   <div class="cart-wrapper <%= params[:gift] ? "" : "" %>">
     <div class="cart-form">
-      <h4>Vos coordonnées</h4>
+      <h3>Vos coordonnées</h3>
       <div class="billing-form">
         <%= form_tag cart_gifts_path(gift: true, cart_id: @cart.id) do %>
           <%= label_tag("Email") %>
@@ -53,7 +53,7 @@
 <% else %>
   <div class="cart-wrapper <%= params[:gift] ? "reverse" : "" %>">
     <div class="cart-form">
-      <h4>Vos coordonnées</h4>
+      <h3>Vos coordonnées</h3>
       <div class="billing-form">
         <%= form_tag cart_purchases_path(@cart.id) do %>
           <%= label_tag("Email") %>
