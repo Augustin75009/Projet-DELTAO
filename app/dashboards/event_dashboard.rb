@@ -13,7 +13,7 @@ class EventDashboard < Administrate::BaseDashboard
     description: Field::Text,
     start_date: Field::DateTime,
     end_date: Field::DateTime,
-    photo: Field::String,
+    photo: Field::EventpicField,
     location: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -40,9 +40,7 @@ class EventDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   title
-  description
   start_date
-  end_date
   link
   priority
   alt
@@ -53,10 +51,9 @@ class EventDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   title
-  description
   start_date
-  end_date
   link
+  photo
   priority
   alt
   ].freeze

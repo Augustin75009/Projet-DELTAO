@@ -20,8 +20,8 @@ fr:
         one: 'Elève'
         other: 'Elèves'
       signature:
-        one: 'Emargement'
-        other: 'Emargements'
+        one: 'Présence'
+        other: 'Présences'
       gift:
         one: 'Bon cadeau'
         other: 'Bon cadeau'
@@ -46,7 +46,7 @@ fr:
         adult: 'Adulte'
         child: 'Enfant'
         phone_booking: 'Réservation par téléphone'
-        payable: 'Payable'
+        payable: 'Payable en ligne'
         gift_card: 'Bon cadeau'
         pic_position: 'Position de la photo'
         slot: 'Horaire'

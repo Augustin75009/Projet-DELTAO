@@ -11,7 +11,7 @@ class SignatureDashboard < Administrate::BaseDashboard
     students: Field::HasMany,
     id: Field::Number,
     date: Field::DateTime,
-    title: Field::String,
+    title: Field::TitleField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -60,6 +60,6 @@ class SignatureDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(signature)
-    "#{signature.title}"
+    "#{signature.title} - #{signature.date.to_date.to_formatted_s(:short)}"
   end
 end

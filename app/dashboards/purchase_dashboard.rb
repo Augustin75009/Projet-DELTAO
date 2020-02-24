@@ -28,6 +28,7 @@ class PurchaseDashboard < Administrate::BaseDashboard
   id
   state
   user
+  created_at
   amount_cents
   slot
   ].freeze
