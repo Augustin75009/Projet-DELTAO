@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :users
       resources :lessons
       resources :slots
-      resources :students
-      resources :signatures
       resources :events
+      resources :users
+      resources :signatures
+      resources :students
       resources :purchases
       resources :gifts
       # resources :carts
