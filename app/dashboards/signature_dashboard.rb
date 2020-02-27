@@ -60,6 +60,6 @@ class SignatureDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(signature)
-    "#{signature.title} - #{signature.date.to_date.to_formatted_s(:short)}"
+    "#{signature.title} - #{signature.date.to_date.strftime("%d/%m/%Y")}"
   end
 end

@@ -5,6 +5,10 @@ class UserMailer < ApplicationMailer
     mail(to: user.email, subject: "Vos créations sont prêtes")
   end
 
+  def ceramic_ready_one(email)
+    mail(to: email, subject: "Rappel : Vos créations sont prêtes")
+  end
+
   def gift_card(gift)
     @gift = gift
     mail(to: gift.user.contact_email, subject: "Bon cadeau")

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   patch 'admin/signature/notification/:id', to: 'admin/signatures#notification', as: :notification
+  post 'admin/signature/notification_one/:id', to: 'admin/signatures#notification_one', as: :notification_one
   get 'charge' => 'payments#charge'
   get 'payments/new'
   get 'payments/create'
