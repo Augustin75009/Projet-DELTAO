@@ -32,6 +32,7 @@ fr:
         address: 'Adresse'
         zip: 'Code postal'
         phone: 'Téléphone'
+        purchases: 'Commande(s)'
       event:
         title: 'Titre'
         start_date: 'Début'
@@ -229,6 +230,7 @@ fr:
         address: 'Adresse'
         zip: 'Code postal'
         phone: 'Téléphone'
+        purchases: Commandes
       event:
         title: 'Titre'
         start_date: 'Début'
@@ -261,6 +263,7 @@ fr:
         last_name: 'Nom'
         address: 'Adresse'
         phone: 'Téléphone'
+        signatures: Présence(s)
       slot:
         lesson: 'Atelier'
         quantity: 'Quantité'
