@@ -9,7 +9,7 @@ class GiftDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
-    student: Field::BelongsTo,
+    student: Field::BelongsToSearch.with_options(class_name: 'Student'),
     id: Field::Number,
     state: Field::String,
     product_sku: Field::String,
@@ -18,7 +18,7 @@ class GiftDashboard < Administrate::BaseDashboard
     payment: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    amount_cents: Field::Number,
+    amount_cents: Field::Number
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -57,7 +57,6 @@ class GiftDashboard < Administrate::BaseDashboard
   product_sku
   gift_to
   gift_from
-  user
   student
   ].freeze
 
