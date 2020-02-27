@@ -12,10 +12,10 @@ as defined by the routes in the `admin/` namespace
     <%= link_to(
       display_resource_name(resource),
       [namespace, resource_index_route_key(resource)],
-      class: "link#{index} navigation__link navigation__link--#{nav_link_state(resource)}"
+      class: "navigation__link navigation__link--#{nav_link_state(resource)}"
     ) %>
     <% if index == 3 || index == 5 %>
-    <hr>
+      <hr>
     <% end %>
   <% end %>
 </nav>
