@@ -19,6 +19,7 @@ gem 'sendinblue'
 
 # dashboard
 gem "administrate"
+gem 'administrate-field-belongs_to_search'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

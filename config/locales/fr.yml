@@ -257,7 +257,7 @@ fr:
         updated_at: "Date de modification"
       signature:
         title: 'Titre'
-        students: 'Elèves'
+        students: 'Elève(s)'
       student:
         first_name: 'Prénom'
         last_name: 'Nom'
