@@ -45,29 +45,5 @@ as well as a link to its edit page.
       <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
           ><%= render_field attribute, page: page %></dd>
     <% end %>
-    <dt class="" id="">
-      Pièces prêtes :
-    </dt>
-    <br>
-    <dd class="">
-      Tous les élèves :
-      <% if Signature.find(params[:id]).mail_sent %>
-        Emails envoyés !
-        (<%=link_to "renvoyer", notification_path(params[:id]), data: { confirm: 'Êtes-vous sûr(e) de vouloir envoyer les emails ?' }, method: "patch", remote: false, class: "" %>)
-      <% else %>
-        <%= render partial: 'admin/shared/row', locals: {resource_id: params[:id]} %>
-      <% end %>
-      <hr>
-      <div class="forms-adjacent-container">
-        <div class="forms-adjacent">
-          <%= form_with(model: Signature.new, url: { action:"notification_one" }, local: true, html: { id: 'discover-woonies-form', style: 'display: inline-flex'}) do |form| %>
-            <input type="text" name='emails' id="tags-input" data-role="tagsinput" placeholder="name@exemple.com">
-            <div class="form-action">
-              <%= form.submit "Envoyer   \u2192", class: "discover-woonies-send inactive"  %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </dd>
   </dl>
 </section>

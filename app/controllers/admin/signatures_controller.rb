@@ -6,7 +6,16 @@ module Admin
       signature.students.each do |student|
         UserMailer.ceramic_ready(student).deliver_now
       end
-      redirect_to admin_signatures_path, notice: 'Mails envoyés !'
+      redirect_to admin_signature_path(params[:id]), notice: 'Mails envoyés !'
+    end
+
+    def notification_one
+      if params[:emails].empty?
+        redirect_to admin_signature_path(params[:id]), notice: 'Renseigner un email'
+      else
+        UserMailer.ceramic_ready_one(params[:emails]).deliver_now
+        redirect_to admin_signature_path(params[:id]), notice: 'Mail envoyé !'
+      end
     end
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :users
       resources :lessons
       resources :slots
-      resources :students
-      resources :signatures
       resources :events
+      resources :users
+      resources :signatures
+      resources :students
       resources :purchases
       resources :gifts
       # resources :carts
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   patch 'admin/signature/notification/:id', to: 'admin/signatures#notification', as: :notification
+  post 'admin/signature/notification_one/:id', to: 'admin/signatures#notification_one', as: :notification_one
   get 'charge' => 'payments#charge'
   get 'payments/new'
   get 'payments/create'

@@ -21,7 +21,7 @@ class LessonDashboard < Administrate::BaseDashboard
     price_cents: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    category: Field::String,
+    category: Field::CategoryField,
     adult: Field::Boolean,
     child: Field::Boolean,
     phone_booking: Field::Boolean,
@@ -47,7 +47,6 @@ class LessonDashboard < Administrate::BaseDashboard
   category
   payable
   gift_card
-  quantity
   price_cents
   ].freeze
 
@@ -59,9 +58,13 @@ class LessonDashboard < Administrate::BaseDashboard
   price_cents
   category
   description
+  adult
+  child
   phone_booking
   payable
   gift_card
+  pic_position
+  alt
   slots
   ].freeze
 
@@ -70,7 +73,6 @@ class LessonDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   title
-  quantity
   price_cents
   category
   description
