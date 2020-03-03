@@ -574,17 +574,18 @@
   }
 
   .cart-form {
-    // padding: 20px 0px 0px 20px !important;
+    padding: 30px 20px 30px 20px !important;
     margin: 0px !important;
   }
 
   .cart-wrapper {
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
+    margin: 0px !important;
     margin-bottom: 20px !important;
   }
 
   .cart-wrapper.reverse {
-    flex-direction: column !important;
+    // flex-direction: column !important;
   }
 
   .billing-form .btn {
