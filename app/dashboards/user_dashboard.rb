@@ -25,8 +25,8 @@ class UserDashboard < Administrate::BaseDashboard
     address: Field::Text,
     city: Field::String,
     zip: Field::Number,
-    phone: Field::Number,
-    adminkey: Field::String,
+    phone: Field::String,
+    adminkey: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
