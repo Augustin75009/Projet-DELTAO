@@ -84,6 +84,9 @@ class LessonDashboard < Administrate::BaseDashboard
   photo
   photo_1
   photo_2
+  card_description
+  pricing
+  schedule
   pic_position
   alt
   ].freeze

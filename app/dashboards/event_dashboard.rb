@@ -40,6 +40,7 @@ class EventDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   title
+  description
   start_date
   link
   priority
@@ -51,6 +52,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   title
+  description
   start_date
   link
   photo
