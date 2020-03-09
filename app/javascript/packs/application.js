@@ -19,11 +19,11 @@ import {planningNav} from '../plugins/planning-nav';
 
 
 alert();
-// if(window.innerWidth < 800 ) {
-//   planningNav();
-// } else {
-//   planning();
-// }
+if(window.innerWidth < 800 ) {
+  planningNav();
+} else {
+  planning();
+}
 // updateQuantityUp();
 tabFocus();
 selectLesson();

@@ -6,10 +6,8 @@
     <ul class="custom_navbar_menu_list">
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
       <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/lessons">Ateliers</a></li>
-      <!-- <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/lessons">Ateliers</a></li> -->
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
       <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="/lessons?query6=true">Bons cadeaux</a></li>
-      <!-- <a id="sezaneMenu_rptMenu_hlMenu_0" class="menu__product__link" href="https://www.delaterrealobjet.fr/lessons?query6=true">Bons cadeaux</a></li> -->
       <li id="sezaneMenu_rptMenu_liMenu_0" class="menu__product__item">
       <span id="select-planning-nav" class="menu__product__link" href="/lessons?query6=true">Planning</span></li>
       <% if user_signed_in? %>
@@ -28,56 +26,6 @@
       <% end %>
     </ul>
   </nav>
-  <% if user_signed_in? %>
-    <div class="shopping-nav">
-  <% else %>
-    <div class="shopping-nav">
-  <% end %>
-    <div class="header-item">
-    <% if user_signed_in? %>
-      <div class="dropdown">
-        <%= image_tag "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555074154/home.png", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown", alt: '' %>
-        <% if @cart_items.count != 0 %>
-          <span class="notification-count burger dropdown"><%= @cart_items.count %></span>
-        <% end %>
-        <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
-          <ul class="burger-phone">
-            <li id="" class="fa fa-custom">
-              <a id="" class=".sign_out xl" href="/lessons">Ateliers</a></li>
-            <li id="" class="fa fa-custom">
-              <a id="" class=".sign_out xl" href="/lessons?query6=true">Bons cadeaux</a></li>
-            <li id="" class="fa fa-custom">
-              <a id="select-planning-nav-burger" class=".sign_out xl">Planning</a></li>
-            <li id="" class="fa fa-custom">
-              <a id="" class=".sign_out xl" href="/cart_items">Panier</a></li>
-          </ul>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete, class: "header-item header-link" do %>
-              <%= t(".sign_out xl", default: "Se déconnecter") %>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <% else %>
-      <div class="dropdown">
-        <%= image_tag "https://res.cloudinary.com/dw7nokc0j/image/upload/v1555074154/home.png", class: "avatar dropdown-toggle", id: "header-menu", "data-toggle" => "dropdown", alt: '' %>
-        <ul class="dropdown-menu dropdown-menu-right header-dropdown-menu">
-          <ul class="burger-phone">
-            <li id="" class="fa fa-custom">
-              <a id="" class=".sign_out xl" href="/lessons">Ateliers</a></li>
-            <li id="" class="fa fa-custom">
-              <a id="" class=".sign_out xl" href="/lessons?query6=true">Bons cadeaux</a></li>
-            <li id="" class="fa fa-custom">
-              <a id="select-planning-nav-burger" class=".sign_out xl">Planning</a></li>
-            <li id="" class="fa fa-custom">
-              <a id="" class=".sign_out xl" href="/cart_items">Panier</a></li>
-          </ul>
-          <li>
-            <%= link_to t(".sign_in xl", default: "Se connecter"), new_user_session_path, class: "header-item header-link" %>
-          </li>
-        </ul>
-      </div>
-    <% end %>
+  <div class="shopping-nav" id="openNav" onclick="w3_open()">
   </div>
 </header>

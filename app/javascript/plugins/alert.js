@@ -6,6 +6,7 @@ const alert = () => {
   const planning = document.getElementById('planning-wrapper');
   const selectCgv = document.getElementById('select-cgv')
   const selectPlanning = document.getElementById('select-planning-nav')
+  console.log(selectPlanning)
   cgv.addEventListener('click', function() {
     cgv.toggleAttribute('hidden')
   })
@@ -13,9 +14,11 @@ const alert = () => {
     cgv.toggleAttribute('hidden')
   })
   planning.addEventListener('click', function() {
+    alert('hello')
     planning.toggleAttribute('hidden')
   })
   selectPlanning.addEventListener('click', function() {
+    alert('hello')
     planning.toggleAttribute('hidden')
   })
 }

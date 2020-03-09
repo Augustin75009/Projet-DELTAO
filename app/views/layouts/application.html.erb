@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
     <meta name="description" content="La trace et l'empreinte de la main sont pour moi sources d'innovation par l'inattendu et la surprise qu'elles provoquent.">
@@ -43,7 +44,25 @@
       gtag('config', 'UA-144011942-1');
     </script>
   </head>
-  <body>
+  <body id="deltao-main">
+    <div class="w3-container" style="display:none" id="sidebar">
+      <button class="w3-button"
+      onclick="w3_close()">Fermer &times;</button>
+      <a id="" class="w3-bar-item .sign_out xl" href="/lessons">Ateliers</a>
+      <a id="" class="w3-bar-item .sign_out xl" href="/lessons?query6=true">Bons cadeaux</a></li>
+      <a class="w3-bar-item .sign_out xl" id="select-planning-nav">Planning</a>
+      <% if user_signed_in? %>
+        <a id="" class="w3-bar-item .sign_out xl" href="/cart_items">Panier</a>
+        <%= link_to destroy_user_session_path, method: :delete, class: "w3-bar-item header-item header-link" do %>
+          <%= t(".sign_out xl", default: "Se déconnecter") %>
+        <% end %>
+      <% else %>
+        <a id="" class="w3-bar-item .sign_out xl" href="#">Panier</a>
+        <%= link_to new_user_session_path, class: "w3-bar-item header-item header-link" do %>
+          <%= t(".sign_out xl", default: "Se connecter") %>
+        <% end %>
+      <% end %>
+    </div>
     <div class="body-container">
       <%= render 'shared/navbar2' %>
       <%= render 'shared/flashes' %>
@@ -58,5 +77,18 @@
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <script>
+      function w3_open() {
+        document.getElementById("deltao-main").style.width = "calc(100% - 60px)";
+        document.getElementById("sidebar").style.width = "-180px";
+        document.getElementById("sidebar").style.display = "block";
+        document.getElementById("openNav").style.display = 'none';
+      }
+      function w3_close() {
+        document.getElementById("deltao-main").style.width = "100%";
+        document.getElementById("sidebar").style.display = "none";
+        document.getElementById("openNav").style.display = "inline-block";
+      }
+    </script>
   </body>
 </html>
