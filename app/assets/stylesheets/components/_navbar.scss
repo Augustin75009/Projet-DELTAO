@@ -161,8 +161,8 @@ header.is-absolute {
   display: inline-block;
   background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555404696/settings_2.png');
   background-size: cover;
-  height: 30px;
-  width: 30px;
+  height: 31px;
+  width: 39px;
   img {
     opacity: 0;
     height: 30px;
@@ -175,8 +175,8 @@ header.is-absolute {
   margin-left: 20px;
   background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555404701/settings_1.png');
   background-size: cover;
-  height: 30px;
-  width: 30px;
+  height: 31px;
+  width: 39px;
   margin-bottom: 37px;
   img {
     opacity: 0;
@@ -223,11 +223,11 @@ li.fa-custom {
 }
 
 a.xl {
-  font-size: 16px !important;
+  font-size: 18px !important;
 }
 
 span.xl {
-  font-size: 16px !important;
+  font-size: 18px !important;
 }
 
 /* Links inside the dropdown */
@@ -258,6 +258,7 @@ span.xl {
   letter-spacing: .2rem;
   transition: color .4s linear;
   cursor: pointer;
+  width: 38px;
 }
 
 .link_sign_out {
