@@ -20,7 +20,7 @@ class Cart < ApplicationRecord
   def add_lesson(lesson, slot, user)
     item = CartItem.where(user_id: user.id).find_by(lesson: lesson, slot: slot)
     if item
-      item.quantity += 1
+      item.quantity += 0
     else
       item = CartItem.new(lesson: lesson, slot_id: slot)
     end
