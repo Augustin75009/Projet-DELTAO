@@ -51,6 +51,9 @@ fr:
         gift_card: 'Bon cadeau'
         pic_position: 'Position de la photo'
         slot: 'Date / Horaire'
+        pricing: Tarifs
+        schedule: Horaires
+        card_description: Infos complémentaires
       purchase:
         user: 'Acheteur'
         state: 'Statut'
@@ -250,6 +253,9 @@ fr:
         phone_booking: 'Réservation par téléphone'
         pic_position: 'Position de la photo'
         slots: 'Date / Horaire'
+        pricing: Tarifs
+        schedule: Horaires
+        card_description: Infos complémentaires
       purchase:
         state: 'Statut'
         product_sku: 'Identifiant atelier'
