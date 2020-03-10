@@ -8,8 +8,8 @@ class PaymentsController < ApplicationController
     @cart_items = CartItem.where(user_id: current_user.id)
     if params[:gift]
       # success_url = "http://localhost:3000/charge?gift=#{params[:gift_id]}"
-      # success_url = "https://www.delaterrealobjet.fr/charge?gift=#{params[:gift_id]}"
-      success_url = "https://tessa.herokuapp.com/charge?gift=#{params[:gift_id]}"
+      success_url = "https://www.delaterrealobjet.fr/charge?gift=#{params[:gift_id]}"
+      # success_url = "https://tessa.herokuapp.com/charge?gift=#{params[:gift_id]}"
       # cancel_url = "http://localhost:3000/cart_items"
       cancel_url = "https://www.delaterrealobjet.fr/cart_items"
       @stripe_session = Stripe::Checkout::Session.create(
@@ -34,8 +34,8 @@ class PaymentsController < ApplicationController
       )
     else
       # success_url = "http://localhost:3000/charge?success=#{params[:purchase_id]}"
-      # success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
-      success_url = "https://tessa.herokuapp.com/charge?success=#{params[:purchase_id]}"
+      success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
+      # success_url = "https://tessa.herokuapp.com/charge?success=#{params[:purchase_id]}"
       # cancel_url = "http://localhost:3000/cart_items"
       cancel_url = "https://www.delaterrealobjet.fr/cart_items"
       @stripe_session = Stripe::Checkout::Session.create(
