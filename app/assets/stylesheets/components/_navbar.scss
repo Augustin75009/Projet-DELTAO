@@ -182,9 +182,6 @@ header.is-absolute {
     opacity: 0;
     height: 30px;
   }
-  a.header-item.header-link {
-    color: white !important;
-  }
 }
 
   .notification-count.burger.dropdown {
@@ -244,10 +241,10 @@ a.xl:hover {
   cursor: pointer;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+// /* Show the dropdown menu on hover */
+// .dropdown:hover .dropdown-content {
+//   display: block;
+// }
 
 .shopping-nav {
   // height: 100%;

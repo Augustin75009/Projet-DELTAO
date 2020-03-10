@@ -57,7 +57,7 @@
           <%= t(".sign_out xl", default: "Se déconnecter \u2192") %>
         <% end %>
       <% else %>
-        <a id="" class="w3-bar-item .sign_out xl" href="#">Panier</a>
+        <a id="" class="w3-bar-item .sign_out xl" href="#" style="cursor: not-allowed">Panier</a>
         <%= link_to new_user_session_path, class: "w3-bar-item header-item header-link" do %>
           <%= t(".sign_out xl", default: "\u2192 Se connecter") %>
         <% end %>
