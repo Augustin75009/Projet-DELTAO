@@ -160,9 +160,10 @@ header.is-absolute {
   position: relative;
   display: inline-block;
   background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555404696/settings_2.png');
-  background-size: cover;
-  height: 31px;
-  width: 39px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 38px;
   img {
     opacity: 0;
     height: 30px;
@@ -174,9 +175,10 @@ header.is-absolute {
   display: inline-block;
   margin-left: 20px;
   background-image: url('https://res.cloudinary.com/dw7nokc0j/image/upload/v1555404701/settings_1.png');
-  background-size: cover;
-  height: 31px;
-  width: 39px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 38px;
   margin-bottom: 37px;
   img {
     opacity: 0;
@@ -258,7 +260,7 @@ a.xl:hover {
   letter-spacing: .2rem;
   transition: color .4s linear;
   cursor: pointer;
-  width: 38px;
+  // width: 38px;
 }
 
 .link_sign_out {
