@@ -50,16 +50,16 @@
       onclick="w3_close()">Fermer &times;</button>
       <a id="" class="w3-bar-item .sign_out xl" href="/lessons">Ateliers</a>
       <a id="" class="w3-bar-item .sign_out xl" href="/lessons?query6=true">Bons cadeaux</a></li>
-      <a class="w3-bar-item .sign_out xl" id="select-planning-nav">Planning</a>
+      <a class="w3-bar-item .sign_out xl" id="select-planning-sidebar">Planning</a>
       <% if user_signed_in? %>
         <a id="" class="w3-bar-item .sign_out xl" href="/cart_items">Panier</a>
         <%= link_to destroy_user_session_path, method: :delete, class: "w3-bar-item header-item header-link" do %>
-          <%= t(".sign_out xl", default: "Se déconnecter") %>
+          <%= t(".sign_out xl", default: "Se déconnecter \u2192") %>
         <% end %>
       <% else %>
         <a id="" class="w3-bar-item .sign_out xl" href="#">Panier</a>
         <%= link_to new_user_session_path, class: "w3-bar-item header-item header-link" do %>
-          <%= t(".sign_out xl", default: "Se connecter") %>
+          <%= t(".sign_out xl", default: "\u2192 Se connecter") %>
         <% end %>
       <% end %>
     </div>
@@ -83,11 +83,14 @@
         document.getElementById("sidebar").style.width = "-180px";
         document.getElementById("sidebar").style.display = "block";
         document.getElementById("openNav").style.display = 'none';
+        document.getElementById("openNav").style.display = 'none';
+        document.getElementById("menu-dimissable").style.display = 'none';
       }
       function w3_close() {
         document.getElementById("deltao-main").style.width = "100%";
         document.getElementById("sidebar").style.display = "none";
         document.getElementById("openNav").style.display = "inline-block";
+        document.getElementById("menu-dimissable").style.display = "flex";
       }
     </script>
   </body>

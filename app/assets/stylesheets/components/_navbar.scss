@@ -183,7 +183,7 @@ header.is-absolute {
     height: 30px;
   }
   a.header-item.header-link {
-    // color: white !important;
+    color: white !important;
   }
 }
 
@@ -239,7 +239,10 @@ span.xl {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+a.xl:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
