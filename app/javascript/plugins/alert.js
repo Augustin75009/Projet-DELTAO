@@ -5,7 +5,10 @@ const alert = () => {
   const cgv = document.getElementById('cgv-wrapper');
   const planning = document.getElementById('planning-wrapper');
   const selectCgv = document.getElementById('select-cgv')
-  const selectPlanning = document.getElementById('select-planning-nav')
+  const selectPlanningNav = document.getElementById('select-planning-nav')
+  const selectPlanningSide = document.getElementById('select-planning-sidebar')
+  const selectPlanning = document.getElementById('select-planning')
+  console.log(selectPlanning)
   cgv.addEventListener('click', function() {
     cgv.toggleAttribute('hidden')
   })
@@ -16,6 +19,12 @@ const alert = () => {
     planning.toggleAttribute('hidden')
   })
   selectPlanning.addEventListener('click', function() {
+    planning.toggleAttribute('hidden')
+  })
+  selectPlanningNav.addEventListener('click', function() {
+    planning.toggleAttribute('hidden')
+  })
+  selectPlanningSide.addEventListener('click', function() {
     planning.toggleAttribute('hidden')
   })
 }

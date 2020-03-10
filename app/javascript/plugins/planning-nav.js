@@ -2,7 +2,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 
 const planningNav = () => {
-  const planning = document.querySelector('#select-planning-nav-burger');
+  const planning = document.querySelector('#select-planning-nav');
   const planningFooter = document.querySelector('#select-planning');
   planning.addEventListener('click', function() {
     const h = window.innerHeight - 280;

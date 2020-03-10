@@ -57,7 +57,7 @@ class LessonDashboard < Administrate::BaseDashboard
   title
   price_cents
   category
-  description
+  slots
   adult
   child
   phone_booking
@@ -65,7 +65,7 @@ class LessonDashboard < Administrate::BaseDashboard
   gift_card
   pic_position
   alt
-  slots
+  description
   ].freeze
 
   # FORM_ATTRIBUTES

@@ -52,7 +52,7 @@ fr:
         pic_position: 'Position de la photo'
         slot: 'Date / Horaire'
       purchase:
-        user: 'Utilisateur'
+        user: 'Acheteur'
         state: 'Statut'
       signature:
         title: 'Titre'
@@ -62,12 +62,14 @@ fr:
         last_name: 'Nom'
         address: 'Adresse'
         phone: 'Téléphone'
+        city: 'Ville'
+        zip: 'Code postal'
       gift:
         product_sku: 'Atelier'
         state: 'Pour'
         gift_from: 'De la part'
         amount_cents: 'Prix'
-        user: 'Utilisateur'
+        user: 'Acheteur'
         student: 'Elève'
     errors:
       messages:
@@ -257,13 +259,15 @@ fr:
         updated_at: "Date de modification"
       signature:
         title: 'Titre'
-        students: 'Elève(s)'
+        students: 'Elèves'
       student:
         first_name: 'Prénom'
         last_name: 'Nom'
         address: 'Adresse'
         phone: 'Téléphone'
         signatures: Présence(s)
+        city: Ville
+        zip: Code postal
       slot:
         lesson: 'Atelier'
         quantity: 'Quantité'
@@ -275,8 +279,8 @@ fr:
         amount_cents: 'Prix'
         created_at: "Date de Création"
         updated_at: "Date de modification"
-        user: 'Utilisateur'
-        student: 'Elève'
+        user: 'Acheteur'
+        student: 'Elèves'
   number:
     currency:
       format:

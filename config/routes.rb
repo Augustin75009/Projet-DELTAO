@@ -4,8 +4,8 @@ Rails.application.routes.draw do
       resources :slots
       resources :events
       resources :users
-      resources :signatures
       resources :students
+      resources :signatures
       resources :purchases
       resources :gifts
       # resources :carts
