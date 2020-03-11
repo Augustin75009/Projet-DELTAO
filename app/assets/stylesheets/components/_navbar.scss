@@ -415,8 +415,9 @@ li {
   width: 100%;
 }
 
-.w3-button:hover{
+.w3-button{
   background: $tessa;
+  color: white;
 }
 
 @keyframes animateleft{
