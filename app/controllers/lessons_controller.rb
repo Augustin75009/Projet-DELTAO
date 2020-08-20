@@ -2,22 +2,9 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query6].present?
-      @lessons = Lesson.where(gift_card: true).order('created_at')
-    elsif params[:query5].present?
-      @lessons = Lesson.search_by_category(params[:query5]).order('created_at')
-    elsif params[:query4].present?
-      @lessons = Lesson.search_by_category(params[:query4]).order('created_at')
-    elsif params[:query2].present?
-      @lessons = Lesson.search_by_category(params[:query2]).order('created_at')
-    elsif params[:query1].present?
-      @lessons = Lesson.where(adult: true).order('created_at')
-    elsif params[:query3].present?
-      @lessons = Lesson.where(child: true).order('created_at')
-    else
-      @lessons = Lesson.all.order('created_at')
-    end
     @events = Event.all
+    lesson_service = LessonService.new(params)
+    @lessons = lesson_service.index
     if user_signed_in?
       @cart_items = CartItem.where(user_id: current_user.id)
     else
