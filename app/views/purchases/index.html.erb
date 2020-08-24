@@ -1,37 +1,31 @@
 <h1 style="padding-top: 50px">Listes des commandes payées</h1>
-<%= render 'shared/dashboard'%>
 <div style="padding: 20px 0px 0px 200px">
   <ul>
-  <% @purchases.each do |item| %>
-  <li>
-    <strong>Ref: </strong><%= item.created_at.strftime("%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
-  </li>
+  <% if @purchase.empty? %>
+    AUCUNE COMMANDE
+  <% else %>
+    <% @purchase.each do |item| %>
     <li>
-      <strong>Status: </strong><%= item.state %>
+      <strong>Ref: </strong><%= item.created_at.strftime("%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
     </li>
-    <li>
-      <strong>Email: </strong><%= @users.find(item.user_id).email %>
-    </li>
-    <li>
-      <strong>Téléphone: </strong>0<%= @users.find(item.user_id).phone %>
-    </li>
-    <li>
-      <strong>Nom: </strong><%= @users.find(item.user_id).last_name %> <%= @users.find(item.user_id).first_name %>
-    </li>
-    <li>
-      <% if item.slot != [] %>
-        <% item.slot.each do |t| %>
-          <strong>Atelier: </strong><%= t %>
+      <li>
+        <strong>Status: </strong><%= item.state %>
+      </li>
+      <li>
+        <% if item.slot != [] %>
+          <% item.slot.each do |t| %>
+            <strong>Atelier: </strong><%= t %>
+          <% end %>
+        <% else %>
+        <% unless Cart.find_by(id: item.product_sku).nil? || Cart.find_by(id: item.product_sku).gift != "" %>
+          <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
+            <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
+          <% end %>
         <% end %>
-      <% else %>
-      <% unless Cart.find_by(id: item.product_sku).nil? || Cart.find_by(id: item.product_sku).gift != "" %>
-        <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
-          <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
         <% end %>
-      <% end %>
-      <% end %>
-    </li>
-    <hr>
+      </li>
+      <hr>
+    <% end %>
   <% end %>
   </ul>
 </div>

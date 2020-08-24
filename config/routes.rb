@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   post 'cart_items/top_down', to: 'cart_items#top_down'
   devise_for :users
   root to: 'pages#home'
-  get 'purchases/index'
+  get 'reservations', to: 'purchases#index', as: :purchases_index
   get 'pages/tessa'
   resources :products do
     resources :purchases, only: []

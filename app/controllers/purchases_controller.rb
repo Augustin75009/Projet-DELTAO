@@ -15,7 +15,9 @@ class PurchasesController < ApplicationController
       @cart = Cart.all
       @purchases = Purchase.where(state: 'paid')
     else
-      redirect_to root_path
+      @cart_items = CartItem.where(user_id: current_user.id)
+      @cart = Cart.all
+      @purchase = current_user.purchases.where(state: 'paid')
     end
   end
 
