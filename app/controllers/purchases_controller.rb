@@ -17,7 +17,7 @@ class PurchasesController < ApplicationController
     else
       @cart_items = CartItem.where(user_id: current_user.id)
       @cart = Cart.all
-      @purchase = current_user.purchases.where(state: 'paid')
+      @purchases = current_user.purchases.where(state: 'paid')
     end
   end
 

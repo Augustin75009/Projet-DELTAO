@@ -1,33 +1,42 @@
-<h1 style="padding-top: 50px">Listes des commandes payées</h1>
-<div style="padding: 20px 0px 0px 200px">
-  <ul>
-  <% if @purchase.empty? %>
-    AUCUNE COMMANDE
-  <% else %>
-    <% @purchase.each do |item| %>
-    <li>
-      <strong>Ref: </strong><%= item.created_at.strftime("%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
-    </li>
-      <li>
-        <strong>Status: </strong><%= item.state %>
-      </li>
-      <li>
-        <% if item.slot != [] %>
-          <% item.slot.each do |t| %>
-            <strong>Atelier: </strong><%= t %>
-          <% end %>
-        <% else %>
-        <% unless Cart.find_by(id: item.product_sku).nil? || Cart.find_by(id: item.product_sku).gift != "" %>
-          <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
-            <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
-          <% end %>
+<div class="purchases-container">
+  <div class="purchases-list-header">
+    <h1><strong>Mes commandes</strong></h1>
+  </div>
+  <div class="purchases-list-content">
+    <div class="purchases-list-container">
+      <ul>
+      <% if @purchases.empty? %>
+        AUCUNE COMMANDE
+      <% else %>
+        <% @purchases.each do |item| %>
+        <li>
+          <strong>Référence : </strong><%= item.created_at.strftime("%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
+        </li>
+          <li>
+            <strong>Status : </strong><%= item.state == 'paid' ? 'Payé' : 'A payer' %>
+          </li>
+          <li>
+            <% if item.slot != [] %>
+              <% item.slot.each do |t| %>
+                <div>
+                  <strong>Atelier: </strong><%= t %>
+                </div>
+              <% end %>
+            <% else %>
+            <% unless Cart.find_by(id: item.product_sku).nil? || Cart.find_by(id: item.product_sku).gift != "" %>
+              <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
+                <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
+              <% end %>
+            <% end %>
+            <% end %>
+          </li>
+          <hr>
         <% end %>
-        <% end %>
-      </li>
-      <hr>
-    <% end %>
-  <% end %>
-  </ul>
+      <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
+
 
 

@@ -1,0 +1,32 @@
+.purchases-container {
+  // box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.5rem 0 rgba(113,113,113,0.23);
+  max-width: 900px;
+  margin: auto;
+  margin-top: 60px;
+  background: white;
+  border-radius: 8px;
+  .purchases-list-header {
+    height: 80px;
+    position: relative;
+    margin: auto;
+    border-bottom: 1px solid #eeeeee;
+    h1 {
+      margin: auto;
+      padding: 30px;
+    }
+
+  }
+
+  .purchases-list-content {
+      border-radius: 0px 0px 8px 8px;
+      padding: 20px;
+      // box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0.5rem 0 rgba(113,113,113,0.23);
+    .purchases-list-container {
+      ul {
+        padding: 0px 40px;
+      }
+    }
+  }
+}
