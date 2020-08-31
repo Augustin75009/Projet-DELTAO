@@ -1,6 +1,13 @@
 <div class="purchases-container">
   <div class="purchases-list-header">
-    <h1><strong>Mes commandes</strong></h1>
+    <div class="tab-container">
+      <%= link_to purchases_index_path, class: "tab-list-link active" do %>
+        <div class="tabl-list-item active"><h1><strong>Mes commandes</strong></h1></div>
+      <% end %>
+      <%= link_to users_setting_path, class: "tab-list-link" do %>
+        <div class="tabl-list-item"><h1><strong>Paramètres</strong></h1></div>
+      <% end %>
+    </div>
   </div>
   <div class="purchases-list-content">
     <div class="purchases-list-container">
@@ -12,25 +19,25 @@
         <li>
           <strong>Référence : </strong><%= item.created_at.strftime("%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
         </li>
-          <li>
-            <strong>Status : </strong><%= item.state == 'paid' ? 'Payé' : 'A payer' %>
-          </li>
-          <li>
-            <% if item.slot != [] %>
-              <% item.slot.each do |t| %>
-                <div>
-                  <strong>Atelier: </strong><%= t %>
-                </div>
-              <% end %>
-            <% else %>
+        <li>
+          <strong>Status : </strong><%= item.state == 'paid' ? 'Payé' : 'A payer' %>
+        </li>
+        <li>
+          <% if item.slot != [] %>
+            <% item.slot.each do |t| %>
+              <div>
+                <strong>Atelier: </strong><%= t %>
+              </div>
+            <% end %>
+          <% else %>
             <% unless Cart.find_by(id: item.product_sku).nil? || Cart.find_by(id: item.product_sku).gift != "" %>
               <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
                 <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
               <% end %>
             <% end %>
-            <% end %>
-          </li>
-          <hr>
+          <% end %>
+        </li>
+        <hr>
         <% end %>
       <% end %>
       </ul>

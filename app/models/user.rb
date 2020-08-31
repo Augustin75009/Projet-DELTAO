@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :lessons, dependent: :nullify
   has_one :cart, dependent: :destroy
   has_many :cart_items, dependent: :destroy
+  has_many :gift, dependent: :destroy
 
   def full_name
     "#{first_name} #{last_name}"

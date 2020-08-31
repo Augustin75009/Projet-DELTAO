@@ -1,0 +1,43 @@
+<div class="purchases-container">
+  <div class="purchases-list-header">
+    <div class="tab-container">
+      <%= link_to purchases_index_path, class: "tab-list-link" do %>
+        <div class="tabl-list-item active"><h1><strong>Mes commandes</strong></h1></div>
+      <% end %>
+      <%= link_to users_setting_path, class: "tab-list-link active" do %>
+        <div class="tabl-list-item"><h1><strong>Paramètres</strong></h1></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="purchases-list-content">
+    <div class="purchases-list-container">
+      <div class="cart-form flex">
+        <div class="billing-form">
+          <%= form_tag users_setting_path do %>
+            <%= label_tag("Email") %>
+            <%= text_field_tag(:contact_email, @user.email, required: true) %>
+            <%= label_tag("Prénom") %>
+            <%= text_field_tag(:first_name, @user.first_name, required: true) %>
+            <%= label_tag("Nom") %>
+            <%= text_field_tag(:last_name, @user.last_name, required: true) %>
+            <%= label_tag("Adresse") %>
+            <%= text_field_tag(:address, @user.address, required: true) %>
+            <%= label_tag("Ville") %>
+            <%= text_field_tag(:city, @user.city, required: true) %>
+            <%= label_tag("Code postal") %>
+            <%= text_field_tag(:zip, @user.zip, required: true) %>
+            <%= label_tag("Téléphone") %>
+            <%= text_field_tag(:phone, @user.phone, placeholder: "06000000", required: true) %>
+            <%= submit_tag 'Modifier mes coordonnées', class: 'btn cart-button' %>
+          <% end %>
+        </div>
+        <div class="billing-form delete-account">
+          <%= form_tag delete_user_path do %>
+            <%= label_tag("Suppression du compte") %>
+            <%= submit_tag 'Supprimer mon compte', class: 'btn btn-danger' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

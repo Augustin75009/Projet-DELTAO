@@ -10,10 +10,26 @@
     height: 80px;
     position: relative;
     margin: auto;
-    border-bottom: 1px solid #eeeeee;
+
+    .tab-container {
+      height: 100%;
+      display: inline-flex;
+      margin: auto;
+      width: 100%;
+
+      a.tab-list-link {
+        flex: 1;
+        height: 100%;
+      }
+
+      a.tab-list-link.active {
+        border-bottom: solid 3px $tessa;
+      }
+    }
+
     h1 {
       margin: auto;
-      padding: 30px;
+      // padding: 30px;
     }
 
   }
@@ -26,6 +42,10 @@
     .purchases-list-container {
       ul {
         padding: 0px 40px;
+      }
+
+      hr:last-child {
+        display: none;
       }
     }
   }

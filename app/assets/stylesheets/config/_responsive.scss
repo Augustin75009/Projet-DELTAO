@@ -216,6 +216,23 @@
 
 @media (max-width: 800px) {
 
+  .section_content {
+    .purchases-container {
+      margin: 10px 10px;
+    }
+
+    .cart-form.flex {
+      display: block;
+      padding-top: 0px !important;
+    }
+
+    .delete-account {
+      margin-left: 0px;
+      margin-bottom: 40px;
+    }
+  }
+
+
   .card-dispatch-lesson:hover {
   transform: translateY(0px) !important;
   // box-shadow: 2px 8px 4px rgba(0, 0, 0, 0) !important;
