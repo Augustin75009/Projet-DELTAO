@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'account/reservations', to: 'purchases#index', as: :purchases_index
   get 'account/settings', to: 'pages#settings', as: :users_setting
   post 'account/delete', to: 'pages#delete_account', as: :delete_user
+  post 'account/update_user', to: 'pages#update_user_infos', as: :update_user_infos
   get 'pages/tessa'
   resources :products do
     resources :purchases, only: []
