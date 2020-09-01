@@ -29,7 +29,7 @@ class PagesController < ApplicationController
     @cart_items = CartItem.where(user_id: current_user.id)
     @user = current_user
     user_params
-    redirect_to users_setting_path
+    redirect_to users_setting_path, alert: "informations misent à jour"
   end
 
   def delete_account

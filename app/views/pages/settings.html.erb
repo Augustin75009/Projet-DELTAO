@@ -34,7 +34,7 @@
         <div class="billing-form delete-account">
           <%= form_tag delete_user_path do %>
             <%= label_tag("Suppression du compte") %>
-            <%= submit_tag 'Supprimer mon compte', class: 'btn btn-danger' %>
+            <%= submit_tag 'Supprimer mon compte', class: 'btn btn-danger', data: { confirm: "Vous êtes sur le point de supprimer toutes vos données, voulez-vous continuer ?" } %>
           <% end %>
         </div>
       </div>
