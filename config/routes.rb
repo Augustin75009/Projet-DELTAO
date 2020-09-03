@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
   patch 'admin/signature/notification/:id', to: 'admin/signatures#notification', as: :notification
   post 'admin/signature/notification_one/:id', to: 'admin/signatures#notification_one', as: :notification_one
+  post 'admin/user/export_users', to: 'admin/users#export_users', as: :export_users
   get 'charge' => 'payments#charge'
   get 'payments/new'
   get 'payments/create'
