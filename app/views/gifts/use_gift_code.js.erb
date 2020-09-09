@@ -1,0 +1,8 @@
+function refreshDashboard(innerHTML) {
+  // insert new flash banner
+  const tab = document.getElementById('targetForSlot');
+  tab.innerHTML = innerHTML;
+}
+
+// call function
+refreshDashboard('<%=j render partial: "gifts/slot", locals: {resource: @lesson, gift: @gift} %>')

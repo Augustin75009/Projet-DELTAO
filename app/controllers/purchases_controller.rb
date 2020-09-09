@@ -55,6 +55,31 @@ class PurchasesController < ApplicationController
     end
   end
 
+  def create_from_gift
+    @slot = Slot.find(params[:slot_id])
+
+    @user = current_user
+    @user.phone = params[:phone]
+    @user.first_name = params[:first_name]
+    @user.last_name = params[:last_name]
+    @user.save
+
+    @purchase = Purchase.new
+    @purchase.product_sku = params[:lesson]
+    @purchase.user = @user
+    @purchase.state = 'paid'
+
+    @purchase.slot = []
+    @purchase.slot << "#{l(@slot.date, :format => "%A %e %B %Y", :locale => 'fr')} - #{Lesson.find(@slot.lesson_id).title} x 1"
+
+    if @purchase.save!
+      @gift = Gift.find(params[:gift])
+      @gift.update(state: 'used')
+
+      redirect_to root_path(paid: true), flash: { notice: 'Réservation prise en compte' }
+    end
+  end
+
   def edit
   end
 

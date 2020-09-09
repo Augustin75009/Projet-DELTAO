@@ -18,6 +18,7 @@ class LessonsController < ApplicationController
       @lessons = Lesson.all.order('created_at')
     end
     @events = Event.all
+    @user = current_user
     if user_signed_in?
       @cart_items = CartItem.where(user_id: current_user.id)
     else

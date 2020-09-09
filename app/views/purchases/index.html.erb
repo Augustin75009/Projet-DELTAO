@@ -2,7 +2,7 @@
   <div class="purchases-list-header">
     <div class="tab-container">
       <%= link_to purchases_index_path, class: "tab-list-link active" do %>
-        <div class="tabl-list-item active"><h1><strong>Mes commandes</strong></h1></div>
+        <div class="tabl-list-item active"><h1><strong>Mes ateliers</strong></h1></div>
       <% end %>
       <%= link_to users_setting_path, class: "tab-list-link" do %>
         <div class="tabl-list-item"><h1><strong>Paramètres</strong></h1></div>
@@ -16,27 +16,33 @@
         VOUS N'AVEZ PAS DE COMMANDE
       <% else %>
         <% @purchases.each do |item| %>
-        <li>
-          <strong>Référence : </strong><%= item.created_at.strftime("%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
-        </li>
-        <li>
-          <strong>Status : </strong><%= item.state == 'paid' ? 'Payé' : 'A payer' %>
-        </li>
-        <li>
-          <% if item.slot != [] %>
-            <% item.slot.each do |t| %>
-              <div>
-                <strong>Atelier: </strong><%= t %>
-              </div>
-            <% end %>
-          <% else %>
-            <% unless Cart.find_by(id: item.product_sku).nil? || Cart.find_by(id: item.product_sku).gift != "" %>
-              <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
-                <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
+        <div class="purchase-list-card">
+          <div class="purchase-list-card-left">
+            <li style="font-weight: 300">
+              Référence : <%= item.created_at.strftime("%m%d") %>-<%= item.user_id %>-<%= item.product_sku %></h4>
+            </li>
+            <li style="font-weight: 300">
+              Status : <span class="purchase-paid-tag"><strong><%= item.state == 'paid' ? 'Payé' : 'A payer' %></strong></span>
+            </li>
+          </div>
+          <div class="purchase-list-card-right">
+            <li>
+              <% if item.slot != [] %>
+                <% item.slot.each do |t| %>
+                  <div style="font-weight: 300">
+                    Atelier : <strong><%= t %></strong>
+                  </div>
+                <% end %>
+              <% else %>
+                <% unless Cart.find_by(id: item.product_sku).nil? || Cart.find_by(id: item.product_sku).gift != "" %>
+                  <% if Lesson.find(Cart.find(item.product_sku).gift.to_i).title%>
+                    <strong>Bon cadeau : </strong><%= Lesson.find(Cart.find(item.product_sku).gift.to_i).title %>
+                  <% end %>
+                <% end %>
               <% end %>
-            <% end %>
-          <% end %>
-        </li>
+            </li>
+          </div>
+        </div>
         <hr>
         <% end %>
       <% end %>

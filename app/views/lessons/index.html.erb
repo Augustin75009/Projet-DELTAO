@@ -103,5 +103,35 @@
           <% end %>
         </ul>
       </div>
+      <div class="flex">
+        <button type="button" class="btn cart-button use-gift-cta" data-toggle="modal" data-target="#staticBackdrop">
+          <h5>
+            Utiliser un bon cadeau
+          </h5>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="staticBackdropLabel">Réserver un atelier</h4>
+        </div>
+        <div class="modal-body" id="targetForSlot">
+          <div class="text-align-center">
+            <%= form_tag("/use_gift_code", method: 'post', remote: true ) do %>
+              <%= label_tag("Référence du bon cadeau") %>
+              <div style="display: inline-flex;">
+                <%= text_field_tag('gift_code', "", placeholder: "XXXXXXXX-XX") %>
+                <%= submit_tag 'Valider', class: 'btn cart-button ml-8' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
     </div>
   </div>

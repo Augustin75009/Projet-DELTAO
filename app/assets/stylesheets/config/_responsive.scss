@@ -128,6 +128,17 @@
 
 @media (max-width: 800px) {
 
+  .flex {
+    .use-gift-cta {
+      width: 240px;
+      margin-top: 12px;
+    }
+  }
+
+  .modal-dialog {
+    margin-top: 25% !important;
+  }
+
   .progress-wrapper{
     font-size: 13px !important;
     .progress-round{

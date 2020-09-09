@@ -49,4 +49,22 @@
       }
     }
   }
+
+  .purchase-list-card {
+    display: inline-flex;
+    justify-content: space-between;
+    // position: relative;
+    width: 100%;
+
+    .purchase-list-card-right {
+      // position: absolute;
+      right: 0px;
+    }
+
+    .purchase-paid-tag {
+      background: #e4e4e4;
+      border-radius: 8px;
+      padding: 0px 8px;
+    }
+  }
 }
