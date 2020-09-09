@@ -128,6 +128,23 @@
 
 @media (max-width: 800px) {
 
+  .purchase-list-card {
+    flex-direction: column;
+  }
+
+  .purchase-list-card-right {
+    margin-top: 12px;
+  }
+
+  .purchases-list-content {
+    .purchases-list-container {
+      ul {
+        padding: 0px 20px !important;
+      }
+    }
+  }
+
+
   .flex {
     .use-gift-cta {
       width: 240px;
