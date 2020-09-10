@@ -15,7 +15,9 @@ class PurchasesController < ApplicationController
       @cart = Cart.all
       @purchases = Purchase.where(state: 'paid')
     else
-      redirect_to root_path
+      @cart_items = CartItem.where(user_id: current_user.id)
+      @cart = Cart.all
+      @purchases = current_user.purchases.where(state: 'paid')
     end
   end
 
@@ -50,6 +52,32 @@ class PurchasesController < ApplicationController
       else
         redirect_to cart_path(id: params[:cart_id]), alert: "N° de téléphone invalide"
       end
+    end
+  end
+
+  def create_from_gift
+    @slot = Slot.find(params[:slot_id])
+
+    @user = current_user
+    @user.phone = params[:phone]
+    @user.first_name = params[:first_name]
+    @user.last_name = params[:last_name]
+    @user.save
+
+    @purchase = Purchase.new
+    @purchase.product_sku = params[:lesson]
+    @purchase.user = @user
+    @purchase.state = 'paid'
+
+    @purchase.slot = []
+    @purchase.slot << "#{l(@slot.date, :format => "%A %e %B %Y", :locale => 'fr')} - #{Lesson.find(@slot.lesson_id).title} x 1"
+
+    if @purchase.save!
+      @gift = Gift.find(params[:gift])
+      @gift.update(state: 'used')
+      @slot.update(quantity: @slot.quantity - 1)
+
+      redirect_to lessons_path(query6: true), flash: { notice: 'Réservation prise en compte' }
     end
   end
 

@@ -18,6 +18,12 @@
   top: 90px;
 }
 
+.cart-form.flex {
+  display: inline-flex;
+  padding: 0px 40px;
+  margin: 0px 0px 20px 0px;
+}
+
 .cart-summary {
   border-radius: 6px;
   height: fit-content;
@@ -46,7 +52,8 @@
 
 .billing-form {
   display: block;
-  input {
+  input, select {
+    width: 100%;
     padding: 4px 8px;
     border: solid 1px rgba(25, 25, 25, 0.25);
   }

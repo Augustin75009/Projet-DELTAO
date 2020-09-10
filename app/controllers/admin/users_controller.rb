@@ -9,6 +9,16 @@ module Admin
     #   send_foo_updated_email
     # end
 
+    def export_users
+      @signature = Signature.find(params[:filter])
+      @students = @signature.students
+
+      respond_to do |format|
+        format.html
+        format.csv { send_data @students.to_csv, filename: "export_eleves_#{@signature.title}-#{Date.today}.csv" }
+      end
+    end
+
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`
     # actions.

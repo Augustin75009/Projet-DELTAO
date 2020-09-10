@@ -51,3 +51,14 @@ $border-radius-small: 2px;
 }
 
 // Override other variables below!
+.modal-dialog {
+  margin-top: 10% !important;
+}
+
+.modal-content {
+  border-radius: 8px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}

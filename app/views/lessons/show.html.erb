@@ -62,38 +62,17 @@
               <% end %>
             </div>
           <% end %>
-<!--       <% if user_signed_in? %>
-        <% if current_user.adminkey == "admin" %>
-          <% array = [] %>
-          <% i = 0 %>
-          <% 363.times do |i|
-            array << (Date.today + i)
-            i += 1
-          end %>
-            <%= simple_form_for @lesson do |f|%>
-              <%= f.input :slot, label: "Choisir une nouvelle date", collection: array %>
-              <%= hidden_field_tag "true", true%>
-              <%= f.button :submit, "Ajouter", class: "button-show" %>
-            <% end %>
-            <%= simple_form_for @lesson do |f|%>
-              <%= f.input :slot, label: "Supprimer une date", collection: @lesson.slot %>
-              <%= f.button :submit, "Supprimer", class: "button-show" %>
-            <% end %>
-        <% end %>
-      <% end %> -->
       </div>
     </div>
   </div>
   <div class="more-infos">
      <ul class="infos-list">
         <li class="tab selected-tab">Description</li>
-        <li class="tab">Horaires</li>
         <li class="tab">Tarifs</li>
         <li class="tab hide">Avis</li>
       </ul>
       <div class="infos-dispatch-content">
         <span class="infos-show"><%= render 'lessons/description' %></span>
-        <span class=""><%= render 'lessons/horaires' %></span>
         <span class=""><%= render 'lessons/reglement' %></span>
         <span class="hide"><%= render 'lessons/avis' %></span>
       </div>

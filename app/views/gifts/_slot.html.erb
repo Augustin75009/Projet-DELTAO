@@ -1,0 +1,37 @@
+<% if resource %>
+  <div class="billing-form">
+    <div style="margin: 20px">
+      <%= form_tag create_from_gift_path do |f|%>
+        <%= label_tag("Date") %>
+        <%= select_tag "slot_id", options_for_select(Slot.where(lesson_id: resource.id).where("quantity > ?", 0).sort_by(&:date).map { |slot| [l(slot.date, :format => "%A %e %B %Y", :locale => 'fr') + " - #{slot.quantity} disponible(s)", slot.id]} ) %>
+        <hr>
+        <%= label_tag("Email") %>
+        <%= text_field_tag(:contact_email, "@user.email", required: true, disabled: true) %>
+        <%= label_tag("Prénom") %>
+        <%= text_field_tag(:first_name, @user.first_name, required: true) %>
+        <%= label_tag("Nom") %>
+        <%= text_field_tag(:last_name, @user.last_name, required: true) %>
+        <%= label_tag("Téléphone") %>
+        <%= text_field_tag(:phone, @user.phone, placeholder: "06000000", required: true) %>
+        <%= hidden_field_tag 'slot', params[:lesson] %>
+        <%= submit_tag 'Valider', class: 'btn cart-button' %>
+        <%= hidden_field_tag :lesson, resource.id %>
+        <%= hidden_field_tag :gift, gift.id %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+<div class="text-align-center">
+  <%= form_tag("/use_gift_code", method: 'post', remote: true ) do %>
+    <%= label_tag("Référence du bon cadeau") %>
+    <div style="display: inline-flex;">
+      <%= text_field_tag('gift_code', "", placeholder: "XXXXXXXX-XX") %>
+      <%= submit_tag 'Valider', class: 'btn cart-button ml-8' %>
+    </div>
+    <br>
+    <span class="alert-text-red">
+      Bon cadeau invalide
+    </span>
+  <% end %>
+</div>
+<% end%>
