@@ -13,7 +13,15 @@
     <div class="purchases-list-container">
       <ul>
       <% if @purchases.empty? %>
-        VOUS N'AVEZ PAS DE COMMANDE
+        <div class="purchases-empty">
+          VOUS N'AVEZ PAS DE COMMANDE
+          <br>
+          <a href="/lessons" class="no-style">
+            <button class="btn cart-button">
+              Chercher un atelier
+            </button>
+          </a>
+        </div>
       <% else %>
         <% @purchases.each do |item| %>
         <div class="purchase-list-card">

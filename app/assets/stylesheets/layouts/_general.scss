@@ -14,6 +14,10 @@ a {
   color: black !important;
 }
 
+a.no-style {
+  color: inherit !important;
+}
+
 body {
   background-color: $tessa-white;
   // min-height: 101vh
