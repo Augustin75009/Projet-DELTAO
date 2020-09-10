@@ -7,7 +7,7 @@
     "chokidar": "^2.1.8",
     "eventbrite": "^1.2.2",
     "flatpickr": "^4.6.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^8.19.0"
   },
