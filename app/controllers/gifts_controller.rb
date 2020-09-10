@@ -46,15 +46,15 @@ class GiftsController < ApplicationController
         format.html { redirect_to lessons_path(query6: true), alert: "Bon cadeau invalide" }
         format.js { flash.now[:alert] = 'Bon cadeau invalide' }
       end
-    else 
+    else
       @user = current_user
       date = params[:gift_code].split("-")[0]
       id = params[:gift_code].split("-")[1].to_i
-  
+
       @gift = Gift.find(id)
-  
+
       gift_date = @gift.created_at.to_date.to_formatted_s(:number)
-  
+
       if gift_date == date && @gift.state != 'used' && gift_still_valid?
         @lesson = Lesson.find_by(title: @gift.product_sku)
         respond_to do |format|
@@ -75,12 +75,11 @@ class GiftsController < ApplicationController
   end
 
   def gift_code_valid?
-    # check if gift still valid with date
     value = params[:gift_code].split("-")
 
     return false if value.length != 2
-    return false if value[0].to_i == 0
-    return false if value[1].to_i == 0
+    return false if value[0].to_i.zero?
+    return false if value[1].to_i.zero?
 
     return true
   end

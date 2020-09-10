@@ -75,8 +75,9 @@ class PurchasesController < ApplicationController
     if @purchase.save!
       @gift = Gift.find(params[:gift])
       @gift.update(state: 'used')
+      @slot.update(quantity: @slot.quantity - 1)
 
-      redirect_to root_path(paid: true), flash: { notice: 'Réservation prise en compte' }
+      redirect_to lessons_path(query6: true), flash: { notice: 'Réservation prise en compte' }
     end
   end
 
