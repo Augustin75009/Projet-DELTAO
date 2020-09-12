@@ -8,7 +8,10 @@ class PurchaseDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
+    user: Field::BelongsTo.with_options(
+      searchable: true,
+      searchable_field: 'last_name'
+    ),
     id: Field::Number,
     state: Field::String,
     product_sku: Field::String,
@@ -16,7 +19,7 @@ class PurchaseDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     amount_cents: Field::Number,
-    slot: Field::String,
+    slot: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
