@@ -4,19 +4,3 @@
   <pre><%= @lesson.schedule %></pre>
   <br>
 <% end %>
-<% if @lesson.slots.size > 0 %>
-  <p class="tab-title-underlign">Les prochaines dates : </p>
-  <ul style ="padding-left: 0px;">
-    <% if @lesson.slots.size > 1 %>
-      <% @lesson.slots.each do |slot|%>
-        <% if slot.class != NilClass %>
-          <li>
-            <%= l(slot.date, :format => "%A %e %B %Y", :locale => 'fr') %>
-          </li>
-        <% end %>
-      <% end %>
-    <% else %>
-      Pas d'atelier prévu prochainement
-    <% end %>
-  </ul>
-<% end %>
