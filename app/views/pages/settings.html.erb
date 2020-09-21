@@ -5,7 +5,7 @@
         <div class="tabl-list-item active"><h1><strong>Mes ateliers</strong></h1></div>
       <% end %>
       <%= link_to users_setting_path, class: "tab-list-link active" do %>
-        <div class="tabl-list-item"><h1><strong>Paramètres</strong></h1></div>
+        <div class="tabl-list-item"><h1><strong>Mes coordonnées</strong></h1></div>
       <% end %>
     </div>
   </div>
@@ -33,7 +33,6 @@
         </div>
         <div class="billing-form delete-account">
           <%= form_tag delete_user_path do %>
-            <%= label_tag("Suppression du compte") %>
             <%= submit_tag 'Supprimer mon compte', class: 'btn btn-danger', data: { confirm: "Vous êtes sur le point de supprimer toutes vos données, voulez-vous continuer ?" } %>
           <% end %>
         </div>

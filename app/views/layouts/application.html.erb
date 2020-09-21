@@ -52,8 +52,9 @@
       <a id="" class="w3-bar-item .sign_out xl" href="/lessons?query6=true">Bons cadeaux</a></li>
       <a class="w3-bar-item .sign_out xl" id="select-planning-sidebar">Planning</a>
       <% if user_signed_in? %>
-        <a id="" class="w3-bar-item .sign_out xl" href="/account/reservations">Compte</a>
-        <a id="" class="w3-bar-item .sign_out xl" href="/cart_items">Panier</a>
+      <a id="" class="w3-bar-item .sign_out xl" href="/cart_items">Panier</a>
+      <hr style="margin-top:12px; margin-bottom:12px">
+      <a id="" class="w3-bar-item .sign_out xl" href="/account/reservations">Compte</a>
         <%= link_to destroy_user_session_path, method: :delete, class: "w3-bar-item header-item header-link" do %>
           <%= t(".sign_out xl", default: "Se déconnecter \u2192") %>
         <% end %>

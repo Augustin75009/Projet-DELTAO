@@ -40,6 +40,7 @@ class UserDashboard < Administrate::BaseDashboard
   first_name
   last_name
   address
+  city
   zip
   phone
   ].freeze

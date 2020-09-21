@@ -103,13 +103,25 @@
           <% end %>
         </ul>
       </div>
-      <div class="flex">
-        <button type="button" class="btn cart-button use-gift-cta" data-toggle="modal" data-target="#staticBackdrop">
-          <h5>
-            Utiliser un bon cadeau
-          </h5>
-        </button>
-      </div>
+      <% if params[:query6].present? %>
+        <div class="flex">
+          <% if user_signed_in? %>
+            <button type="button" class="btn cart-button use-gift-cta" data-toggle="modal" data-target="#staticBackdrop">
+              <h5>
+                Utiliser un bon cadeau
+              </h5>
+            </button>
+          <% else %>
+            <%= link_to new_user_session_path, :style=> 'width: 100%;' do %>
+              <button type="button" class="btn cart-button use-gift-cta">
+                <h5>
+                  Utiliser un bon cadeau
+                </h5>
+              </button>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
