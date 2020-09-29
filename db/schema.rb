@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_132701) do
+ActiveRecord::Schema.define(version: 2020_09_29_131913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,6 +121,8 @@ ActiveRecord::Schema.define(version: 2020_02_20_132701) do
     t.string "slot", array: true
     t.string "gift_to"
     t.string "gift_from"
+    t.bigint "gift_id"
+    t.index ["gift_id"], name: "index_purchases_on_gift_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
@@ -198,6 +200,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_132701) do
   add_foreign_key "gifts", "students"
   add_foreign_key "gifts", "users"
   add_foreign_key "lessons", "users"
+  add_foreign_key "purchases", "gifts"
   add_foreign_key "purchases", "users"
   add_foreign_key "slots", "lessons"
   add_foreign_key "teachings", "users"

@@ -12,6 +12,10 @@ class PurchaseDashboard < Administrate::BaseDashboard
       searchable: true,
       searchable_field: 'last_name'
     ),
+    gift: Field::BelongsTo.with_options(
+      searchable: true,
+      searchable_field: 'id'
+    ),
     id: Field::Number,
     state: Field::String,
     product_sku: Field::String,
@@ -31,6 +35,7 @@ class PurchaseDashboard < Administrate::BaseDashboard
   id
   state
   user
+  gift
   created_at
   amount_cents
   slot

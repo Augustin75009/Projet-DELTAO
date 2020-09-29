@@ -57,6 +57,7 @@ class PurchasesController < ApplicationController
 
   def create_from_gift
     @slot = Slot.find(params[:slot_id])
+    @gift = Gift.find(params[:gift])
 
     @user = current_user
     @user.phone = params[:phone]
@@ -67,13 +68,13 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new
     @purchase.product_sku = params[:lesson]
     @purchase.user = @user
+    @purchase.gift  = @gift
     @purchase.state = 'paid'
 
     @purchase.slot = []
     @purchase.slot << "#{l(@slot.date, :format => "%A %e %B %Y", :locale => 'fr')} - #{Lesson.find(@slot.lesson_id).title} x 1"
 
     if @purchase.save!
-      @gift = Gift.find(params[:gift])
       @gift.update(state: 'used')
       @slot.update(quantity: @slot.quantity - 1)
 
