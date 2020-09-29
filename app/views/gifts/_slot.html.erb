@@ -6,7 +6,7 @@
         <%= select_tag "slot_id", options_for_select(Slot.where(lesson_id: resource.id).where("quantity > ?", 0).sort_by(&:date).map { |slot| [l(slot.date, :format => "%A %e %B %Y", :locale => 'fr') + " - #{slot.quantity} disponible(s)", slot.id]} ) %>
         <hr>
         <%= label_tag("Email") %>
-        <%= text_field_tag(:contact_email, "@user.email", required: true, disabled: true) %>
+        <%= text_field_tag(:contact_email, @user.email, required: true, disabled: true) %>
         <%= label_tag("Prénom") %>
         <%= text_field_tag(:first_name, @user.first_name, required: true) %>
         <%= label_tag("Nom") %>
