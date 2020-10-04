@@ -7,11 +7,13 @@ class PaymentsController < ApplicationController
     @cart = Cart.find(params[:cart_id])
     @cart_items = CartItem.where(user_id: current_user.id)
     if params[:gift]
-      # success_url = "http://localhost:3000/charge?gift=#{params[:gift_id]}"
-      success_url = "https://www.delaterrealobjet.fr/charge?gift=#{params[:gift_id]}"
-      # success_url = "https://tessa.herokuapp.com/charge?gift=#{params[:gift_id]}"
-      # cancel_url = "http://localhost:3000/cart_items"
-      cancel_url = "https://www.delaterrealobjet.fr/cart_items"
+      if Rails.env == "development"
+        success_url = "http://localhost:3000/charge?gift=#{params[:gift_id]}"
+        cancel_url = "http://localhost:3000/cart_items"
+      else
+        success_url = "https://www.delaterrealobjet.fr/charge?gift=#{params[:gift_id]}"
+        cancel_url = "https://www.delaterrealobjet.fr/cart_items"
+      end
       @stripe_session = Stripe::Checkout::Session.create(
         customer_email: current_user.email,
         payment_method_types: ['card'],
@@ -33,11 +35,13 @@ class PaymentsController < ApplicationController
         locale: 'fr'
       )
     else
-      # success_url = "http://localhost:3000/charge?success=#{params[:purchase_id]}"
-      success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
-      # success_url = "https://tessa.herokuapp.com/charge?success=#{params[:purchase_id]}"
-      # cancel_url = "http://localhost:3000/cart_items"
-      cancel_url = "https://www.delaterrealobjet.fr/cart_items"
+      if Rails.env == "development"
+        success_url = "http://localhost:3000/charge?success=#{params[:purchase_id]}"
+        cancel_url = "http://localhost:3000/cart_items"
+      else
+        success_url = "https://www.delaterrealobjet.fr/charge?success=#{params[:purchase_id]}"
+        cancel_url = "https://www.delaterrealobjet.fr/cart_items"
+      end
       @stripe_session = Stripe::Checkout::Session.create(
         customer_email: current_user.email,
         payment_method_types: ['card'],
@@ -69,17 +73,28 @@ class PaymentsController < ApplicationController
   end
 
   def charge
-    @cart_items = CartItem.where(user_id: current_user.id)
-    if params[:success]
-      Purchase.find(params[:success]).update(state: 'paid')
-      update_quantity
-      @cart_items.destroy_all
-    else
-      gift = Gift.find(params[:gift])
-      gift.update(state: 'paid')
-      UserMailer.gift_card(gift).deliver_now
+    begin
+      @cart_items = CartItem.where(user_id: current_user.id)
+      if params[:success]
+        Purchase.find(params[:success]).update(state: 'paid')
+        update_quantity
+        @cart_items.destroy_all
+      else
+        gift = Gift.find(params[:gift])
+        gift.update(state: 'paid')
+        UserMailer.gift_card(gift).deliver_now
+      end
+      redirect_to root_path(paid: true), flash: { notice: 'Réservation prise en compte' }
+    rescue
+      if params[:success]
+        Purchase.find(params[:success]).update(state: 'paid')
+      else
+        gift = Gift.find(params[:gift])
+        gift.update(state: 'paid')
+        UserMailer.gift_card(gift).deliver_now
+      end
+      redirect_to root_path(paid: true), flash: { notice: 'Réservation prise en compte' }
     end
-    redirect_to root_path(paid: true), flash: { notice: 'Réservation prise en compte' }
   end
 
   def create
