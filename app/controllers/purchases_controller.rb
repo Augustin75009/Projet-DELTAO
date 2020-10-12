@@ -77,6 +77,7 @@ class PurchasesController < ApplicationController
       @gift = Gift.find(params[:gift])
       @gift.update(state: 'used')
       @slot.update(quantity: @slot.quantity - 1)
+      UserMailer.purchase_from_gift(@purchase).deliver_now
 
       redirect_to lessons_path(query6: true), flash: { notice: 'Réservation prise en compte' }
     end
