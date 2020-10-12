@@ -13,4 +13,9 @@ class UserMailer < ApplicationMailer
     @gift = gift
     mail(to: gift.user.contact_email, subject: "Bon cadeau")
   end
+
+  def purchase_from_gift(purchase)
+    @purchase = purchase
+    mail(to: purchase.user.contact_email, subject: "Votre atelier de céramique")
+  end
 end
