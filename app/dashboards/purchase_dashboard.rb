@@ -13,7 +13,7 @@ class PurchaseDashboard < Administrate::BaseDashboard
       searchable_field: 'last_name'
     ),
     gift: Field::BelongsTo.with_options(
-      searchable: true,
+      searchable: false,
       searchable_field: 'id'
     ),
     id: Field::Number,
