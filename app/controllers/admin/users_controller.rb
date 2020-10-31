@@ -10,12 +10,19 @@ module Admin
     # end
 
     def export_users
-      @signature = Signature.find(params[:filter])
-      @students = @signature.students
+      title = Lesson.find(params[:filter]).title
+      signatures = Signature.where(title: title)
+      @students = ''
+      unless signatures.empty?
+        signatures.each do |signature|
+          @students += signature.students.to_csv
+        end
+      end
+      # raise
 
       respond_to do |format|
         format.html
-        format.csv { send_data @students.to_csv, filename: "export_eleves_#{@signature.title}-#{Date.today}.csv" }
+        format.csv { send_data @students, filename: "export_eleves_#{title}-#{Date.today}.csv" }
       end
     end
 
