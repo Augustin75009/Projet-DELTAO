@@ -76,7 +76,6 @@ class GiftsController < ApplicationController
 
   def gift_code_valid?
     value = params[:gift_code].split("-")
-
     return false if value.length != 2
     return false if value[0].to_i.zero?
     return false if value[1].to_i.zero?

@@ -3,7 +3,7 @@
     <div style="margin: 20px">
       <%= form_tag create_from_gift_path do |f|%>
         <%= label_tag("Date") %>
-        <%= select_tag "slot_id", options_for_select(Slot.where(lesson_id: resource.id).where("quantity > ?", 0).sort_by(&:date).map { |slot| [l(slot.date, :format => "%A %e %B %Y", :locale => 'fr') + " - #{slot.quantity} disponible(s)", slot.id]} ) %>
+        <%= select_tag "slot_id", options_for_select(Slot.where(lesson_id: resource.id).where("quantity > ?", 0).where("date >= ?", Date.today).where("date < ?", @gift.created_at.to_date.to_date.next_year).sort_by(&:date).map { |slot| [l(slot.date, :format => "%A %e %B %Y", :locale => 'fr') + " - #{slot.quantity} disponible(s)", slot.id]} ) %>
         <hr>
         <%= label_tag("Email") %>
         <%= text_field_tag(:contact_email, @user.email, required: true, disabled: true) %>
