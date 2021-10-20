@@ -32,6 +32,7 @@ class GiftDashboard < Administrate::BaseDashboard
   product_sku
   gift_to
   gift_from
+  created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
