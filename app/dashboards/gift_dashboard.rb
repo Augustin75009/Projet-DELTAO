@@ -8,7 +8,7 @@ class GiftDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
+    user: Field::BelongsTo.with_options(class_name: 'User', searchable: true, searchable_field: 'last_name'),
     student: Field::BelongsToSearch.with_options(class_name: 'Student'),
     id: Field::Number,
     state: Field::String,
@@ -32,6 +32,7 @@ class GiftDashboard < Administrate::BaseDashboard
   product_sku
   gift_to
   gift_from
+  user
   created_at
   ].freeze
 
