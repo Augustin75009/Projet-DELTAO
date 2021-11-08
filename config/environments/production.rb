@@ -13,7 +13,7 @@ Rails.application.configure do
     domain: ENV['DOMAIN_NAME'],
     user_name: ENV["SMTP_USER_NAME"],
     password: ENV["SMTP_PASSWORD"],
-    authentication: :plain,
+    authentication: "public",
     enable_starttls_auto: true
   }
 

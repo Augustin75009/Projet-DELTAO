@@ -10,9 +10,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.sendgrid.net',
     port: 465,
+    domain: ENV['DOMAIN_NAME'],
     user_name: ENV["SMTP_USER_NAME"],
     password: ENV["SMTP_PASSWORD"],
-    authentication: :plain,
+    authentication: "public",
     enable_starttls_auto: true
   }
   # Settings specified here will take precedence over those in config/application.rb.

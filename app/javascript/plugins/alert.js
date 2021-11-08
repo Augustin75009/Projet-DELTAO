@@ -15,18 +15,18 @@ const alert = () => {
   selectCgv.addEventListener('click', function() {
     cgv.toggleAttribute('hidden')
   })
-  planning.addEventListener('click', function() {
-    planning.toggleAttribute('hidden')
-  })
-  selectPlanning.addEventListener('click', function() {
-    planning.toggleAttribute('hidden')
-  })
-  selectPlanningNav.addEventListener('click', function() {
-    planning.toggleAttribute('hidden')
-  })
-  selectPlanningSide.addEventListener('click', function() {
-    planning.toggleAttribute('hidden')
-  })
+  // planning.addEventListener('click', function() {
+  //   planning.toggleAttribute('hidden')
+  // })
+  // selectPlanning.addEventListener('click', function() {
+  //   planning.toggleAttribute('hidden')
+  // })
+  // selectPlanningNav.addEventListener('click', function() {
+  //   planning.toggleAttribute('hidden')
+  // })
+  // selectPlanningSide.addEventListener('click', function() {
+  //   planning.toggleAttribute('hidden')
+  // })
 }
 
     // const Toast = Swal.mixin({
