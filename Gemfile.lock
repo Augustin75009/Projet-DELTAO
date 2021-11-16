@@ -224,6 +224,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    ruby_http_client (3.5.2)
     sassc (2.2.1)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -233,6 +234,8 @@ GEM
       sprockets-rails
       tilt
     selectize-rails (0.12.6)
+    sendgrid-ruby (6.6.0)
+      ruby_http_client (~> 3.4)
     sendinblue (2.4)
       httparty
       json
@@ -304,6 +307,7 @@ DEPENDENCIES
   rails (= 5.2.2)
   redis
   sassc-rails
+  sendgrid-ruby
   sendinblue
   simple_form
   spring

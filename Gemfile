@@ -16,6 +16,7 @@ gem 'pg_search'
 
 # mailing
 gem 'sendinblue'
+gem 'sendgrid-ruby'
 
 # dashboard
 gem "administrate"
