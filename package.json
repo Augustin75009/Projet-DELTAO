@@ -2,7 +2,7 @@
   "name": "_delta",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "5.4",
     "bootstrap": "3",
     "chokidar": "^2.1.8",
     "eventbrite": "^1.2.2",
